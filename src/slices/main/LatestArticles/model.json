@@ -1,0 +1,18 @@
+{
+	"id": "latest_articles",
+	"type": "SharedSlice",
+	"name": "LatestArticles",
+	"description": "LatestArticles",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {},
+			"items": {}
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+	"id": "header",
+	"label": "Header",
+	"format": "custom",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {}
+	}
+}

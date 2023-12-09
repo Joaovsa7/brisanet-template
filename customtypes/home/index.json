@@ -1,0 +1,71 @@
+{
+	"id": "home",
+	"label": "Home",
+	"format": "page",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"slices": {
+				"type": "Slices",
+				"fieldset": "Slice Zone",
+				"config": {
+					"choices": {
+						"call_to_action": {
+							"type": "SharedSlice"
+						},
+						"content_block": {
+							"type": "SharedSlice"
+						},
+						"faq": {
+							"type": "SharedSlice"
+						}
+					}
+				}
+			}
+		},
+		"SEO & Metadata": {
+			"meta_title": {
+				"config": {
+					"label": "Meta Title",
+					"placeholder": "A title of the page used for social media and search engines"
+				},
+				"type": "Text"
+			},
+			"meta_description": {
+				"config": {
+					"label": "Meta Description",
+					"placeholder": "A brief summary of the page"
+				},
+				"type": "Text"
+			},
+			"robots_index": {
+				"type": "Boolean",
+				"config": {
+					"label": "Robots Index",
+					"placeholder_false": "false",
+					"placeholder_true": "true",
+					"default_value": false
+				}
+			},
+			"robots_follow": {
+				"type": "Boolean",
+				"config": {
+					"label": "Robots Follow",
+					"placeholder_false": "false",
+					"placeholder_true": "true",
+					"default_value": false
+				}
+			}
+		},
+		"Sidebar": {
+			"slices2": {
+				"type": "Slices",
+				"fieldset": "Slice Zone",
+				"config": {
+					"choices": {}
+				}
+			}
+		}
+	}
+}

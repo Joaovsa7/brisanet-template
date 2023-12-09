@@ -1,0 +1,10 @@
+{
+	"repositoryName": "portal-das-operadoras",
+	"adapter": "@slicemachine/adapter-next",
+	"libraries": [
+		"./src/slices/main",
+		"./src/slices/sidebar",
+		"./src/slices/footer"
+	],
+	"localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+}

@@ -1,0 +1,41 @@
+{
+	"id": "call_to_action",
+	"label": "CallToAction",
+	"format": "custom",
+	"repeatable": true,
+	"status": true,
+	"json": {
+		"Main": {
+			"uid": {
+				"config": {
+					"label": "UID"
+				},
+				"type": "UID"
+			},
+			"content": {
+				"type": "StructuredText",
+				"config": {
+					"label": "Conteúdo",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+				}
+			},
+			"cta_label": {
+				"type": "Text",
+				"config": {
+					"label": "CTA Label",
+					"placeholder": ""
+				}
+			},
+			"cta_link": {
+				"type": "Link",
+				"config": {
+					"label": "CTA Link",
+					"placeholder": "",
+					"select": null
+				}
+			}
+		}
+	}
+}

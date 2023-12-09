@@ -2,26 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .footer-nav {
+    @apply text-neutral-500 text-sm md:text-base;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .footer-nav ul {
+    @apply flex flex-col gap-2 font-medium;
+  }
+
+  .footer-nav a {
+    @apply underline-offset-2 transition-colors;
+    @apply hover:underline hover:text-primary-500;
+  }
+
+  .text {
+    @apply prose prose-sm;
+    @apply md:prose-base;
+    @apply prose-a:text-primary-500 hover:prose-a:no-underline;
+    @apply prose-headings:font-bold prose-headings:mt-0 prose-headings:text-neutral-800;
+    @apply prose-p:text-neutral-700 prose-p:leading-relaxed;
+    @apply prose-strong:text-neutral-700 prose-strong:font-semibold;
+    @apply prose-ul:text-neutral-700;
+  }
 }

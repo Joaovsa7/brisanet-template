@@ -1,0 +1,36 @@
+{
+	"id": "most_read_articles",
+	"label": "Artigos mais lidos",
+	"format": "custom",
+	"repeatable": false,
+	"status": true,
+	"json": {
+		"Main": {
+			"titulo": {
+				"type": "StructuredText",
+				"config": {
+					"label": "Título",
+					"placeholder": "",
+					"allowTargetBlank": true,
+					"single": "heading1,heading2,heading3,heading4,heading5,heading6"
+				}
+			},
+			"articles": {
+				"type": "Group",
+				"config": {
+					"label": "Artigos",
+					"fields": {
+						"article": {
+							"type": "Link",
+							"config": {
+								"label": "Artigo",
+								"select": "document",
+								"customtypes": ["article"]
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

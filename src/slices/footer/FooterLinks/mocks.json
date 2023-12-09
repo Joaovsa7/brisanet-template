@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"column_title",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Proident aliquip occaecat laboris minim. Et minim incididunt labore. Do deserunt et magna officia ex elit proident ex veniam adipisicing esse velit aliqua nulla."
+									}
+								}
+							]
+						}
+					],
+					[
+						"links",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Aute labore do et consequat cupidatat."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]
