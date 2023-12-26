@@ -1,13 +1,19 @@
-import { ComponentProps } from 'react'
+import { Slot } from '@radix-ui/react-slot'
+import { ComponentProps, ElementRef, forwardRef } from 'react'
 import { VariantProps, tv } from 'tailwind-variants'
 
 interface IContainerProps
 	extends ComponentProps<'div'>,
-		VariantProps<typeof containerStyles> {}
+		VariantProps<typeof containerStyles> {
+      asChild?: boolean
+    }
 
-export function Container({ className, size, ...props }: IContainerProps) {
-	return <div className={containerStyles({ className, size })} {...props} />
-}
+
+export const Container = forwardRef<ElementRef<'div'>, IContainerProps>(({ className, asChild, size, ...props }, forwardedRef) => {
+  const Component = asChild ? Slot : 'div'
+
+	return <Component {...props} ref={forwardedRef} className={containerStyles({ className, size })} />
+})
 
 const containerStyles = tv({
 	base: 'mx-auto px-6',

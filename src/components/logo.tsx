@@ -1,12 +1,16 @@
 import Link from 'next/link'
 
-export function Logo() {
+interface ILogoProps {
+  isWhite?: boolean
+}
+
+export function Logo({ isWhite }: ILogoProps) {
 	return (
-		<Link href="/" className="flex flex-col select-none">
-			<span className="text-[22.7px] text-neutral-900 tracking-tight font-bold uppercase">
+		<Link href="/" className="flex flex-col select-none tracking-tight text-center font-bold uppercase">
+			<span className={`text-md md:text-xl ${isWhite ? 'text-white' : 'text-primary-950'}`}>
 				Portal das
 			</span>{' '}
-			<span className="uppercase text-neutral-500 -mt-2.5 text-xl font-medium">
+			<span className={`text-sm md:text-lg -mt-1.5 md:-mt-2.5 ${isWhite ? 'text-white' : 'text-primary-600'}`}>
 				Operadoras
 			</span>
 		</Link>

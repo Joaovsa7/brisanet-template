@@ -431,6 +431,7 @@ export type ArticleCategoryDocument<Lang extends string = string> =
   >;
 
 type ArticlesDocumentDataSlicesSlice =
+  | AuthorBoxSlice
   | MostReadArticlesSlice
   | LatestArticlesSlice
   | FaqSlice
@@ -577,6 +578,7 @@ export interface AuthorDocumentDataSocialNetworksItem {
 }
 
 type AuthorDocumentDataSlicesSlice =
+  | AuthorBoxSlice
   | LatestArticlesSlice
   | MostReadArticlesSlice
   | FaqSlice
@@ -749,6 +751,7 @@ export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
 type AuthorsDocumentDataSlicesSlice =
+  | AuthorBoxSlice
   | FaqSlice
   | ContentBlockSlice
   | MostReadArticlesSlice
@@ -1074,11 +1077,12 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | AuthorBoxSlice
+  | LatestArticlesSlice
+  | MostReadArticlesSlice
   | CallToActionSlice
   | ContentBlockSlice
   | FaqSlice;
-
-type HomeDocumentDataSlices2Slice = never;
 
 /**
  * Content for Home documents
@@ -1137,16 +1141,7 @@ interface HomeDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
-  robots_follow: prismic.BooleanField /**
-   * Slice Zone field in *Home*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: home.slices2[]
-   * - **Tab**: Sidebar
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */;
-  slices2: prismic.SliceZone<HomeDocumentDataSlices2Slice>;
+  robots_follow: prismic.BooleanField;
 }
 
 /**
@@ -1162,11 +1157,11 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
- * Item in *Layout Principal → Meta Tags*
+ * Item in *Layout → Meta Tags*
  */
 export interface LayoutDocumentDataMetaTagsItem {
   /**
-   * Propriedade field in *Layout Principal → Meta Tags*
+   * Propriedade field in *Layout → Meta Tags*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1176,7 +1171,7 @@ export interface LayoutDocumentDataMetaTagsItem {
   property: prismic.KeyTextField;
 
   /**
-   * Conteúdo field in *Layout Principal → Meta Tags*
+   * Conteúdo field in *Layout → Meta Tags*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1187,11 +1182,11 @@ export interface LayoutDocumentDataMetaTagsItem {
 }
 
 /**
- * Content for Layout Principal documents
+ * Content for Layout documents
  */
 interface LayoutDocumentData {
   /**
-   * Meta Tags field in *Layout Principal*
+   * Meta Tags field in *Layout*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -1203,7 +1198,7 @@ interface LayoutDocumentData {
 }
 
 /**
- * Layout Principal document from Prismic
+ * Layout document from Prismic
  *
  * - **API ID**: `layout`
  * - **Repeatable**: `false`
@@ -1349,30 +1344,12 @@ export type OperatorDocument<Lang extends string = string> =
     Lang
   >;
 
-interface OperatorLayoutDocumentData {}
-
 /**
- * Layout de Operadora document from Prismic
- *
- * - **API ID**: `operator_layout`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type OperatorLayoutDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<OperatorLayoutDocumentData>,
-    "operator_layout",
-    Lang
-  >;
-
-/**
- * Item in *Redirecionamentos → Redirecionamentos*
+ * Item in *Redirects → Redirecionamentos*
  */
 export interface RedirectsDocumentDataRedirectsItem {
   /**
-   * Origem field in *Redirecionamentos → Redirecionamentos*
+   * Origem field in *Redirects → Redirecionamentos*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1382,7 +1359,7 @@ export interface RedirectsDocumentDataRedirectsItem {
   origin: prismic.KeyTextField;
 
   /**
-   * Destino field in *Redirecionamentos → Redirecionamentos*
+   * Destino field in *Redirects → Redirecionamentos*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1392,7 +1369,7 @@ export interface RedirectsDocumentDataRedirectsItem {
   destination: prismic.KeyTextField;
 
   /**
-   * Permanente field in *Redirecionamentos → Redirecionamentos*
+   * Permanente field in *Redirects → Redirecionamentos*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
@@ -1404,11 +1381,11 @@ export interface RedirectsDocumentDataRedirectsItem {
 }
 
 /**
- * Content for Redirecionamentos documents
+ * Content for Redirects documents
  */
 interface RedirectsDocumentData {
   /**
-   * Redirecionamentos field in *Redirecionamentos*
+   * Redirecionamentos field in *Redirects*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -1420,7 +1397,7 @@ interface RedirectsDocumentData {
 }
 
 /**
- * Redirecionamentos document from Prismic
+ * Redirects document from Prismic
  *
  * - **API ID**: `redirects`
  * - **Repeatable**: `false`
@@ -1450,7 +1427,6 @@ export type AllDocumentTypes =
   | LayoutDocument
   | MostReadArticlesDocument
   | OperatorDocument
-  | OperatorLayoutDocument
   | RedirectsDocument;
 
 /**
@@ -1809,7 +1785,6 @@ declare module "@prismicio/client" {
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
-      HomeDocumentDataSlices2Slice,
       LayoutDocument,
       LayoutDocumentData,
       LayoutDocumentDataMetaTagsItem,
@@ -1819,8 +1794,6 @@ declare module "@prismicio/client" {
       OperatorDocument,
       OperatorDocumentData,
       OperatorDocumentDataSlicesSlice,
-      OperatorLayoutDocument,
-      OperatorLayoutDocumentData,
       RedirectsDocument,
       RedirectsDocumentData,
       RedirectsDocumentDataRedirectsItem,

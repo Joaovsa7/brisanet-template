@@ -8,15 +8,15 @@ import { MenuButton } from './menu-button'
 
 export function Header() {
 	return (
-		<header className="py-2 bg-white border-b border-neutral-200 sticky top-0 left-0 right-0">
+		<header className="bg-white border-b border-neutral-200 sticky top-0 left-0 right-0">
 			<Container size="lg" className="flex items-center justify-between py-3">
 				<Logo />
 
 				<nav className="hidden xl:flex items-center">
-					<ul className="flex items-center justify-center gap-4 text-neutral-600">
+					<ul className="flex items-center justify-center gap-4 text-neutral-600 font-semibold">
 						<li>
 							<Link href="/" className="flex items-center gap-1">
-								Operadoras de Internet
+                Operadoras de Internet
 								<ChevronDownIcon className="w-4 h-4" />
 							</Link>
 						</li>
@@ -28,14 +28,13 @@ export function Header() {
 						</li>
 						<li>
 							<Link href="/" className="flex items-center gap-1">
-								Atendimento das Operadoras
+								Número das Operadoras
 								<ChevronDownIcon className="w-4 h-4" />
 							</Link>
 						</li>
-						<li>
+            <li>
 							<Link href="/" className="flex items-center gap-1">
-								Streamings
-								<ChevronDownIcon className="w-4 h-4" />
+								Sou Operadora
 							</Link>
 						</li>
 						<li>
@@ -46,13 +45,13 @@ export function Header() {
 					</ul>
 				</nav>
 
-				<Button asChild>
-					<Link href="/">Avaliar Operadora</Link>
-				</Button>
+        <div className="flex gap-1">
+          <Button asChild size="sm">
+            <Link href="/">Avaliar Operadora</Link>
+          </Button>
 
-				<div className="hidden">
-					<MenuButton />
-				</div>
+          <MenuButton />
+        </div>
 			</Container>
 		</header>
 	)

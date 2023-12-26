@@ -1,6 +1,8 @@
 import { SliceZone } from '@prismicio/react'
 import { notFound } from 'next/navigation'
 
+import { PageInfo } from '~/components/page-info'
+
 import { createClient } from '~/libs/prismicio'
 
 import { mainSlices } from '~/slices'
@@ -21,6 +23,7 @@ export default async function AuthorPage({ params }: IAuthorPage) {
 
 		return (
 			<main>
+        <PageInfo updatedAt={document.last_publication_date} />
 				<SliceZone slices={document.data.slices} components={mainSlices} />
 			</main>
 		)

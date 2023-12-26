@@ -4,16 +4,16 @@
 
 @layer components {
   .footer-nav {
-    @apply text-neutral-500 text-sm md:text-base;
+    @apply text-white text-sm md:text-base;
   }
 
   .footer-nav ul {
-    @apply flex flex-col gap-2 font-medium;
+    @apply flex flex-col gap-1 font-medium;
   }
 
   .footer-nav a {
     @apply underline-offset-2 transition-colors;
-    @apply hover:underline hover:text-primary-500;
+    @apply hover:underline hover:text-white;
   }
 
   .text {

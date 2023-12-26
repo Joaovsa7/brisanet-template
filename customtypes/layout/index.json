@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"id": "layout",
 	"label": "Layout Principal",
 	"format": "custom",
@@ -31,4 +32,38 @@
 			}
 		}
 	}
+=======
+  "id": "layout",
+  "label": "Layout",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {},
+    "SEO & Metadata": {
+      "meta_tags": {
+        "type": "Group",
+        "config": {
+          "label": "Meta Tags",
+          "fields": {
+            "property": {
+              "type": "Text",
+              "config": {
+                "label": "Propriedade",
+                "placeholder": ""
+              }
+            },
+            "content": {
+              "type": "Text",
+              "config": {
+                "label": "Conteúdo",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+>>>>>>> 30b9943 (feat: initial commit)
 }

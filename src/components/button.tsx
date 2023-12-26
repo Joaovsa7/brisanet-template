@@ -29,21 +29,22 @@ Button.displayName = 'Button'
 
 const buttonStyles = tv(
 	{
-		base: 'inline-flex items-center justify-center gap-2 font-semibold transition-colors',
+		base: 'inline-flex items-center justify-center gap-2 font-bold transition-colors uppercase',
 		variants: {
 			variant: {
-				primary: 'bg-primary-700 text-white hover:bg-primary-500'
+				primary: 'bg-primary-600 text-white hover:bg-primary-500',
+        secondary: 'bg-secondary-400 text-neutral-800 hover:bg-secondary-500',
 			},
 			outline: {
 				true: ''
 			},
 			ghost: {
-				true: 'bg-transparent text-primary-700 hover:bg-primary-50'
+				true: 'bg-transparent text-primary-600 hover:bg-primary-50'
 			},
 			size: {
 				sm: 'h-10 px-4 text-sm rounded',
-				md: 'h-12 px-5 rounded-md',
-				lg: 'h-14 px-7 rounded-md'
+				md: 'h-12 px-5 rounded',
+				lg: 'h-14 px-7 text-lg rounded-md'
 			}
 		},
 		compoundVariants: [
@@ -51,7 +52,7 @@ const buttonStyles = tv(
 				variant: 'primary',
 				outline: true,
 				class:
-					'bg-transparent border border-primary-700 text-primary-700 hover:text-white hover:bg-primary-700'
+					'bg-transparent border border-primary-600 text-primary-600 hover:text-white hover:bg-primary-600'
 			}
 		],
 		defaultVariants: {

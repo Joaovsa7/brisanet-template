@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation'
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { RichText } from '~/components/rich-text'
+import { PageInfo } from '~/components/page-info'
 import { mainSlices } from '~/slices'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
@@ -63,6 +64,8 @@ export default async function ArticlePage({ params }: IArticlePage) {
 				size="lg"
 				className="grid xl:grid-cols-app gap-10 py-4 sm:p-6 md:py-12"
 			>
+        <PageInfo updatedAt={document.last_publication_date} />
+
 				<main>
 					<Breadcrumb items={document.data.breadcrumb_items} />
 

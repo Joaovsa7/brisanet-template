@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss'
-import { black, emerald, indigo, red, white, zinc } from 'tailwindcss/colors'
+import { black, emerald, sky, red, white, amber, zinc } from 'tailwindcss/colors'
 
 const config: Config = {
 	content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -8,7 +8,8 @@ const config: Config = {
 			white,
 			black,
 			neutral: zinc,
-			primary: indigo,
+			primary: sky,
+      secondary: amber,
 			destructive: red,
 			success: emerald
 		},
