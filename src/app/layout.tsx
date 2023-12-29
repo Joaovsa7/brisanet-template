@@ -13,6 +13,28 @@ const font = Manrope({
 	subsets: ['latin']
 })
 
+export async function generateMetadata() {
+	const siteName = 'Portal das Operadoras'
+
+	return {
+		site_name: siteName,
+		locale: 'pt_BR',
+		type: 'website',
+		robots: {
+			googleBot: {
+				'max-video-preview': -1,
+				'max-image-preview': 'large',
+				'max-snippet': -1
+			}
+		},
+		openGraph: {
+			siteName,
+			locale: 'pt_BR',
+			type: 'website'
+		}
+	}
+}
+
 export default async function RootLayout({
 	children
 }: {

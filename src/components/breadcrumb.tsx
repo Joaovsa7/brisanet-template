@@ -4,12 +4,11 @@ import { ChevronLeftIcon, ChevronRightIcon, HomeIcon } from 'lucide-react'
 import { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
-import { AuthorDocumentDataBreadcrumbItemsItem } from '../../prismicio-types'
-
 import { Container } from './container'
 
 interface IBreadcrumb {
-	items: AuthorDocumentDataBreadcrumbItemsItem[]
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+items: any[]
 }
 
 export function Breadcrumb({ items = [] }: IBreadcrumb) {

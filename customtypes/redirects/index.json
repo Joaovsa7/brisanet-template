@@ -1,42 +1,42 @@
 {
-	"id": "redirects",
-	"label": "Redirecionamentos",
-	"format": "custom",
-	"repeatable": false,
-	"status": true,
-	"json": {
-		"Main": {
-			"redirects": {
-				"type": "Group",
-				"config": {
-					"label": "Redirecionamentos",
-					"fields": {
-						"origin": {
-							"type": "Text",
-							"config": {
-								"label": "Origem",
-								"placeholder": ""
-							}
-						},
-						"destination": {
-							"type": "Text",
-							"config": {
-								"label": "Destino",
-								"placeholder": ""
-							}
-						},
-						"permanent": {
-							"type": "Boolean",
-							"config": {
-								"label": "Permanente",
-								"default_value": false,
-								"placeholder_true": "true",
-								"placeholder_false": "false"
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+  "id": "redirects",
+  "label": "Redirecionamentos",
+  "format": "custom",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "redirects": {
+        "type": "Group",
+        "config": {
+          "label": "Redirecionamentos",
+          "fields": {
+            "origin": {
+              "type": "Text",
+              "config": {
+                "label": "Origem",
+                "placeholder": ""
+              }
+            },
+            "destination": {
+              "type": "Text",
+              "config": {
+                "label": "Destino",
+                "placeholder": ""
+              }
+            },
+            "permanent": {
+              "type": "Boolean",
+              "config": {
+                "label": "Permanente",
+                "default_value": false,
+                "placeholder_true": "true",
+                "placeholder_false": "false"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

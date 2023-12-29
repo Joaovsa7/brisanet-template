@@ -1,24 +1,20 @@
-import { SliceZone } from '@prismicio/react'
 import { notFound } from 'next/navigation'
 
 import { createClient } from '~/libs/prismicio'
-
-import { PageInfo } from '~/components/page-info'
-
-import { mainSlices } from '~/slices'
 
 export default async function AuthorsPage() {
 	try {
 		const client = createClient()
 
-		const document = await client.getSingle('authors')
+		const authorDocuments = await client.getAllByType('author', {
+			orderings: {
+				// field: 'document.first_publication_date',
+				field: 'my.author.name',
+				direction: 'desc'
+			}
+		})
 
-		return (
-			<main>
-        <PageInfo updatedAt={document.last_publication_date} />
-				<SliceZone slices={document.data.slices} components={mainSlices} />
-			</main>
-		)
+		return <main></main>
 	} catch {
 		return notFound()
 	}

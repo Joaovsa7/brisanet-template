@@ -5,15 +5,22 @@ import { VariantProps, tv } from 'tailwind-variants'
 interface IContainerProps
 	extends ComponentProps<'div'>,
 		VariantProps<typeof containerStyles> {
-      asChild?: boolean
-    }
+	asChild?: boolean
+}
 
+export const Container = forwardRef<ElementRef<'div'>, IContainerProps>(
+	({ className, asChild, size, ...props }, forwardedRef) => {
+		const Component = asChild ? Slot : 'div'
 
-export const Container = forwardRef<ElementRef<'div'>, IContainerProps>(({ className, asChild, size, ...props }, forwardedRef) => {
-  const Component = asChild ? Slot : 'div'
-
-	return <Component {...props} ref={forwardedRef} className={containerStyles({ className, size })} />
-})
+		return (
+			<Component
+				{...props}
+				ref={forwardedRef}
+				className={containerStyles({ className, size })}
+			/>
+		)
+	}
+)
 
 const containerStyles = tv({
 	base: 'mx-auto px-6',

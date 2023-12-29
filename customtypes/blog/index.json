@@ -1,6 +1,6 @@
 {
-  "id": "home",
-  "label": "Home",
+  "id": "blog",
+  "label": "Blog",
   "format": "page",
   "repeatable": false,
   "status": true,
@@ -11,13 +11,13 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "call_to_action": {
+            "faq": {
               "type": "SharedSlice"
             },
             "content_block": {
               "type": "SharedSlice"
             },
-            "faq": {
+            "call_to_action": {
               "type": "SharedSlice"
             }
           }
@@ -52,9 +52,9 @@
         "type": "Boolean",
         "config": {
           "label": "Robots Follow",
-          "placeholder_false": "false",
+          "default_value": false,
           "placeholder_true": "true",
-          "default_value": false
+          "placeholder_false": "false"
         }
       }
     }

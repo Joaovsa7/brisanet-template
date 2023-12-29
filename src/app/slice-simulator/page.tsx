@@ -2,7 +2,7 @@
 import { SliceZone } from '@prismicio/react'
 import { SliceSimulator } from '@slicemachine/adapter-next/simulator'
 
-import { mainSlices } from '../../slices'
+import { mainSlices } from '~/slices'
 
 export default function SliceSimulatorPage() {
 	return (

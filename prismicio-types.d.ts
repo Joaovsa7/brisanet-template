@@ -5,42 +5,25 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ArticleDocumentDataSlicesSlice =
-  | AuthorBoxSlice
-  | MostReadArticlesSlice
-  | LatestArticlesSlice
   | FaqSlice
   | ContentBlockSlice
   | CallToActionSlice;
 
 /**
- * Item in *Artigo → Itens*
- */
-export interface ArticleDocumentDataBreadcrumbItemsItem {
-  /**
-   * Label field in *Artigo → Itens*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.breadcrumb_items[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *Artigo → Itens*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.breadcrumb_items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
  * Content for Artigo documents
  */
 interface ArticleDocumentData {
+  /**
+   * Título field in *Artigo*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+
   /**
    * Autor field in *Artigo*
    *
@@ -73,17 +56,6 @@ interface ArticleDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   image: prismic.ImageField<never>;
-
-  /**
-   * Título field in *Artigo*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.TitleField;
 
   /**
    * Slice Zone field in *Artigo*
@@ -149,18 +121,7 @@ interface ArticleDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#number
    */
-  reading_time: prismic.NumberField /**
-   * Itens field in *Artigo*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article.breadcrumb_items[]
-   * - **Tab**: Breadcrumb
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  breadcrumb_items: prismic.GroupField<
-    Simplify<ArticleDocumentDataBreadcrumbItemsItem>
-  >;
+  reading_time: prismic.NumberField;
 }
 
 /**
@@ -179,158 +140,10 @@ export type ArticleDocument<Lang extends string = string> =
     Lang
   >;
 
-type ArticleCategoriesDocumentDataSlicesSlice =
-  | MostReadArticlesSlice
-  | AuthorBoxSlice
-  | CallToActionSlice
-  | FaqSlice
-  | LatestArticlesSlice
-  | ContentBlockSlice;
-
-/**
- * Item in *Categorias de Artigos → Itens*
- */
-export interface ArticleCategoriesDocumentDataBreadcrumbItemsItem {
-  /**
-   * Label field in *Categorias de Artigos → Itens*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_categories.breadcrumb_items[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *Categorias de Artigos → Itens*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_categories.breadcrumb_items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Content for Categorias de Artigos documents
- */
-interface ArticleCategoriesDocumentData {
-  /**
-   * Slice Zone field in *Categorias de Artigos*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_categories.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<ArticleCategoriesDocumentDataSlicesSlice> /**
-   * Meta Title field in *Categorias de Artigos*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: article_categories.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Categorias de Artigos*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: article_categories.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Robots Index field in *Categorias de Artigos*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: article_categories.robots_index
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  robots_index: prismic.BooleanField;
-
-  /**
-   * Robots Follow field in *Categorias de Artigos*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: article_categories.robots_follow
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  robots_follow: prismic.BooleanField /**
-   * Itens field in *Categorias de Artigos*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_categories.breadcrumb_items[]
-   * - **Tab**: Breadcrumb
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  breadcrumb_items: prismic.GroupField<
-    Simplify<ArticleCategoriesDocumentDataBreadcrumbItemsItem>
-  >;
-}
-
-/**
- * Categorias de Artigos document from Prismic
- *
- * - **API ID**: `article_categories`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ArticleCategoriesDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<ArticleCategoriesDocumentData>,
-    "article_categories",
-    Lang
-  >;
-
 type ArticleCategoryDocumentDataSlicesSlice =
-  | MostReadArticlesSlice
   | ContentBlockSlice
-  | LatestArticlesSlice
   | FaqSlice
-  | CallToActionSlice
-  | AuthorBoxSlice;
-
-/**
- * Item in *Categoria de Artigo → Itens*
- */
-export interface ArticleCategoryDocumentDataBreadcrumbItemsItem {
-  /**
-   * Label field in *Categoria de Artigo → Itens*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_category.breadcrumb_items[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *Categoria de Artigo → Itens*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_category.breadcrumb_items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
+  | CallToActionSlice;
 
 /**
  * Content for Categoria de Artigo documents
@@ -339,13 +152,24 @@ interface ArticleCategoryDocumentData {
   /**
    * Nome field in *Categoria de Artigo*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
    * - **API ID Path**: article_category.name
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  name: prismic.RichTextField;
+  name: prismic.TitleField;
+
+  /**
+   * Ícone field in *Categoria de Artigo*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article_category.icone
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  icone: prismic.ImageField<never>;
 
   /**
    * Slice Zone field in *Categoria de Artigo*
@@ -400,18 +224,7 @@ interface ArticleCategoryDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
-  robots_follow: prismic.BooleanField /**
-   * Itens field in *Categoria de Artigo*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: article_category.breadcrumb_items[]
-   * - **Tab**: Breadcrumb
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  breadcrumb_items: prismic.GroupField<
-    Simplify<ArticleCategoryDocumentDataBreadcrumbItemsItem>
-  >;
+  robots_follow: prismic.BooleanField;
 }
 
 /**
@@ -430,132 +243,12 @@ export type ArticleCategoryDocument<Lang extends string = string> =
     Lang
   >;
 
-type ArticlesDocumentDataSlicesSlice =
-  | AuthorBoxSlice
-  | MostReadArticlesSlice
-  | LatestArticlesSlice
-  | FaqSlice
-  | ContentBlockSlice
-  | CallToActionSlice;
-
 /**
- * Item in *Artigos → Itens*
- */
-export interface ArticlesDocumentDataBreadcrumbItemsItem {
-  /**
-   * Label field in *Artigos → Itens*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.breadcrumb_items[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *Artigos → Itens*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.breadcrumb_items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Content for Artigos documents
- */
-interface ArticlesDocumentData {
-  /**
-   * Slice Zone field in *Artigos*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<ArticlesDocumentDataSlicesSlice> /**
-   * Meta Title field in *Artigos*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: articles.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Artigos*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: articles.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Robots Index field in *Artigos*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: articles.robots_index
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  robots_index: prismic.BooleanField;
-
-  /**
-   * Robots Follow field in *Artigos*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: articles.robots_follow
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  robots_follow: prismic.BooleanField /**
-   * Itens field in *Artigos*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: articles.breadcrumb_items[]
-   * - **Tab**: Breadcrumb
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  breadcrumb_items: prismic.GroupField<
-    Simplify<ArticlesDocumentDataBreadcrumbItemsItem>
-  >;
-}
-
-/**
- * Artigos document from Prismic
- *
- * - **API ID**: `articles`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type ArticlesDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<ArticlesDocumentData>,
-    "articles",
-    Lang
-  >;
-
-/**
- * Item in *Autor → Redes Sociais*
+ * Item in *Autor(a) → Redes Sociais*
  */
 export interface AuthorDocumentDataSocialNetworksItem {
   /**
-   * Rede Social field in *Autor → Redes Sociais*
+   * Rede Social field in *Autor(a) → Redes Sociais*
    *
    * - **Field Type**: Select
    * - **Placeholder**: *None*
@@ -567,7 +260,7 @@ export interface AuthorDocumentDataSocialNetworksItem {
   >;
 
   /**
-   * Link field in *Autor → Redes Sociais*
+   * Link field in *Autor(a) → Redes Sociais*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -578,55 +271,16 @@ export interface AuthorDocumentDataSocialNetworksItem {
 }
 
 type AuthorDocumentDataSlicesSlice =
-  | AuthorBoxSlice
-  | LatestArticlesSlice
-  | MostReadArticlesSlice
   | FaqSlice
   | ContentBlockSlice
   | CallToActionSlice;
 
 /**
- * Item in *Autor → Itens*
- */
-export interface AuthorDocumentDataBreadcrumbItemsItem {
-  /**
-   * Label field in *Autor → Itens*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author.breadcrumb_items[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *Autor → Itens*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author.breadcrumb_items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Content for Autor documents
+ * Content for Autor(a) documents
  */
 interface AuthorDocumentData {
   /**
-   * Avatar field in *Autor*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author.avatar
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  avatar: prismic.ImageField<never>;
-
-  /**
-   * Name field in *Autor*
+   * Nome field in *Autor(a)*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -637,18 +291,18 @@ interface AuthorDocumentData {
   name: prismic.KeyTextField;
 
   /**
-   * Cargo field in *Autor*
+   * Avatar field in *Autor(a)*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: author.position
+   * - **API ID Path**: author.avatar
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  position: prismic.KeyTextField;
+  avatar: prismic.ImageField<never>;
 
   /**
-   * Bio field in *Autor*
+   * Bio field in *Autor(a)*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -659,7 +313,29 @@ interface AuthorDocumentData {
   bio: prismic.RichTextField;
 
   /**
-   * Redes Sociais field in *Autor*
+   * Empresa field in *Autor(a)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.company
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  company: prismic.KeyTextField;
+
+  /**
+   * Cargo field in *Autor(a)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.position
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  position: prismic.KeyTextField;
+
+  /**
+   * Redes Sociais field in *Autor(a)*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -672,7 +348,7 @@ interface AuthorDocumentData {
   >;
 
   /**
-   * Slice Zone field in *Autor*
+   * Slice Zone field in *Autor(a)*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -681,7 +357,7 @@ interface AuthorDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<AuthorDocumentDataSlicesSlice> /**
-   * Meta Title field in *Autor*
+   * Meta Title field in *Autor(a)*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
@@ -692,7 +368,7 @@ interface AuthorDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Autor*
+   * Meta Description field in *Autor(a)*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
@@ -703,7 +379,7 @@ interface AuthorDocumentData {
   meta_description: prismic.KeyTextField;
 
   /**
-   * Robots Index field in *Autor*
+   * Robots Index field in *Autor(a)*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
@@ -715,7 +391,7 @@ interface AuthorDocumentData {
   robots_index: prismic.BooleanField;
 
   /**
-   * Robots Follow field in *Autor*
+   * Robots Follow field in *Autor(a)*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
@@ -724,22 +400,11 @@ interface AuthorDocumentData {
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
-  robots_follow: prismic.BooleanField /**
-   * Itens field in *Autor*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author.breadcrumb_items[]
-   * - **Tab**: Breadcrumb
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  breadcrumb_items: prismic.GroupField<
-    Simplify<AuthorDocumentDataBreadcrumbItemsItem>
-  >;
+  robots_follow: prismic.BooleanField;
 }
 
 /**
- * Autor document from Prismic
+ * Autor(a) document from Prismic
  *
  * - **API ID**: `author`
  * - **Repeatable**: `true`
@@ -750,125 +415,82 @@ interface AuthorDocumentData {
 export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
-type AuthorsDocumentDataSlicesSlice =
-  | AuthorBoxSlice
+type BlogDocumentDataSlicesSlice =
   | FaqSlice
   | ContentBlockSlice
-  | MostReadArticlesSlice
-  | LatestArticlesSlice
   | CallToActionSlice;
 
 /**
- * Item in *Autores → Itens*
+ * Content for Blog documents
  */
-export interface AuthorsDocumentDataBreadcrumbItemsItem {
+interface BlogDocumentData {
   /**
-   * Label field in *Autores → Itens*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: authors.breadcrumb_items[].label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  label: prismic.KeyTextField;
-
-  /**
-   * Link field in *Autores → Itens*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: authors.breadcrumb_items[].link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
-}
-
-/**
- * Content for Autores documents
- */
-interface AuthorsDocumentData {
-  /**
-   * Slice Zone field in *Autores*
+   * Slice Zone field in *Blog*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
-   * - **API ID Path**: authors.slices[]
+   * - **API ID Path**: blog.slices[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<AuthorsDocumentDataSlicesSlice> /**
-   * Meta Title field in *Autores*
+  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice> /**
+   * Meta Title field in *Blog*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: authors.meta_title
+   * - **API ID Path**: blog.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */;
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Autores*
+   * Meta Description field in *Blog*
    *
    * - **Field Type**: Text
    * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: authors.meta_description
+   * - **API ID Path**: blog.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   meta_description: prismic.KeyTextField;
 
   /**
-   * Robots Index field in *Autores*
+   * Robots Index field in *Blog*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
    * - **Default Value**: false
-   * - **API ID Path**: authors.robots_index
+   * - **API ID Path**: blog.robots_index
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   robots_index: prismic.BooleanField;
 
   /**
-   * Robots Follow field in *Autores*
+   * Robots Follow field in *Blog*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
    * - **Default Value**: false
-   * - **API ID Path**: authors.robots_follow
+   * - **API ID Path**: blog.robots_follow
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
-  robots_follow: prismic.BooleanField /**
-   * Itens field in *Autores*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: authors.breadcrumb_items[]
-   * - **Tab**: Breadcrumb
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  breadcrumb_items: prismic.GroupField<
-    Simplify<AuthorsDocumentDataBreadcrumbItemsItem>
-  >;
+  robots_follow: prismic.BooleanField;
 }
 
 /**
- * Autores document from Prismic
+ * Blog document from Prismic
  *
- * - **API ID**: `authors`
+ * - **API ID**: `blog`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AuthorsDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<AuthorsDocumentData>,
-    "authors",
-    Lang
-  >;
+export type BlogDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<BlogDocumentData>, "blog", Lang>;
 
 /**
  * Content for CallToAction documents
@@ -1077,9 +699,6 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
-  | AuthorBoxSlice
-  | LatestArticlesSlice
-  | MostReadArticlesSlice
   | CallToActionSlice
   | ContentBlockSlice
   | FaqSlice;
@@ -1157,11 +776,11 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
- * Item in *Layout → Meta Tags*
+ * Item in *Layout Principal → Meta Tags*
  */
 export interface LayoutDocumentDataMetaTagsItem {
   /**
-   * Propriedade field in *Layout → Meta Tags*
+   * Propriedade field in *Layout Principal → Meta Tags*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1171,7 +790,7 @@ export interface LayoutDocumentDataMetaTagsItem {
   property: prismic.KeyTextField;
 
   /**
-   * Conteúdo field in *Layout → Meta Tags*
+   * Conteúdo field in *Layout Principal → Meta Tags*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1182,11 +801,11 @@ export interface LayoutDocumentDataMetaTagsItem {
 }
 
 /**
- * Content for Layout documents
+ * Content for Layout Principal documents
  */
 interface LayoutDocumentData {
   /**
-   * Meta Tags field in *Layout*
+   * Meta Tags field in *Layout Principal*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -1198,7 +817,7 @@ interface LayoutDocumentData {
 }
 
 /**
- * Layout document from Prismic
+ * Layout Principal document from Prismic
  *
  * - **API ID**: `layout`
  * - **Repeatable**: `false`
@@ -1275,16 +894,35 @@ export type MostReadArticlesDocument<Lang extends string = string> =
 
 type OperatorDocumentDataSlicesSlice =
   | FaqSlice
-  | LatestArticlesSlice
-  | MostReadArticlesSlice
   | ContentBlockSlice
-  | CallToActionSlice
-  | AuthorBoxSlice;
+  | CallToActionSlice;
 
 /**
  * Content for Operadora documents
  */
 interface OperatorDocumentData {
+  /**
+   * Nome field in *Operadora*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: operator.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Logo field in *Operadora*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: operator.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  logo: prismic.ImageField<never>;
+
   /**
    * Slice Zone field in *Operadora*
    *
@@ -1344,12 +982,30 @@ export type OperatorDocument<Lang extends string = string> =
     Lang
   >;
 
+interface OperatorLayoutDocumentData {}
+
 /**
- * Item in *Redirects → Redirecionamentos*
+ * Layout de Operadora document from Prismic
+ *
+ * - **API ID**: `operator_layout`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OperatorLayoutDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<OperatorLayoutDocumentData>,
+    "operator_layout",
+    Lang
+  >;
+
+/**
+ * Item in *Redirecionamentos → Redirecionamentos*
  */
 export interface RedirectsDocumentDataRedirectsItem {
   /**
-   * Origem field in *Redirects → Redirecionamentos*
+   * Origem field in *Redirecionamentos → Redirecionamentos*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1359,7 +1015,7 @@ export interface RedirectsDocumentDataRedirectsItem {
   origin: prismic.KeyTextField;
 
   /**
-   * Destino field in *Redirects → Redirecionamentos*
+   * Destino field in *Redirecionamentos → Redirecionamentos*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -1369,7 +1025,7 @@ export interface RedirectsDocumentDataRedirectsItem {
   destination: prismic.KeyTextField;
 
   /**
-   * Permanente field in *Redirects → Redirecionamentos*
+   * Permanente field in *Redirecionamentos → Redirecionamentos*
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
@@ -1381,11 +1037,11 @@ export interface RedirectsDocumentDataRedirectsItem {
 }
 
 /**
- * Content for Redirects documents
+ * Content for Redirecionamentos documents
  */
 interface RedirectsDocumentData {
   /**
-   * Redirecionamentos field in *Redirects*
+   * Redirecionamentos field in *Redirecionamentos*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -1397,7 +1053,7 @@ interface RedirectsDocumentData {
 }
 
 /**
- * Redirects document from Prismic
+ * Redirecionamentos document from Prismic
  *
  * - **API ID**: `redirects`
  * - **Repeatable**: `false`
@@ -1414,11 +1070,9 @@ export type RedirectsDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | ArticleDocument
-  | ArticleCategoriesDocument
   | ArticleCategoryDocument
-  | ArticlesDocument
   | AuthorDocument
-  | AuthorsDocument
+  | BlogDocument
   | CallToActionDocument
   | FaqDocument
   | FooterDocument
@@ -1427,52 +1081,8 @@ export type AllDocumentTypes =
   | LayoutDocument
   | MostReadArticlesDocument
   | OperatorDocument
+  | OperatorLayoutDocument
   | RedirectsDocument;
-
-/**
- * Primary content in *AuthorBox → Primary*
- */
-export interface AuthorBoxSliceDefaultPrimary {
-  /**
-   * Autor field in *AuthorBox → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: author_box.primary.author
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  author: prismic.ContentRelationshipField<"author">;
-}
-
-/**
- * Default variation for AuthorBox Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AuthorBoxSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<AuthorBoxSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *AuthorBox*
- */
-type AuthorBoxSliceVariation = AuthorBoxSliceDefault;
-
-/**
- * AuthorBox Shared Slice
- *
- * - **API ID**: `author_box`
- * - **Description**: AuthorBox
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type AuthorBoxSlice = prismic.SharedSlice<
-  "author_box",
-  AuthorBoxSliceVariation
->;
 
 /**
  * Primary content in *CallToAction → Primary*
@@ -1607,81 +1217,6 @@ type FaqSliceVariation = FaqSliceDefault;
 export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
 
 /**
- * Default variation for LatestArticles Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type LatestArticlesSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  never
->;
-
-/**
- * Slice variation for *LatestArticles*
- */
-type LatestArticlesSliceVariation = LatestArticlesSliceDefault;
-
-/**
- * LatestArticles Shared Slice
- *
- * - **API ID**: `latest_articles`
- * - **Description**: LatestArticles
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type LatestArticlesSlice = prismic.SharedSlice<
-  "latest_articles",
-  LatestArticlesSliceVariation
->;
-
-/**
- * Primary content in *MostReadArticles → Primary*
- */
-export interface MostReadArticlesSliceDefaultPrimary {
-  /**
-   * Artigo mais lidos field in *MostReadArticles → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: most_read_articles.primary.most_read_articles
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  most_read_articles: prismic.ContentRelationshipField<"most_read_articles">;
-}
-
-/**
- * Default variation for MostReadArticles Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type MostReadArticlesSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<MostReadArticlesSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *MostReadArticles*
- */
-type MostReadArticlesSliceVariation = MostReadArticlesSliceDefault;
-
-/**
- * MostReadArticles Shared Slice
- *
- * - **API ID**: `most_read_articles`
- * - **Description**: MostReadArticles
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type MostReadArticlesSlice = prismic.SharedSlice<
-  "most_read_articles",
-  MostReadArticlesSliceVariation
->;
-
-/**
  * Primary content in *FooterLinks → Items*
  */
 export interface FooterLinksSliceDefaultItem {
@@ -1749,28 +1284,16 @@ declare module "@prismicio/client" {
       ArticleDocument,
       ArticleDocumentData,
       ArticleDocumentDataSlicesSlice,
-      ArticleDocumentDataBreadcrumbItemsItem,
-      ArticleCategoriesDocument,
-      ArticleCategoriesDocumentData,
-      ArticleCategoriesDocumentDataSlicesSlice,
-      ArticleCategoriesDocumentDataBreadcrumbItemsItem,
       ArticleCategoryDocument,
       ArticleCategoryDocumentData,
       ArticleCategoryDocumentDataSlicesSlice,
-      ArticleCategoryDocumentDataBreadcrumbItemsItem,
-      ArticlesDocument,
-      ArticlesDocumentData,
-      ArticlesDocumentDataSlicesSlice,
-      ArticlesDocumentDataBreadcrumbItemsItem,
       AuthorDocument,
       AuthorDocumentData,
       AuthorDocumentDataSocialNetworksItem,
       AuthorDocumentDataSlicesSlice,
-      AuthorDocumentDataBreadcrumbItemsItem,
-      AuthorsDocument,
-      AuthorsDocumentData,
-      AuthorsDocumentDataSlicesSlice,
-      AuthorsDocumentDataBreadcrumbItemsItem,
+      BlogDocument,
+      BlogDocumentData,
+      BlogDocumentDataSlicesSlice,
       CallToActionDocument,
       CallToActionDocumentData,
       FaqDocument,
@@ -1794,14 +1317,12 @@ declare module "@prismicio/client" {
       OperatorDocument,
       OperatorDocumentData,
       OperatorDocumentDataSlicesSlice,
+      OperatorLayoutDocument,
+      OperatorLayoutDocumentData,
       RedirectsDocument,
       RedirectsDocumentData,
       RedirectsDocumentDataRedirectsItem,
       AllDocumentTypes,
-      AuthorBoxSlice,
-      AuthorBoxSliceDefaultPrimary,
-      AuthorBoxSliceVariation,
-      AuthorBoxSliceDefault,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
@@ -1814,13 +1335,6 @@ declare module "@prismicio/client" {
       FaqSliceDefaultPrimary,
       FaqSliceVariation,
       FaqSliceDefault,
-      LatestArticlesSlice,
-      LatestArticlesSliceVariation,
-      LatestArticlesSliceDefault,
-      MostReadArticlesSlice,
-      MostReadArticlesSliceDefaultPrimary,
-      MostReadArticlesSliceVariation,
-      MostReadArticlesSliceDefault,
       FooterLinksSlice,
       FooterLinksSliceDefaultItem,
       FooterLinksSliceVariation,

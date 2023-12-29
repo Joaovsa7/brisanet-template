@@ -41,7 +41,7 @@ export function Footer({ footerDocument }: IFooterProps) {
 					<p className="text-sm text-white font-medium">
 						&copy; {currentYear} - Portal das Operadoras
 					</p>
-					<Logo isWhite/>
+					<Logo isWhite />
 				</div>
 			</Container>
 		</footer>

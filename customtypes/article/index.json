@@ -1,143 +1,112 @@
 {
-	"id": "article",
-	"label": "Artigo",
-	"format": "page",
-	"repeatable": true,
-	"status": true,
-	"json": {
-		"Main": {
-			"uid": {
-				"config": {
-					"label": "UID"
-				},
-				"type": "UID"
-			},
-			"author": {
-				"type": "Link",
-				"config": {
-					"label": "Autor",
-					"select": "document",
-					"customtypes": ["author"]
-				}
-			},
-			"category": {
-				"type": "Link",
-				"config": {
-					"label": "Categoria",
-					"select": "document",
-					"customtypes": ["article_category"]
-				}
-			},
-			"image": {
-				"type": "Image",
-				"config": {
-					"label": "Imagem",
-					"constraint": {},
-					"thumbnails": []
-				}
-			},
-			"title": {
-				"type": "StructuredText",
-				"config": {
-					"label": "Título",
-					"placeholder": "",
-					"allowTargetBlank": true,
-					"single": "heading1,heading2,heading3,heading4,heading5,heading6"
-				}
-			},
-			"slices": {
-				"type": "Slices",
-				"fieldset": "Slice Zone",
-				"config": {
-					"choices": {
-						"author_box": {
-							"type": "SharedSlice"
-						},
-						"most_read_articles": {
-							"type": "SharedSlice"
-						},
-						"latest_articles": {
-							"type": "SharedSlice"
-						},
-						"faq": {
-							"type": "SharedSlice"
-						},
-						"content_block": {
-							"type": "SharedSlice"
-						},
-						"call_to_action": {
-							"type": "SharedSlice"
-						}
-					}
-				}
-			}
-		},
-		"SEO & Metadata": {
-			"meta_title": {
-				"config": {
-					"label": "Meta Title",
-					"placeholder": "A title of the page used for social media and search engines"
-				},
-				"type": "Text"
-			},
-			"meta_description": {
-				"config": {
-					"label": "Meta Description",
-					"placeholder": "A brief summary of the page"
-				},
-				"type": "Text"
-			},
-			"robots_index": {
-				"type": "Boolean",
-				"config": {
-					"label": "Robots Index",
-					"default_value": false,
-					"placeholder_true": "true",
-					"placeholder_false": "false"
-				}
-			},
-			"robots_follow": {
-				"type": "Boolean",
-				"config": {
-					"label": "Robots Follow",
-					"default_value": false,
-					"placeholder_true": "true",
-					"placeholder_false": "false"
-				}
-			},
-			"reading_time": {
-				"type": "Number",
-				"config": {
-					"label": "Tempo de Leitura",
-					"placeholder": ""
-				}
-			}
-		},
-		"Breadcrumb": {
-			"breadcrumb_items": {
-				"type": "Group",
-				"config": {
-					"label": "Itens",
-					"fields": {
-						"label": {
-							"type": "Text",
-							"config": {
-								"label": "Label",
-								"placeholder": ""
-							}
-						},
-						"link": {
-							"type": "Link",
-							"config": {
-								"label": "Link",
-								"placeholder": "",
-								"allowTargetBlank": true,
-								"select": null
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+  "id": "article",
+  "label": "Artigo",
+  "format": "page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Título",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6"
+        }
+      },
+      "uid": {
+        "config": {
+          "label": "Slug",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
+      "author": {
+        "type": "Link",
+        "config": {
+          "label": "Autor",
+          "select": "document",
+          "customtypes": ["author"]
+        }
+      },
+      "category": {
+        "type": "Link",
+        "config": {
+          "label": "Categoria",
+          "select": "document",
+          "customtypes": ["article_category"]
+        }
+      },
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Imagem",
+          "constraint": {
+            "width": 1200,
+            "height": 720
+          },
+          "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "faq": {
+              "type": "SharedSlice"
+            },
+            "content_block": {
+              "type": "SharedSlice"
+            },
+            "call_to_action": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "robots_index": {
+        "type": "Boolean",
+        "config": {
+          "label": "Robots Index",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
+      "robots_follow": {
+        "type": "Boolean",
+        "config": {
+          "label": "Robots Follow",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
+      "reading_time": {
+        "type": "Number",
+        "config": {
+          "label": "Tempo de Leitura",
+          "placeholder": ""
+        }
+      }
+    }
+  }
 }

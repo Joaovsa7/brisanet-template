@@ -16,7 +16,7 @@ export function Header() {
 					<ul className="flex items-center justify-center gap-4 text-neutral-600 font-semibold">
 						<li>
 							<Link href="/" className="flex items-center gap-1">
-                Operadoras de Internet
+								Operadoras de Internet
 								<ChevronDownIcon className="w-4 h-4" />
 							</Link>
 						</li>
@@ -32,7 +32,7 @@ export function Header() {
 								<ChevronDownIcon className="w-4 h-4" />
 							</Link>
 						</li>
-            <li>
+						<li>
 							<Link href="/" className="flex items-center gap-1">
 								Sou Operadora
 							</Link>
@@ -45,13 +45,13 @@ export function Header() {
 					</ul>
 				</nav>
 
-        <div className="flex gap-1">
-          <Button asChild size="sm">
-            <Link href="/">Avaliar Operadora</Link>
-          </Button>
+				<div className="flex gap-1">
+					<Button asChild size="sm">
+						<Link href="/">Avaliar Operadora</Link>
+					</Button>
 
-          <MenuButton />
-        </div>
+					<MenuButton />
+				</div>
 			</Container>
 		</header>
 	)

@@ -33,7 +33,7 @@ const buttonStyles = tv(
 		variants: {
 			variant: {
 				primary: 'bg-primary-600 text-white hover:bg-primary-500',
-        secondary: 'bg-secondary-400 text-neutral-800 hover:bg-secondary-500',
+				secondary: 'bg-secondary-400 text-neutral-800 hover:bg-secondary-500'
 			},
 			outline: {
 				true: ''

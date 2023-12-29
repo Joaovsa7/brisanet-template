@@ -54,6 +54,9 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 export const fetchLinks = [
 	'author.avatar',
 	'author.name',
+	'author.position',
+	'article_category.name',
+	'article_category.color',
 	'call_to_action.content',
 	'call_to_action.cta_link',
 	'call_to_action.cta_label',
