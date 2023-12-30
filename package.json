@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "npx @biomejs/biome check --apply .",
+    "lint": "npx @biomejs/biome check --apply-unsafe src",
     "slicemachine": "start-slicemachine",
     "check-updates": "npx npm-check-updates -i",
     "prepare": "husky install"
