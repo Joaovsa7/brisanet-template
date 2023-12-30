@@ -9,7 +9,7 @@ export function ArticleCard({
 	return (
 		<article className="flex flex-col shadow-md overflow-hidden rounded-md transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
 			<div className="aspect-video">
-				<PrismicNextImage field={article.data.image} className="aspect-video" width={600} height={337.50} />
+				<PrismicNextImage field={article.data.image} className="aspect-video" width={600} height={337.50} quality={80} />
 			</div>
 
 			<div className="flex-1 flex flex-col p-4">

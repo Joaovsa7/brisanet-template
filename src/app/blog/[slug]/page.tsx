@@ -210,7 +210,7 @@ export default async function ArticlePage({ params }: IPageProps) {
 							<PrismicNextImage
 								field={document.data.image}
 								width={1200}
-								height={628}
+								height={720}
 								quality={100}
 								loading="eager"
 							/>
