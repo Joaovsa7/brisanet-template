@@ -1,10 +1,19 @@
 import { PrismicNextImage } from '@prismicio/next'
 import { notFound } from 'next/navigation'
+import { Metadata } from 'next'
 import Link from 'next/link'
 
 import { Container } from '~/components/container'
 
 import { createClient } from '~/libs/prismicio'
+
+export const metadata: Metadata = {
+	title: 'Portal das Operadoras | Autores',
+	robots: 'index, follow',
+  alternates: {
+    canonical: 'https://portaldasoperadoras.com.br/autores'
+  }
+}
 
 export default async function AuthorsPage() {
 	try {

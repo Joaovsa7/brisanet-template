@@ -2,6 +2,7 @@ import { Content } from '@prismicio/client'
 import { SliceZone } from '@prismicio/react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { ResolvingMetadata } from 'next'
 
 import { ArticleCard } from '~/components/article-card'
 import { Container } from '~/components/container'
@@ -10,6 +11,42 @@ import { mainSlices } from '~/slices'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
 import { IArticleDocumentResponse } from './[slug]/page'
+
+export async function generateMetadata(
+	parent: ResolvingMetadata
+) {
+	const client = createClient()
+
+	const document = await client.getSingle('blog', {
+		fetchLinks
+	})
+
+	const { meta_title, meta_description, robots_follow, robots_index } =
+		document.data
+
+	const url = `https://${process.env.HOST}/blog`
+
+	const parentMetadata = await parent
+
+	return {
+		title: meta_title,
+		description: meta_description,
+		robots: {
+			...parentMetadata.robots,
+			index: robots_index,
+			follow: robots_follow
+		},
+		openGraph: {
+			...parentMetadata.openGraph,
+			title: meta_title,
+			description: meta_description,
+			url
+		},
+		alternates: {
+			canonical: url
+		}
+	}
+}
 
 export default async function BlogPage() {
 	try {

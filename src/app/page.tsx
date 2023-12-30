@@ -1,12 +1,49 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { ResolvingMetadata } from 'next'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
 
 import { Button } from '~/components/button'
 import { Container } from '~/components/container'
 import { PageInfo } from '~/components/page-info'
+
+export async function generateMetadata(
+	parent: ResolvingMetadata
+) {
+	const client = createClient()
+
+	const document = await client.getSingle('home', {
+		fetchLinks
+	})
+
+	const { meta_title, meta_description, robots_follow, robots_index } =
+		document.data
+
+	const url = `https://${process.env.HOST}`
+
+	const parentMetadata = await parent
+
+	return {
+		title: meta_title,
+		description: meta_description,
+		robots: {
+			...parentMetadata.robots,
+			index: robots_index,
+			follow: robots_follow
+		},
+		openGraph: {
+			...parentMetadata.openGraph,
+			title: meta_title,
+			description: meta_description,
+			url
+		},
+		alternates: {
+			canonical: url
+		}
+	}
+}
 
 export default async function Home() {
 	try {
