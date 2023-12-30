@@ -1,7 +1,7 @@
 import { SliceZone } from '@prismicio/react'
+import { ResolvingMetadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ResolvingMetadata } from 'next'
 
 import { ArticleCard } from '~/components/article-card'
 import { Container } from '~/components/container'
@@ -12,8 +12,8 @@ import { createClient, fetchLinks } from '~/libs/prismicio'
 import { IArticleDocumentResponse } from './[slug]/page'
 
 export async function generateMetadata(
-  // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-_: any,
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	_: any,
 	parent: ResolvingMetadata
 ) {
 	const client = createClient()

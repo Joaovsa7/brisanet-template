@@ -8,7 +8,7 @@ import { Container } from './container'
 
 interface IBreadcrumb {
 	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-items: any[]
+	items: any[]
 }
 
 export function Breadcrumb({ items = [] }: IBreadcrumb) {

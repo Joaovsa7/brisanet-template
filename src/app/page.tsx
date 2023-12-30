@@ -1,7 +1,7 @@
+import { ResolvingMetadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { ResolvingMetadata } from 'next'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
 
@@ -10,8 +10,8 @@ import { Container } from '~/components/container'
 import { PageInfo } from '~/components/page-info'
 
 export async function generateMetadata(
-    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-  _: any,
+	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+	_: any,
 	parent: ResolvingMetadata
 ) {
 	const client = createClient()

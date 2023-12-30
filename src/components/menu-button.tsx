@@ -13,7 +13,10 @@ import Link from 'next/link'
 export function MenuButton() {
 	return (
 		<Root>
-			<DialogTrigger aria-label='Menu' className="flex items-center gap-2 bg-primary-600 text-white h-10 rounded w-10 justify-center xl:hidden">
+			<DialogTrigger
+				aria-label="Menu"
+				className="flex items-center gap-2 bg-primary-600 text-white h-10 rounded w-10 justify-center xl:hidden"
+			>
 				<MenuIcon className="w-6 h-6" />
 			</DialogTrigger>
 
