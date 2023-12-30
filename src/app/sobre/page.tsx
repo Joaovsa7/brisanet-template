@@ -1,19 +1,21 @@
+import { Metadata } from 'next'
 import { Container } from '~/components/container'
+import { Text } from '~/components/text'
 
-export const metadata = {
-	title: 'Portal das Operadoras | Sobre nós',
+export const metadata: Metadata = {
+	title: 'Portal das Operadoras | Quem somos',
 	description:
 		'Descubra conosco um mundo de possibilidades e economia! No Portal das Operadoras, nós te guiamos na jornada para encontrar os planos de saúde e telecomunicação mais vantajosos do mercado. Com nossa ajuda, escolher um plano que se encaixa perfeitamente em seu orçamento e necessidades é mais fácil do que nunca.',
-	image: '/assets/og-image.png',
 	robots: 'index, follow',
-	type: 'website',
-	url: 'https://portaldasoperadoras.com.br/sobre'
+  alternates: {
+    canonical: 'https://portaldasoperadoras.com.br/sobre'
+  }
 }
 
-export default function Page() {
+export default function AboutPage() {
 	return (
 		<Container size="lg" className="grid gap-10 py-4 sm:py-6 md:py-12">
-			<div className="prose max-w-full">
+			<Text className="max-w-full">
 				<h1>Bem-vindo ao Portal das Operadoras</h1>
 				<p>
 					Descubra conosco um mundo de possibilidades e economia! No Portal das
@@ -68,7 +70,7 @@ export default function Page() {
 					alcance e sempre atualizado.
 				</p>
 
-				<h2>Por Que Escolher o Portal das Operadoras?</h2>
+				<h2>Por que escolher o Portal das Operadoras?</h2>
 				<ul>
 					<li>
 						<strong>Simplicidade e Eficiência:</strong> Encontrar o que você
@@ -94,7 +96,7 @@ export default function Page() {
 					sempre prontos para ajudá-lo a encontrar o melhor plano, economizando
 					seu tempo e seu dinheiro. Explore conosco um mundo de possibilidades!
 				</p>
-			</div>
+			</Text>
 		</Container>
 	)
 }
