@@ -32,7 +32,7 @@ function AccordionTrigger({
 		<Trigger
 			{...props}
 			className={twMerge(
-				'group w-full flex items-center justify-between gap-4 py-4 text-base md:text-xl font-medium',
+				'group w-full flex items-center justify-between gap-4 py-4 text-base md:text-lg font-medium',
 				className
 			)}
 		>

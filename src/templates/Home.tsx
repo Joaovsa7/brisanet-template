@@ -1,9 +1,12 @@
+import { SliceZone } from '@prismicio/react'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '~/components/button'
 import { Container } from '~/components/container'
 import { PageInfo } from '~/components/page-info'
+import { mainSlices } from '~/slices'
+
 import { HomeDocument } from '../../prismicio-types'
 
 export function Home({ document }: { document: HomeDocument }) {
@@ -31,118 +34,8 @@ export function Home({ document }: { document: HomeDocument }) {
 				</Container>
 			</section>
 
-			<main className="py-10 md:py-16">
-				<Container size="lg" asChild>
-					<section>
-						<h2 className="text-2xl md:text-3xl font-bold flex items-center tracking-tight gap-2 mb-6 before:w-2 before:h-10 before:bg-primary-500 before:block">
-							Operadoras de Internet
-						</h2>
-
-						<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/claro.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/sky.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/tim.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/vivo.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/hughesnet.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-						</div>
-					</section>
-				</Container>
-
-				<Container size="lg" asChild>
-					<section>
-						<h2 className="text-2xl md:text-3xl font-bold flex items-center tracking-tight gap-2 mb-6 before:w-2 before:h-10 before:bg-primary-500 before:block mt-16">
-							Operadoras de Saúde
-						</h2>
-
-						<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/claro.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/sky.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/tim.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/vivo.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-							<div className="p-6 border border-neutral-200 rounded-lg flex items-center justify-center">
-								<Image
-									src="/hughesnet.svg"
-									alt=""
-									width={144}
-									height={144}
-									className="aspect-video"
-								/>
-							</div>
-						</div>
-					</section>
-				</Container>
+			<main className="py-10">
+				<SliceZone slices={document.data.slices} components={mainSlices} />
 			</main>
 		</>
 	)

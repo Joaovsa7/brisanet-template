@@ -1,6 +1,7 @@
 import { Content } from '@prismicio/client'
 import { SliceComponentProps } from '@prismicio/react'
 
+import { Container } from '~/components/container'
 import { RichText } from '~/components/rich-text'
 import { Section } from '~/components/section'
 
@@ -12,7 +13,9 @@ export default function ContentBlock({ slice }: ContentBlockProps) {
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			<RichText field={slice.primary.content} />
+			<Container size="sm">
+				<RichText field={slice.primary.content} />
+			</Container>
 		</Section>
 	)
 }
