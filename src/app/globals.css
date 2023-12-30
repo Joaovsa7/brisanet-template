@@ -12,7 +12,7 @@
   }
 
   .footer-nav a {
-    @apply py-1.5 block underline-offset-2 transition-colors;
+    @apply py-3 md:py-1.5 block underline-offset-2 transition-colors;
     @apply hover:underline hover:text-white;
   }
 
