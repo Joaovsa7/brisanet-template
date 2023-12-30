@@ -8,11 +8,11 @@
   }
 
   .footer-nav ul {
-    @apply flex flex-col gap-1 font-medium;
+    @apply flex flex-col font-medium;
   }
 
   .footer-nav a {
-    @apply underline-offset-2 transition-colors;
+    @apply py-1.5 block underline-offset-2 transition-colors;
     @apply hover:underline hover:text-white;
   }
 

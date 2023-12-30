@@ -42,6 +42,7 @@ export function ArticleShareButtons({ title, url }: IArticleShareButtonsProps) {
 				<button
 					type="button"
 					onClick={handleShareArticle}
+          aria-label='Compartilhe este artigo'
 					className="w-10 h-10 rounded-full bg-neutral-200 flex items-center justify-center transition-transform duration-300 hover:-translate-y-0.5"
 				>
 					{hasCopiedToClipboard ? (
@@ -50,14 +51,14 @@ export function ArticleShareButtons({ title, url }: IArticleShareButtonsProps) {
 						<LinkIcon className="w-5 h-5" />
 					)}
 				</button>
-				<FacebookShareButton url={url}>
-					<FacebookIcon className="w-10 h-10 rounded-full transition-transform duration-300 hover:-translate-y-0.5" />
+				<FacebookShareButton aria-label="Compartilhe este artigo no Facebook" url={url}>
+					<FacebookIcon aria-label="Facebook" className="w-10 h-10 rounded-full transition-transform duration-300 hover:-translate-y-0.5" />
 				</FacebookShareButton>
-				<LinkedinShareButton url={url}>
-					<LinkedinIcon className="w-10 h-10 rounded-full transition-transform duration-300 hover:-translate-y-0.5" />
+				<LinkedinShareButton aria-label="Compartilhe este artigo no LinkedIn" url={url}>
+					<LinkedinIcon aria-label="LinkedIn" className="w-10 h-10 rounded-full transition-transform duration-300 hover:-translate-y-0.5" />
 				</LinkedinShareButton>
-				<TwitterShareButton url={url}>
-					<XIcon className="w-10 h-10 rounded-full transition-transform duration-300 hover:-translate-y-0.5" />
+				<TwitterShareButton aria-label="Compartilhe este artigo no X" url={url}>
+					<XIcon aria-label="X" className="w-10 h-10 rounded-full transition-transform duration-300 hover:-translate-y-0.5" />
 				</TwitterShareButton>
 			</div>
 		</div>
