@@ -16,44 +16,48 @@ export async function generateMetadata(
 	{ params }: IPageProps,
 	parent: ResolvingMetadata
 ) {
-	const { slug } = params
+	try {
+		const { slug } = params
 
-	const client = createClient()
+		const client = createClient()
 
-	const document = await client.getByUID('article', slug, {
-		fetchLinks
-	})
+		const document = await client.getByUID('article', slug, {
+			fetchLinks
+		})
 
-	const { meta_title, meta_description, robots_follow, robots_index } =
-		document.data
+		const { meta_title, meta_description, robots_follow, robots_index } =
+			document.data
 
-	const url = `https://${process.env.HOST}/blog/${slug}`
+		const url = `https://${process.env.HOST}/blog/${slug}`
 
-	const parentMetadata = await parent
+		const parentMetadata = await parent
 
-	return {
-		title: meta_title,
-		description: meta_description,
-		robots: {
-			...parentMetadata.robots,
-			index: robots_index,
-			follow: robots_follow
-		},
-		openGraph: {
-			...parentMetadata.openGraph,
+		return {
 			title: meta_title,
 			description: meta_description,
-			url,
-			images: {
-				url: document.data.image.url,
-				width: 1200,
-				height: 720,
-				alt: document.data.image.alt
+			robots: {
+				...parentMetadata.robots,
+				index: robots_index,
+				follow: robots_follow
+			},
+			openGraph: {
+				...parentMetadata.openGraph,
+				title: meta_title,
+				description: meta_description,
+				url,
+				images: {
+					url: document.data.image.url,
+					width: 1200,
+					height: 720,
+					alt: document.data.image.alt
+				}
+			},
+			alternates: {
+				canonical: url
 			}
-		},
-		alternates: {
-			canonical: url
 		}
+	} catch {
+		return notFound()
 	}
 }
 

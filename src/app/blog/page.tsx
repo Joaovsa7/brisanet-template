@@ -12,36 +12,40 @@ export async function generateMetadata(
 	_: any,
 	parent: ResolvingMetadata
 ) {
-	const client = createClient()
+	try {
+		const client = createClient()
 
-	const document = await client.getSingle('blog', {
-		fetchLinks
-	})
+		const document = await client.getSingle('blog', {
+			fetchLinks
+		})
 
-	const { meta_title, meta_description, robots_follow, robots_index } =
-		document.data
+		const { meta_title, meta_description, robots_follow, robots_index } =
+			document.data
 
-	const url = `https://${process.env.HOST}/blog`
+		const url = `https://${process.env.HOST}/blog`
 
-	const parentMetadata = await parent
+		const parentMetadata = await parent
 
-	return {
-		title: meta_title,
-		description: meta_description,
-		robots: {
-			...parentMetadata.robots,
-			index: robots_index,
-			follow: robots_follow
-		},
-		openGraph: {
-			...parentMetadata.openGraph,
+		return {
 			title: meta_title,
 			description: meta_description,
-			url
-		},
-		alternates: {
-			canonical: url
+			robots: {
+				...parentMetadata.robots,
+				index: robots_index,
+				follow: robots_follow
+			},
+			openGraph: {
+				...parentMetadata.openGraph,
+				title: meta_title,
+				description: meta_description,
+				url
+			},
+			alternates: {
+				canonical: url
+			}
 		}
+	} catch {
+		return notFound()
 	}
 }
 

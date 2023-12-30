@@ -18,35 +18,39 @@ export async function generateMetadata(
 	{ params }: IPageProps,
 	parent: ResolvingMetadata
 ) {
-	const { slug } = params
+	try {
+		const { slug } = params
 
-	const client = createClient()
+		const client = createClient()
 
-	const document = await client.getByUID('author', slug, {
-		fetchLinks
-	})
+		const document = await client.getByUID('author', slug, {
+			fetchLinks
+		})
 
-	const { meta_title, meta_description, robots_follow, robots_index } =
-		document.data
+		const { meta_title, meta_description, robots_follow, robots_index } =
+			document.data
 
-	const url = `https://${process.env.HOST}/autores/${slug}`
+		const url = `https://${process.env.HOST}/autores/${slug}`
 
-	const parentMetadata = await parent
+		const parentMetadata = await parent
 
-	return {
-		title: meta_title,
-		description: meta_description,
-		robots: {
-			...parentMetadata.robots,
-			index: robots_index,
-			follow: robots_follow
-		},
-		openGraph: {
-			...parentMetadata.openGraph,
+		return {
 			title: meta_title,
 			description: meta_description,
-			url
+			robots: {
+				...parentMetadata.robots,
+				index: robots_index,
+				follow: robots_follow
+			},
+			openGraph: {
+				...parentMetadata.openGraph,
+				title: meta_title,
+				description: meta_description,
+				url
+			}
 		}
+	} catch {
+		return notFound()
 	}
 }
 
