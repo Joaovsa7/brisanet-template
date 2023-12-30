@@ -1,13 +1,17 @@
 import { PrismicNextImage } from '@prismicio/next'
 import Link from 'next/link'
 
+import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
+
 import { AuthorDocument } from '../../../prismicio-types'
 
 export function Authors({ authors }: { authors: AuthorDocument[] }) {
 	return (
 		<main className="py-12">
 			<Container size="lg">
+				<Breadcrumb className="mb-10" />
+
 				<section>
 					<h2 className="mb-8 text-3xl font-bold tracking-tight">
 						Conheça nossos autores

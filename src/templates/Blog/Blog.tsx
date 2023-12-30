@@ -2,6 +2,7 @@ import { SliceZone } from '@prismicio/react'
 import Link from 'next/link'
 
 import { ArticleCard } from '~/components/article-card'
+import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { PageInfo } from '~/components/page-info'
 import { mainSlices } from '~/slices'
@@ -16,10 +17,11 @@ interface IBlogProps {
 
 export function Blog({ articles, document }: IBlogProps) {
 	return (
-		<main>
+		<main className="py-8">
 			<PageInfo updatedAt={document.last_publication_date} />
-			<section className="py-12">
-				<Container size="lg">
+			<Container size="lg">
+				<Breadcrumb className="mb-10" />
+				<section>
 					<h1 className="mb-6 text-3xl font-bold">Últimos artigos</h1>
 
 					<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -35,8 +37,8 @@ export function Blog({ articles, document }: IBlogProps) {
 							)
 						})}
 					</div>
-				</Container>
-			</section>
+				</section>
+			</Container>
 
 			<SliceZone slices={document.data.slices} components={mainSlices} />
 		</main>

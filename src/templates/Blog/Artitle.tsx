@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { IArticleDocumentResponse } from '~/app/blog/[slug]/page'
 import { ArticleCard } from '~/components/article-card'
 import { ArticleShareButtons } from '~/components/article-share-buttons'
+import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { RichText } from '~/components/rich-text'
 import { mainSlices } from '~/slices'
@@ -56,11 +57,10 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 				}}
 			/>
 
-			<Container
-				size="sm"
-				className="grid xl:grid-cols-app gap-10 py-4 sm:p-6 md:py-10"
-			>
-				<main>
+			<main className="py-8">
+				<Container size="sm">
+					<Breadcrumb className="mb-10" />
+
 					<div className="flex flex-col gap-1 text-neutral-500 text-sm mb-4 sm:mb-6 sm:text-sm sm:flex-row sm:items-center sm:gap-4">
 						<time
 							dateTime={document.first_publication_date}
@@ -153,8 +153,8 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 							</div>
 						</section>
 					)}
-				</main>
-			</Container>
+				</Container>
+			</main>
 		</>
 	)
 }
