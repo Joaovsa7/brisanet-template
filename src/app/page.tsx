@@ -10,6 +10,8 @@ import { Container } from '~/components/container'
 import { PageInfo } from '~/components/page-info'
 
 export async function generateMetadata(
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+  _: any,
 	parent: ResolvingMetadata
 ) {
 	const client = createClient()
