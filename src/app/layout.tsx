@@ -42,12 +42,13 @@ export default async function RootLayout({
 }) {
 	const client = createClient()
 
+	const headerDocument = await client.getSingle('header').catch(() => null)
 	const footerDocument = await client.getSingle('footer').catch(() => null)
 
 	return (
 		<html lang="pt-BR" className={font.variable}>
-			<body className="antialiased  text-neutral-800 flex flex-col min-h-screen">
-				<Header />
+			<body className="antialiased bg-neutral-50 text-neutral-800 flex flex-col min-h-screen overflow-x-hidden">
+				<Header headerDocument={headerDocument} />
 				<div className="flex flex-col flex-1">{children}</div>
 				<Footer footerDocument={footerDocument} />
 			</body>

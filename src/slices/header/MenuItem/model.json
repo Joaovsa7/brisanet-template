@@ -1,0 +1,52 @@
+{
+	"id": "menu_item",
+	"type": "SharedSlice",
+	"name": "MenuItem",
+	"description": "MenuItem",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"item_label": {
+					"type": "Text",
+					"config": {
+						"label": "Item Label",
+						"placeholder": ""
+					}
+				},
+				"item_link": {
+					"type": "Link",
+					"config": {
+						"label": "Item Link",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"select": null
+					}
+				}
+			},
+			"items": {
+				"subitem_label": {
+					"type": "Text",
+					"config": {
+						"label": "SubItem Label",
+						"placeholder": ""
+					}
+				},
+				"subitem_link": {
+					"type": "Link",
+					"config": {
+						"label": "SubItem Link",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"select": null
+					}
+				}
+			}
+		}
+	]
+}

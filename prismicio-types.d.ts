@@ -680,7 +680,23 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
-interface HeaderDocumentData {}
+type HeaderDocumentDataSlicesSlice = MenuItemSlice;
+
+/**
+ * Content for Header documents
+ */
+interface HeaderDocumentData {
+  /**
+   * Slice Zone field in *Header*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HeaderDocumentDataSlicesSlice>;
+}
 
 /**
  * Header document from Prismic
@@ -1217,6 +1233,86 @@ type FaqSliceVariation = FaqSliceDefault;
 export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
 
 /**
+ * Primary content in *MenuItem → Primary*
+ */
+export interface MenuItemSliceDefaultPrimary {
+  /**
+   * Item Label field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.item_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  item_label: prismic.KeyTextField;
+
+  /**
+   * Item Link field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.item_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  item_link: prismic.LinkField;
+}
+
+/**
+ * Primary content in *MenuItem → Items*
+ */
+export interface MenuItemSliceDefaultItem {
+  /**
+   * SubItem Label field in *MenuItem → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.items[].subitem_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subitem_label: prismic.KeyTextField;
+
+  /**
+   * SubItem Link field in *MenuItem → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.items[].subitem_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  subitem_link: prismic.LinkField;
+}
+
+/**
+ * Default variation for MenuItem Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenuItemSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MenuItemSliceDefaultPrimary>,
+  Simplify<MenuItemSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *MenuItem*
+ */
+type MenuItemSliceVariation = MenuItemSliceDefault;
+
+/**
+ * MenuItem Shared Slice
+ *
+ * - **API ID**: `menu_item`
+ * - **Description**: MenuItem
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenuItemSlice = prismic.SharedSlice<
+  "menu_item",
+  MenuItemSliceVariation
+>;
+
+/**
  * Primary content in *FooterLinks → Items*
  */
 export interface FooterLinksSliceDefaultItem {
@@ -1305,6 +1401,7 @@ declare module "@prismicio/client" {
       FooterDocumentDataAnsNumberItem,
       HeaderDocument,
       HeaderDocumentData,
+      HeaderDocumentDataSlicesSlice,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
@@ -1335,6 +1432,11 @@ declare module "@prismicio/client" {
       FaqSliceDefaultPrimary,
       FaqSliceVariation,
       FaqSliceDefault,
+      MenuItemSlice,
+      MenuItemSliceDefaultPrimary,
+      MenuItemSliceDefaultItem,
+      MenuItemSliceVariation,
+      MenuItemSliceDefault,
       FooterLinksSlice,
       FooterLinksSliceDefaultItem,
       FooterLinksSliceVariation,

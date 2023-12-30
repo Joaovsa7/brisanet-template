@@ -4,6 +4,7 @@
 	"libraries": [
 		"./src/slices/main",
 		"./src/slices/sidebar",
+		"./src/slices/header",
 		"./src/slices/footer"
 	],
 	"localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
