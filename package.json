@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "npx @biomejs/biome check --apply .",
     "slicemachine": "start-slicemachine",
-    "check-updates": "npx npm-check-updates -i"
+    "check-updates": "npx npm-check-updates -i",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@prismicio/client": "^7.3.1",
@@ -30,12 +31,16 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "@slicemachine/adapter-next": "^0.3.31",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.16",
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0",
     "postcss": "^8",
     "slice-machine-ui": "^1.22.1",
     "tailwind-scrollbar": "^3.0.5",
