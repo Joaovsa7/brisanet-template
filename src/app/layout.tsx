@@ -48,7 +48,7 @@ export default async function RootLayout({
 		<html lang="pt-BR" className={font.variable}>
 			<body className="antialiased  text-neutral-800 flex flex-col min-h-screen">
 				<Header />
-				<div className="flex-1">{children}</div>
+				<div className="flex flex-col flex-1">{children}</div>
 				<Footer footerDocument={footerDocument} />
 			</body>
 		</html>
