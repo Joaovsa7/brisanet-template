@@ -8,7 +8,7 @@ import { MenuButton } from './menu-button'
 
 export function Header() {
 	return (
-		<header className="bg-white border-b border-neutral-200 sticky top-0 left-0 right-0">
+		<header className="bg-white border-b border-neutral-200 sticky top-0 left-0 right-0 z-50">
 			<Container size="lg" className="flex items-center justify-between py-3">
 				<Logo />
 

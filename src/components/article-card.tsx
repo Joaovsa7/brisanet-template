@@ -7,7 +7,7 @@ export function ArticleCard({
 	article
 }: { article: IArticleDocumentResponse }) {
 	return (
-		<article className="flex flex-col shadow-md overflow-hidden rounded-xl transition-transform duration-300 hover:shadow-xl hover:-translate-y-3">
+		<article className="flex flex-col shadow-md overflow-hidden rounded-md transition-transform duration-300 hover:shadow-xl hover:-translate-y-1">
 			<div className="aspect-video">
 				<PrismicNextImage field={article.data.image} className="aspect-video" />
 			</div>

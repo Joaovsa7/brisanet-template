@@ -7,7 +7,8 @@ import {
 	sky,
 	transparent,
 	white,
-	zinc
+	zinc,
+  current
 } from 'tailwindcss/colors'
 
 const config: Config = {
@@ -17,6 +18,7 @@ const config: Config = {
 			white,
 			black,
 			transparent,
+      current,
 			neutral: zinc,
 			primary: sky,
 			secondary: amber,
