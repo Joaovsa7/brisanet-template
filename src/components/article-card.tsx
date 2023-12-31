@@ -11,7 +11,7 @@ export function ArticleCard({
 			<div className="aspect-video">
 				<PrismicNextImage
 					field={article.data.image}
-					className="aspect-video"
+					className="aspect-video object-cover"
 					width={600}
 					height={337.5}
 					quality={80}

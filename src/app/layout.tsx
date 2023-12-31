@@ -5,6 +5,7 @@ import { createClient } from '~/libs/prismicio'
 
 import { Footer } from '~/components/footer'
 import { Header } from '~/components/header'
+import { SearchButton } from '~/components/search-button'
 
 const font = Manrope({
 	weight: ['400', '500', '600', '700'],
@@ -50,6 +51,7 @@ export default async function RootLayout({
 			<body className="antialiased bg-neutral-50 text-neutral-800 flex flex-col min-h-screen overflow-x-hidden">
 				<Header headerDocument={headerDocument} />
 				<div className="flex flex-col flex-1">{children}</div>
+				<SearchButton />
 				<Footer footerDocument={footerDocument} />
 			</body>
 		</html>
