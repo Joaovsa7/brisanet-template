@@ -1018,6 +1018,95 @@ export type OperatorLayoutDocument<Lang extends string = string> =
     Lang
   >;
 
+type PageDocumentDataSlicesSlice =
+  | CallToActionSlice
+  | ContentBlockSlice
+  | FaqSlice
+  | InfoCardsSlice;
+
+/**
+ * Content for Página documents
+ */
+interface PageDocumentData {
+  /**
+   * Slice Zone field in *Página*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PageDocumentDataSlicesSlice> /**
+   * Meta Image field in *Página*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */;
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Página*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: page.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Página*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: page.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Robots Index field in *Página*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: page.robots_index
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  robots_index: prismic.BooleanField;
+
+  /**
+   * Robots Follow field in *Página*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: page.robots_follow
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  robots_follow: prismic.BooleanField;
+}
+
+/**
+ * Página document from Prismic
+ *
+ * - **API ID**: `page`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PageDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
 /**
  * Item in *Redirecionamentos → Redirecionamentos*
  */
@@ -1100,6 +1189,7 @@ export type AllDocumentTypes =
   | MostReadArticlesDocument
   | OperatorDocument
   | OperatorLayoutDocument
+  | PageDocument
   | RedirectsDocument;
 
 /**
@@ -1483,6 +1573,9 @@ declare module "@prismicio/client" {
       OperatorDocumentDataSlicesSlice,
       OperatorLayoutDocument,
       OperatorLayoutDocumentData,
+      PageDocument,
+      PageDocumentData,
+      PageDocumentDataSlicesSlice,
       RedirectsDocument,
       RedirectsDocumentData,
       RedirectsDocumentDataRedirectsItem,
