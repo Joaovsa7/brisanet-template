@@ -1,0 +1,45 @@
+{
+	"id": "info_cards",
+	"type": "SharedSlice",
+	"name": "InfoCards",
+	"description": "InfoCards",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {},
+			"items": {
+				"image": {
+					"type": "Image",
+					"config": {
+						"label": "Imagem",
+						"constraint": {},
+						"thumbnails": []
+					}
+				},
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Título",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "heading2,heading3,heading4,heading5,heading6,paragraph,heading1"
+					}
+				},
+				"description": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Descrição",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "paragraph,strong,em,hyperlink"
+					}
+				}
+			}
+		}
+	]
+}

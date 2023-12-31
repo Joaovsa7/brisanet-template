@@ -29,6 +29,7 @@ export default async function Faq({ slice }: FaqProps) {
 		<Section
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
+			className="py-12"
 		>
 			<Container size="sm">
 				{titleIsFilled && (

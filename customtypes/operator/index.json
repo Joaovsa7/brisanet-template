@@ -33,6 +33,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "info_cards": {
+              "type": "SharedSlice"
+            },
             "faq": {
               "type": "SharedSlice"
             },

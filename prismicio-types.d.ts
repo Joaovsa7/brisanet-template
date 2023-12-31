@@ -715,6 +715,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | InfoCardsSlice
   | CallToActionSlice
   | ContentBlockSlice
   | FaqSlice;
@@ -909,6 +910,7 @@ export type MostReadArticlesDocument<Lang extends string = string> =
   >;
 
 type OperatorDocumentDataSlicesSlice =
+  | InfoCardsSlice
   | FaqSlice
   | ContentBlockSlice
   | CallToActionSlice;
@@ -1233,6 +1235,71 @@ type FaqSliceVariation = FaqSliceDefault;
 export type FaqSlice = prismic.SharedSlice<"faq", FaqSliceVariation>;
 
 /**
+ * Primary content in *InfoCards → Items*
+ */
+export interface InfoCardsSliceDefaultItem {
+  /**
+   * Imagem field in *InfoCards → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_cards.items[].image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Título field in *InfoCards → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_cards.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Descrição field in *InfoCards → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: info_cards.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Default variation for InfoCards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoCardsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<InfoCardsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *InfoCards*
+ */
+type InfoCardsSliceVariation = InfoCardsSliceDefault;
+
+/**
+ * InfoCards Shared Slice
+ *
+ * - **API ID**: `info_cards`
+ * - **Description**: InfoCards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InfoCardsSlice = prismic.SharedSlice<
+  "info_cards",
+  InfoCardsSliceVariation
+>;
+
+/**
  * Primary content in *MenuItem → Primary*
  */
 export interface MenuItemSliceDefaultPrimary {
@@ -1432,6 +1499,10 @@ declare module "@prismicio/client" {
       FaqSliceDefaultPrimary,
       FaqSliceVariation,
       FaqSliceDefault,
+      InfoCardsSlice,
+      InfoCardsSliceDefaultItem,
+      InfoCardsSliceVariation,
+      InfoCardsSliceDefault,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
       MenuItemSliceDefaultItem,
