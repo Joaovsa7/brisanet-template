@@ -84,18 +84,17 @@ export default async function ArticlePage({ params }: IPageProps) {
 			{ fetchLinks }
 		)
 
-		const relatedArticles = await client.getAllByType<IArticleDocumentResponse>(
-			'article',
-			{
+		const relatedArticles = await client
+			.getAllByType<IArticleDocumentResponse>('article', {
 				fetchLinks,
-				filters: [filter.at('my.article.author', document.data.author.id)],
+				filters: [filter.at('my.article.author', document.data?.author?.id)],
 				orderings: {
 					field: 'document.first_publication_date',
 					direction: 'desc'
 				},
 				limit: 4
-			}
-		)
+			})
+			.catch(() => [])
 
 		return <Article document={document} relatedArticles={relatedArticles} />
 	} catch {
