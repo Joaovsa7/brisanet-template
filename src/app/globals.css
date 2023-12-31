@@ -20,7 +20,7 @@
     @apply prose prose-sm;
     @apply md:prose-base;
     @apply prose-a:text-primary-500 hover:prose-a:no-underline;
-    @apply prose-headings:font-bold prose-headings:mt-0 prose-headings:text-neutral-800;
+    @apply prose-headings:font-bold prose-headings:text-neutral-800 prose-headings:text-xl md:prose-headings:text-2xl;
     @apply prose-p:text-neutral-500 prose-p:leading-relaxed;
     @apply prose-strong:font-bold prose-strong:text-neutral-800;
     @apply prose-ul:text-neutral-500;
