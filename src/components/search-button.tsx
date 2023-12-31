@@ -61,7 +61,7 @@ export function SearchButton() {
 							name="q"
 							defaultValue={query ?? ''}
 							placeholder="Ex: Qual a melhor operadora de internet?"
-							className="px-3 h-10 border border-neutral-200 rounded w-full focus:border-neutral-500 focus:outline-none text-sm sm:text-base"
+							className="px-3 h-10 border border-neutral-200 rounded w-full focus:border-neutral-500 focus:outline-none text-base"
 						/>
 						<button
 							type="submit"
