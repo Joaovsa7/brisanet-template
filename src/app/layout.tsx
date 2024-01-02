@@ -18,6 +18,11 @@ export async function generateMetadata() {
 	const siteName = 'Portal das Operadoras'
 
 	return {
+		title: {
+			default: 'Portal das Operadoras',
+			template: '%s | Portal das Operadoras'
+		},
+		description: 'Encontre a melhor operadora para o seu perfil',
 		site_name: siteName,
 		locale: 'pt_BR',
 		type: 'website',
