@@ -20,6 +20,14 @@
         },
         "type": "UID"
       },
+      "category": {
+        "type": "Select",
+        "config": {
+          "label": "Categoria",
+          "placeholder": "",
+          "options": ["Internet", "Saúde"]
+        }
+      },
       "logo": {
         "type": "Image",
         "config": {

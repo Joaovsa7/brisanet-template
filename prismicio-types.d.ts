@@ -936,6 +936,17 @@ interface OperatorDocumentData {
   name: prismic.KeyTextField;
 
   /**
+   * Categoria field in *Operadora*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: operator.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  category: prismic.SelectField<"Internet" | "Saúde">;
+
+  /**
    * Logo field in *Operadora*
    *
    * - **Field Type**: Image
