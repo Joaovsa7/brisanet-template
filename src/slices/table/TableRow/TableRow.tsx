@@ -14,11 +14,11 @@ export default function TableRow({ slice }: TableRowProps) {
 		>
 			<tr className="text-left whitespace-nowrap">
 				{slice.items.map((item) => (
-					<th key={asText(item.value)} className="p-4">
+					<td key={asText(item.value)} className="p-4">
 						<span>
 							<PrismicRichText field={item.value} />
 						</span>
-					</th>
+					</td>
 				))}
 			</tr>
 		</tbody>
@@ -29,11 +29,11 @@ export default function TableRow({ slice }: TableRowProps) {
 		>
 			<tr className="bg-primary-500 text-white text-left font-bold whitespace-nowrap">
 				{slice.items.map((item) => (
-					<td key={asText(item.value)} className="p-4">
+					<th key={asText(item.value)} className="p-4">
 						<span>
 							<PrismicRichText field={item.value} />
 						</span>
-					</td>
+					</th>
 				))}
 			</tr>
 		</thead>
