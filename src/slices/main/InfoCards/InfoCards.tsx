@@ -28,7 +28,7 @@ export default function InfoCards({ slice }: InfoCardsProps) {
 						/>
 
 						<main className="p-6 bg-white flex flex-col justify-center lg:h-full lg:justify-start border border-neutral-200">
-							<RichText field={item.title} />
+							<RichText field={item.title} className="prose-headings:m-0" />
 							<RichText field={item.description} />
 						</main>
 					</article>
