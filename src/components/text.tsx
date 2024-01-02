@@ -14,7 +14,7 @@ export const Text = forwardRef<ElementRef<'span'>, ITextProps>(
 			<Component
 				{...props}
 				ref={forwardedRef}
-				className={twMerge('text', className)}
+				className={twMerge('text block', className)}
 			/>
 		)
 	}
