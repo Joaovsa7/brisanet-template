@@ -40,6 +40,7 @@ export function SearchButton() {
 			<PopoverTrigger asChild>
 				<button
 					type="button"
+					aria-label={popoverIsOpen ? 'Fechar pesquisa' : 'Abrir pesquisa'}
 					className="group shadow-xl fixed bottom-6 right-6 w-16 h-16 text-white bg-primary-500 hover:bg-primary-400 transition-colors
          rounded-full flex items-center justify-center"
 				>
