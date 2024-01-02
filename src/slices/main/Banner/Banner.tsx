@@ -34,6 +34,7 @@ export default function Banner({ slice }: BannerProps) {
 					height={1080}
 					quality={100}
 					fallbackAlt=""
+					loading="eager"
 				/>
 			)}
 
