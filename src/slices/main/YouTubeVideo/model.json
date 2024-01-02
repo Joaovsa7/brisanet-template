@@ -1,0 +1,65 @@
+{
+	"id": "you_tube_video",
+	"type": "SharedSlice",
+	"name": "YouTubeVideo",
+	"description": "YouTubeVideo",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Título",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6"
+					}
+				},
+				"description": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Descrição",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "paragraph,strong,em,hyperlink"
+					}
+				},
+				"video_id": {
+					"type": "Text",
+					"config": {
+						"label": "ID do Vídeo",
+						"placeholder": ""
+					}
+				},
+				"video_title": {
+					"type": "Text",
+					"config": {
+						"label": "Título do Vídeo",
+						"placeholder": ""
+					}
+				},
+				"video_upload_date": {
+					"type": "Timestamp",
+					"config": {
+						"label": "Data de publicação do Vídeo",
+						"placeholder": ""
+					}
+				},
+				"video_duration_time": {
+					"type": "Number",
+					"config": {
+						"label": "Tempo de duração do Vídeo",
+						"placeholder": ""
+					}
+				}
+			},
+			"items": {}
+		}
+	]
+}

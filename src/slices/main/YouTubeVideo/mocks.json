@@ -1,0 +1,51 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"video_id": {
+				"__TYPE__": "FieldContent",
+				"value": "center",
+				"type": "Text"
+			},
+			"video_title": {
+				"__TYPE__": "FieldContent",
+				"value": "farmer",
+				"type": "Text"
+			},
+			"video_duration_time": {
+				"__TYPE__": "FieldContent",
+				"value": "28",
+				"type": "Number"
+			},
+			"video_upload_date": {
+				"__TYPE__": "FieldContent",
+				"type": "Timestamp",
+				"value": "2017-11-20T08:56:08Z"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim qui velit eiusmod cillum consequat ex ad dolor in dolore irure anim do ex consectetur. Aute Lorem laboris mollit ex esse culpa nulla quis. Est Lorem ea ipsum amet cillum nostrud qui occaecat reprehenderit ad do in."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis nostrud quis consequat ut deserunt aute nostrud incididunt proident labore mollit laborum sint duis. Incididunt laboris ullamco ea laborum deserunt minim cillum tempor. Tempor consequat nostrud ad ut sint."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

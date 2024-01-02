@@ -726,6 +726,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | YouTubeVideoSlice
   | TableSlice
   | BannerSlice
   | InfoCardsSlice
@@ -1023,6 +1024,7 @@ export type OperatorLayoutDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | YouTubeVideoSlice
   | TableSlice
   | BannerSlice
   | CallToActionSlice
@@ -1680,6 +1682,101 @@ type TableSliceVariation = TableSliceDefault;
 export type TableSlice = prismic.SharedSlice<"table", TableSliceVariation>;
 
 /**
+ * Primary content in *YouTubeVideo → Primary*
+ */
+export interface YouTubeVideoSliceDefaultPrimary {
+  /**
+   * Título field in *YouTubeVideo → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: you_tube_video.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Descrição field in *YouTubeVideo → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: you_tube_video.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * ID do Vídeo field in *YouTubeVideo → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: you_tube_video.primary.video_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_id: prismic.KeyTextField;
+
+  /**
+   * Título do Vídeo field in *YouTubeVideo → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: you_tube_video.primary.video_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_title: prismic.KeyTextField;
+
+  /**
+   * Data de publicação do Vídeo field in *YouTubeVideo → Primary*
+   *
+   * - **Field Type**: Timestamp
+   * - **Placeholder**: *None*
+   * - **API ID Path**: you_tube_video.primary.video_upload_date
+   * - **Documentation**: https://prismic.io/docs/field#timestamp
+   */
+  video_upload_date: prismic.TimestampField;
+
+  /**
+   * Tempo de duração do Vídeo field in *YouTubeVideo → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: *None*
+   * - **API ID Path**: you_tube_video.primary.video_duration_time
+   * - **Documentation**: https://prismic.io/docs/field#number
+   */
+  video_duration_time: prismic.NumberField;
+}
+
+/**
+ * Default variation for YouTubeVideo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type YouTubeVideoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<YouTubeVideoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *YouTubeVideo*
+ */
+type YouTubeVideoSliceVariation = YouTubeVideoSliceDefault;
+
+/**
+ * YouTubeVideo Shared Slice
+ *
+ * - **API ID**: `you_tube_video`
+ * - **Description**: YouTubeVideo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type YouTubeVideoSlice = prismic.SharedSlice<
+  "you_tube_video",
+  YouTubeVideoSliceVariation
+>;
+
+/**
  * Primary content in *TableRow → Items*
  */
 export interface TableRowSliceDefaultItem {
@@ -1974,6 +2071,10 @@ declare module "@prismicio/client" {
       TableSliceDefaultPrimary,
       TableSliceVariation,
       TableSliceDefault,
+      YouTubeVideoSlice,
+      YouTubeVideoSliceDefaultPrimary,
+      YouTubeVideoSliceVariation,
+      YouTubeVideoSliceDefault,
       TableRowSlice,
       TableRowSliceDefaultItem,
       TableRowSliceBodyItem,
