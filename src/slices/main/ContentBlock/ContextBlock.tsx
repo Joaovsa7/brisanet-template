@@ -13,7 +13,7 @@ export default function ContentBlock({ slice }: ContentBlockProps) {
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
 		>
-			<Container size="sm">
+			<Container size="lg">
 				<RichText field={slice.primary.content} />
 			</Container>
 		</Section>

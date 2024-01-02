@@ -22,21 +22,23 @@ export function Header({
 			<Container size="lg" className="flex items-center justify-between">
 				<Logo />
 
-				<NavigationMenuRoot className="hidden relative xl:block">
-					<NavigationMenuList className="flex items-center justify-center">
-						<SliceZone
-							slices={headerDocument?.data?.slices}
-							components={headerSlices}
-						/>
-					</NavigationMenuList>
-				</NavigationMenuRoot>
+				<div className="flex items-center gap-4">
+					<NavigationMenuRoot className="hidden relative xl:block">
+						<NavigationMenuList className="flex items-center justify-center">
+							<SliceZone
+								slices={headerDocument?.data?.slices}
+								components={headerSlices}
+							/>
+						</NavigationMenuList>
+					</NavigationMenuRoot>
 
-				<div className="flex gap-1">
-					<Button asChild size="sm">
-						<Link href="/">Avaliar Operadora</Link>
-					</Button>
+					<div className="flex gap-1">
+						<Button asChild size="sm">
+							<Link href="/">Avaliar Operadora</Link>
+						</Button>
 
-					<MenuButton />
+						<MenuButton />
+					</div>
 				</div>
 			</Container>
 		</header>
