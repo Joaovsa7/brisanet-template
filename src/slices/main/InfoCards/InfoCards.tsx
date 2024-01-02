@@ -11,7 +11,7 @@ export default function InfoCards({ slice }: InfoCardsProps) {
 		<section
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
-			className="bg-neutral-200/50 py-24"
+			className="bg-neutral-200/50 py-16 lg:py-24"
 		>
 			<Container size="lg" className="grid gap-6 lg:grid-cols-3">
 				{slice.items.map((item) => (
