@@ -10,7 +10,7 @@ export function AccordionQuestions({
 	items: FaqDocumentDataFrequentlyAskedQuestionsItem[]
 }) {
 	return (
-		<Accordion.Root type="single">
+		<Accordion.Root type="single" className="mt-8">
 			{items.map((item) => {
 				return (
 					<Accordion.Item

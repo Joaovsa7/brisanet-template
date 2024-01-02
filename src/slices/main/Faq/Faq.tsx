@@ -29,11 +29,10 @@ export default async function Faq({ slice }: FaqProps) {
 		<Section
 			data-slice-type={slice.slice_type}
 			data-slice-variation={slice.variation}
-			className="py-12"
 		>
 			<Container size="sm">
 				{titleIsFilled && (
-					<RichText field={title} className="mb-6 text-center" />
+					<RichText field={title} className="text-center prose-headings:m-0" />
 				)}
 				<AccordionQuestions items={frequently_asked_questions} />
 			</Container>
