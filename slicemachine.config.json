@@ -3,7 +3,7 @@
 	"adapter": "@slicemachine/adapter-next",
 	"libraries": [
 		"./src/slices/main",
-		"./src/slices/sidebar",
+		"./src/slices/table",
 		"./src/slices/header",
 		"./src/slices/footer"
 	],

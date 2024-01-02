@@ -6,7 +6,7 @@ type ISectionProps = ComponentProps<'section'>
 export function Section({ className, ...props }: ISectionProps) {
 	return (
 		<section
-			className={twMerge('mb-4 sm:mb-6 md:mb-10', className)}
+			className={twMerge('my-4 sm:my-6 md:my-10', className)}
 			{...props}
 		/>
 	)

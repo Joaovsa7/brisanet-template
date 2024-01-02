@@ -75,5 +75,6 @@ export const fetchLinks = [
 	'call_to_action.cta_link',
 	'call_to_action.cta_label',
 	'faq.title',
-	'faq.frequently_asked_questions'
+	'faq.frequently_asked_questions',
+	'table.slices'
 ]

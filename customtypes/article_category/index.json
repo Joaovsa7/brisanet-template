@@ -35,6 +35,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "info_cards": {
+              "type": "SharedSlice"
+            },
+            "banner": {
+              "type": "SharedSlice"
+            },
+            "table": {
+              "type": "SharedSlice"
+            },
             "content_block": {
               "type": "SharedSlice"
             },

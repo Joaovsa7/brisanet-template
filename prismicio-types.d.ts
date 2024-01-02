@@ -5,6 +5,8 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ArticleDocumentDataSlicesSlice =
+  | InfoCardsSlice
+  | TableSlice
   | FaqSlice
   | ContentBlockSlice
   | CallToActionSlice;
@@ -141,6 +143,9 @@ export type ArticleDocument<Lang extends string = string> =
   >;
 
 type ArticleCategoryDocumentDataSlicesSlice =
+  | InfoCardsSlice
+  | BannerSlice
+  | TableSlice
   | ContentBlockSlice
   | FaqSlice
   | CallToActionSlice;
@@ -271,6 +276,9 @@ export interface AuthorDocumentDataSocialNetworksItem {
 }
 
 type AuthorDocumentDataSlicesSlice =
+  | BannerSlice
+  | InfoCardsSlice
+  | TableSlice
   | FaqSlice
   | ContentBlockSlice
   | CallToActionSlice;
@@ -416,6 +424,9 @@ export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
 type BlogDocumentDataSlicesSlice =
+  | TableSlice
+  | InfoCardsSlice
+  | BannerSlice
   | FaqSlice
   | ContentBlockSlice
   | CallToActionSlice;
@@ -715,6 +726,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | TableSlice
   | BannerSlice
   | InfoCardsSlice
   | CallToActionSlice
@@ -911,6 +923,8 @@ export type MostReadArticlesDocument<Lang extends string = string> =
   >;
 
 type OperatorDocumentDataSlicesSlice =
+  | BannerSlice
+  | TableSlice
   | InfoCardsSlice
   | FaqSlice
   | ContentBlockSlice
@@ -1020,6 +1034,7 @@ export type OperatorLayoutDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TableSlice
   | BannerSlice
   | CallToActionSlice
   | ContentBlockSlice
@@ -1177,6 +1192,36 @@ export type RedirectsDocument<Lang extends string = string> =
     Lang
   >;
 
+type TableDocumentDataSlicesSlice = TableRowSlice;
+
+/**
+ * Content for Tabela documents
+ */
+interface TableDocumentData {
+  /**
+   * Slice Zone field in *Tabela*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<TableDocumentDataSlicesSlice>;
+}
+
+/**
+ * Tabela document from Prismic
+ *
+ * - **API ID**: `table`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TableDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<TableDocumentData>, "table", Lang>;
+
 export type AllDocumentTypes =
   | ArticleDocument
   | ArticleCategoryDocument
@@ -1192,7 +1237,8 @@ export type AllDocumentTypes =
   | OperatorDocument
   | OperatorLayoutDocument
   | PageDocument
-  | RedirectsDocument;
+  | RedirectsDocument
+  | TableDocument;
 
 /**
  * Primary content in *Banner → Primary*
@@ -1603,6 +1649,121 @@ export type InfoCardsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Table → Primary*
+ */
+export interface TableSliceDefaultPrimary {
+  /**
+   * Tabela field in *Table → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table.primary.table
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  table: prismic.ContentRelationshipField<"table">;
+}
+
+/**
+ * Default variation for Table Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TableSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TableSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Table*
+ */
+type TableSliceVariation = TableSliceDefault;
+
+/**
+ * Table Shared Slice
+ *
+ * - **API ID**: `table`
+ * - **Description**: Table
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TableSlice = prismic.SharedSlice<"table", TableSliceVariation>;
+
+/**
+ * Primary content in *TableRow → Items*
+ */
+export interface TableRowSliceDefaultItem {
+  /**
+   * Valor field in *TableRow → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table_row.items[].value
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  value: prismic.RichTextField;
+}
+
+/**
+ * Head variation for TableRow Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TableRowSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<TableRowSliceDefaultItem>
+>;
+
+/**
+ * Primary content in *TableRow → Items*
+ */
+export interface TableRowSliceBodyItem {
+  /**
+   * Valor field in *TableRow → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: table_row.items[].value
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  value: prismic.RichTextField;
+}
+
+/**
+ * Body variation for TableRow Slice
+ *
+ * - **API ID**: `body`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TableRowSliceBody = prismic.SharedSliceVariation<
+  "body",
+  Record<string, never>,
+  Simplify<TableRowSliceBodyItem>
+>;
+
+/**
+ * Slice variation for *TableRow*
+ */
+type TableRowSliceVariation = TableRowSliceDefault | TableRowSliceBody;
+
+/**
+ * TableRow Shared Slice
+ *
+ * - **API ID**: `table_row`
+ * - **Description**: TableRow
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TableRowSlice = prismic.SharedSlice<
+  "table_row",
+  TableRowSliceVariation
+>;
+
+/**
  * Primary content in *MenuItem → Primary*
  */
 export interface MenuItemSliceDefaultPrimary {
@@ -1792,6 +1953,9 @@ declare module "@prismicio/client" {
       RedirectsDocument,
       RedirectsDocumentData,
       RedirectsDocumentDataRedirectsItem,
+      TableDocument,
+      TableDocumentData,
+      TableDocumentDataSlicesSlice,
       AllDocumentTypes,
       BannerSlice,
       BannerSliceDefaultPrimary,
@@ -1817,6 +1981,16 @@ declare module "@prismicio/client" {
       InfoCardsSliceDefaultItem,
       InfoCardsSliceVariation,
       InfoCardsSliceDefault,
+      TableSlice,
+      TableSliceDefaultPrimary,
+      TableSliceVariation,
+      TableSliceDefault,
+      TableRowSlice,
+      TableRowSliceDefaultItem,
+      TableRowSliceBodyItem,
+      TableRowSliceVariation,
+      TableRowSliceDefault,
+      TableRowSliceBody,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
       MenuItemSliceDefaultItem,

@@ -7,5 +7,6 @@ export const components = {
 	call_to_action: dynamic(() => import('./CallToAction')),
 	content_block: dynamic(() => import('./ContentBlock')),
 	faq: dynamic(() => import('./Faq')),
-	info_cards: dynamic(() => import('./InfoCards'))
+	info_cards: dynamic(() => import('./InfoCards')),
+	table: dynamic(() => import('./Table'))
 }
