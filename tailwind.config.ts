@@ -2,10 +2,10 @@ import type { Config } from 'tailwindcss'
 import {
 	amber,
 	black,
+	blue,
 	current,
 	emerald,
 	red,
-	sky,
 	transparent,
 	white,
 	zinc
@@ -20,7 +20,7 @@ const config: Config = {
 			transparent,
 			current,
 			neutral: zinc,
-			primary: sky,
+			primary: blue,
 			secondary: amber,
 			destructive: red,
 			success: emerald
