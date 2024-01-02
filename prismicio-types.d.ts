@@ -874,24 +874,13 @@ export interface MostReadArticlesDocumentDataArticlesItem {
    * - **API ID Path**: most_read_articles.articles[].article
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  article: prismic.ContentRelationshipField;
+  article: prismic.ContentRelationshipField<"article">;
 }
 
 /**
  * Content for Artigos mais lidos documents
  */
 interface MostReadArticlesDocumentData {
-  /**
-   * Título field in *Artigos mais lidos*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: most_read_articles.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
   /**
    * Artigos field in *Artigos mais lidos*
    *
@@ -910,13 +899,13 @@ interface MostReadArticlesDocumentData {
  * Artigos mais lidos document from Prismic
  *
  * - **API ID**: `most_read_articles`
- * - **Repeatable**: `true`
+ * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
 export type MostReadArticlesDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
+  prismic.PrismicDocumentWithoutUID<
     Simplify<MostReadArticlesDocumentData>,
     "most_read_articles",
     Lang

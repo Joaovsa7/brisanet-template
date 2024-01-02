@@ -12,6 +12,28 @@ interface IPageProps {
 	}
 }
 
+export async function generateStaticParams() {
+	try {
+		const client = createClient()
+
+		const document = await client.getSingle<
+			Content.MostReadArticlesDocument & {
+				data: {
+					articles: {
+						article: Pick<Content.ArticleDocument, 'uid'>
+					}[]
+				}
+			}
+		>('most_read_articles')
+
+		return document.data.articles.map((article) => ({
+			slug: article.article.uid
+		}))
+	} catch {
+		return []
+	}
+}
+
 export async function generateMetadata(
 	{ params }: IPageProps,
 	parent: ResolvingMetadata
