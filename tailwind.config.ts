@@ -73,6 +73,10 @@ const config: Config = {
 			}
 		}
 	},
-	plugins: [require('@tailwindcss/typography'), require('tailwind-scrollbar')]
+	plugins: [
+		require('@tailwindcss/typography'),
+		require('tailwind-scrollbar'),
+		require('@tailwindcss/line-clamp')
+	]
 }
 export default config
