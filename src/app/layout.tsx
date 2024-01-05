@@ -1,8 +1,9 @@
 import { Manrope } from 'next/font/google'
 import './globals.css'
 
-import { createClient } from '~/libs/prismicio'
+import { createClient, repositoryName } from '~/libs/prismicio'
 
+import { PrismicPreview } from '@prismicio/next'
 import { Footer } from '~/components/footer'
 import { Header } from '~/components/header'
 import { SearchButton } from '~/components/search-button'
@@ -58,6 +59,7 @@ export default async function RootLayout({
 				<div className="flex flex-col flex-1">{children}</div>
 				<SearchButton />
 				<Footer footerDocument={footerDocument} />
+				<PrismicPreview repositoryName={repositoryName} />
 			</body>
 		</html>
 	)
