@@ -1,6 +1,6 @@
 import { filter } from '@prismicio/client'
 import Link from 'next/link'
-import { notFound, redirect } from 'next/navigation'
+import { redirect } from 'next/navigation'
 
 import { ArticleCard } from '~/components/article-card'
 
