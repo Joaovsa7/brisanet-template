@@ -68,11 +68,12 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 						>
 							<CalendarIcon className="w-4 h-4" />
 							Atualizado em{' '}
-							{new Date(
-								`${document.first_publication_date}`
-							).toLocaleDateString('pt-BR', {
-								dateStyle: 'long'
-							})}
+							{new Date(`${document.last_publication_date}`).toLocaleDateString(
+								'pt-BR',
+								{
+									dateStyle: 'long'
+								}
+							)}
 						</time>
 						<span className="flex items-center gap-1.5">
 							<ClockIcon className="w-4 h-4" />
