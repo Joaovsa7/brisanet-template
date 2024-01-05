@@ -1,18 +1,18 @@
 'use client'
 import {
-	PopoverArrow,
-	PopoverClose,
-	PopoverContent,
-	PopoverPortal,
-	PopoverTrigger,
-	Root as PopoverRoot
-} from '@radix-ui/react-popover'
-import { SearchIcon, XIcon } from 'lucide-react'
+	DialogClose,
+	DialogContent,
+	DialogOverlay,
+	DialogPortal,
+	DialogTrigger,
+	Root
+} from '@radix-ui/react-dialog'
+import { SearchIcon } from 'lucide-react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { FormEvent, useState } from 'react'
 
 export function SearchButton() {
-	const [popoverIsOpen, setPopoverIsOpen] = useState(false)
+	const [searchIsOpen, setSearchIsOpen] = useState(false)
 
 	const router = useRouter()
 	const searchParams = useSearchParams()
@@ -31,57 +31,36 @@ export function SearchButton() {
 			return null
 		}
 
-		setPopoverIsOpen(false)
+		setSearchIsOpen(false)
 		router.push(`/busca?q=${query}`)
 	}
 
 	return (
-		<PopoverRoot open={popoverIsOpen} onOpenChange={setPopoverIsOpen}>
-			<PopoverTrigger asChild>
-				<button
-					type="button"
-					aria-label={popoverIsOpen ? 'Fechar pesquisa' : 'Abrir pesquisa'}
-					className="group shadow-xl fixed bottom-6 right-6 w-16 h-16 text-white bg-primary-500 hover:bg-primary-400 transition-colors
-         rounded-full flex items-center justify-center"
-				>
-					<SearchIcon className="w-8 h-8 group-data-[state=open]:hidden data-[state=closed]:block" />
-					<XIcon className="w-8 h-8 group-data-[state=closed]:hidden data-[state=open]:block" />
-				</button>
-			</PopoverTrigger>
+		<Root open={searchIsOpen} onOpenChange={setSearchIsOpen}>
+			<DialogTrigger
+				aria-label="Busca"
+				className="flex items-center gap-2 bg-primary-600 text-white h-10 rounded w-10 justify-center outline-none"
+			>
+				<SearchIcon className="w-6 h-6" />
+			</DialogTrigger>
 
-			<PopoverPortal>
-				<PopoverContent
-					align="end"
-					sideOffset={10}
-					className="rounded p-4 w-80 sm:w-96 bg-white shadow-xl focus:shadow-2xl will-change-[transform,opacity] data-[state=open]:data-[side=top]:animate-slideDownAndFade data-[state=open]:data-[side=right]:animate-slideLeftAndFade data-[state=open]:data-[side=bottom]:animate-slideUpAndFade data-[state=open]:data-[side=left]:animate-slideRightAndFade"
-				>
-					<span className="mb-2 block font-medium">O que você procura?</span>
-					<form onSubmit={handleSearch} className="flex gap-1">
-						<input
-							type="text"
-							name="q"
-							defaultValue={query ?? ''}
-							placeholder="Ex: Qual a melhor operadora de internet?"
-							className="px-3 h-10 border border-neutral-200 rounded w-full focus:border-neutral-500 focus:outline-none text-base"
-						/>
-						<button
-							type="submit"
-							className="flex items-center justify-center h-10 w-12 bg-primary-500 hover:bg-primary-400 transition-colors text-white rounded"
-						>
-							<SearchIcon className="w-5 h-5" />
-						</button>
+			<DialogPortal>
+				<DialogOverlay className="bg-black/70 data-[state=open]:animate-overlayShow fixed inset-0" />
+				<DialogContent className="absolute top-14 xl:top-16 left-0 right-0">
+					<form onSubmit={handleSearch}>
+						<label className="w-full flex items-center gap-2 p-4 bg-neutral-100 justify-center xl:h-16">
+							<SearchIcon className="w-5 h-5 text-neutral-500" />
+							<input
+								type="text"
+								name="q"
+								placeholder="Pesquise por operadoras de internet e saúde..."
+								className="w-full max-w-96 flex focus:border-neutral-500 focus:outline-none bg-transparent placeholder:text-neutral-500"
+							/>
+						</label>
 					</form>
-
-					<PopoverClose
-						className="rounded-full h-5 w-5 inline-flex items-center justify-center text-neutral-800 absolute top-4 right-4 hover:bg-neutral-200 focus:shadow-xl outline-none cursor-default"
-						aria-label="Fechar"
-					>
-						<XIcon className="w-4 h-4" />
-					</PopoverClose>
-
-					<PopoverArrow className="fill-white" />
-				</PopoverContent>
-			</PopoverPortal>
-		</PopoverRoot>
+					<DialogClose />
+				</DialogContent>
+			</DialogPortal>
+		</Root>
 	)
 }

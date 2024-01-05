@@ -4,13 +4,12 @@ import {
 	NavigationMenuList,
 	Root as NavigationMenuRoot
 } from '@radix-ui/react-navigation-menu'
-import Link from 'next/link'
 
 import { headerSlices } from '~/slices'
-import { Button } from './button'
 import { Container } from './container'
 import { Logo } from './logo'
 import { MenuButton } from './menu-button'
+import { SearchButton } from './search-button'
 
 import { HeaderDocument } from '../../prismicio-types'
 
@@ -18,8 +17,11 @@ export function Header({
 	headerDocument
 }: { headerDocument: HeaderDocument | null }) {
 	return (
-		<header className="bg-white border-b border-neutral-200 sticky top-0 left-0 right-0 z-50 py-2 xl:py-0">
-			<Container size="lg" className="flex items-center justify-between">
+		<header className="bg-white border-b border-neutral-200 sticky top-0 left-0 right-0 z-50 xl:py-0">
+			<Container
+				size="lg"
+				className="flex items-center justify-between h-14 xl:h-16"
+			>
 				<Logo />
 
 				<div className="flex items-center gap-4">
@@ -33,10 +35,7 @@ export function Header({
 					</NavigationMenuRoot>
 
 					<div className="flex gap-1">
-						<Button asChild size="sm">
-							<Link href="/">Avaliar Operadora</Link>
-						</Button>
-
+						<SearchButton />
 						<MenuButton />
 					</div>
 				</div>

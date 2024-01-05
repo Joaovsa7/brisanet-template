@@ -1,13 +1,15 @@
 import { filter } from '@prismicio/client'
+import { isFilled } from '@prismicio/client'
+import { CalendarIcon } from 'lucide-react'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
-import { ArticleCard } from '~/components/article-card'
+import { createClient } from '~/libs/prismicio'
 
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
-import { createClient } from '~/libs/prismicio'
-import { IArticleDocumentResponse } from '../blog/[slug]/page'
+
+import { ArticleDocument, PageDocument } from '../../../prismicio-types'
 
 interface IPageProps {
 	searchParams: {
@@ -24,13 +26,14 @@ export default async function SearchPage({ searchParams }: IPageProps) {
 
 	const client = createClient()
 
-	const { results, total_results_size } =
-		await client.get<IArticleDocumentResponse>({
-			filters: [
-				filter.at('document.type', 'article'),
-				filter.fulltext('document', query)
-			]
-		})
+	const { results, total_results_size } = await client.get<
+		ArticleDocument | PageDocument
+	>({
+		filters: [
+			filter.any('document.type', ['page', 'article']),
+			filter.fulltext('document', query)
+		]
+	})
 
 	return (
 		<main className="py-8">
@@ -45,20 +48,44 @@ export default async function SearchPage({ searchParams }: IPageProps) {
 								? 'resultados encontrados'
 								: 'resultado encontrado'}
 						</span>
-						<section>
-							<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-								{results.map((article) => {
-									return (
-										<Link
-											key={article.id}
-											href={`/blog/${article.uid}`}
-											className="flex"
+						<section className="grid gap-8 max-w-3xl">
+							{results.map((result) => {
+								const metaTitleIsFilled = isFilled.keyText(
+									result.data.meta_title
+								)
+								const { url } = result
+
+								if (!metaTitleIsFilled || !url) {
+									return null
+								}
+
+								return (
+									<Link
+										key={result.id}
+										href={`${url.replaceAll('--', '/')}`}
+										className="flex flex-col gap-2 group"
+									>
+										<h3 className="font-bold text-primary-500 group-hover:underline">
+											{result.data.meta_title}
+										</h3>
+										<p className="text-sm text-neutral-500 font-medium mb-2 line-clamp-2">
+											{result.data.meta_description}
+										</p>
+										<time
+											dateTime={result.last_publication_date}
+											className="flex items-center gap-1.5 text-sm text-neutral-500"
 										>
-											<ArticleCard article={article} />
-										</Link>
-									)
-								})}
-							</div>
+											<CalendarIcon className="w-4 h-4" />
+											Atualizado em:{' '}
+											{new Date(
+												`${result.last_publication_date}`
+											).toLocaleDateString('pt-BR', {
+												dateStyle: 'long'
+											})}
+										</time>
+									</Link>
+								)
+							})}
 						</section>
 					</>
 				) : (
