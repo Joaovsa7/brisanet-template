@@ -54,8 +54,7 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 		fetchOptions:
 			process.env.NODE_ENV === 'production'
 				? {
-						next: { tags: ['prismic'] },
-						cache: 'force-cache'
+						next: { tags: ['@portal-das-operadoras/prismic-tag'] }
 				  }
 				: { next: { revalidate: 5 } },
 		...config
