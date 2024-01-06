@@ -36,9 +36,9 @@ function AccordionTrigger({
 				className
 			)}
 		>
-			<p className="group-data-[state=open]:text-primary-500 group-hover-[state=open]:text-primary-500 transition-colors duration-300">
+			<h3 className="group-data-[state=open]:text-primary-500 group-hover-[state=open]:text-primary-500 transition-colors duration-300">
 				{children}
-			</p>
+			</h3>
 			<ChevronDownIcon className="text-neutral-400 h-5 w-5 group-data-[state=open]:rotate-180 group-data-[state=open]:text-primary-500 group-hover:text-primary-500 group-focus:text-primary-500 ease-out transition-all duration-300" />
 		</Trigger>
 	)
