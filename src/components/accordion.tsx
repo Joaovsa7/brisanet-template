@@ -36,10 +36,10 @@ function AccordionTrigger({
 				className
 			)}
 		>
-			<h3 className="group-data-[state=open]:text-primary-500 group-hover-[state=open]:text-primary-500 transition-colors duration-300">
+			<h3 className="text-left group-data-[state=open]:text-primary-500 group-hover-[state=open]:text-primary-500 transition-colors duration-300">
 				{children}
 			</h3>
-			<ChevronDownIcon className="text-neutral-400 h-5 w-5 group-data-[state=open]:rotate-180 group-data-[state=open]:text-primary-500 group-hover:text-primary-500 group-focus:text-primary-500 ease-out transition-all duration-300" />
+			<ChevronDownIcon className="text-neutral-400 max-w-6 max-h-6 min-h-6 min-w-6 group-data-[state=open]:rotate-180 group-data-[state=open]:text-primary-500 group-hover:text-primary-500 group-focus:text-primary-500 ease-out transition-all duration-300" />
 		</Trigger>
 	)
 }

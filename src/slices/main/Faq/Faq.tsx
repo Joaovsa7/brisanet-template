@@ -41,7 +41,7 @@ export default async function Faq({ slice }: FaqProps) {
 						{titleIsFilled && (
 							<RichText
 								field={title}
-								className="text-center prose-headings:m-0"
+								className="text-center prose-headings:m-0 mx-auto"
 							/>
 						)}
 						<AccordionQuestions items={frequently_asked_questions} />
@@ -75,7 +75,7 @@ export default async function Faq({ slice }: FaqProps) {
 					{titleIsFilled && (
 						<RichText
 							field={slice.primary.title}
-							className="text-center prose-headings:m-0"
+							className="text-center prose-headings:m-0 mx-auto"
 						/>
 					)}
 					<AccordionQuestions items={items} />
