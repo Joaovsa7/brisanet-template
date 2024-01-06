@@ -39,6 +39,7 @@ export function Author({
 	const articlesIsPopulated = authorArticles.length > 0
 	const authorsIsPopulated = otherAuthors.length > 0
 
+	const bioIsFilled = isFilled.richText(document.data.bio)
 	const socialNetworksIsFilled = isFilled.group(document.data.social_networks)
 
 	return (
@@ -66,9 +67,13 @@ export function Author({
 						</div>
 					</div>
 
-					<h3 className="text-xl font-bold mt-8">Sobre o autor(a)</h3>
+					{bioIsFilled && (
+						<>
+							<h3 className="text-xl font-bold mt-8">Sobre o autor(a)</h3>
 
-					<RichText field={document.data.bio} className="block" />
+							<RichText field={document.data.bio} className="block" />
+						</>
+					)}
 
 					{socialNetworksIsFilled && (
 						<>
@@ -77,16 +82,22 @@ export function Author({
 							</h3>
 
 							<ul className="mt-4">
-								{document.data.social_networks.map((socialNetwork) => (
-									<li key={socialNetwork.name}>
-										<PrismicNextLink
-											field={socialNetwork.link}
-											className="w-10 h-10 bg-neutral-200 rounded-full overflow-hidden flex items-center justify-center transition-transform duration-300 hover:-translate-y-0.5"
-										>
-											{icons[socialNetwork.name ?? 'Facebook']}
-										</PrismicNextLink>
-									</li>
-								))}
+								{document.data.social_networks.map((socialNetwork) => {
+									if (!socialNetwork.name) {
+										return null
+									}
+
+									return (
+										<li key={socialNetwork.name}>
+											<PrismicNextLink
+												field={socialNetwork.link}
+												className="w-10 h-10 bg-neutral-200 rounded-full overflow-hidden flex items-center justify-center transition-transform duration-300 hover:-translate-y-0.5"
+											>
+												{icons[socialNetwork.name]}
+											</PrismicNextLink>
+										</li>
+									)
+								})}
 							</ul>
 						</>
 					)}
