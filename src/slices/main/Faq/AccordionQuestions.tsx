@@ -1,13 +1,18 @@
 'use client'
+import { KeyTextField, RichTextField } from '@prismicio/client'
+
 import { Accordion } from '~/components/accordion'
 import { RichText } from '~/components/rich-text'
 
-import { FaqDocumentDataFrequentlyAskedQuestionsItem } from '../../../../prismicio-types'
+export interface IAccordionQuestion {
+	question: KeyTextField
+	answer: RichTextField
+}
 
 export function AccordionQuestions({
 	items
 }: {
-	items: FaqDocumentDataFrequentlyAskedQuestionsItem[]
+	items: IAccordionQuestion[]
 }) {
 	return (
 		<Accordion.Root type="single" className="mt-8">

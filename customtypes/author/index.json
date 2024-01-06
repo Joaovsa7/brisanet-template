@@ -90,6 +90,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "you_tube_video": {
+              "type": "SharedSlice"
+            },
             "banner": {
               "type": "SharedSlice"
             },

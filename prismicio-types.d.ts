@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ArticleDocumentDataSlicesSlice =
+  | YouTubeVideoSlice
   | InfoCardsSlice
   | TableSlice
   | FaqSlice
@@ -276,6 +277,7 @@ export interface AuthorDocumentDataSocialNetworksItem {
 }
 
 type AuthorDocumentDataSlicesSlice =
+  | YouTubeVideoSlice
   | BannerSlice
   | InfoCardsSlice
   | TableSlice
@@ -1537,14 +1539,39 @@ export type ContentBlockSlice = prismic.SharedSlice<
  */
 export interface FaqSliceDefaultPrimary {
   /**
-   * Faq field in *Faq → Primary*
+   * Título field in *Faq → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: faq.primary.faq
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: faq.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  faq: prismic.ContentRelationshipField<"faq">;
+  title: prismic.RichTextField;
+}
+
+/**
+ * Primary content in *Faq → Items*
+ */
+export interface FaqSliceDefaultItem {
+  /**
+   * Pergunta field in *Faq → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.items[].question
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  question: prismic.KeyTextField;
+
+  /**
+   * Resposta field in *Faq → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.items[].anwser
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  anwser: prismic.RichTextField;
 }
 
 /**
@@ -1557,13 +1584,41 @@ export interface FaqSliceDefaultPrimary {
 export type FaqSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<FaqSliceDefaultPrimary>,
+  Simplify<FaqSliceDefaultItem>
+>;
+
+/**
+ * Primary content in *Faq → Primary*
+ */
+export interface FaqSliceRelationalPrimary {
+  /**
+   * Faq field in *Faq → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: faq.primary.faq
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  faq: prismic.ContentRelationshipField<"faq">;
+}
+
+/**
+ * Relacional variation for Faq Slice
+ *
+ * - **API ID**: `relational`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FaqSliceRelational = prismic.SharedSliceVariation<
+  "relational",
+  Simplify<FaqSliceRelationalPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Faq*
  */
-type FaqSliceVariation = FaqSliceDefault;
+type FaqSliceVariation = FaqSliceDefault | FaqSliceRelational;
 
 /**
  * Faq Shared Slice
@@ -2061,8 +2116,11 @@ declare module "@prismicio/client" {
       ContentBlockSliceDefault,
       FaqSlice,
       FaqSliceDefaultPrimary,
+      FaqSliceDefaultItem,
+      FaqSliceRelationalPrimary,
       FaqSliceVariation,
       FaqSliceDefault,
+      FaqSliceRelational,
       InfoCardsSlice,
       InfoCardsSliceDefaultItem,
       InfoCardsSliceVariation,
