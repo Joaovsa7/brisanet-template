@@ -1,6 +1,9 @@
 import { SliceZone } from '@prismicio/react'
 import { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
+import { Breadcrumb } from '~/components/breadcrumb'
+import { Container } from '~/components/container'
+import { PageInfo } from '~/components/page-info'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
 
@@ -65,7 +68,15 @@ export default async function Page({ params }: IPageProps) {
 
 		const document = await client.getByUID('page', uid, { fetchLinks })
 
-		return <SliceZone slices={document.data.slices} components={mainSlices} />
+		return (
+			<main className="py-8">
+				<PageInfo updatedAt={document.last_publication_date} />
+				<Container size="lg">
+					<Breadcrumb className="mb-10" />
+				</Container>
+				<SliceZone slices={document.data.slices} components={mainSlices} />
+			</main>
+		)
 	} catch {
 		return notFound()
 	}
