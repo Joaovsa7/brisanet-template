@@ -24,7 +24,7 @@ export function Header({
 			>
 				<Logo />
 
-				<div className="flex items-center gap-4">
+				<div className="flex items-center">
 					<NavigationMenuRoot className="hidden relative xl:block">
 						<NavigationMenuList className="flex items-center justify-center">
 							<SliceZone
@@ -34,7 +34,7 @@ export function Header({
 						</NavigationMenuList>
 					</NavigationMenuRoot>
 
-					<div className="flex gap-1">
+					<div className="flex">
 						<SearchButton />
 						<MenuButton />
 					</div>

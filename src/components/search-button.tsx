@@ -15,9 +15,6 @@ export function SearchButton() {
 	const [searchIsOpen, setSearchIsOpen] = useState(false)
 
 	const router = useRouter()
-	const searchParams = useSearchParams()
-
-	const query = searchParams.get('q')
 
 	function handleSearch(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault()
@@ -38,8 +35,10 @@ export function SearchButton() {
 	return (
 		<Root open={searchIsOpen} onOpenChange={setSearchIsOpen}>
 			<DialogTrigger
-				aria-label="Busca"
-				className="flex items-center gap-2 bg-primary-600 text-white h-10 rounded w-10 justify-center outline-none"
+				aria-label={
+					searchIsOpen ? 'Fechar barra de pesquisa' : 'Abrir barra de pesquisa'
+				}
+				className="flex items-center justify-center gap-2 h-10 w-10 text-neutral-500 xl:hover:text-primary-500 xl:h-16"
 			>
 				<SearchIcon className="w-6 h-6" />
 			</DialogTrigger>
@@ -48,7 +47,7 @@ export function SearchButton() {
 				<DialogOverlay className="bg-black/70 data-[state=open]:animate-overlayShow fixed inset-0" />
 				<DialogContent className="absolute top-14 xl:top-16 left-0 right-0">
 					<form onSubmit={handleSearch}>
-						<label className="w-full flex items-center gap-2 p-4 bg-neutral-100 justify-center xl:h-16">
+						<label className="w-full flex items-center gap-2 p-6 bg-neutral-100 justify-center xl:h-16">
 							<SearchIcon className="w-5 h-5 text-neutral-500" />
 							<input
 								type="text"
