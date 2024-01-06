@@ -24,15 +24,6 @@
                 "label": "Destino",
                 "placeholder": ""
               }
-            },
-            "permanent": {
-              "type": "Boolean",
-              "config": {
-                "label": "Permanente",
-                "default_value": false,
-                "placeholder_true": "true",
-                "placeholder_false": "false"
-              }
             }
           }
         }

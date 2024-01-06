@@ -1149,17 +1149,6 @@ export interface RedirectsDocumentDataRedirectsItem {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   destination: prismic.KeyTextField;
-
-  /**
-   * Permanente field in *Redirecionamentos → Redirecionamentos*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: redirects.redirects[].permanent
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  permanent: prismic.BooleanField;
 }
 
 /**

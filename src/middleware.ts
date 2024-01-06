@@ -17,7 +17,9 @@ export async function middleware(request: NextRequest) {
 			return NextResponse.next()
 		}
 
-		return NextResponse.redirect(String(redirect.destination))
+		return NextResponse.redirect(String(redirect.destination), {
+			status: 301
+		})
 	} catch {
 		return NextResponse.next()
 	}
