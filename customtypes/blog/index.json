@@ -65,6 +65,13 @@
           "placeholder_true": "true",
           "placeholder_false": "false"
         }
+      },
+      "google_structured_data": {
+        "type": "Text",
+        "config": {
+          "label": "Dados Estruturados (Schema.org)",
+          "placeholder": ""
+        }
       }
     }
   }

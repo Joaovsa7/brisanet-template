@@ -1,6 +1,6 @@
 {
   "id": "layout",
-  "label": "Layout Principal",
+  "label": "Layout",
   "format": "custom",
   "repeatable": false,
   "status": true,

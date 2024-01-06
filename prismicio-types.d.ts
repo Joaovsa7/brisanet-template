@@ -125,6 +125,17 @@ interface ArticleDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#number
    */
   reading_time: prismic.NumberField;
+
+  /**
+   * Dados Estruturados (Schema.org) field in *Artigo*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: article.google_structured_data
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  google_structured_data: prismic.KeyTextField;
 }
 
 /**
@@ -411,6 +422,17 @@ interface AuthorDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   robots_follow: prismic.BooleanField;
+
+  /**
+   * Dados Estruturados (Schema.org) field in *Autor(a)*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: author.google_structured_data
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  google_structured_data: prismic.KeyTextField;
 }
 
 /**
@@ -491,6 +513,17 @@ interface BlogDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   robots_follow: prismic.BooleanField;
+
+  /**
+   * Dados Estruturados (Schema.org) field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.google_structured_data
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  google_structured_data: prismic.KeyTextField;
 }
 
 /**
@@ -794,6 +827,17 @@ interface HomeDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   robots_follow: prismic.BooleanField;
+
+  /**
+   * Dados Estruturados (Schema.org) field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.google_structured_data
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  google_structured_data: prismic.KeyTextField;
 }
 
 /**
@@ -809,11 +853,11 @@ export type HomeDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
 
 /**
- * Item in *Layout Principal → Meta Tags*
+ * Item in *Layout → Meta Tags*
  */
 export interface LayoutDocumentDataMetaTagsItem {
   /**
-   * Propriedade field in *Layout Principal → Meta Tags*
+   * Propriedade field in *Layout → Meta Tags*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -823,7 +867,7 @@ export interface LayoutDocumentDataMetaTagsItem {
   property: prismic.KeyTextField;
 
   /**
-   * Conteúdo field in *Layout Principal → Meta Tags*
+   * Conteúdo field in *Layout → Meta Tags*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -834,11 +878,11 @@ export interface LayoutDocumentDataMetaTagsItem {
 }
 
 /**
- * Content for Layout Principal documents
+ * Content for Layout documents
  */
 interface LayoutDocumentData {
   /**
-   * Meta Tags field in *Layout Principal*
+   * Meta Tags field in *Layout*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -850,7 +894,7 @@ interface LayoutDocumentData {
 }
 
 /**
- * Layout Principal document from Prismic
+ * Layout document from Prismic
  *
  * - **API ID**: `layout`
  * - **Repeatable**: `false`
@@ -1018,24 +1062,6 @@ export type OperatorDocument<Lang extends string = string> =
     Lang
   >;
 
-interface OperatorLayoutDocumentData {}
-
-/**
- * Layout de Operadora document from Prismic
- *
- * - **API ID**: `operator_layout`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type OperatorLayoutDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<OperatorLayoutDocumentData>,
-    "operator_layout",
-    Lang
-  >;
-
 type PageDocumentDataSlicesSlice =
   | YouTubeVideoSlice
   | TableSlice
@@ -1114,6 +1140,17 @@ interface PageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   robots_follow: prismic.BooleanField;
+
+  /**
+   * Dados Estruturados (Schema.org) field in *Página*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: page.google_structured_data
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  google_structured_data: prismic.KeyTextField;
 }
 
 /**
@@ -1228,7 +1265,6 @@ export type AllDocumentTypes =
   | LayoutDocument
   | MostReadArticlesDocument
   | OperatorDocument
-  | OperatorLayoutDocument
   | PageDocument
   | RedirectsDocument
   | TableDocument;
@@ -2086,8 +2122,6 @@ declare module "@prismicio/client" {
       OperatorDocument,
       OperatorDocumentData,
       OperatorDocumentDataSlicesSlice,
-      OperatorLayoutDocument,
-      OperatorLayoutDocumentData,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,

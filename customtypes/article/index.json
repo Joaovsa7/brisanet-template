@@ -115,6 +115,13 @@
           "label": "Tempo de Leitura",
           "placeholder": ""
         }
+      },
+      "google_structured_data": {
+        "type": "Text",
+        "config": {
+          "label": "Dados Estruturados (Schema.org)",
+          "placeholder": ""
+        }
       }
     }
   }

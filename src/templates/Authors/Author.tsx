@@ -12,6 +12,7 @@ import { IArticleDocumentResponse } from '~/app/blog/[slug]/page'
 import { ArticleCard } from '~/components/article-card'
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
+import { GoogleStructuredData } from '~/components/google-structured-data'
 import { PageInfo } from '~/components/page-info'
 import { RichText } from '~/components/rich-text'
 
@@ -45,6 +46,7 @@ export function Author({
 	return (
 		<main className="py-8">
 			<PageInfo updatedAt={document.last_publication_date} />
+			<GoogleStructuredData data={document.data.google_structured_data} />
 			<Container size="lg">
 				<Breadcrumb className="mb-10" />
 

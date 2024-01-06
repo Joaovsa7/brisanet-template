@@ -9,6 +9,7 @@ import { ArticleCard } from '~/components/article-card'
 import { ArticleShareButtons } from '~/components/article-share-buttons'
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
+import { GoogleStructuredData } from '~/components/google-structured-data'
 import { RichText } from '~/components/rich-text'
 import { mainSlices } from '~/slices'
 
@@ -56,6 +57,8 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 					})
 				}}
 			/>
+
+			<GoogleStructuredData data={document.data.google_structured_data} />
 
 			<main className="py-8">
 				<Container size="sm">
