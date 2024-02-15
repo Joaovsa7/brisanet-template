@@ -1,5 +1,5 @@
 {
-	"repositoryName": "portal-das-operadoras",
+	"repositoryName": "telefone-da-brisanet",
 	"adapter": "@slicemachine/adapter-next",
 	"libraries": [
 		"./src/slices/main",
