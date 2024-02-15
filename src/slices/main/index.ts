@@ -8,6 +8,5 @@ export const components = {
 	content_block: dynamic(() => import('./ContentBlock')),
 	faq: dynamic(() => import('./Faq')),
 	info_cards: dynamic(() => import('./InfoCards')),
-	table: dynamic(() => import('./Table')),
 	you_tube_video: dynamic(() => import('./YouTubeVideo'))
 }

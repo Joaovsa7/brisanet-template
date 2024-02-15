@@ -7,7 +7,6 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 type ArticleDocumentDataSlicesSlice =
   | YouTubeVideoSlice
   | InfoCardsSlice
-  | TableSlice
   | FaqSlice
   | ContentBlockSlice
   | CallToActionSlice;
@@ -157,7 +156,6 @@ export type ArticleDocument<Lang extends string = string> =
 type ArticleCategoryDocumentDataSlicesSlice =
   | InfoCardsSlice
   | BannerSlice
-  | TableSlice
   | ContentBlockSlice
   | FaqSlice
   | CallToActionSlice;
@@ -291,7 +289,6 @@ type AuthorDocumentDataSlicesSlice =
   | YouTubeVideoSlice
   | BannerSlice
   | InfoCardsSlice
-  | TableSlice
   | FaqSlice
   | ContentBlockSlice
   | CallToActionSlice;
@@ -448,7 +445,6 @@ export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
 type BlogDocumentDataSlicesSlice =
-  | TableSlice
   | InfoCardsSlice
   | BannerSlice
   | FaqSlice
@@ -539,11 +535,11 @@ export type BlogDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<BlogDocumentData>, "blog", Lang>;
 
 /**
- * Content for CallToAction documents
+ * Content for Call to Action documents
  */
 interface CallToActionDocumentData {
   /**
-   * Conteúdo field in *CallToAction*
+   * Conteúdo field in *Call to Action*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -554,7 +550,7 @@ interface CallToActionDocumentData {
   content: prismic.RichTextField;
 
   /**
-   * CTA Label field in *CallToAction*
+   * CTA Label field in *Call to Action*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -565,7 +561,7 @@ interface CallToActionDocumentData {
   cta_label: prismic.KeyTextField;
 
   /**
-   * CTA Link field in *CallToAction*
+   * CTA Link field in *Call to Action*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
@@ -577,7 +573,7 @@ interface CallToActionDocumentData {
 }
 
 /**
- * CallToAction document from Prismic
+ * Call to Action document from Prismic
  *
  * - **API ID**: `call_to_action`
  * - **Repeatable**: `true`
@@ -593,11 +589,11 @@ export type CallToActionDocument<Lang extends string = string> =
   >;
 
 /**
- * Item in *Faq → Perguntas Frequentes*
+ * Item in *Perguntas Frequentes → Perguntas Frequentes*
  */
 export interface FaqDocumentDataFrequentlyAskedQuestionsItem {
   /**
-   * Pergunta field in *Faq → Perguntas Frequentes*
+   * Pergunta field in *Perguntas Frequentes → Perguntas Frequentes*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
@@ -607,7 +603,7 @@ export interface FaqDocumentDataFrequentlyAskedQuestionsItem {
   question: prismic.KeyTextField;
 
   /**
-   * Resposta field in *Faq → Perguntas Frequentes*
+   * Resposta field in *Perguntas Frequentes → Perguntas Frequentes*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -618,11 +614,11 @@ export interface FaqDocumentDataFrequentlyAskedQuestionsItem {
 }
 
 /**
- * Content for Faq documents
+ * Content for Perguntas Frequentes documents
  */
 interface FaqDocumentData {
   /**
-   * Título field in *Faq*
+   * Título field in *Perguntas Frequentes*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
@@ -633,7 +629,7 @@ interface FaqDocumentData {
   title: prismic.RichTextField;
 
   /**
-   * Perguntas Frequentes field in *Faq*
+   * Perguntas Frequentes field in *Perguntas Frequentes*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
@@ -647,7 +643,7 @@ interface FaqDocumentData {
 }
 
 /**
- * Faq document from Prismic
+ * Perguntas Frequentes document from Prismic
  *
  * - **API ID**: `faq`
  * - **Repeatable**: `true`
@@ -762,7 +758,6 @@ export type HeaderDocument<Lang extends string = string> =
 
 type HomeDocumentDataSlicesSlice =
   | YouTubeVideoSlice
-  | TableSlice
   | BannerSlice
   | InfoCardsSlice
   | CallToActionSlice
@@ -958,113 +953,8 @@ export type MostReadArticlesDocument<Lang extends string = string> =
     Lang
   >;
 
-type OperatorDocumentDataSlicesSlice =
-  | BannerSlice
-  | TableSlice
-  | InfoCardsSlice
-  | FaqSlice
-  | ContentBlockSlice
-  | CallToActionSlice;
-
-/**
- * Content for Operadora documents
- */
-interface OperatorDocumentData {
-  /**
-   * Nome field in *Operadora*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: operator.name
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField;
-
-  /**
-   * Categoria field in *Operadora*
-   *
-   * - **Field Type**: Select
-   * - **Placeholder**: *None*
-   * - **API ID Path**: operator.category
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#select
-   */
-  category: prismic.SelectField<"Internet" | "Saúde">;
-
-  /**
-   * Logo field in *Operadora*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: operator.logo
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  logo: prismic.ImageField<never>;
-
-  /**
-   * Slice Zone field in *Operadora*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: operator.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<OperatorDocumentDataSlicesSlice> /**
-   * Meta Description field in *Operadora*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
-   * - **API ID Path**: operator.meta_description
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Meta Image field in *Operadora*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: operator.meta_image
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Operadora*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: operator.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
-}
-
-/**
- * Operadora document from Prismic
- *
- * - **API ID**: `operator`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type OperatorDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<OperatorDocumentData>,
-    "operator",
-    Lang
-  >;
-
 type PageDocumentDataSlicesSlice =
   | YouTubeVideoSlice
-  | TableSlice
   | BannerSlice
   | CallToActionSlice
   | ContentBlockSlice
@@ -1222,36 +1112,6 @@ export type RedirectsDocument<Lang extends string = string> =
     Lang
   >;
 
-type TableDocumentDataSlicesSlice = TableRowSlice;
-
-/**
- * Content for Tabela documents
- */
-interface TableDocumentData {
-  /**
-   * Slice Zone field in *Tabela*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: table.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<TableDocumentDataSlicesSlice>;
-}
-
-/**
- * Tabela document from Prismic
- *
- * - **API ID**: `table`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type TableDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<TableDocumentData>, "table", Lang>;
-
 export type AllDocumentTypes =
   | ArticleDocument
   | ArticleCategoryDocument
@@ -1264,10 +1124,8 @@ export type AllDocumentTypes =
   | HomeDocument
   | LayoutDocument
   | MostReadArticlesDocument
-  | OperatorDocument
   | PageDocument
-  | RedirectsDocument
-  | TableDocument;
+  | RedirectsDocument;
 
 /**
  * Primary content in *Banner → Primary*
@@ -1731,48 +1589,6 @@ export type InfoCardsSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Table → Primary*
- */
-export interface TableSliceDefaultPrimary {
-  /**
-   * Tabela field in *Table → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: table.primary.table
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  table: prismic.ContentRelationshipField<"table">;
-}
-
-/**
- * Default variation for Table Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TableSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<TableSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Table*
- */
-type TableSliceVariation = TableSliceDefault;
-
-/**
- * Table Shared Slice
- *
- * - **API ID**: `table`
- * - **Description**: Table
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TableSlice = prismic.SharedSlice<"table", TableSliceVariation>;
-
-/**
  * Primary content in *YouTubeVideo → Primary*
  */
 export interface YouTubeVideoSliceDefaultPrimary {
@@ -1865,79 +1681,6 @@ type YouTubeVideoSliceVariation = YouTubeVideoSliceDefault;
 export type YouTubeVideoSlice = prismic.SharedSlice<
   "you_tube_video",
   YouTubeVideoSliceVariation
->;
-
-/**
- * Primary content in *TableRow → Items*
- */
-export interface TableRowSliceDefaultItem {
-  /**
-   * Valor field in *TableRow → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: table_row.items[].value
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  value: prismic.RichTextField;
-}
-
-/**
- * Head variation for TableRow Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TableRowSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Record<string, never>,
-  Simplify<TableRowSliceDefaultItem>
->;
-
-/**
- * Primary content in *TableRow → Items*
- */
-export interface TableRowSliceBodyItem {
-  /**
-   * Valor field in *TableRow → Items*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: table_row.items[].value
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  value: prismic.RichTextField;
-}
-
-/**
- * Body variation for TableRow Slice
- *
- * - **API ID**: `body`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TableRowSliceBody = prismic.SharedSliceVariation<
-  "body",
-  Record<string, never>,
-  Simplify<TableRowSliceBodyItem>
->;
-
-/**
- * Slice variation for *TableRow*
- */
-type TableRowSliceVariation = TableRowSliceDefault | TableRowSliceBody;
-
-/**
- * TableRow Shared Slice
- *
- * - **API ID**: `table_row`
- * - **Description**: TableRow
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type TableRowSlice = prismic.SharedSlice<
-  "table_row",
-  TableRowSliceVariation
 >;
 
 /**
@@ -2119,18 +1862,12 @@ declare module "@prismicio/client" {
       MostReadArticlesDocument,
       MostReadArticlesDocumentData,
       MostReadArticlesDocumentDataArticlesItem,
-      OperatorDocument,
-      OperatorDocumentData,
-      OperatorDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       RedirectsDocument,
       RedirectsDocumentData,
       RedirectsDocumentDataRedirectsItem,
-      TableDocument,
-      TableDocumentData,
-      TableDocumentDataSlicesSlice,
       AllDocumentTypes,
       BannerSlice,
       BannerSliceDefaultPrimary,
@@ -2159,20 +1896,10 @@ declare module "@prismicio/client" {
       InfoCardsSliceDefaultItem,
       InfoCardsSliceVariation,
       InfoCardsSliceDefault,
-      TableSlice,
-      TableSliceDefaultPrimary,
-      TableSliceVariation,
-      TableSliceDefault,
       YouTubeVideoSlice,
       YouTubeVideoSliceDefaultPrimary,
       YouTubeVideoSliceVariation,
       YouTubeVideoSliceDefault,
-      TableRowSlice,
-      TableRowSliceDefaultItem,
-      TableRowSliceBodyItem,
-      TableRowSliceVariation,
-      TableRowSliceDefault,
-      TableRowSliceBody,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
       MenuItemSliceDefaultItem,

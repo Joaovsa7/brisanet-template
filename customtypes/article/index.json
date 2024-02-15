@@ -60,9 +60,6 @@
             "info_cards": {
               "type": "SharedSlice"
             },
-            "table": {
-              "type": "SharedSlice"
-            },
             "faq": {
               "type": "SharedSlice"
             },

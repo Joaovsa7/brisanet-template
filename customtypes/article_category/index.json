@@ -41,9 +41,6 @@
             "banner": {
               "type": "SharedSlice"
             },
-            "table": {
-              "type": "SharedSlice"
-            },
             "content_block": {
               "type": "SharedSlice"
             },

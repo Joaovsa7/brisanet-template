@@ -1,6 +1,6 @@
 {
   "id": "call_to_action",
-  "label": "CallToAction",
+  "label": "Call to Action",
   "format": "custom",
   "repeatable": true,
   "status": true,

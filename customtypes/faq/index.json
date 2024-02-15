@@ -1,6 +1,6 @@
 {
   "id": "faq",
-  "label": "Faq",
+  "label": "Perguntas Frequentes",
   "format": "custom",
   "repeatable": true,
   "status": true,
