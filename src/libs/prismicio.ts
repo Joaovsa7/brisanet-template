@@ -1,12 +1,6 @@
 import * as prismic from '@prismicio/client'
 import * as prismicNext from '@prismicio/next'
-import config from '../../slicemachine.config.json'
-
-/**
- * The project's Prismic repository name.
- */
-export const repositoryName =
-	process.env.NEXT_PUBLIC_PRISMIC_ENVIRONMENT || config.repositoryName
+import { env } from '~/config/env'
 
 /**
  * A list of Route Resolver objects that define how a document's `url` field is resolved.
@@ -48,8 +42,8 @@ const routes: prismic.ClientConfig['routes'] = [
  * @param config - Configuration for the Prismic client.
  */
 export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
-	const client = prismic.createClient(repositoryName, {
-		accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+	const client = prismic.createClient(env.BASE_URL, {
+		accessToken: env.PRISMIC_ACCESS_TOKEN,
 		routes,
 		fetchOptions:
 			process.env.NODE_ENV === 'production'
@@ -80,6 +74,5 @@ export const fetchLinks = [
 	'call_to_action.cta_label',
 	'faq.title',
 	'faq.frequently_asked_questions',
-	'table.slices',
 	'most_read_articles.articles'
 ]

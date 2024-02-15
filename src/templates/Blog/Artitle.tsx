@@ -11,6 +11,7 @@ import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { GoogleStructuredData } from '~/components/google-structured-data'
 import { RichText } from '~/components/rich-text'
+import { env } from '~/config/env'
 import { mainSlices } from '~/slices'
 
 interface IArticleProps {
@@ -32,7 +33,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 						'@type': 'Article',
 						mainEntityOfPage: {
 							'@type': 'WebPage',
-							'@id': `${process.env.HOST}/blog/${document.uid}`
+							'@id': `${env.BASE_URL}/blog/${document.uid}`
 						},
 						headline: document.data.meta_title,
 						description: document.data.meta_description,
@@ -41,7 +42,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 							'@type': 'Person',
 							name: document.data.author?.data?.name,
 							url: isFilled.contentRelationship(document.data.author)
-								? `${process.env.HOST}/autores/${document.data.author.uid}`
+								? `${env.BASE_URL}/autores/${document.data.author.uid}`
 								: ''
 						},
 						publisher: {
@@ -122,7 +123,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 
 						<ArticleShareButtons
 							title={asText(document.data.title)}
-							url={`${process.env.HOST}/blog/${document.uid}`}
+							url={`${env.BASE_URL}/blog/${document.uid}`}
 						/>
 					</div>
 

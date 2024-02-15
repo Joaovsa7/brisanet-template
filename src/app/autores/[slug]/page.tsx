@@ -6,6 +6,7 @@ import { createClient, fetchLinks } from '~/libs/prismicio'
 
 import { IArticleDocumentResponse } from '~/app/blog/[slug]/page'
 
+import { env } from '~/config/env'
 import { Author } from '~/templates/Authors'
 
 interface IPageProps {
@@ -30,7 +31,7 @@ export async function generateMetadata(
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
 
-		const url = `https://${process.env.HOST}/autores/${slug}`
+		const url = `${env.BASE_URL}/autores/${slug}`
 
 		const parentMetadata = await parent
 

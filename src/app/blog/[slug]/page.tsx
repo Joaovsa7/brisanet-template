@@ -1,6 +1,7 @@
 import { Content, filter } from '@prismicio/client'
 import { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
+import { env } from '~/config/env'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
 
@@ -50,7 +51,7 @@ export async function generateMetadata(
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
 
-		const url = `https://${process.env.HOST}/blog/${slug}`
+		const url = `${env.BASE_URL}/blog/${slug}`
 
 		const parentMetadata = await parent
 

@@ -5,6 +5,7 @@ import { createClient, fetchLinks } from '~/libs/prismicio'
 
 import { IArticleDocumentResponse } from './[slug]/page'
 
+import { env } from '~/config/env'
 import { Blog } from '~/templates/Blog'
 
 export async function generateMetadata(
@@ -22,7 +23,7 @@ export async function generateMetadata(
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
 
-		const url = `https://${process.env.HOST}/blog`
+		const url = `${env.BASE_URL}/blog`
 
 		const parentMetadata = await parent
 

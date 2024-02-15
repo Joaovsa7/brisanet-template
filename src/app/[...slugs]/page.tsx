@@ -5,6 +5,7 @@ import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { GoogleStructuredData } from '~/components/google-structured-data'
 import { PageInfo } from '~/components/page-info'
+import { env } from '~/config/env'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
 
@@ -33,7 +34,7 @@ export async function generateMetadata(
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
 
-		const url = `https://${process.env.HOST}/${slugs.join('/')}`
+		const url = `${env.BASE_URL}/${slugs.join('/')}`
 
 		const parentMetadata = await parent
 

@@ -2,6 +2,8 @@ import { ResolvingMetadata } from 'next'
 
 import { notFound } from 'next/navigation'
 
+import { env } from '~/config/env'
+
 import { createClient, fetchLinks } from '~/libs/prismicio'
 
 import { Home } from '~/templates/Home'
@@ -21,8 +23,6 @@ export async function generateMetadata(
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
 
-		const url = `https://${process.env.HOST}`
-
 		const parentMetadata = await parent
 
 		return {
@@ -37,10 +37,10 @@ export async function generateMetadata(
 				...parentMetadata.openGraph,
 				title: meta_title,
 				description: meta_description,
-				url
+				url: env.BASE_URL
 			},
 			alternates: {
-				canonical: url
+				canonical: env.BASE_URL
 			}
 		}
 	} catch {

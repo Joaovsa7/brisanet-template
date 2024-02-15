@@ -1,3 +1,4 @@
+import { env } from '~/config/env'
 import { createClient } from '~/libs/prismicio'
 
 export default async function sitemap() {
@@ -16,7 +17,7 @@ export default async function sitemap() {
 
 	if (homePage.status === 'fulfilled' && homePage.value.data.robots_index) {
 		sitemaps.push({
-			url: `https://${process.env.HOST}`,
+			url: env.BASE_URL,
 			lastModified: homePage.value.last_publication_date,
 			changeFrequency: 'weekly',
 			priority: 0.9
@@ -25,7 +26,7 @@ export default async function sitemap() {
 
 	if (blogPage.status === 'fulfilled' && blogPage.value.data.robots_index) {
 		sitemaps.push({
-			url: `https://${process.env.HOST}/blog`,
+			url: `${env.BASE_URL}/blog`,
 			lastModified: blogPage.value.last_publication_date,
 			changeFrequency: 'weekly',
 			priority: 0.9
@@ -36,7 +37,7 @@ export default async function sitemap() {
 		const articlesSitemap = articlePages.value
 			.filter((document) => document.data.robots_index)
 			.map((document) => ({
-				url: `https://${process.env.HOST}/blog/${document.uid}`,
+				url: `${env.BASE_URL}/blog/${document.uid}`,
 				lastModified: document.last_publication_date,
 				changeFrequency: 'weekly',
 				priority: 0.9
@@ -49,10 +50,7 @@ export default async function sitemap() {
 		const articlesSitemap = pages.value
 			.filter((document) => document.data.robots_index)
 			.map((document) => ({
-				url: `https://${process.env.HOST}/${document.uid.replaceAll(
-					'--',
-					'/'
-				)}`,
+				url: `${env.BASE_URL}/${document.uid.replaceAll('--', '/')}`,
 				lastModified: document.last_publication_date,
 				changeFrequency: 'weekly',
 				priority: 0.9
@@ -65,7 +63,7 @@ export default async function sitemap() {
 		const authorsSitemap = authorPages.value
 			.filter((document) => document.data.robots_index)
 			.map((document) => ({
-				url: `https://${process.env.HOST}/autores/${document.uid}`,
+				url: `${env.BASE_URL}/autores/${document.uid}`,
 				lastModified: document.last_publication_date,
 				changeFrequency: 'weekly',
 				priority: 0.9
