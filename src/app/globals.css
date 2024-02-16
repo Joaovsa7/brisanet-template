@@ -15,10 +15,10 @@
   .text {
     @apply prose prose-sm;
     @apply md:prose-base;
-    @apply prose-a:text-primary hover:prose-a:no-underline;
-    @apply prose-headings:font-bold prose-headings:text-neutral-800 prose-headings:text-2xl md:prose-headings:text-3xl;
-    @apply prose-p:text-neutral-500 prose-p:leading-relaxed;
+    @apply prose-a:text-primary prose-a:underline-offset-4 prose-a:no-underline hover:prose-a:underline;
+    @apply prose-headings:text-primary prose-headings:font-semibold prose-headings:text-2xl md:prose-headings:text-3xl;
+    @apply prose-p:text-neutral-600 prose-p:font-medium prose-p:leading-relaxed;
     @apply prose-strong:font-bold prose-strong:text-neutral-800;
-    @apply prose-ul:text-neutral-500;
+    @apply prose-ul:text-neutral-600 prose-ul:font-medium;
   }
 }
