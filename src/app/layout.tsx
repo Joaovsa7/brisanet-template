@@ -5,7 +5,9 @@ import './globals.css'
 import { createClient } from '~/libs/prismicio'
 
 import { Footer } from '~/components/footer'
+import { GoogleAnalytics } from '~/components/google-analytics'
 import { Header } from '~/components/header'
+
 import { env } from '~/config/env'
 
 const font = Barlow({
@@ -55,6 +57,7 @@ export default async function RootLayout({
 	return (
 		<html lang="pt-BR" className={font.variable}>
 			<body className="antialiased bg-neutral-50 text-neutral-800 flex flex-col min-h-screen overflow-x-hidden">
+				<GoogleAnalytics />
 				<Header headerDocument={headerDocument} />
 				<div className="flex flex-col flex-1">{children}</div>
 				<Footer footerDocument={footerDocument} />
