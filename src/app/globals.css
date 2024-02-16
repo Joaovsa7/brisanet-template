@@ -3,23 +3,19 @@
 @tailwind utilities;
 
 @layer components {
-  .footer-nav {
-    @apply text-white text-sm md:text-base;
-  }
-
   .footer-nav ul {
     @apply flex flex-col font-medium;
   }
 
   .footer-nav a {
-    @apply py-3 md:py-1.5 block underline-offset-2 transition-colors;
+    @apply py-1.5 block underline-offset-4 transition-colors;
     @apply hover:underline hover:text-white;
   }
 
   .text {
     @apply prose prose-sm;
     @apply md:prose-base;
-    @apply prose-a:text-primary-600 hover:prose-a:no-underline;
+    @apply prose-a:text-primary hover:prose-a:no-underline;
     @apply prose-headings:font-bold prose-headings:text-neutral-800 prose-headings:text-2xl md:prose-headings:text-3xl;
     @apply prose-p:text-neutral-500 prose-p:leading-relaxed;
     @apply prose-strong:font-bold prose-strong:text-neutral-800;

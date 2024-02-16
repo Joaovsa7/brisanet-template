@@ -1,5 +1,6 @@
 import * as prismic from '@prismicio/client'
 import * as prismicNext from '@prismicio/next'
+
 import { env } from '~/config/env'
 
 /**
@@ -42,7 +43,7 @@ const routes: prismic.ClientConfig['routes'] = [
  * @param config - Configuration for the Prismic client.
  */
 export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
-	const client = prismic.createClient(env.BASE_URL, {
+	const client = prismic.createClient(env.PRISMIC_REPOSITORY_NAME, {
 		accessToken: env.PRISMIC_ACCESS_TOKEN,
 		routes,
 		fetchOptions:

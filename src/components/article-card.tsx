@@ -39,7 +39,7 @@ export function ArticleCard({
 					</time>
 				</div>
 
-				<h2 className="flex-1 font-bold transition-colors group-hover:text-primary-500">
+				<h2 className="flex-1 font-bold transition-colors group-hover:text-primary">
 					{asText(article.data.title)}
 				</h2>
 			</div>

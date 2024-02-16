@@ -8,7 +8,7 @@ import {
 	Root
 } from '@radix-ui/react-dialog'
 import { SearchIcon } from 'lucide-react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { FormEvent, useState } from 'react'
 
 export function SearchButton() {
@@ -38,7 +38,7 @@ export function SearchButton() {
 				aria-label={
 					searchIsOpen ? 'Fechar barra de pesquisa' : 'Abrir barra de pesquisa'
 				}
-				className="flex items-center justify-center gap-2 h-10 w-10 text-neutral-500 xl:hover:text-primary-500 xl:h-16"
+				className="flex items-center justify-center gap-2 h-10 w-10 text-neutral-500 xl:hover:text-primary xl:h-16"
 			>
 				<SearchIcon className="w-6 h-6" />
 			</DialogTrigger>

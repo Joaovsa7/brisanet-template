@@ -4,11 +4,13 @@ import Link from 'next/link'
 import { Button } from '~/components/button'
 import { Container } from '~/components/container'
 
+import { env } from '~/config/env'
+
 export const metadata: Metadata = {
 	title: 'Página não encontrada',
 	robots: 'noindex, nofollow',
 	alternates: {
-		canonical: 'https://portaldasoperadoras.com.br/not-found'
+		canonical: `${env.BASE_URL}/not-found`
 	}
 }
 

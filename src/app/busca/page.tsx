@@ -65,7 +65,7 @@ export default async function SearchPage({ searchParams }: IPageProps) {
 										href={`${url.replaceAll('--', '/')}`}
 										className="flex flex-col gap-2 group"
 									>
-										<h3 className="font-bold text-primary-500 group-hover:underline">
+										<h3 className="font-bold text-primary group-hover:underline">
 											{result.data.meta_title}
 										</h3>
 										<p className="text-sm text-neutral-500 font-medium mb-2 line-clamp-2">

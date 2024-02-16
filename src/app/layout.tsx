@@ -1,13 +1,14 @@
 import { PrismicPreview } from '@prismicio/next'
-import { Manrope } from 'next/font/google'
+import { Barlow } from 'next/font/google'
 import './globals.css'
 
-import { createClient, repositoryName } from '~/libs/prismicio'
+import { createClient } from '~/libs/prismicio'
 
 import { Footer } from '~/components/footer'
 import { Header } from '~/components/header'
+import { env } from '~/config/env'
 
-const font = Manrope({
+const font = Barlow({
 	weight: ['400', '500', '600', '700'],
 	display: 'swap',
 	variable: '--font-default',
@@ -57,7 +58,7 @@ export default async function RootLayout({
 				<Header headerDocument={headerDocument} />
 				<div className="flex flex-col flex-1">{children}</div>
 				<Footer footerDocument={footerDocument} />
-				<PrismicPreview repositoryName={repositoryName} />
+				<PrismicPreview repositoryName={env.PRISMIC_REPOSITORY_NAME} />
 			</body>
 		</html>
 	)

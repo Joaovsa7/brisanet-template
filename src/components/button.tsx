@@ -32,14 +32,13 @@ const buttonStyles = tv(
 		base: 'inline-flex items-center justify-center text-center gap-2 font-bold transition-colors uppercase',
 		variants: {
 			variant: {
-				primary: 'bg-primary-600 text-white hover:bg-primary-500',
-				secondary: 'bg-secondary-400 text-neutral-800 hover:bg-secondary-500'
+				primary: 'bg-primary text-white hover:bg-primary'
 			},
 			outline: {
 				true: ''
 			},
 			ghost: {
-				true: 'bg-transparent text-primary-600 hover:bg-primary-50'
+				true: 'bg-transparent text-primary hover:bg-primary/10'
 			},
 			size: {
 				sm: 'h-10 px-4 text-sm rounded',
@@ -52,7 +51,7 @@ const buttonStyles = tv(
 				variant: 'primary',
 				outline: true,
 				class:
-					'bg-transparent border border-primary-600 text-primary-600 hover:text-white hover:bg-primary-600'
+					'bg-transparent border border-primary text-primary hover:text-white hover:bg-primary'
 			}
 		],
 		defaultVariants: {

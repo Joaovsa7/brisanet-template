@@ -96,7 +96,7 @@ const bannerStyles = tv({
 				wrapper: 'z-10'
 			},
 			false: {
-				section: 'bg-gradient-to-r from-primary-500 to-primary-700'
+				section: 'bg-gradient-to-r from-primary to-primary'
 			}
 		}
 	}

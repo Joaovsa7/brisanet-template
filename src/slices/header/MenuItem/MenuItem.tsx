@@ -17,13 +17,13 @@ export default function MenuItem({ slice }: MenuItemProps) {
 	const isDropdown = slice.items.length > 0
 
 	return (
-		<NavigationMenuItem className="text-sm text-neutral-600 font-semibold">
+		<NavigationMenuItem className="text-secondary font-semibold uppercase">
 			{isDropdown ? (
 				<>
 					<NavigationMenuTrigger>
 						<PrismicNextLink
 							field={slice.primary.item_link}
-							className="flex items-center justify-center gap-2 h-16 pl-4 pr-2 transition-colors hover:text-primary-500"
+							className="flex items-center justify-center gap-2 h-16 pl-4 pr-2 transition-colors hover:text-primary"
 						>
 							<span>{slice.primary.item_label}</span>
 							<ChevronDownIcon className="w-4 h-4" />
@@ -40,7 +40,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 									<NavigationMenuLink asChild>
 										<PrismicNextLink
 											field={item.subitem_link}
-											className="py-3 px-6 block hover:bg-primary-500 hover:text-white transition-colors"
+											className="py-3 px-6 block hover:bg-primary hover:text-white transition-colors"
 										>
 											{item.subitem_label}
 										</PrismicNextLink>
@@ -54,7 +54,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 				<NavigationMenuLink asChild>
 					<PrismicNextLink
 						field={slice.primary.item_link}
-						className="flex items-center justify-center h-16 px-4 transition-colors hover:text-primary-500"
+						className="flex items-center justify-center h-16 px-4 transition-colors hover:text-primary"
 					>
 						{slice.primary.item_label}
 					</PrismicNextLink>

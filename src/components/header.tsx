@@ -11,6 +11,7 @@ import { Logo } from './logo'
 import { MenuButton } from './menu-button'
 import { SearchButton } from './search-button'
 
+import Link from 'next/link'
 import { HeaderDocument } from '../../prismicio-types'
 
 export function Header({
@@ -18,26 +19,23 @@ export function Header({
 }: { headerDocument: HeaderDocument | null }) {
 	return (
 		<header className="bg-white border-b border-neutral-200 sticky top-0 left-0 right-0 z-50 xl:py-0">
-			<Container
-				size="lg"
-				className="flex items-center justify-between h-14 xl:h-16"
-			>
-				<Logo />
+			<Container size="lg" className="flex items-center justify-between h-16">
+				<Link href="/" className="w-32">
+					<Logo />
+				</Link>
 
-				<div className="flex items-center">
-					<NavigationMenuRoot className="hidden relative xl:block">
-						<NavigationMenuList className="flex items-center justify-center">
-							<SliceZone
-								slices={headerDocument?.data?.slices}
-								components={headerSlices}
-							/>
-						</NavigationMenuList>
-					</NavigationMenuRoot>
+				<NavigationMenuRoot className="hidden relative xl:block">
+					<NavigationMenuList className="flex items-center justify-center">
+						<SliceZone
+							slices={headerDocument?.data?.slices}
+							components={headerSlices}
+						/>
+					</NavigationMenuList>
+				</NavigationMenuRoot>
 
-					<div className="flex">
-						<SearchButton />
-						<MenuButton />
-					</div>
+				<div className="flex">
+					<SearchButton />
+					<MenuButton />
 				</div>
 			</Container>
 		</header>

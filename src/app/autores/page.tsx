@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
+import { env } from '~/config/env'
+
 import { createClient } from '~/libs/prismicio'
 
 import { Authors } from '~/templates/Authors'
@@ -9,7 +11,7 @@ export const metadata: Metadata = {
 	title: 'Portal das Operadoras | Autores',
 	robots: 'index, follow',
 	alternates: {
-		canonical: 'https://portaldasoperadoras.com.br/autores'
+		canonical: `${env.BASE_URL}/autores`
 	}
 }
 
