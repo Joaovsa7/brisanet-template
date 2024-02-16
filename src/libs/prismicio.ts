@@ -70,7 +70,7 @@ export const fetchLinks = [
 	'author.position',
 	'article_category.name',
 	'article_category.color',
-	'call_to_action.content',
+	'call_to_action.title',
 	'call_to_action.cta_link',
 	'call_to_action.cta_label',
 	'faq.title',

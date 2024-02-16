@@ -539,15 +539,15 @@ export type BlogDocument<Lang extends string = string> =
  */
 interface CallToActionDocumentData {
   /**
-   * Conteúdo field in *Call to Action*
+   * Título field in *Call to Action*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
-   * - **API ID Path**: call_to_action.content
+   * - **API ID Path**: call_to_action.title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  content: prismic.RichTextField;
+  title: prismic.TitleField;
 
   /**
    * CTA Label field in *Call to Action*
