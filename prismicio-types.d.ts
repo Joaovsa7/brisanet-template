@@ -657,31 +657,6 @@ export type FaqDocument<Lang extends string = string> =
 type FooterDocumentDataSlicesSlice = FooterLinksSlice;
 
 /**
- * Item in *Footer → Números da ANS*
- */
-export interface FooterDocumentDataAnsNumberItem {
-  /**
-   * Nome field in *Footer → Números da ANS*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.ans_number[].name
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  name: prismic.KeyTextField;
-
-  /**
-   * Número field in *Footer → Números da ANS*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.ans_number[].number
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  number: prismic.KeyTextField;
-}
-
-/**
  * Content for Footer documents
  */
 interface FooterDocumentData {
@@ -694,16 +669,7 @@ interface FooterDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
-  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice> /**
-   * Números da ANS field in *Footer*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: footer.ans_number[]
-   * - **Tab**: ANS
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */;
-  ans_number: prismic.GroupField<Simplify<FooterDocumentDataAnsNumberItem>>;
+  slices: prismic.SliceZone<FooterDocumentDataSlicesSlice>;
 }
 
 /**
@@ -728,6 +694,50 @@ type HeaderDocumentDataSlicesSlice = MenuItemSlice;
  * Content for Header documents
  */
 interface HeaderDocumentData {
+  /**
+   * Texto do Botão 1 field in *Header*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.btn_primary_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  btn_primary_text: prismic.KeyTextField;
+
+  /**
+   * Link do Botão 1 field in *Header*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.btn_primary_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  btn_primary_link: prismic.LinkField;
+
+  /**
+   * Texto do Botão 2 field in *Header*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.btn_secondary_text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  btn_secondary_text: prismic.KeyTextField;
+
+  /**
+   * Link do Botão 2 field in *Header*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.btn_secondary_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  btn_secondary_link: prismic.LinkField;
+
   /**
    * Slice Zone field in *Header*
    *
@@ -1849,7 +1859,6 @@ declare module "@prismicio/client" {
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
-      FooterDocumentDataAnsNumberItem,
       HeaderDocument,
       HeaderDocumentData,
       HeaderDocumentDataSlicesSlice,

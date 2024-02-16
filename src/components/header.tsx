@@ -1,17 +1,17 @@
 'use client'
+import { PrismicNextLink } from '@prismicio/next'
 import { SliceZone } from '@prismicio/react'
 import {
 	NavigationMenuList,
 	Root as NavigationMenuRoot
 } from '@radix-ui/react-navigation-menu'
+import Link from 'next/link'
 
 import { headerSlices } from '~/slices'
+import { Button } from './button'
 import { Container } from './container'
 import { Logo } from './logo'
-import { MenuButton } from './menu-button'
-import { SearchButton } from './search-button'
 
-import Link from 'next/link'
 import { HeaderDocument } from '../../prismicio-types'
 
 export function Header({
@@ -34,8 +34,28 @@ export function Header({
 				</NavigationMenuRoot>
 
 				<div className="flex">
-					<SearchButton />
-					<MenuButton />
+					<div className="flex items-center flex-row gap-2 sm:gap-4">
+						<Button asChild size="xs">
+							<PrismicNextLink field={headerDocument?.data.btn_primary_link}>
+								{headerDocument?.data.btn_primary_text}
+							</PrismicNextLink>
+						</Button>
+
+						<Button size="xs" variant="secondary" className="xl:hidden">
+							Menu
+						</Button>
+
+						<Button
+							asChild
+							size="xs"
+							variant="secondary"
+							className="hidden xl:flex"
+						>
+							<PrismicNextLink field={headerDocument?.data.btn_secondary_link}>
+								{headerDocument?.data.btn_secondary_text}
+							</PrismicNextLink>
+						</Button>
+					</div>
 				</div>
 			</Container>
 		</header>

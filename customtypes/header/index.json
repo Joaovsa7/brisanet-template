@@ -6,6 +6,38 @@
   "status": true,
   "json": {
     "Main": {
+      "btn_primary_text": {
+        "type": "Text",
+        "config": {
+          "label": "Texto do Botão 1",
+          "placeholder": ""
+        }
+      },
+      "btn_primary_link": {
+        "type": "Link",
+        "config": {
+          "label": "Link do Botão 1",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null
+        }
+      },
+      "btn_secondary_text": {
+        "type": "Text",
+        "config": {
+          "label": "Texto do Botão 2",
+          "placeholder": ""
+        }
+      },
+      "btn_secondary_link": {
+        "type": "Link",
+        "config": {
+          "label": "Link do Botão 2",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

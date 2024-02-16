@@ -17,30 +17,6 @@
           }
         }
       }
-    },
-    "ANS": {
-      "ans_number": {
-        "type": "Group",
-        "config": {
-          "label": "Números da ANS",
-          "fields": {
-            "name": {
-              "type": "Text",
-              "config": {
-                "label": "Nome",
-                "placeholder": ""
-              }
-            },
-            "number": {
-              "type": "Text",
-              "config": {
-                "label": "Número",
-                "placeholder": ""
-              }
-            }
-          }
-        }
-      }
     }
   }
 }
