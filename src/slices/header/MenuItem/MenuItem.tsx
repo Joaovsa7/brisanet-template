@@ -23,7 +23,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 					<NavigationMenuTrigger>
 						<PrismicNextLink
 							field={slice.primary.item_link}
-							className="flex items-center justify-center gap-2 h-16 pl-4 pr-2 transition-colors hover:text-primary"
+							className="flex items-center justify-center gap-2 h-16 pl-4 pr-2 transition-colors hover:text-primary uppercase"
 						>
 							<span>{slice.primary.item_label}</span>
 							<ChevronDownIcon className="w-4 h-4" />
@@ -32,7 +32,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 
 					<NavigationMenuContent
 						forceMount
-						className="bg-white min-w-60 overflow-hidden shadow-md rounded-md absolute top-20 data-[state=closed]:sr-only"
+						className="bg-white min-w-60 overflow-hidden shadow-md absolute top-20 data-[state=closed]:sr-only"
 					>
 						<ul className="flex flex-col gap-2">
 							{slice.items.map((item) => (
@@ -40,7 +40,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 									<NavigationMenuLink asChild>
 										<PrismicNextLink
 											field={item.subitem_link}
-											className="py-3 px-6 block hover:bg-primary hover:text-white transition-colors"
+											className="py-3 px-6 block hover:text-primary transition-colors"
 										>
 											{item.subitem_label}
 										</PrismicNextLink>
