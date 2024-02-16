@@ -71,11 +71,11 @@ export default async function Page({ params }: IPageProps) {
 		const document = await client.getByUID('page', uid, { fetchLinks })
 
 		return (
-			<main className="py-8">
+			<main>
 				<PageInfo updatedAt={document.last_publication_date} />
 				<GoogleStructuredData data={document.data.google_structured_data} />
-				<Container size="lg">
-					<Breadcrumb className="mb-10" />
+				<Container size="lg" className="py-4">
+					<Breadcrumb />
 				</Container>
 				<SliceZone slices={document.data.slices} components={mainSlices} />
 			</main>

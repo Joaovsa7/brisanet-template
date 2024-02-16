@@ -46,7 +46,7 @@ export default function Banner({ slice }: BannerProps) {
 					<div>
 						<div className="max-w-2xl">
 							{titleIsFilled && (
-								<span className="text-4xl md:text-5xl text-white font-bold mb-6 tracking-tighter block">
+								<span className="text-4xl md:text-5xl text-white font-semibold mb-6 tracking-tighter block">
 									<PrismicRichText field={slice.primary.title} />
 								</span>
 							)}

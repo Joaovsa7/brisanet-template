@@ -17,8 +17,9 @@
     @apply md:prose-base;
     @apply prose-a:text-primary prose-a:underline-offset-4 prose-a:no-underline hover:prose-a:underline;
     @apply prose-headings:text-primary prose-headings:font-semibold prose-headings:text-2xl md:prose-headings:text-3xl;
+    @apply prose-headings:text-primary prose-headings:font-semibold prose-headings:text-xl md:prose-headings:text-2xl prose-h1:text-2xl prose-h2:text-2xl md:prose-h1:text-3xl md:prose-h2:text-3xl;
     @apply prose-p:text-neutral-600 prose-p:font-medium prose-p:leading-relaxed;
-    @apply prose-strong:font-bold prose-strong:text-neutral-800;
+    @apply prose-strong:font-semibold;
     @apply prose-ul:text-neutral-600 prose-ul:font-medium;
   }
 }
