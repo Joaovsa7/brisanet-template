@@ -1,0 +1,82 @@
+{
+  "format": "custom",
+  "id": "product",
+  "label": "Produto",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Nome",
+          "placeholder": ""
+        }
+      },
+      "benefits": {
+        "type": "Group",
+        "config": {
+          "label": "Beneficios",
+          "repeat": true,
+          "fields": {
+            "icon": {
+              "type": "Select",
+              "config": {
+                "label": "Ícone",
+                "placeholder": "",
+                "options": [
+                  "Check",
+                  "Download",
+                  "Suporte",
+                  "Smartphone",
+                  "Telefone",
+                  "Upload",
+                  "Wi-Fi"
+                ],
+                "default_value": "Check"
+              }
+            },
+            "benefit": {
+              "type": "Text",
+              "config": {
+                "label": "Beneficio",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "is_promotion": {
+        "type": "Boolean",
+        "config": {
+          "label": "Promoção",
+          "placeholder_false": "Não",
+          "placeholder_true": "Sim",
+          "default_value": false
+        }
+      },
+      "price": {
+        "type": "Text",
+        "config": {
+          "label": "Preço",
+          "placeholder": ""
+        }
+      },
+      "link": {
+        "type": "Link",
+        "config": {
+          "label": "Link",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null
+        }
+      }
+    }
+  }
+}

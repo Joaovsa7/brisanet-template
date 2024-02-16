@@ -1066,6 +1066,118 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 /**
+ * Item in *Produto → Beneficios*
+ */
+export interface ProductDocumentDataBenefitsItem {
+  /**
+   * Ícone field in *Produto → Beneficios*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **Default Value**: Check
+   * - **API ID Path**: product.benefits[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<
+    | "Check"
+    | "Download"
+    | "Suporte"
+    | "Smartphone"
+    | "Telefone"
+    | "Upload"
+    | "Wi-Fi",
+    "filled"
+  >;
+
+  /**
+   * Beneficio field in *Produto → Beneficios*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product.benefits[].benefit
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  benefit: prismic.KeyTextField;
+}
+
+/**
+ * Content for Produto documents
+ */
+interface ProductDocumentData {
+  /**
+   * Nome field in *Produto*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Beneficios field in *Produto*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product.benefits[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  benefits: prismic.GroupField<Simplify<ProductDocumentDataBenefitsItem>>;
+
+  /**
+   * Promoção field in *Produto*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: product.is_promotion
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_promotion: prismic.BooleanField;
+
+  /**
+   * Preço field in *Produto*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product.price
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  price: prismic.KeyTextField;
+
+  /**
+   * Link field in *Produto*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: product.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Produto document from Prismic
+ *
+ * - **API ID**: `product`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProductDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ProductDocumentData>,
+    "product",
+    Lang
+  >;
+
+/**
  * Item in *Redirecionamentos → Redirecionamentos*
  */
 export interface RedirectsDocumentDataRedirectsItem {
@@ -1135,6 +1247,7 @@ export type AllDocumentTypes =
   | LayoutDocument
   | MostReadArticlesDocument
   | PageDocument
+  | ProductDocument
   | RedirectsDocument;
 
 /**
@@ -1874,6 +1987,9 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      ProductDocument,
+      ProductDocumentData,
+      ProductDocumentDataBenefitsItem,
       RedirectsDocument,
       RedirectsDocumentData,
       RedirectsDocumentDataRedirectsItem,
