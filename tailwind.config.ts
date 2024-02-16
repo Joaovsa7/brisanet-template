@@ -1,8 +1,6 @@
 import type { Config } from 'tailwindcss'
 import {
-	amber,
 	black,
-	blue,
 	current,
 	emerald,
 	red,
@@ -20,8 +18,8 @@ const config: Config = {
 			transparent,
 			current,
 			neutral: zinc,
-			primary: blue,
-			secondary: amber,
+			primary: '#F56E28',
+			secondary: '#083D93',
 			destructive: red,
 			success: emerald
 		},
@@ -73,10 +71,7 @@ const config: Config = {
 			}
 		}
 	},
-	plugins: [
-		require('@tailwindcss/typography'),
-		require('tailwind-scrollbar'),
-		require('@tailwindcss/line-clamp')
-	]
+	plugins: [require('@tailwindcss/typography'), require('tailwind-scrollbar')]
 }
+
 export default config
