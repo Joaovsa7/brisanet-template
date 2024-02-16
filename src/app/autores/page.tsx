@@ -8,7 +8,7 @@ import { createClient } from '~/libs/prismicio'
 import { Authors } from '~/templates/Authors'
 
 export const metadata: Metadata = {
-	title: 'Portal das Operadoras | Autores',
+	title: `${env.NEXT_PUBLIC_SITE_NAME} | Autores`,
 	robots: 'index, follow',
 	alternates: {
 		canonical: `${env.BASE_URL}/autores`

@@ -18,12 +18,12 @@ const font = Barlow({
 })
 
 export async function generateMetadata() {
-	const siteName = 'Portal das Operadoras'
+	const siteName = env.NEXT_PUBLIC_SITE_NAME
 
 	return {
 		title: {
-			default: 'Portal das Operadoras',
-			template: '%s | Portal das Operadoras'
+			default: siteName,
+			template: `%s | ${siteName}`
 		},
 		description: 'Encontre a melhor operadora para o seu perfil',
 		site_name: siteName,

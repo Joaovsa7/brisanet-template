@@ -47,7 +47,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 						},
 						publisher: {
 							'@type': 'Organization',
-							name: 'Portal das Operadoras',
+							name: env.NEXT_PUBLIC_SITE_NAME,
 							logo: {
 								'@type': 'ImageObject',
 								url: ''
