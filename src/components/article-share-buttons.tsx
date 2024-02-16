@@ -1,5 +1,5 @@
 'use client'
-import { CheckIcon, LinkIcon } from 'lucide-react'
+import { IconCheck, IconLink } from '@tabler/icons-react'
 import { useState } from 'react'
 import {
 	FacebookIcon,
@@ -46,9 +46,9 @@ export function ArticleShareButtons({ title, url }: IArticleShareButtonsProps) {
 					className="w-10 h-10 rounded-full bg-neutral-200 flex items-center justify-center transition-transform duration-300 hover:-translate-y-0.5"
 				>
 					{hasCopiedToClipboard ? (
-						<CheckIcon className="w-5 h-5" />
+						<IconCheck className="w-5 h-5" />
 					) : (
-						<LinkIcon className="w-5 h-5" />
+						<IconLink className="w-5 h-5" />
 					)}
 				</button>
 				<FacebookShareButton

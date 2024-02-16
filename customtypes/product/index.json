@@ -33,8 +33,10 @@
                 "options": [
                   "Check",
                   "Download",
-                  "Suporte",
+                  "Instalaçao",
+                  "Internet",
                   "Smartphone",
+                  "Suporte",
                   "Telefone",
                   "Upload",
                   "Wi-Fi"

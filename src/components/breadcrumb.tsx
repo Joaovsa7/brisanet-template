@@ -1,5 +1,9 @@
 'use client'
-import { ChevronLeftIcon, ChevronRightIcon, HomeIcon } from 'lucide-react'
+import {
+	IconChevronLeft,
+	IconChevronRight,
+	IconHome2
+} from '@tabler/icons-react'
 import Link, { LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ComponentProps } from 'react'
@@ -30,7 +34,7 @@ export function Breadcrumb({ className, ...props }: IBreadcrumbProps) {
 				<meta itemProp="position" content="1" />
 
 				<BreadcrumbLink href="/">
-					<HomeIcon className="w-4 h-4" />
+					<IconHome2 className="w-4 h-4" />
 					<span itemProp="name">Página inicial</span>
 				</BreadcrumbLink>
 			</BreadcrumbItem>
@@ -70,9 +74,9 @@ function BreadcrumbItem({
 				className
 			)}
 		>
-			<ChevronLeftIcon className="w-4 h-4 hidden group-first:!hidden group-[&:nth-last-child(2)]:block md:group-[&:nth-last-child(2)]:hidden" />
+			<IconChevronLeft className="w-4 h-4 hidden group-first:!hidden group-[&:nth-last-child(2)]:block md:group-[&:nth-last-child(2)]:hidden" />
 			{children}
-			<ChevronRightIcon className="w-4 h-4 group-[&:nth-last-child(2)]:hidden md:group-[&:nth-last-child(2)]:block group-last:hidden" />
+			<IconChevronRight className="w-4 h-4 group-[&:nth-last-child(2)]:hidden md:group-[&:nth-last-child(2)]:block group-last:hidden" />
 		</li>
 	)
 }

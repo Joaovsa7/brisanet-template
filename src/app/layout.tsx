@@ -56,7 +56,7 @@ export default async function RootLayout({
 
 	return (
 		<html lang="pt-BR" className={font.variable}>
-			<body className="antialiased bg-neutral-50 text-neutral-800 flex flex-col min-h-screen overflow-x-hidden">
+			<body className="antialiased bg-neutral-100 text-neutral-800 flex flex-col min-h-screen overflow-x-hidden">
 				<GoogleAnalytics />
 				<Header headerDocument={headerDocument} />
 				<div className="flex flex-col flex-1">{children}</div>

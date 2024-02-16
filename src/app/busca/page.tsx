@@ -1,6 +1,6 @@
 import { filter } from '@prismicio/client'
 import { isFilled } from '@prismicio/client'
-import { CalendarIcon } from 'lucide-react'
+import { IconCalendar } from '@tabler/icons-react'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
@@ -75,7 +75,7 @@ export default async function SearchPage({ searchParams }: IPageProps) {
 											dateTime={result.last_publication_date}
 											className="flex items-center gap-1.5 text-sm text-neutral-500"
 										>
-											<CalendarIcon className="w-4 h-4" />
+											<IconCalendar className="w-4 h-4" />
 											Atualizado em:{' '}
 											{new Date(
 												`${result.last_publication_date}`

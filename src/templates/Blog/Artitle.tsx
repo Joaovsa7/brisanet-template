@@ -1,7 +1,7 @@
 import { asText, isFilled } from '@prismicio/client'
 import { PrismicNextImage } from '@prismicio/next'
 import { SliceZone } from '@prismicio/react'
-import { CalendarIcon, ClockIcon } from 'lucide-react'
+import { IconCalendar, IconClock } from '@tabler/icons-react'
 import Link from 'next/link'
 
 import { IArticleDocumentResponse } from '~/app/blog/[slug]/page'
@@ -70,7 +70,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 							dateTime={document.first_publication_date}
 							className="flex items-center gap-1.5"
 						>
-							<CalendarIcon className="w-4 h-4" />
+							<IconCalendar className="w-4 h-4" />
 							Atualizado em{' '}
 							{new Date(`${document.last_publication_date}`).toLocaleDateString(
 								'pt-BR',
@@ -80,7 +80,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 							)}
 						</time>
 						<span className="flex items-center gap-1.5">
-							<ClockIcon className="w-4 h-4" />
+							<IconClock className="w-4 h-4" />
 							{document.data.reading_time} min de leitura
 						</span>
 					</div>

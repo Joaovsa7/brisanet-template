@@ -7,7 +7,7 @@ import {
 	DialogTrigger,
 	Root
 } from '@radix-ui/react-dialog'
-import { SearchIcon } from 'lucide-react'
+import { IconSearch } from '@tabler/icons-react'
 import { useRouter } from 'next/navigation'
 import { FormEvent, useState } from 'react'
 
@@ -40,7 +40,7 @@ export function SearchButton() {
 				}
 				className="flex items-center justify-center gap-2 h-10 w-10 text-neutral-500 xl:hover:text-primary xl:h-16"
 			>
-				<SearchIcon className="w-6 h-6" />
+				<IconSearch className="w-6 h-6" />
 			</DialogTrigger>
 
 			<DialogPortal>
@@ -48,7 +48,7 @@ export function SearchButton() {
 				<DialogContent className="absolute top-14 xl:top-16 left-0 right-0">
 					<form onSubmit={handleSearch}>
 						<label className="w-full flex items-center gap-2 p-6 bg-neutral-100 justify-center xl:h-16">
-							<SearchIcon className="w-5 h-5 text-neutral-500" />
+							<IconSearch className="w-5 h-5 text-neutral-500" />
 							<input
 								type="text"
 								name="q"

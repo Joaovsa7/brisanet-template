@@ -767,6 +767,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | ProductsCarouselSlice
   | YouTubeVideoSlice
   | BannerSlice
   | InfoCardsSlice
@@ -964,6 +965,7 @@ export type MostReadArticlesDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ProductsCarouselSlice
   | YouTubeVideoSlice
   | BannerSlice
   | CallToActionSlice
@@ -1081,8 +1083,8 @@ export interface ProductDocumentDataBenefitsItem {
   icon: prismic.SelectField<
     | "Check"
     | "Download"
-    | "Suporte"
     | "Smartphone"
+    | "Suporte"
     | "Telefone"
     | "Upload"
     | "Wi-Fi",
@@ -1712,6 +1714,66 @@ export type InfoCardsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ProductsCarousel → Primary*
+ */
+export interface ProductsCarouselSliceDefaultPrimary {
+  /**
+   * Título field in *ProductsCarousel → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: products_carousel.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+}
+
+/**
+ * Primary content in *ProductsCarousel → Items*
+ */
+export interface ProductsCarouselSliceDefaultItem {
+  /**
+   * Produto field in *ProductsCarousel → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: products_carousel.items[].product
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  product: prismic.ContentRelationshipField<"product">;
+}
+
+/**
+ * Default variation for ProductsCarousel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProductsCarouselSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProductsCarouselSliceDefaultPrimary>,
+  Simplify<ProductsCarouselSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ProductsCarousel*
+ */
+type ProductsCarouselSliceVariation = ProductsCarouselSliceDefault;
+
+/**
+ * ProductsCarousel Shared Slice
+ *
+ * - **API ID**: `products_carousel`
+ * - **Description**: ProductsCarousel
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProductsCarouselSlice = prismic.SharedSlice<
+  "products_carousel",
+  ProductsCarouselSliceVariation
+>;
+
+/**
  * Primary content in *YouTubeVideo → Primary*
  */
 export interface YouTubeVideoSliceDefaultPrimary {
@@ -2021,6 +2083,11 @@ declare module "@prismicio/client" {
       InfoCardsSliceDefaultItem,
       InfoCardsSliceVariation,
       InfoCardsSliceDefault,
+      ProductsCarouselSlice,
+      ProductsCarouselSliceDefaultPrimary,
+      ProductsCarouselSliceDefaultItem,
+      ProductsCarouselSliceVariation,
+      ProductsCarouselSliceDefault,
       YouTubeVideoSlice,
       YouTubeVideoSliceDefaultPrimary,
       YouTubeVideoSliceVariation,

@@ -9,7 +9,7 @@ import {
 	NavigationMenuLink,
 	NavigationMenuTrigger
 } from '@radix-ui/react-navigation-menu'
-import { ChevronDownIcon } from 'lucide-react'
+import { IconChevronDown } from '@tabler/icons-react'
 
 export type MenuItemProps = SliceComponentProps<Content.MenuItemSlice>
 
@@ -26,7 +26,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 							className="flex items-center justify-center gap-2 h-16 pl-4 pr-2 transition-colors hover:text-primary uppercase"
 						>
 							<span>{slice.primary.item_label}</span>
-							<ChevronDownIcon className="w-4 h-4" />
+							<IconChevronDown className="w-4 h-4" />
 						</PrismicNextLink>
 					</NavigationMenuTrigger>
 

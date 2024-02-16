@@ -6,7 +6,7 @@ import type {
 	AccordionSingleProps,
 	AccordionTriggerProps
 } from '@radix-ui/react-accordion'
-import { ChevronDownIcon } from 'lucide-react'
+import { IconChevronDown } from '@tabler/icons-react'
 import { ElementRef, forwardRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 
@@ -32,7 +32,7 @@ function AccordionTrigger({
 			)}
 		>
 			<h3 className="text-left text-secondary">{children}</h3>
-			<ChevronDownIcon className="text-secondary max-w-6 max-h-6 min-h-6 min-w-6 group-data-[state=open]:rotate-180 transition-transform duration-300" />
+			<IconChevronDown className="text-secondary max-w-6 max-h-6 min-h-6 min-w-6 group-data-[state=open]:rotate-180 transition-transform duration-300" />
 		</Trigger>
 	)
 }
