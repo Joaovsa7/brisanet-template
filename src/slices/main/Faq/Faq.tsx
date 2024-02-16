@@ -37,12 +37,9 @@ export default async function Faq({ slice }: FaqProps) {
 					data-slice-type={slice.slice_type}
 					data-slice-variation={slice.variation}
 				>
-					<Container size="sm">
+					<Container size="lg">
 						{titleIsFilled && (
-							<RichText
-								field={title}
-								className="text-center prose-headings:m-0 mx-auto"
-							/>
+							<RichText field={title} className="prose-headings:m-0" />
 						)}
 						<AccordionQuestions items={frequently_asked_questions} />
 					</Container>
@@ -71,11 +68,11 @@ export default async function Faq({ slice }: FaqProps) {
 				data-slice-type={slice.slice_type}
 				data-slice-variation={slice.variation}
 			>
-				<Container size="sm">
+				<Container size="lg">
 					{titleIsFilled && (
 						<RichText
 							field={slice.primary.title}
-							className="text-center prose-headings:m-0 mx-auto"
+							className="prose-headings:m-0"
 						/>
 					)}
 					<AccordionQuestions items={items} />

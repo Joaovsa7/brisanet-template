@@ -15,7 +15,10 @@ export function AccordionQuestions({
 	items: IAccordionQuestion[]
 }) {
 	return (
-		<Accordion.Root type="single" className="mt-8">
+		<Accordion.Root
+			type="single"
+			className="mt-8 grid gap-4 md:gap-6 md:grid-cols-2 items-start"
+		>
 			{items.map((item) => {
 				return (
 					<Accordion.Item
