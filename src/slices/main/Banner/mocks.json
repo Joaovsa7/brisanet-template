@@ -42,52 +42,18 @@
 	},
 	{
 		"__TYPE__": "SharedSliceContent",
-		"variation": "image",
+		"variation": "ad",
 		"primary": {
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ex enim proident incididunt enim. Cillum est incididunt excepteur sint ea sunt velit dolore velit irure dolore sit eu ut qui."
-						}
-					}
-				]
-			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Tempor mollit et id velit aliquip labore nulla. Veniam ex voluptate Lorem commodo commodo ipsum magna."
-						}
-					}
-				]
-			},
-			"cta_label": {
-				"__TYPE__": "FieldContent",
-				"value": "distance",
-				"type": "Text"
-			},
-			"cta_link": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"__TYPE__": "ExternalLink",
-					"url": "https://slicemachine.dev"
-				}
-			},
-			"image": {
+			"banner": {
 				"origin": {
 					"id": "main",
-					"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
-					"width": 4000,
-					"height": 4000
+					"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+					"width": 3648,
+					"height": 4560
 				},
-				"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
-				"width": 4000,
-				"height": 4000,
+				"url": "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2",
+				"width": 3648,
+				"height": 4560,
 				"edit": {
 					"zoom": 1,
 					"crop": {
@@ -100,75 +66,13 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
-				"value": []
-			}
-		]
-	},
-	{
-		"__TYPE__": "SharedSliceContent",
-		"variation": "background",
-		"primary": {
-			"title": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Aliquip voluptate incididunt dolore nulla ut qui incididunt minim. Nisi exercitation sit ex ad culpa culpa. In adipisicing do minim Lorem pariatur laborum cupidatat veniam adipisicing aliqua tempor nulla laboris duis et."
-						}
-					}
-				]
 			},
-			"description": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Enim eiusmod consectetur laborum proident voluptate in labore amet ullamco laboris occaecat consectetur cupidatat. Nostrud do magna sit magna sit quis veniam. Ea elit duis esse."
-						}
-					}
-				]
-			},
-			"cta_label": {
-				"__TYPE__": "FieldContent",
-				"value": "word",
-				"type": "Text"
-			},
-			"cta_link": {
+			"link": {
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
-					"url": "https://prismic.io"
+					"url": "http://google.com"
 				}
-			},
-			"background": {
-				"origin": {
-					"id": "main",
-					"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
-					"width": 3168,
-					"height": 4752
-				},
-				"url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
-				"width": 3168,
-				"height": 4752,
-				"edit": {
-					"zoom": 1,
-					"crop": {
-						"x": 0,
-						"y": 0
-					},
-					"background": "transparent"
-				},
-				"credits": null,
-				"alt": null,
-				"__TYPE__": "ImageContent",
-				"thumbnails": {}
 			}
 		},
 		"items": [

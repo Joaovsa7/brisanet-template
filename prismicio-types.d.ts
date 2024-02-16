@@ -1304,146 +1304,45 @@ export type BannerSliceDefault = prismic.SharedSliceVariation<
 /**
  * Primary content in *Banner → Primary*
  */
-export interface BannerSliceImagePrimary {
+export interface BannerSliceAdPrimary {
   /**
-   * Título field in *Banner → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Descrição field in *Banner → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * CTA Label field in *Banner → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.cta_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  cta_label: prismic.KeyTextField;
-
-  /**
-   * CTA Link field in *Banner → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.cta_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  cta_link: prismic.LinkField;
-
-  /**
-   * Imagem field in *Banner → Primary*
+   * Banner field in *Banner → Primary*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.image
+   * - **API ID Path**: banner.primary.banner
    * - **Documentation**: https://prismic.io/docs/field#image
    */
-  image: prismic.ImageField<never>;
-}
-
-/**
- * Com Imagem variation for Banner Slice
- *
- * - **API ID**: `image`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type BannerSliceImage = prismic.SharedSliceVariation<
-  "image",
-  Simplify<BannerSliceImagePrimary>,
-  never
->;
-
-/**
- * Primary content in *Banner → Primary*
- */
-export interface BannerSliceBackgroundPrimary {
-  /**
-   * Título field in *Banner → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
+  banner: prismic.ImageField<never>;
 
   /**
-   * Descrição field in *Banner → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * CTA Label field in *Banner → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.cta_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  cta_label: prismic.KeyTextField;
-
-  /**
-   * CTA Link field in *Banner → Primary*
+   * Link field in *Banner → Primary*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.cta_link
+   * - **API ID Path**: banner.primary.link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  cta_link: prismic.LinkField;
-
-  /**
-   * Background field in *Banner → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: banner.primary.background
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  background: prismic.ImageField<never>;
+  link: prismic.LinkField;
 }
 
 /**
- * Com Background variation for Banner Slice
+ * Anúncio variation for Banner Slice
  *
- * - **API ID**: `background`
+ * - **API ID**: `ad`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type BannerSliceBackground = prismic.SharedSliceVariation<
-  "background",
-  Simplify<BannerSliceBackgroundPrimary>,
+export type BannerSliceAd = prismic.SharedSliceVariation<
+  "ad",
+  Simplify<BannerSliceAdPrimary>,
   never
 >;
 
 /**
  * Slice variation for *Banner*
  */
-type BannerSliceVariation =
-  | BannerSliceDefault
-  | BannerSliceImage
-  | BannerSliceBackground;
+type BannerSliceVariation = BannerSliceDefault | BannerSliceAd;
 
 /**
  * Banner Shared Slice
@@ -2049,12 +1948,10 @@ declare module "@prismicio/client" {
       AllDocumentTypes,
       BannerSlice,
       BannerSliceDefaultPrimary,
-      BannerSliceImagePrimary,
-      BannerSliceBackgroundPrimary,
+      BannerSliceAdPrimary,
       BannerSliceVariation,
       BannerSliceDefault,
-      BannerSliceImage,
-      BannerSliceBackground,
+      BannerSliceAd,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
