@@ -41,6 +41,7 @@ export default function ProductsCarousel({ slice }: ProductsCarouselProps) {
 									name={product.data.name as string}
 									benefits={benefits}
 									price={product.data.price as string}
+									isPromotion={product.data.is_promotion}
 								/>
 							</SliderItem>
 						)

@@ -33,12 +33,26 @@ interface IProductCardProps {
 	name: string
 	benefits: IProductBenefit[]
 	price: string
+	isPromotion: boolean
 }
 
-export function ProductCard({ name, price, benefits }: IProductCardProps) {
+export function ProductCard({
+	name,
+	price,
+	benefits,
+	isPromotion
+}: IProductCardProps) {
 	return (
-		<article className="p-6 bg-white flex flex-col gap-6 h-full">
+		<article
+			data-promotion={isPromotion}
+			className="p-6 bg-white flex flex-col gap-6 h-full data-[promotion=true]:relative data-[promotion=true]:pt-14 overflow-hidden rounded"
+		>
 			<header>
+				{isPromotion && (
+					<span className="absolute top-0 left-0 right-0 bg-secondary text-white p-2 uppercase font-semibold text-center">
+						Promoção
+					</span>
+				)}
 				<h3 className="font-semibold text-4xl text-primary tracking-tight">
 					{name}
 				</h3>

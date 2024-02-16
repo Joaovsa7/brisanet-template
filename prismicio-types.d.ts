@@ -1083,6 +1083,8 @@ export interface ProductDocumentDataBenefitsItem {
   icon: prismic.SelectField<
     | "Check"
     | "Download"
+    | "Instalaçao"
+    | "Internet"
     | "Smartphone"
     | "Suporte"
     | "Telefone"
@@ -1150,17 +1152,6 @@ interface ProductDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   price: prismic.KeyTextField;
-
-  /**
-   * Link field in *Produto*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: product.link
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  link: prismic.LinkField;
 }
 
 /**

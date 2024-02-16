@@ -78,5 +78,6 @@ export const fetchLinks = [
 	'most_read_articles.articles',
 	'product.name',
 	'product.benefits',
-	'product.price'
+	'product.price',
+	'product.is_promotion'
 ]

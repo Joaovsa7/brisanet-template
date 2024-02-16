@@ -9,7 +9,7 @@
   }
 
   .splide-slider .splide__pagination__page {
-    @apply !w-10 !h-10 !flex !items-center !justify-center !rounded-md !bg-neutral-200 !text-neutral-950 !z-0 !scale-100 !cursor-pointer !opacity-100 hover:!opacity-70 !font-medium;
+    @apply !w-10 !h-10 !flex !items-center !justify-center !rounded-sm !bg-neutral-200 !text-neutral-950 !z-0 !scale-100 !cursor-pointer !opacity-100 hover:!opacity-70 !font-medium;
   }
 
   .splide-slider .splide__pagination__page.is-active {
