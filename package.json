@@ -46,7 +46,6 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "postcss": "^8",
-    "prismic-cli": "^4.2.3",
     "slice-machine-ui": "^1.24.0",
     "tailwind-scrollbar": "^3.1.0",
     "tailwindcss": "^3.4.1",
