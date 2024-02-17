@@ -30,10 +30,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 						</PrismicNextLink>
 					</NavigationMenuTrigger>
 
-					<NavigationMenuContent
-						forceMount
-						className="bg-white min-w-60 overflow-hidden shadow-md absolute top-20 data-[state=closed]:sr-only"
-					>
+					<NavigationMenuContent className="bg-white min-w-60 overflow-hidden shadow-md absolute top-20">
 						<ul className="flex flex-col gap-2">
 							{slice.items.map((item) => (
 								<li key={item.subitem_label}>
