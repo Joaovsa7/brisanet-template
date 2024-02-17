@@ -13,7 +13,7 @@ export const env = createEnv({
 
 	client: {
 		NEXT_PUBLIC_SITE_NAME: z.string().min(1),
-		NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: z.string().min(1)
+		NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: z.string().optional()
 	},
 
 	runtimeEnv: {
