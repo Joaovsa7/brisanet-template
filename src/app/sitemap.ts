@@ -18,7 +18,9 @@ export default async function sitemap() {
 	if (homePage.status === 'fulfilled' && homePage.value.data.robots_index) {
 		sitemaps.push({
 			url: env.BASE_URL,
-			lastModified: homePage.value.last_publication_date,
+			lastModified: new Date(
+				homePage.value.last_publication_date
+			).toISOString(),
 			changeFrequency: 'weekly',
 			priority: 0.9
 		})
@@ -27,7 +29,9 @@ export default async function sitemap() {
 	if (blogPage.status === 'fulfilled' && blogPage.value.data.robots_index) {
 		sitemaps.push({
 			url: `${env.BASE_URL}/blog`,
-			lastModified: blogPage.value.last_publication_date,
+			lastModified: new Date(
+				blogPage.value.last_publication_date
+			).toISOString(),
 			changeFrequency: 'weekly',
 			priority: 0.9
 		})
@@ -38,7 +42,7 @@ export default async function sitemap() {
 			.filter((document) => document.data.robots_index)
 			.map((document) => ({
 				url: `${env.BASE_URL}/blog/${document.uid}`,
-				lastModified: document.last_publication_date,
+				lastModified: new Date(document.last_publication_date).toISOString(),
 				changeFrequency: 'weekly',
 				priority: 0.9
 			}))
@@ -51,7 +55,7 @@ export default async function sitemap() {
 			.filter((document) => document.data.robots_index)
 			.map((document) => ({
 				url: `${env.BASE_URL}/${document.uid.replaceAll('--', '/')}`,
-				lastModified: document.last_publication_date,
+				lastModified: new Date(document.last_publication_date).toISOString(),
 				changeFrequency: 'weekly',
 				priority: 0.9
 			}))
@@ -64,7 +68,7 @@ export default async function sitemap() {
 			.filter((document) => document.data.robots_index)
 			.map((document) => ({
 				url: `${env.BASE_URL}/autores/${document.uid}`,
-				lastModified: document.last_publication_date,
+				lastModified: new Date(document.last_publication_date).toISOString(),
 				changeFrequency: 'weekly',
 				priority: 0.9
 			}))
