@@ -58,7 +58,7 @@ export default function LinksCard({ slice }: LinksCardProps) {
 			<Container size="lg">
 				<RichText field={slice.primary.title} className="prose-headings:mt-0" />
 
-				<div className="grid grid-cols-4">
+				<div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{slice.items.map((item: Content.LinksCardSliceDefaultItem) => {
 						const Icon = ICONS[item.icon ?? 'Arquivo']
 
@@ -70,7 +70,7 @@ export default function LinksCard({ slice }: LinksCardProps) {
 							>
 								<Icon className="w-10 h-10 text-primary" />
 								<h3 className="text-xl text-secondary">{item.title}</h3>
-								<p>{item.description}</p>
+								{item.description && <p>{item.description}</p>}
 							</PrismicNextLink>
 						)
 					})}
