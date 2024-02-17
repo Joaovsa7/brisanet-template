@@ -767,6 +767,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | LinksCardSlice
   | ProductsCarouselSlice
   | YouTubeVideoSlice
   | BannerSlice
@@ -965,6 +966,7 @@ export type MostReadArticlesDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | LinksCardSlice
   | ProductsCarouselSlice
   | YouTubeVideoSlice
   | BannerSlice
@@ -1604,6 +1606,113 @@ export type InfoCardsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *LinksCard → Primary*
+ */
+export interface LinksCardSliceDefaultPrimary {
+  /**
+   * Título field in *LinksCard → Primary*
+   *
+   * - **Field Type**: Title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: links_card.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.TitleField;
+}
+
+/**
+ * Primary content in *LinksCard → Items*
+ */
+export interface LinksCardSliceDefaultItem {
+  /**
+   * Ícone field in *LinksCard → Items*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: links_card.items[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<
+    | "Ajuda"
+    | "Arquivo"
+    | "Calendário"
+    | "Download"
+    | "Headset"
+    | "Instalação"
+    | "Internet"
+    | "Jornal"
+    | "Laptop"
+    | "Smartphone"
+    | "Tablet"
+    | "Telefone"
+    | "TV"
+    | "Upload"
+    | "WhatsApp"
+    | "Wi-Fi"
+  >;
+
+  /**
+   * Título field in *LinksCard → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: links_card.items[].title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Descrição field in *LinksCard → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: links_card.items[].description
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * Link field in *LinksCard → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: links_card.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Default variation for LinksCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LinksCardSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LinksCardSliceDefaultPrimary>,
+  Simplify<LinksCardSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *LinksCard*
+ */
+type LinksCardSliceVariation = LinksCardSliceDefault;
+
+/**
+ * LinksCard Shared Slice
+ *
+ * - **API ID**: `links_card`
+ * - **Description**: LinksCard
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LinksCardSlice = prismic.SharedSlice<
+  "links_card",
+  LinksCardSliceVariation
+>;
+
+/**
  * Primary content in *ProductsCarousel → Primary*
  */
 export interface ProductsCarouselSliceDefaultPrimary {
@@ -1971,6 +2080,11 @@ declare module "@prismicio/client" {
       InfoCardsSliceDefaultItem,
       InfoCardsSliceVariation,
       InfoCardsSliceDefault,
+      LinksCardSlice,
+      LinksCardSliceDefaultPrimary,
+      LinksCardSliceDefaultItem,
+      LinksCardSliceVariation,
+      LinksCardSliceDefault,
       ProductsCarouselSlice,
       ProductsCarouselSliceDefaultPrimary,
       ProductsCarouselSliceDefaultItem,

@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "links_card": {
+              "type": "SharedSlice"
+            },
             "products_carousel": {
               "type": "SharedSlice"
             },

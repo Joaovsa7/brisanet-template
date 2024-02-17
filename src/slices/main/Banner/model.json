@@ -1,84 +1,84 @@
 {
-  "id": "banner",
-  "type": "SharedSlice",
-  "name": "Banner",
-  "description": "Banner",
-  "variations": [
-    {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Título",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6"
-          }
-        },
-        "description": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Descrição",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,rtl"
-          }
-        },
-        "cta_label": {
-          "type": "Text",
-          "config": {
-            "label": "CTA Label",
-            "placeholder": ""
-          }
-        },
-        "cta_link": {
-          "type": "Link",
-          "config": {
-            "label": "CTA Link",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "select": null
-          }
-        }
-      },
-      "items": {}
-    },
-    {
-      "id": "ad",
-      "name": "Anúncio",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "banner": {
-          "type": "Image",
-          "config": {
-            "label": "Banner",
-            "constraint": {
-              "width": null,
-              "height": null
-            },
-            "thumbnails": []
-          }
-        },
-        "link": {
-          "type": "Link",
-          "config": {
-            "label": "Link",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "select": null
-          }
-        }
-      },
-      "items": {}
-    }
-  ]
+	"id": "banner",
+	"type": "SharedSlice",
+	"name": "Banner",
+	"description": "Banner",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Título",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6"
+					}
+				},
+				"description": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Descrição",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,rtl"
+					}
+				},
+				"cta_label": {
+					"type": "Text",
+					"config": {
+						"label": "CTA Label",
+						"placeholder": ""
+					}
+				},
+				"cta_link": {
+					"type": "Link",
+					"config": {
+						"label": "CTA Link",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"select": null
+					}
+				}
+			},
+			"items": {}
+		},
+		{
+			"id": "ad",
+			"name": "Anúncio",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"banner": {
+					"type": "Image",
+					"config": {
+						"label": "Banner",
+						"constraint": {
+							"width": null,
+							"height": null
+						},
+						"thumbnails": []
+					}
+				},
+				"link": {
+					"type": "Link",
+					"config": {
+						"label": "Link",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"select": null
+					}
+				}
+			},
+			"items": {}
+		}
+	]
 }
