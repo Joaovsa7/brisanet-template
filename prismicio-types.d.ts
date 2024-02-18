@@ -1229,6 +1229,49 @@ export type RedirectsDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Sidebar Banner documents
+ */
+interface SidebarBannerDocumentData {
+  /**
+   * Link field in *Sidebar Banner*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sidebar_banner.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+
+  /**
+   * Banner field in *Sidebar Banner*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: sidebar_banner.banner
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner: prismic.ImageField<never>;
+}
+
+/**
+ * Sidebar Banner document from Prismic
+ *
+ * - **API ID**: `sidebar_banner`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SidebarBannerDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<SidebarBannerDocumentData>,
+    "sidebar_banner",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | ArticleDocument
   | ArticleCategoryDocument
@@ -1243,7 +1286,8 @@ export type AllDocumentTypes =
   | MostReadArticlesDocument
   | PageDocument
   | ProductDocument
-  | RedirectsDocument;
+  | RedirectsDocument
+  | SidebarBannerDocument;
 
 /**
  * Primary content in *Banner → Primary*
@@ -1413,6 +1457,16 @@ export interface ContentBlockSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Banner field in *ContentBlock → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: content_block.primary.banner
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  banner: prismic.ContentRelationshipField<"sidebar_banner">;
 }
 
 /**
@@ -2054,6 +2108,8 @@ declare module "@prismicio/client" {
       RedirectsDocument,
       RedirectsDocumentData,
       RedirectsDocumentDataRedirectsItem,
+      SidebarBannerDocument,
+      SidebarBannerDocumentData,
       AllDocumentTypes,
       BannerSlice,
       BannerSliceDefaultPrimary,
