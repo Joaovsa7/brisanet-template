@@ -13,23 +13,25 @@ import { Container } from './container'
 import { Logo } from './logo'
 
 import { HeaderDocument } from '../../prismicio-types'
+import { MobileMenu } from './mobile-menu'
 
 export function Header({
 	headerDocument
 }: { headerDocument: HeaderDocument | null }) {
+	const menuItems = headerDocument?.data.slices.filter(
+		(slice) => slice.slice_type === 'menu_item'
+	)
+
 	return (
-		<header className="bg-white border-b border-neutral-200 sticky top-0 left-0 right-0 z-50 xl:py-0">
+		<header className="bg-white border-b border-neutral-200 sticky top-0 left-0 right-0 z-40">
 			<Container size="lg" className="flex items-center justify-between h-16">
 				<Link href="/" className="w-32">
 					<Logo />
 				</Link>
 
-				<NavigationMenuRoot className="hidden relative xl:block">
+				<NavigationMenuRoot className="hidden xl:block relative">
 					<NavigationMenuList className="flex items-center justify-center">
-						<SliceZone
-							slices={headerDocument?.data?.slices}
-							components={headerSlices}
-						/>
+						<SliceZone slices={menuItems} components={headerSlices} />
 					</NavigationMenuList>
 				</NavigationMenuRoot>
 
@@ -41,9 +43,13 @@ export function Header({
 							</PrismicNextLink>
 						</Button>
 
-						<Button size="xs" variant="secondary" className="xl:hidden">
-							Menu
-						</Button>
+						<MobileMenu>
+							<NavigationMenuRoot orientation="vertical">
+								<NavigationMenuList>
+									<SliceZone slices={menuItems} components={headerSlices} />
+								</NavigationMenuList>
+							</NavigationMenuRoot>
+						</MobileMenu>
 
 						<Button
 							asChild
