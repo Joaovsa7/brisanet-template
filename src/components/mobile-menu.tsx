@@ -6,16 +6,26 @@ import {
 	DialogPortal,
 	DialogTrigger
 } from '@radix-ui/react-dialog'
-
 import { IconX } from '@tabler/icons-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { Button } from './button'
 import { Logo } from './logo'
 
 export function MobileMenu({ children }: { children: React.ReactNode }) {
+	const [menuIsOpen, setMenuIsOpen] = useState(false)
+
+	const pathname = usePathname()
+
+	// biome-ignore lint/correctness/useExhaustiveDependencies:
+	useEffect(() => {
+		setMenuIsOpen(false)
+	}, [pathname])
+
 	return (
 		<div className="xl:hidden">
-			<DialogRoot>
+			<DialogRoot open={menuIsOpen} onOpenChange={setMenuIsOpen}>
 				<DialogTrigger asChild>
 					<Button size="xs" variant="secondary">
 						Menu
@@ -28,6 +38,7 @@ export function MobileMenu({ children }: { children: React.ReactNode }) {
 							<Link href="/" className="w-32">
 								<Logo isWhite />
 							</Link>
+
 							<DialogClose aria-label="Fechar menu">
 								<IconX className="text-white w-8 h-8" />
 							</DialogClose>

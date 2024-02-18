@@ -23,6 +23,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 
 	return (
 		<>
+			{/* Menu Desktop */}
 			<NavigationMenuItem className="text-secondary font-semibold uppercase hidden xl:block">
 				{isSubmenuVariation && (
 					<>
@@ -64,6 +65,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 				)}
 			</NavigationMenuItem>
 
+			{/* Menu Mobile */}
 			{isSubmenuVariation && (
 				<NavigationMenuItem className="text-white font-medium text-lg uppercase xl:hidden">
 					<CollapsibleRoot>
@@ -82,7 +84,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 												className="p-4 flex items-center justify-between bg-black/20"
 											>
 												<span>{item.label}</span>
-												<IconChevronRight className="" />
+												<IconChevronRight />
 											</PrismicNextLink>
 										</NavigationMenuLink>
 									</li>
@@ -94,7 +96,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 			)}
 
 			{isDefaultVariation && (
-				<NavigationMenuItem className="text-white font-medium text-xl uppercase xl:hidden">
+				<NavigationMenuItem className="text-white font-medium text-lg uppercase xl:hidden">
 					<NavigationMenuLink asChild>
 						<PrismicNextLink
 							field={slice.primary.item_link}
