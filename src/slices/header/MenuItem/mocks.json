@@ -19,22 +19,39 @@
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "submenu",
+		"primary": {
+			"label": {
+				"__TYPE__": "FieldContent",
+				"value": "cookies",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
 				"value": [
 					[
-						"subitem_label",
+						"label",
 						{
 							"__TYPE__": "FieldContent",
-							"value": "silver",
+							"value": "harbor",
 							"type": "Text"
 						}
 					],
 					[
-						"subitem_link",
+						"link",
 						{
 							"__TYPE__": "LinkContent",
 							"value": {
 								"__TYPE__": "ExternalLink",
-								"url": "http://google.com"
+								"url": "https://prismic.io"
 							}
 						}
 					]

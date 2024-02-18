@@ -29,18 +29,36 @@
 					}
 				}
 			},
-			"items": {
-				"subitem_label": {
+			"items": {}
+		},
+		{
+			"id": "submenu",
+			"name": "Submenu",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"label": {
 					"type": "Text",
 					"config": {
-						"label": "SubItem Label",
+						"label": "Label",
+						"placeholder": ""
+					}
+				}
+			},
+			"items": {
+				"label": {
+					"type": "Text",
+					"config": {
+						"label": "Label",
 						"placeholder": ""
 					}
 				},
-				"subitem_link": {
+				"link": {
 					"type": "Link",
 					"config": {
-						"label": "SubItem Link",
+						"label": "Link",
 						"placeholder": "",
 						"allowTargetBlank": true,
 						"select": null

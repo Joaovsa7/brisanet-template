@@ -1947,31 +1947,6 @@ export interface MenuItemSliceDefaultPrimary {
 }
 
 /**
- * Primary content in *MenuItem → Items*
- */
-export interface MenuItemSliceDefaultItem {
-  /**
-   * SubItem Label field in *MenuItem → Items*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.items[].subitem_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  subitem_label: prismic.KeyTextField;
-
-  /**
-   * SubItem Link field in *MenuItem → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: menu_item.items[].subitem_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  subitem_link: prismic.LinkField;
-}
-
-/**
  * Default variation for MenuItem Slice
  *
  * - **API ID**: `default`
@@ -1981,13 +1956,66 @@ export interface MenuItemSliceDefaultItem {
 export type MenuItemSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<MenuItemSliceDefaultPrimary>,
-  Simplify<MenuItemSliceDefaultItem>
+  never
+>;
+
+/**
+ * Primary content in *MenuItem → Primary*
+ */
+export interface MenuItemSliceSubmenuPrimary {
+  /**
+   * Label field in *MenuItem → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.primary.label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *MenuItem → Items*
+ */
+export interface MenuItemSliceSubmenuItem {
+  /**
+   * Label field in *MenuItem → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.items[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+
+  /**
+   * Link field in *MenuItem → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: menu_item.items[].link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField;
+}
+
+/**
+ * Submenu variation for MenuItem Slice
+ *
+ * - **API ID**: `submenu`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MenuItemSliceSubmenu = prismic.SharedSliceVariation<
+  "submenu",
+  Simplify<MenuItemSliceSubmenuPrimary>,
+  Simplify<MenuItemSliceSubmenuItem>
 >;
 
 /**
  * Slice variation for *MenuItem*
  */
-type MenuItemSliceVariation = MenuItemSliceDefault;
+type MenuItemSliceVariation = MenuItemSliceDefault | MenuItemSliceSubmenu;
 
 /**
  * MenuItem Shared Slice
@@ -2152,9 +2180,11 @@ declare module "@prismicio/client" {
       YouTubeVideoSliceDefault,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
-      MenuItemSliceDefaultItem,
+      MenuItemSliceSubmenuPrimary,
+      MenuItemSliceSubmenuItem,
       MenuItemSliceVariation,
       MenuItemSliceDefault,
+      MenuItemSliceSubmenu,
       FooterLinksSlice,
       FooterLinksSliceDefaultItem,
       FooterLinksSliceVariation,
