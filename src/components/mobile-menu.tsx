@@ -35,7 +35,7 @@ export function MobileMenu({ children }: { children: React.ReactNode }) {
 				<DialogPortal>
 					<DialogContent className="xl:hidden bg-secondary fixed inset-0 z-50 overflow-y-auto">
 						<div className="p-4 flex items-center justify-between">
-							<Link href="/" className="w-32">
+							<Link prefetch={false} href="/" className="w-32">
 								<Logo isWhite />
 							</Link>
 

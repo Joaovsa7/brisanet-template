@@ -117,6 +117,7 @@ export function Author({
 									<Link
 										key={article.id}
 										href={`/blog/${article.uid}`}
+										prefetch={false}
 										className="flex"
 									>
 										<ArticleCard article={article} />
@@ -139,6 +140,7 @@ export function Author({
 									<Link
 										key={author.id}
 										href={`/autores/${author.uid}`}
+										prefetch={false}
 										className="bg-neutral-100 flex flex-col items-center justify-center text-center px-6 py-8 rounded-md hover:bg-neutral-200 transition-colors"
 									>
 										<PrismicNextImage

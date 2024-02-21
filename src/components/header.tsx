@@ -25,7 +25,7 @@ export function Header({
 	return (
 		<header className="bg-white border-b border-neutral-200 sticky top-0 left-0 right-0 z-40">
 			<Container size="lg" className="flex items-center justify-between h-16">
-				<Link href="/" className="w-32">
+				<Link href="/" prefetch={false} className="w-32">
 					<Logo />
 				</Link>
 

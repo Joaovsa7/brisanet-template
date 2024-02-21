@@ -32,6 +32,7 @@ export function Blog({ articles, document }: IBlogProps) {
 								<Link
 									key={article.id}
 									href={`/blog/${article.uid}`}
+									prefetch={false}
 									className="flex"
 								>
 									<ArticleCard article={article} />

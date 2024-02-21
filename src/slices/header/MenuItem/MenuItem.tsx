@@ -81,6 +81,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 										<NavigationMenuLink asChild>
 											<PrismicNextLink
 												field={item.link}
+												prefetch={false}
 												className="p-4 flex items-center justify-between bg-black/20"
 											>
 												<span>{item.label}</span>
@@ -100,6 +101,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 					<NavigationMenuLink asChild>
 						<PrismicNextLink
 							field={slice.primary.item_link}
+							prefetch={false}
 							className="p-4 block"
 						>
 							{slice.primary.item_label}

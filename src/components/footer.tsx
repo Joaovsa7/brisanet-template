@@ -31,7 +31,7 @@ export function Footer({ footerDocument }: IFooterProps) {
 						reservados
 					</p>
 
-					<Link href="/">
+					<Link href="/" prefetch={false}>
 						<Logo isWhite className="w-32" />
 					</Link>
 				</div>

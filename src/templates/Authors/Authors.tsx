@@ -23,6 +23,7 @@ export function Authors({ authors }: { authors: AuthorDocument[] }) {
 								<Link
 									key={author.id}
 									href={`/autores/${author.uid}`}
+									prefetch={false}
 									className="bg-neutral-100 flex flex-col items-center justify-center text-center px-6 py-8 rounded-md hover:bg-neutral-200 transition-colors"
 								>
 									<PrismicNextImage

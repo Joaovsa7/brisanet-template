@@ -93,6 +93,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 					<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
 						{isFilled.contentRelationship(document.data.author) && (
 							<Link
+								prefetch={false}
 								href={`/autores/${document.data.author.uid}`}
 								className="flex items-center gap-2"
 							>
@@ -149,6 +150,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 										<Link
 											key={article.id}
 											href={`/blog/${article.uid}`}
+											prefetch={false}
 											className="flex"
 										>
 											<ArticleCard article={article} />

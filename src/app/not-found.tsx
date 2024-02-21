@@ -26,7 +26,9 @@ export default function NotFoundPage() {
 					removida.
 				</p>
 				<Button asChild>
-					<Link href="/">Retornar à Home</Link>
+					<Link href="/" prefetch={false}>
+						Retornar à Home
+					</Link>
 				</Button>
 			</Container>
 		</main>
