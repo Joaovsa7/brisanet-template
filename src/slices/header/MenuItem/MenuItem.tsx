@@ -39,6 +39,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 										<NavigationMenuLink asChild>
 											<PrismicNextLink
 												field={item.link}
+												prefetch={false}
 												className="py-3 px-6 block hover:text-primary transition-colors"
 											>
 												{item.label}
@@ -56,6 +57,7 @@ export default function MenuItem({ slice }: MenuItemProps) {
 						<NavigationMenuLink asChild>
 							<PrismicNextLink
 								field={slice.primary.item_link}
+								prefetch={false}
 								className="flex items-center justify-center h-16 px-4 transition-colors hover:text-primary"
 							>
 								{slice.primary.item_label}
