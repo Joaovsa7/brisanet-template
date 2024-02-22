@@ -48,9 +48,7 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 		routes,
 		fetchOptions:
 			process.env.NODE_ENV === 'production'
-				? {
-						cache: 'force-cache'
-				  }
+				? { next: { tags: ['@brisanet/prismic-tag'] }, cache: 'force-cache' }
 				: { next: { revalidate: 5 } },
 		...config
 	})
