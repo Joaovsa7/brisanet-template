@@ -1,10 +1,13 @@
+import { Content } from '@prismicio/client'
 import { SliceZone } from '@prismicio/react'
 import { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
+
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { GoogleStructuredData } from '~/components/google-structured-data'
 import { PageInfo } from '~/components/page-info'
+
 import { env } from '~/config/env'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
@@ -14,6 +17,28 @@ import { mainSlices } from '~/slices'
 interface IPageProps {
 	params: {
 		slugs: string[]
+	}
+}
+
+export async function generateStaticParams() {
+	try {
+		const client = createClient()
+
+		const document = await client.getSingle<
+			Content.MostVisitedPagesDocument & {
+				data: {
+					pages: {
+						page: Pick<Content.PageDocument, 'uid'>
+					}[]
+				}
+			}
+		>('most_visited_pages')
+
+		return document.data.pages.map((page) => ({
+			slugs: page.page.uid.split('--')
+		}))
+	} catch {
+		return []
 	}
 }
 

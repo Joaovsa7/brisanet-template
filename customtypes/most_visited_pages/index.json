@@ -1,0 +1,28 @@
+{
+  "format": "custom",
+  "id": "most_visited_pages",
+  "label": "Páginas mais acessadas",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "pages": {
+        "type": "Group",
+        "config": {
+          "label": "Páginas",
+          "repeat": true,
+          "fields": {
+            "page": {
+              "type": "Link",
+              "config": {
+                "label": "Página",
+                "select": "document",
+                "customtypes": ["page"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

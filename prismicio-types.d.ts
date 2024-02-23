@@ -965,6 +965,53 @@ export type MostReadArticlesDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *Páginas mais acessadas → Páginas*
+ */
+export interface MostVisitedPagesDocumentDataPagesItem {
+  /**
+   * Página field in *Páginas mais acessadas → Páginas*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: most_visited_pages.pages[].page
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  page: prismic.ContentRelationshipField<"page">;
+}
+
+/**
+ * Content for Páginas mais acessadas documents
+ */
+interface MostVisitedPagesDocumentData {
+  /**
+   * Páginas field in *Páginas mais acessadas*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: most_visited_pages.pages[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  pages: prismic.GroupField<Simplify<MostVisitedPagesDocumentDataPagesItem>>;
+}
+
+/**
+ * Páginas mais acessadas document from Prismic
+ *
+ * - **API ID**: `most_visited_pages`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type MostVisitedPagesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<MostVisitedPagesDocumentData>,
+    "most_visited_pages",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   | LinksCardSlice
   | ProductsCarouselSlice
@@ -1284,6 +1331,7 @@ export type AllDocumentTypes =
   | HomeDocument
   | LayoutDocument
   | MostReadArticlesDocument
+  | MostVisitedPagesDocument
   | PageDocument
   | ProductDocument
   | RedirectsDocument
@@ -1506,12 +1554,12 @@ export interface FaqSliceDefaultPrimary {
   /**
    * Título field in *Faq → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Title
    * - **Placeholder**: *None*
    * - **API ID Path**: faq.primary.title
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.RichTextField;
+  title: prismic.TitleField;
 }
 
 /**
@@ -2127,6 +2175,9 @@ declare module "@prismicio/client" {
       MostReadArticlesDocument,
       MostReadArticlesDocumentData,
       MostReadArticlesDocumentDataArticlesItem,
+      MostVisitedPagesDocument,
+      MostVisitedPagesDocumentData,
+      MostVisitedPagesDocumentDataPagesItem,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
