@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "npx @biomejs/biome check --apply-unsafe src",
     "slicemachine": "start-slicemachine",
+    "prismic-login": "npx prismic-cli login",
     "check-updates": "npx npm-check-updates -i",
     "prepare": "husky install"
   },
