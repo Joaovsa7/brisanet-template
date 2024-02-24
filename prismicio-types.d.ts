@@ -589,6 +589,60 @@ export type CallToActionDocument<Lang extends string = string> =
   >;
 
 /**
+ * Content for Conversion Bar documents
+ */
+interface ConversionBarDocumentData {
+  /**
+   * Texto field in *Conversion Bar*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: conversion_bar.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
+
+  /**
+   * Texto do Botão field in *Conversion Bar*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: conversion_bar.cta_label
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_label: prismic.KeyTextField;
+
+  /**
+   * Link do Botão field in *Conversion Bar*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: conversion_bar.cta_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
+}
+
+/**
+ * Conversion Bar document from Prismic
+ *
+ * - **API ID**: `conversion_bar`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ConversionBarDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<ConversionBarDocumentData>,
+    "conversion_bar",
+    Lang
+  >;
+
+/**
  * Item in *Perguntas Frequentes → Perguntas Frequentes*
  */
 export interface FaqDocumentDataFrequentlyAskedQuestionsItem {
@@ -1325,6 +1379,7 @@ export type AllDocumentTypes =
   | AuthorDocument
   | BlogDocument
   | CallToActionDocument
+  | ConversionBarDocument
   | FaqDocument
   | FooterDocument
   | HeaderDocument
@@ -2157,6 +2212,8 @@ declare module "@prismicio/client" {
       BlogDocumentDataSlicesSlice,
       CallToActionDocument,
       CallToActionDocumentData,
+      ConversionBarDocument,
+      ConversionBarDocumentData,
       FaqDocument,
       FaqDocumentData,
       FaqDocumentDataFrequentlyAskedQuestionsItem,

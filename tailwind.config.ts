@@ -8,6 +8,7 @@ import {
 	white,
 	zinc
 } from 'tailwindcss/colors'
+const { withTV } = require('tailwind-variants/transformer')
 
 const config: Config = {
 	content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -74,4 +75,4 @@ const config: Config = {
 	plugins: [require('@tailwindcss/typography'), require('tailwind-scrollbar')]
 }
 
-export default config
+export default withTV(config)

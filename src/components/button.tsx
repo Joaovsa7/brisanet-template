@@ -29,7 +29,7 @@ Button.displayName = 'Button'
 
 const buttonStyles = tv(
 	{
-		base: 'inline-flex items-center justify-center text-center gap-2 font-semibold transition-colors duration-500 uppercase',
+		base: 'inline-flex items-center justify-center text-center gap-2 font-semibold transition-colors duration-500 uppercase whitespace-nowrap',
 		variants: {
 			variant: {
 				primary: 'bg-primary text-white hover:bg-secondary',

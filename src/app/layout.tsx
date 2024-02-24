@@ -8,6 +8,7 @@ import { Footer } from '~/components/footer'
 import { GoogleAnalytics } from '~/components/google-analytics'
 import { Header } from '~/components/header'
 
+import { ConversionBar } from '~/components/conversion-bar'
 import { env } from '~/config/env'
 
 const font = Barlow({
@@ -60,6 +61,7 @@ export default async function RootLayout({
 				<GoogleAnalytics />
 				<Header headerDocument={headerDocument} />
 				<div className="flex flex-col flex-1">{children}</div>
+				<ConversionBar />
 				<Footer footerDocument={footerDocument} />
 				<PrismicPreview repositoryName={env.PRISMIC_REPOSITORY_NAME} />
 			</body>
