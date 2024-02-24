@@ -62,7 +62,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 			<GoogleStructuredData data={document.data.google_structured_data} />
 
 			<main className="py-8">
-				<Container size="sm">
+				<Container size="lg">
 					<Breadcrumb className="mb-10" />
 
 					<div className="flex flex-col gap-1 text-neutral-500 text-sm mb-4 sm:mb-6 sm:text-sm sm:flex-row sm:items-center sm:gap-4">
@@ -87,7 +87,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 
 					<RichText
 						field={document.data.title}
-						className="my-4 md:my-8 font-bold"
+						className="my-4 md:my-8 font-bold min-w-full w-full"
 					/>
 
 					<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
@@ -137,9 +137,11 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 							loading="eager"
 						/>
 					</div>
+				</Container>
 
-					<SliceZone slices={document.data.slices} components={mainSlices} />
+				<SliceZone slices={document.data.slices} components={mainSlices} />
 
+				<Container>
 					{relatedArticlesIsPopulated && (
 						<section className="py-12">
 							<h3 className="mb-6 text-2xl font-bold">Artigos relacionados</h3>
