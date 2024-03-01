@@ -1,4 +1,3 @@
-import { PrismicPreview } from '@prismicio/next'
 import { Barlow } from 'next/font/google'
 import './globals.css'
 
@@ -63,7 +62,6 @@ export default async function RootLayout({
 				<div className="flex flex-col flex-1">{children}</div>
 				<ConversionBar />
 				<Footer footerDocument={footerDocument} />
-				<PrismicPreview repositoryName={env.PRISMIC_REPOSITORY_NAME} />
 			</body>
 		</html>
 	)
