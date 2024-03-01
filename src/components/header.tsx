@@ -38,7 +38,10 @@ export function Header({
 				<div className="flex">
 					<div className="flex items-center flex-row gap-2 sm:gap-4">
 						<Button asChild size="xs">
-							<PrismicNextLink field={headerDocument?.data.btn_primary_link}>
+							<PrismicNextLink
+								field={headerDocument?.data.btn_primary_link}
+								prefetch={false}
+							>
 								{headerDocument?.data.btn_primary_text}
 							</PrismicNextLink>
 						</Button>
@@ -57,7 +60,10 @@ export function Header({
 							variant="secondary"
 							className="hidden xl:flex"
 						>
-							<PrismicNextLink field={headerDocument?.data.btn_secondary_link}>
+							<PrismicNextLink
+								field={headerDocument?.data.btn_secondary_link}
+								prefetch={false}
+							>
 								{headerDocument?.data.btn_secondary_text}
 							</PrismicNextLink>
 						</Button>

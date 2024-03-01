@@ -66,6 +66,7 @@ export default function LinksCard({ slice }: LinksCardProps) {
 							<PrismicNextLink
 								key={item.title}
 								field={item.link}
+								prefetch={false}
 								className="p-6 bg-white shadow rounded flex flex-col gap-4 hover:shadow-md transition-shadow"
 							>
 								<Icon className="w-10 h-10 text-primary" />

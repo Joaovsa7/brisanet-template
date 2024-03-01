@@ -92,6 +92,7 @@ export function Author({
 									return (
 										<li key={socialNetwork.name}>
 											<PrismicNextLink
+												prefetch={false}
 												field={socialNetwork.link}
 												className="w-10 h-10 bg-neutral-200 rounded-full overflow-hidden flex items-center justify-center transition-transform duration-300 hover:-translate-y-0.5"
 											>

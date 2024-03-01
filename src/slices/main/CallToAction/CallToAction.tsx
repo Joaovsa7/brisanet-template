@@ -28,7 +28,7 @@ export default function CallToAction({ slice }: CallToActionProps) {
 					<RichText field={cta.data.title} className="prose-headings:m-0" />
 
 					<Button asChild size="lg">
-						<PrismicNextLink field={cta.data.cta_link}>
+						<PrismicNextLink field={cta.data.cta_link} prefetch={false}>
 							{cta.data.cta_label}
 						</PrismicNextLink>
 					</Button>

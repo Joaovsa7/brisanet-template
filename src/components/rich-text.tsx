@@ -51,7 +51,6 @@ export function RichText({ className, field, ...props }: IRichTextProps) {
 	return (
 		<Text
 			className={className}
-			// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 			dangerouslySetInnerHTML={{ __html: asHTML(field) }}
 		/>
 	)

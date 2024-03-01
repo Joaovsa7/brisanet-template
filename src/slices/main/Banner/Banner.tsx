@@ -1,6 +1,6 @@
-import { Content, isFilled } from '@prismicio/client'
+import { Content, asHTML, isFilled } from '@prismicio/client'
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
-import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
+import { SliceComponentProps } from '@prismicio/react'
 
 import { Button } from '~/components/button'
 import { Container } from '~/components/container'
@@ -11,7 +11,7 @@ function BannerAd({ primary }: Content.BannerSliceAd) {
 	return (
 		<section>
 			<Container size="lg">
-				<PrismicNextLink field={primary.link}>
+				<PrismicNextLink field={primary.link} prefetch={false}>
 					<PrismicNextImage
 						field={primary.banner}
 						width={1280}
@@ -55,19 +55,28 @@ export default function Banner({ slice }: BannerProps) {
 						<div>
 							<div className="max-w-2xl">
 								{titleIsFilled && (
-									<span className="text-4xl md:text-5xl text-white font-semibold mb-6 tracking-tighter block">
-										<PrismicRichText field={slice.primary.title} />
-									</span>
+									<span
+										className="text-4xl md:text-5xl text-white font-semibold mb-6 tracking-tighter block"
+										dangerouslySetInnerHTML={{
+											__html: asHTML(slice.primary.title)
+										}}
+									/>
 								)}
 								{descriptionIsFilled && (
-									<span className="text-white text-lg font-medium mb-8 block">
-										<PrismicRichText field={slice.primary.description} />
-									</span>
+									<span
+										className="text-white text-lg font-medium mb-8 block"
+										dangerouslySetInnerHTML={{
+											__html: asHTML(slice.primary.description)
+										}}
+									/>
 								)}
 							</div>
 							{ctaIsFilled && (
 								<Button size="lg" variant="secondary" asChild>
-									<PrismicNextLink field={slice.primary.cta_link}>
+									<PrismicNextLink
+										field={slice.primary.cta_link}
+										prefetch={false}
+									>
 										{slice.primary.cta_label}
 									</PrismicNextLink>
 								</Button>

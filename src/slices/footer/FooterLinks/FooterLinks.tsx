@@ -2,9 +2,10 @@ import {
 	Content,
 	FilledContentRelationshipField,
 	LinkResolverFunction,
+	asHTML,
 	asText
 } from '@prismicio/client'
-import { PrismicRichText, SliceComponentProps } from '@prismicio/react'
+import { SliceComponentProps } from '@prismicio/react'
 
 const linkResolver: LinkResolverFunction = (
 	doc: FilledContentRelationshipField
@@ -23,12 +24,18 @@ export default function FooterLinks({ slice }: FooterLinksProps) {
 		>
 			{slice.items.map((item) => (
 				<nav key={asText(item.column_title)} className="footer-nav">
-					<span className="footer-nav--heading">
-						<PrismicRichText field={item.column_title} />
-					</span>
-					<span className="text-white">
-						<PrismicRichText field={item.links} linkResolver={linkResolver} />
-					</span>
+					<span
+						className="footer-nav--heading"
+						dangerouslySetInnerHTML={{ __html: asHTML(item.column_title) }}
+					/>
+					<span
+						className="text-white"
+						dangerouslySetInnerHTML={{
+							__html: asHTML(item.links, {
+								linkResolver
+							})
+						}}
+					/>
 				</nav>
 			))}
 		</section>

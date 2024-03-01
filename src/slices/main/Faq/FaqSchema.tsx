@@ -22,7 +22,6 @@ export function FaqSchema({ items }: { items: IAccordionQuestion[] }) {
 	return (
 		<script
 			type="application/ld+json"
-			// biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
 			dangerouslySetInnerHTML={{
 				__html: JSON.stringify(schema)
 			}}
