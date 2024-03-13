@@ -9,7 +9,7 @@ import { createClient } from '~/libs/prismicio'
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 
-import { ArticleDocument, PageDocument } from '../../../prismicio-types'
+import { ArticleDocument, PageDocument } from '../../../../prismicio-types'
 
 interface IPageProps {
 	searchParams: {

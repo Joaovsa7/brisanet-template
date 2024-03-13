@@ -4,7 +4,7 @@ import { SliceZone } from '@prismicio/react'
 import { IconCalendar, IconClock } from '@tabler/icons-react'
 import Link from 'next/link'
 
-import { IArticleDocumentResponse } from '~/app/blog/[slug]/page'
+import { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
 import { ArticleCard } from '~/components/article-card'
 import { ArticleShareButtons } from '~/components/article-share-buttons'
 import { Breadcrumb } from '~/components/breadcrumb'

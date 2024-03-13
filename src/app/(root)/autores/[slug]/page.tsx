@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
 
-import { IArticleDocumentResponse } from '~/app/blog/[slug]/page'
+import { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
 
 import { env } from '~/config/env'
 import { Author } from '~/templates/Authors'

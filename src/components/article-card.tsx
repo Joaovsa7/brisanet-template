@@ -1,7 +1,7 @@
 import { asText, isFilled } from '@prismicio/client'
 import { PrismicNextImage } from '@prismicio/next'
 
-import { IArticleDocumentResponse } from '~/app/blog/[slug]/page'
+import { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
 
 export function ArticleCard({
 	article
