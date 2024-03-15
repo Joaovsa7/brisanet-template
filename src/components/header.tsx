@@ -11,13 +11,15 @@ import { headerSlices } from '~/slices'
 import { Button } from './button'
 import { Container } from './container'
 import { Logo } from './logo'
-
-import { HeaderDocument } from '../../prismicio-types'
 import { MobileMenu } from './mobile-menu'
 
-export function Header({
-	headerDocument
-}: { headerDocument: HeaderDocument | null }) {
+import { createClient } from '~/libs/prismicio'
+
+export async function Header() {
+	const client = createClient()
+
+	const headerDocument = await client.getSingle('header').catch(() => null)
+
 	const menuItems = headerDocument?.data.slices.filter(
 		(slice) => slice.slice_type === 'menu_item'
 	)

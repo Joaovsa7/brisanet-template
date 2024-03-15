@@ -1,18 +1,17 @@
 import { SliceZone } from '@prismicio/react'
+import Link from 'next/link'
 
 import { footerSlices } from '~/slices'
 import { Container } from './container'
 import { Logo } from './logo'
 
-import { isFilled } from '@prismicio/client'
-import Link from 'next/link'
-import { FooterDocument } from '../../prismicio-types'
+import { createClient } from '~/libs/prismicio'
 
-interface IFooterProps {
-	footerDocument: FooterDocument | null
-}
+export async function Footer() {
+	const client = createClient()
 
-export function Footer({ footerDocument }: IFooterProps) {
+	const footerDocument = await client.getSingle('footer').catch(() => null)
+
 	const currentYear = new Date().getFullYear()
 
 	return (
