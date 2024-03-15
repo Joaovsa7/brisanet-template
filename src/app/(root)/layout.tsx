@@ -2,6 +2,7 @@ import { createClient } from '~/libs/prismicio'
 
 import { env } from '~/config/env'
 
+import { Suspense } from 'react'
 import { ConversionBar } from '~/components/conversion-bar'
 import { Footer } from '~/components/footer'
 import { GoogleAnalytics } from '~/components/google-analytics'
@@ -47,10 +48,12 @@ export default async function Layout({
 	return (
 		<div className="bg-neutral-100 text-neutral-800 flex flex-col min-h-screen overflow-x-hidden">
 			<GoogleAnalytics />
-			<Header headerDocument={headerDocument} />
-			<div className="flex flex-col flex-1">{children}</div>
-			<ConversionBar />
-			<Footer footerDocument={footerDocument} />
+			<Suspense fallback={<p>Carregando...</p>}>
+				<Header headerDocument={headerDocument} />
+				<div className="flex flex-col flex-1">{children}</div>
+				<ConversionBar />
+				<Footer footerDocument={footerDocument} />
+			</Suspense>
 		</div>
 	)
 }
