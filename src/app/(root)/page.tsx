@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 
 import { env } from '~/config/env'
 
-import { createClient, fetchLinks } from '~/libs/prismicio'
+import { cmsService } from '~/services/cms'
 
 import { Home } from '~/templates/Home'
 
@@ -14,11 +14,7 @@ export async function generateMetadata(
 	parent: ResolvingMetadata
 ) {
 	try {
-		const client = createClient()
-
-		const document = await client.getSingle('home', {
-			fetchLinks
-		})
+		const document = await cmsService.getHome()
 
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
@@ -50,9 +46,7 @@ export async function generateMetadata(
 
 export default async function HomePage() {
 	try {
-		const client = createClient()
-
-		const document = await client.getSingle('home', { fetchLinks })
+		const document = await cmsService.getHome()
 
 		return <Home document={document} />
 	} catch {
