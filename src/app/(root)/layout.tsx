@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 
 import { env } from '~/config/env'
 
+import { Clarity } from '~/components/clarity'
 import { ConversionBar } from '~/components/conversion-bar'
 import { Footer } from '~/components/footer'
 import { GoogleAnalytics } from '~/components/google-analytics'
@@ -35,13 +36,14 @@ export default function Layout({
 }) {
 	return (
 		<div className="bg-neutral-100 text-neutral-800 flex flex-col min-h-screen overflow-x-hidden">
-			<GoogleAnalytics />
 			<Suspense fallback={<p>Hello world</p>}>
 				<Header />
 				<div className="flex flex-col flex-1">{children}</div>
 				<ConversionBar />
 				<Footer />
 			</Suspense>
+			<GoogleAnalytics />
+			<Clarity />
 		</div>
 	)
 }
