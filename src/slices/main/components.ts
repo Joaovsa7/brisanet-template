@@ -5,7 +5,6 @@ import Faq from './Faq'
 import InfoCards from './InfoCards'
 import LinksCard from './LinksCard'
 import ProductsCarousel from './ProductsCarousel'
-import YouTubeVideo from './YouTubeVideo'
 
 export const components = {
 	banner: Banner,
@@ -14,6 +13,5 @@ export const components = {
 	faq: Faq,
 	info_cards: InfoCards,
 	links_cards: LinksCard,
-	products_carousel: ProductsCarousel,
-	you_tube_video: YouTubeVideo
+	products_carousel: ProductsCarousel
 }
