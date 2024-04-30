@@ -17,9 +17,6 @@
             "products_carousel": {
               "type": "SharedSlice"
             },
-            "you_tube_video": {
-              "type": "SharedSlice"
-            },
             "banner": {
               "type": "SharedSlice"
             },

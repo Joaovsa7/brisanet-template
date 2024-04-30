@@ -54,9 +54,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "you_tube_video": {
-              "type": "SharedSlice"
-            },
             "info_cards": {
               "type": "SharedSlice"
             },

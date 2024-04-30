@@ -5,7 +5,6 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ArticleDocumentDataSlicesSlice =
-  | YouTubeVideoSlice
   | InfoCardsSlice
   | FaqSlice
   | ContentBlockSlice
@@ -286,7 +285,6 @@ export interface AuthorDocumentDataSocialNetworksItem {
 }
 
 type AuthorDocumentDataSlicesSlice =
-  | YouTubeVideoSlice
   | BannerSlice
   | InfoCardsSlice
   | FaqSlice
@@ -642,72 +640,6 @@ export type ConversionBarDocument<Lang extends string = string> =
     Lang
   >;
 
-/**
- * Item in *Perguntas Frequentes → Perguntas Frequentes*
- */
-export interface FaqDocumentDataFrequentlyAskedQuestionsItem {
-  /**
-   * Pergunta field in *Perguntas Frequentes → Perguntas Frequentes*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: faq.frequently_asked_questions[].question
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  question: prismic.KeyTextField;
-
-  /**
-   * Resposta field in *Perguntas Frequentes → Perguntas Frequentes*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: faq.frequently_asked_questions[].answer
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  answer: prismic.RichTextField;
-}
-
-/**
- * Content for Perguntas Frequentes documents
- */
-interface FaqDocumentData {
-  /**
-   * Título field in *Perguntas Frequentes*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: faq.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  title: prismic.RichTextField;
-
-  /**
-   * Perguntas Frequentes field in *Perguntas Frequentes*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: faq.frequently_asked_questions[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#group
-   */
-  frequently_asked_questions: prismic.GroupField<
-    Simplify<FaqDocumentDataFrequentlyAskedQuestionsItem>
-  >;
-}
-
-/**
- * Perguntas Frequentes document from Prismic
- *
- * - **API ID**: `faq`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type FaqDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<FaqDocumentData>, "faq", Lang>;
-
 type FooterDocumentDataSlicesSlice = FooterLinksSlice;
 
 /**
@@ -823,7 +755,6 @@ export type HeaderDocument<Lang extends string = string> =
 type HomeDocumentDataSlicesSlice =
   | LinksCardSlice
   | ProductsCarouselSlice
-  | YouTubeVideoSlice
   | BannerSlice
   | InfoCardsSlice
   | CallToActionSlice
@@ -1069,7 +1000,6 @@ export type MostVisitedPagesDocument<Lang extends string = string> =
 type PageDocumentDataSlicesSlice =
   | LinksCardSlice
   | ProductsCarouselSlice
-  | YouTubeVideoSlice
   | BannerSlice
   | CallToActionSlice
   | ContentBlockSlice
@@ -1373,6 +1303,43 @@ export type SidebarBannerDocument<Lang extends string = string> =
     Lang
   >;
 
+type SlicesDocumentDataSlicesSlice =
+  | ProductsCarouselSlice
+  | LinksCardSlice
+  | InfoCardsSlice
+  | FaqSlice
+  | ContentBlockSlice
+  | CallToActionSlice
+  | BannerSlice;
+
+/**
+ * Content for Slices documents
+ */
+interface SlicesDocumentData {
+  /**
+   * Slice Zone field in *Slices*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slices.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<SlicesDocumentDataSlicesSlice>;
+}
+
+/**
+ * Slices document from Prismic
+ *
+ * - **API ID**: `slices`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SlicesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<SlicesDocumentData>, "slices", Lang>;
+
 export type AllDocumentTypes =
   | ArticleDocument
   | ArticleCategoryDocument
@@ -1380,7 +1347,6 @@ export type AllDocumentTypes =
   | BlogDocument
   | CallToActionDocument
   | ConversionBarDocument
-  | FaqDocument
   | FooterDocument
   | HeaderDocument
   | HomeDocument
@@ -1390,7 +1356,8 @@ export type AllDocumentTypes =
   | PageDocument
   | ProductDocument
   | RedirectsDocument
-  | SidebarBannerDocument;
+  | SidebarBannerDocument
+  | SlicesDocument;
 
 /**
  * Primary content in *Banner → Primary*
@@ -1656,37 +1623,9 @@ export type FaqSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Faq → Primary*
- */
-export interface FaqSliceRelationalPrimary {
-  /**
-   * Faq field in *Faq → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: faq.primary.faq
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  faq: prismic.ContentRelationshipField<"faq">;
-}
-
-/**
- * Relacional variation for Faq Slice
- *
- * - **API ID**: `relational`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type FaqSliceRelational = prismic.SharedSliceVariation<
-  "relational",
-  Simplify<FaqSliceRelationalPrimary>,
-  never
->;
-
-/**
  * Slice variation for *Faq*
  */
-type FaqSliceVariation = FaqSliceDefault | FaqSliceRelational;
+type FaqSliceVariation = FaqSliceDefault;
 
 /**
  * Faq Shared Slice
@@ -1930,99 +1869,46 @@ export type ProductsCarouselSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *YouTubeVideo → Primary*
+ * Primary content in *Slices → Primary*
  */
-export interface YouTubeVideoSliceDefaultPrimary {
+export interface SlicesSliceDefaultPrimary {
   /**
-   * Título field in *YouTubeVideo → Primary*
+   * Slices field in *Slices → Primary*
    *
-   * - **Field Type**: Rich Text
+   * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: you_tube_video.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   * - **API ID Path**: slices.primary.slices
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  title: prismic.RichTextField;
-
-  /**
-   * Descrição field in *YouTubeVideo → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: you_tube_video.primary.description
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  description: prismic.RichTextField;
-
-  /**
-   * ID do Vídeo field in *YouTubeVideo → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: you_tube_video.primary.video_id
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  video_id: prismic.KeyTextField;
-
-  /**
-   * Título do Vídeo field in *YouTubeVideo → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: you_tube_video.primary.video_title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  video_title: prismic.KeyTextField;
-
-  /**
-   * Data de publicação do Vídeo field in *YouTubeVideo → Primary*
-   *
-   * - **Field Type**: Timestamp
-   * - **Placeholder**: *None*
-   * - **API ID Path**: you_tube_video.primary.video_upload_date
-   * - **Documentation**: https://prismic.io/docs/field#timestamp
-   */
-  video_upload_date: prismic.TimestampField;
-
-  /**
-   * Tempo de duração do Vídeo field in *YouTubeVideo → Primary*
-   *
-   * - **Field Type**: Number
-   * - **Placeholder**: *None*
-   * - **API ID Path**: you_tube_video.primary.video_duration_time
-   * - **Documentation**: https://prismic.io/docs/field#number
-   */
-  video_duration_time: prismic.NumberField;
+  slices: prismic.ContentRelationshipField<"slices">;
 }
 
 /**
- * Default variation for YouTubeVideo Slice
+ * Default variation for Slices Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type YouTubeVideoSliceDefault = prismic.SharedSliceVariation<
+export type SlicesSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Simplify<YouTubeVideoSliceDefaultPrimary>,
+  Simplify<SlicesSliceDefaultPrimary>,
   never
 >;
 
 /**
- * Slice variation for *YouTubeVideo*
+ * Slice variation for *Slices*
  */
-type YouTubeVideoSliceVariation = YouTubeVideoSliceDefault;
+type SlicesSliceVariation = SlicesSliceDefault;
 
 /**
- * YouTubeVideo Shared Slice
+ * Slices Shared Slice
  *
- * - **API ID**: `you_tube_video`
- * - **Description**: YouTubeVideo
+ * - **API ID**: `slices`
+ * - **Description**: Slices
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type YouTubeVideoSlice = prismic.SharedSlice<
-  "you_tube_video",
-  YouTubeVideoSliceVariation
->;
+export type SlicesSlice = prismic.SharedSlice<"slices", SlicesSliceVariation>;
 
 /**
  * Primary content in *MenuItem → Primary*
@@ -2214,9 +2100,6 @@ declare module "@prismicio/client" {
       CallToActionDocumentData,
       ConversionBarDocument,
       ConversionBarDocumentData,
-      FaqDocument,
-      FaqDocumentData,
-      FaqDocumentDataFrequentlyAskedQuestionsItem,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
@@ -2246,6 +2129,9 @@ declare module "@prismicio/client" {
       RedirectsDocumentDataRedirectsItem,
       SidebarBannerDocument,
       SidebarBannerDocumentData,
+      SlicesDocument,
+      SlicesDocumentData,
+      SlicesDocumentDataSlicesSlice,
       AllDocumentTypes,
       BannerSlice,
       BannerSliceDefaultPrimary,
@@ -2264,10 +2150,8 @@ declare module "@prismicio/client" {
       FaqSlice,
       FaqSliceDefaultPrimary,
       FaqSliceDefaultItem,
-      FaqSliceRelationalPrimary,
       FaqSliceVariation,
       FaqSliceDefault,
-      FaqSliceRelational,
       InfoCardsSlice,
       InfoCardsSliceDefaultItem,
       InfoCardsSliceVariation,
@@ -2282,10 +2166,10 @@ declare module "@prismicio/client" {
       ProductsCarouselSliceDefaultItem,
       ProductsCarouselSliceVariation,
       ProductsCarouselSliceDefault,
-      YouTubeVideoSlice,
-      YouTubeVideoSliceDefaultPrimary,
-      YouTubeVideoSliceVariation,
-      YouTubeVideoSliceDefault,
+      SlicesSlice,
+      SlicesSliceDefaultPrimary,
+      SlicesSliceVariation,
+      SlicesSliceDefault,
       MenuItemSlice,
       MenuItemSliceDefaultPrimary,
       MenuItemSliceSubmenuPrimary,

@@ -10,5 +10,5 @@ export const components = {
 	info_cards: dynamic(() => import('./InfoCards')),
 	links_card: dynamic(() => import('./LinksCard')),
 	products_carousel: dynamic(() => import('./ProductsCarousel')),
-	you_tube_video: dynamic(() => import('./YouTubeVideo'))
+	slices: dynamic(() => import('./Slices'))
 }
