@@ -7,7 +7,7 @@ import type {
 	AccordionTriggerProps
 } from '@radix-ui/react-accordion'
 import { IconChevronDown } from '@tabler/icons-react'
-import { ElementRef, forwardRef } from 'react'
+import { type ElementRef, forwardRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 function AccordionRoot(props: AccordionSingleProps) {

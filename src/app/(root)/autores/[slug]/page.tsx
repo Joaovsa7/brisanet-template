@@ -1,10 +1,10 @@
 import { filter } from '@prismicio/client'
-import { ResolvingMetadata } from 'next'
+import type { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
 
-import { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
+import type { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
 
 import { env } from '~/config/env'
 import { Author } from '~/templates/Authors'

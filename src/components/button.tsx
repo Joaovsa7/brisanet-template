@@ -1,6 +1,6 @@
 import { Slot } from '@radix-ui/react-slot'
-import { ComponentProps, ElementRef, forwardRef } from 'react'
-import { VariantProps, tv } from 'tailwind-variants'
+import { type ComponentProps, type ElementRef, forwardRef } from 'react'
+import { type VariantProps, tv } from 'tailwind-variants'
 
 interface IButtonProps
 	extends ComponentProps<'button'>,

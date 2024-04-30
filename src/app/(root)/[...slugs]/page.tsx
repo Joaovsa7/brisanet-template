@@ -1,6 +1,6 @@
-import { Content } from '@prismicio/client'
+import type { Content } from '@prismicio/client'
 import { SliceZone } from '@prismicio/react'
-import { ResolvingMetadata } from 'next'
+import type { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { Breadcrumb } from '~/components/breadcrumb'

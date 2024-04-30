@@ -1,4 +1,4 @@
-import { ResolvingMetadata } from 'next'
+import type { ResolvingMetadata } from 'next'
 
 import { notFound } from 'next/navigation'
 

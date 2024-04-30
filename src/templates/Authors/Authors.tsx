@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 
-import { AuthorDocument } from '../../../prismicio-types'
+import type { AuthorDocument } from '../../../prismicio-types'
 
 export function Authors({ authors }: { authors: AuthorDocument[] }) {
 	return (

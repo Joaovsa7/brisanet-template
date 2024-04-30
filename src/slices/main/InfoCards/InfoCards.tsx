@@ -1,6 +1,6 @@
-import { Content, asText } from '@prismicio/client'
+import { type Content, asText } from '@prismicio/client'
 import { PrismicNextImage } from '@prismicio/next'
-import { SliceComponentProps } from '@prismicio/react'
+import type { SliceComponentProps } from '@prismicio/react'
 import { Container } from '~/components/container'
 import { RichText } from '~/components/rich-text'
 

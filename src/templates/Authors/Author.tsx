@@ -8,7 +8,7 @@ import {
 	LinkedinIcon
 } from 'react-share'
 
-import { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
+import type { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
 import { ArticleCard } from '~/components/article-card'
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
@@ -16,7 +16,7 @@ import { GoogleStructuredData } from '~/components/google-structured-data'
 import { PageInfo } from '~/components/page-info'
 import { RichText } from '~/components/rich-text'
 
-import { AuthorDocument } from '../../../prismicio-types'
+import type { AuthorDocument } from '../../../prismicio-types'
 
 const icons = {
 	Facebook: <FacebookIcon />,

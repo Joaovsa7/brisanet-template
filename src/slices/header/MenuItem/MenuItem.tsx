@@ -1,12 +1,12 @@
 'use client'
-import { FilledContentRelationshipField } from '@prismicio/client'
-import { Content, LinkResolverFunction } from '@prismicio/client'
+import type { FilledContentRelationshipField } from '@prismicio/client'
+import type { Content, LinkResolverFunction } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
-import { SliceComponentProps } from '@prismicio/react'
+import type { SliceComponentProps } from '@prismicio/react'
 import {
 	CollapsibleContent,
-	CollapsibleTrigger,
-	Root as CollapsibleRoot
+	Root as CollapsibleRoot,
+	CollapsibleTrigger
 } from '@radix-ui/react-collapsible'
 import {
 	NavigationMenuContent,

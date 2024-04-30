@@ -1,11 +1,11 @@
 import {
-	Content,
-	FilledContentRelationshipField,
-	LinkResolverFunction,
+	type Content,
+	type FilledContentRelationshipField,
+	type LinkResolverFunction,
 	asHTML,
 	asText
 } from '@prismicio/client'
-import { SliceComponentProps } from '@prismicio/react'
+import type { SliceComponentProps } from '@prismicio/react'
 
 const linkResolver: LinkResolverFunction = (
 	doc: FilledContentRelationshipField

@@ -1,9 +1,9 @@
 'use client'
 import {
-	Dialog as DialogRoot,
 	DialogClose,
 	DialogContent,
 	DialogPortal,
+	Dialog as DialogRoot,
 	DialogTrigger
 } from '@radix-ui/react-dialog'
 import { IconX } from '@tabler/icons-react'

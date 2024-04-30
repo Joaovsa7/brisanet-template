@@ -1,9 +1,9 @@
-import { ResolvingMetadata } from 'next'
+import type { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { createClient, fetchLinks } from '~/libs/prismicio'
 
-import { IArticleDocumentResponse } from './[slug]/page'
+import type { IArticleDocumentResponse } from './[slug]/page'
 
 import { env } from '~/config/env'
 import { Blog } from '~/templates/Blog'

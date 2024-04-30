@@ -1,5 +1,5 @@
 import { Slot } from '@radix-ui/react-slot'
-import { ComponentProps, ElementRef, forwardRef } from 'react'
+import { type ComponentProps, type ElementRef, forwardRef } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 interface ITextProps extends ComponentProps<'span'> {

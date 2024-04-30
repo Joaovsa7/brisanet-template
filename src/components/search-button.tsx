@@ -9,7 +9,7 @@ import {
 } from '@radix-ui/react-dialog'
 import { IconSearch } from '@tabler/icons-react'
 import { useRouter } from 'next/navigation'
-import { FormEvent, useState } from 'react'
+import { type FormEvent, useState } from 'react'
 
 export function SearchButton() {
 	const [searchIsOpen, setSearchIsOpen] = useState(false)

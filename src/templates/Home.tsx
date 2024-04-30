@@ -4,7 +4,7 @@ import { GoogleStructuredData } from '~/components/google-structured-data'
 import { PageInfo } from '~/components/page-info'
 import { mainSlices } from '~/slices'
 
-import { HomeDocument } from '../../prismicio-types'
+import type { HomeDocument } from '../../prismicio-types'
 
 export function Home({ document }: { document: HomeDocument }) {
 	return (

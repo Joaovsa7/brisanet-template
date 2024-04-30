@@ -1,5 +1,5 @@
 'use client'
-import { KeyTextField, RichTextField } from '@prismicio/client'
+import type { KeyTextField, RichTextField } from '@prismicio/client'
 
 import { Accordion } from '~/components/accordion'
 import { RichText } from '~/components/rich-text'

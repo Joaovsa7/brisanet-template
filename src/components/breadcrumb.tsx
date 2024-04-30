@@ -4,9 +4,9 @@ import {
 	IconChevronRight,
 	IconHome2
 } from '@tabler/icons-react'
-import Link, { LinkProps } from 'next/link'
+import Link, { type LinkProps } from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 type IBreadcrumbProps = ComponentProps<'ul'>

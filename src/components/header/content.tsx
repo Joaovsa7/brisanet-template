@@ -7,7 +7,7 @@ import {
 } from '@radix-ui/react-navigation-menu'
 import Link from 'next/link'
 
-import { Content } from '@prismicio/client'
+import type { Content } from '@prismicio/client'
 import { headerSlices } from '~/slices'
 import { Button } from '../button'
 import { Container } from '../container'

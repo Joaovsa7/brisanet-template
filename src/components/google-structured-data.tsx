@@ -1,4 +1,4 @@
-import { KeyTextField } from '@prismicio/client'
+import type { KeyTextField } from '@prismicio/client'
 
 export function GoogleStructuredData({
 	data

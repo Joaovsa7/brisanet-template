@@ -1,6 +1,6 @@
-import { Content, asHTML, isFilled } from '@prismicio/client'
+import { type Content, asHTML, isFilled } from '@prismicio/client'
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
-import { SliceComponentProps } from '@prismicio/react'
+import type { SliceComponentProps } from '@prismicio/react'
 
 import { Button } from '~/components/button'
 import { Container } from '~/components/container'

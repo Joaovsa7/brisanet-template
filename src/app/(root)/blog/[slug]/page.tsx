@@ -1,5 +1,5 @@
-import { Content, filter } from '@prismicio/client'
-import { ResolvingMetadata } from 'next'
+import { type Content, filter } from '@prismicio/client'
+import type { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 import { env } from '~/config/env'
 

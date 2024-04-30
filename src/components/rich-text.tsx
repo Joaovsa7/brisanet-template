@@ -1,4 +1,4 @@
-import { RTLinkNode } from '@prismicio/client'
+import type { RTLinkNode } from '@prismicio/client'
 import type { JSXMapSerializer, PrismicRichTextProps } from '@prismicio/react'
 
 import { slugify } from '~/utils/slugify'

@@ -1,5 +1,5 @@
-import { Content, isFilled } from '@prismicio/client'
-import { SliceComponentProps } from '@prismicio/react'
+import { type Content, isFilled } from '@prismicio/client'
+import type { SliceComponentProps } from '@prismicio/react'
 
 import {
 	Carousel,

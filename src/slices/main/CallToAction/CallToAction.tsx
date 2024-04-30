@@ -1,12 +1,12 @@
-import { Content, isFilled } from '@prismicio/client'
+import { type Content, isFilled } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
-import { SliceComponentProps } from '@prismicio/react'
+import type { SliceComponentProps } from '@prismicio/react'
 
 import { Button } from '~/components/button'
 import { Container } from '~/components/container'
 import { RichText } from '~/components/rich-text'
 
-import { CallToActionDocument } from '../../../../prismicio-types'
+import type { CallToActionDocument } from '../../../../prismicio-types'
 
 export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>
 

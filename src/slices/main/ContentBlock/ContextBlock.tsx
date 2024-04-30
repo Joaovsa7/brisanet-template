@@ -1,12 +1,12 @@
-import { Content, isFilled } from '@prismicio/client'
+import { type Content, isFilled } from '@prismicio/client'
 import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
-import { SliceComponentProps } from '@prismicio/react'
+import type { SliceComponentProps } from '@prismicio/react'
 
 import { Container } from '~/components/container'
 import { RichText } from '~/components/rich-text'
 import { Section } from '~/components/section'
 
-import { SidebarBannerDocument } from '../../../../prismicio-types'
+import type { SidebarBannerDocument } from '../../../../prismicio-types'
 
 export type ContentBlockProps = SliceComponentProps<Content.ContentBlockSlice>
 

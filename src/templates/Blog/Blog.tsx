@@ -8,8 +8,8 @@ import { GoogleStructuredData } from '~/components/google-structured-data'
 import { PageInfo } from '~/components/page-info'
 import { mainSlices } from '~/slices'
 
-import { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
-import { BlogDocument } from '../../../prismicio-types'
+import type { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
+import type { BlogDocument } from '../../../prismicio-types'
 
 interface IBlogProps {
 	document: BlogDocument

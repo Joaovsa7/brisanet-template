@@ -1,6 +1,6 @@
 import { asText } from '@prismicio/client'
 
-import { IAccordionQuestion } from './AccordionQuestions'
+import type { IAccordionQuestion } from './AccordionQuestions'
 
 export function FaqSchema({ items }: { items: IAccordionQuestion[] }) {
 	const mainEntity = items.map((item) => ({
