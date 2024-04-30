@@ -3,24 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  .splide-slider .splide__pagination {
-    counter-reset: pagination-num;
-    @apply !flex !static !mt-6 !gap-2 ;
-  }
-
-  .splide-slider .splide__pagination__page {
-    @apply !w-10 !h-10 !flex !items-center !justify-center !rounded-sm !bg-neutral-200 !text-neutral-950 !z-0 !scale-100 !cursor-pointer !opacity-100 hover:!opacity-70 !font-medium;
-  }
-
-  .splide-slider .splide__pagination__page.is-active {
-    @apply !bg-primary !text-white hover:!opacity-100;
-  }
-
-  .splide-slider .splide__pagination__page::before {
-    counter-increment: pagination-num;
-    content: counter( pagination-num );
-  }
-
   .footer-nav ul {
     @apply flex flex-col font-medium;
   }
