@@ -1753,6 +1753,17 @@ export interface LinksCardSliceDefaultItem {
     | "Upload"
     | "WhatsApp"
     | "Wi-Fi"
+    | "Facebook"
+    | "Instagram"
+    | "Twitter"
+    | "YouTube"
+    | "LinkedIn"
+    | "Ferramenta"
+    | "Chat"
+    | "PDF"
+    | "Empresa"
+    | "Localização"
+    | "Casa"
   >;
 
   /**

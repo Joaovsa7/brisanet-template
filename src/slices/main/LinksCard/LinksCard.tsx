@@ -2,7 +2,13 @@ import type { Content } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
 import type { SliceComponentProps } from '@prismicio/react'
 import {
+	IconBrandFacebook,
+	IconBrandInstagram,
+	IconBrandLinkedin,
 	IconBrandWhatsapp,
+	IconBrandX,
+	IconBrandYoutube,
+	IconBuildingEstate,
 	IconCalendar,
 	IconDeviceLaptop,
 	IconDeviceMobile,
@@ -12,10 +18,15 @@ import {
 	IconFileText,
 	IconHeadset,
 	IconHelp,
+	IconHome,
 	IconHomeSignal,
+	IconMapPin,
+	IconMessages,
 	IconNetwork,
 	IconNews,
+	IconPdf,
 	IconPhone,
+	IconTool,
 	IconUpload,
 	IconWifi
 } from '@tabler/icons-react'
@@ -40,7 +51,18 @@ const ICONS = {
 	TV: IconDeviceTv,
 	Upload: IconUpload,
 	WhatsApp: IconBrandWhatsapp,
-	'Wi-Fi': IconWifi
+	Facebook: IconBrandFacebook,
+	Instagram: IconBrandInstagram,
+	Twitter: IconBrandX,
+	Ferramenta: IconTool,
+	Chat: IconMessages,
+	PDF: IconPdf,
+	Empresa: IconBuildingEstate,
+	Localização: IconMapPin,
+	'Wi-Fi': IconWifi,
+	YouTube: IconBrandYoutube,
+	LinkedIn: IconBrandLinkedin,
+	Casa: IconHome
 }
 
 export type LinksCardProps = SliceComponentProps<Content.LinksCardSlice>
