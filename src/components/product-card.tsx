@@ -10,6 +10,8 @@ import {
 	IconWifi
 } from '@tabler/icons-react'
 
+import { env } from '~/config/env'
+
 import { Button } from './button'
 
 const PRODUCT_BENEFIT_ICONS = {
@@ -42,6 +44,8 @@ export function ProductCard({
 	benefits,
 	isPromotion
 }: IProductCardProps) {
+	const productBenefits = benefits.map((benefit) => benefit.name)
+
 	return (
 		<article
 			data-promotion={isPromotion}
@@ -53,15 +57,11 @@ export function ProductCard({
 					__html: JSON.stringify({
 						'@context': 'https://schema.org',
 						'@type': 'Product',
-						name: name,
+						name,
 						image: 'https://telefonedabrisanet.com.br/brisanet-logo.png',
-						descriptition: `Plano de internet ${name} com ${benefits.join(
+						description: `Plano de internet ${name} com ${productBenefits.join(
 							', '
-						)} por apenas ${Intl.NumberFormat('pt-BR', {
-							currency: 'BRL',
-							style: 'currency'
-						}).format(Number(price.replace(/\D/g, '')) / 100)} por mês.
-            )`,
+						)} por apenas ${Number(price.replace(/\D/g, '')) / 100} por mês.`,
 						shippingDetails: {
 							'@type': 'OfferShippingDetails',
 							shippingDestination: {
@@ -81,9 +81,12 @@ export function ProductCard({
 						},
 						offers: {
 							'@type': 'Offer',
+							url: env.BASE_URL,
 							priceCurrency: 'BRL',
 							price: Number(price.replace(/\D/g, '')) / 100,
-							availability: 'https://schema.org/InStock'
+							priceValidUntil: '2025-01-01',
+							availability: 'https://schema.org/InStock',
+							itemCondition: 'https://schema.org/NewCondition'
 						}
 					})
 				}}

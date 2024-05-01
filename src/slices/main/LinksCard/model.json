@@ -1,88 +1,88 @@
 {
-  "id": "links_card",
-  "type": "SharedSlice",
-  "name": "LinksCard",
-  "description": "LinksCard",
-  "variations": [
-    {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "Título",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "single": "heading1,heading2,heading3,heading4,heading5,heading6"
-          }
-        }
-      },
-      "items": {
-        "icon": {
-          "type": "Select",
-          "config": {
-            "label": "Ícone",
-            "placeholder": "",
-            "options": [
-              "Ajuda",
-              "Arquivo",
-              "Calendário",
-              "Download",
-              "Headset",
-              "Instalação",
-              "Internet",
-              "Jornal",
-              "Laptop",
-              "Smartphone",
-              "Tablet",
-              "Telefone",
-              "TV",
-              "Upload",
-              "WhatsApp",
-              "Wi-Fi",
-              "Facebook",
-              "Instagram",
-              "Twitter",
-              "YouTube",
-              "LinkedIn",
-              "Ferramenta",
-              "Chat",
-              "PDF",
-              "Empresa",
-              "Localização",
-              "Casa"
-            ]
-          }
-        },
-        "title": {
-          "type": "Text",
-          "config": {
-            "label": "Título",
-            "placeholder": ""
-          }
-        },
-        "description": {
-          "type": "Text",
-          "config": {
-            "label": "Descrição",
-            "placeholder": ""
-          }
-        },
-        "link": {
-          "type": "Link",
-          "config": {
-            "label": "Link",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "select": null
-          }
-        }
-      }
-    }
-  ]
+	"id": "links_card",
+	"type": "SharedSlice",
+	"name": "LinksCard",
+	"description": "LinksCard",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"title": {
+					"type": "StructuredText",
+					"config": {
+						"label": "Título",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"single": "heading1,heading2,heading3,heading4,heading5,heading6"
+					}
+				}
+			},
+			"items": {
+				"icon": {
+					"type": "Select",
+					"config": {
+						"label": "Ícone",
+						"placeholder": "",
+						"options": [
+							"Ajuda",
+							"Arquivo",
+							"Calendário",
+							"Download",
+							"Headset",
+							"Instalação",
+							"Internet",
+							"Jornal",
+							"Laptop",
+							"Smartphone",
+							"Tablet",
+							"Telefone",
+							"TV",
+							"Upload",
+							"WhatsApp",
+							"Wi-Fi",
+							"Facebook",
+							"Instagram",
+							"Twitter",
+							"YouTube",
+							"LinkedIn",
+							"Ferramenta",
+							"Chat",
+							"PDF",
+							"Empresa",
+							"Localização",
+							"Casa"
+						]
+					}
+				},
+				"title": {
+					"type": "Text",
+					"config": {
+						"label": "Título",
+						"placeholder": ""
+					}
+				},
+				"description": {
+					"type": "Text",
+					"config": {
+						"label": "Descrição",
+						"placeholder": ""
+					}
+				},
+				"link": {
+					"type": "Link",
+					"config": {
+						"label": "Link",
+						"placeholder": "",
+						"allowTargetBlank": true,
+						"select": null
+					}
+				}
+			}
+		}
+	]
 }
