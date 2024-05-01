@@ -55,6 +55,10 @@ const config: Config = {
 				slideLeftAndFade: {
 					from: { opacity: '0', transform: 'translateX(2px)' },
 					to: { opacity: '1', transform: 'translateX(0)' }
+				},
+				apperFromTop: {
+					from: { opacity: '0', transform: 'translateY(-100%)' },
+					to: { opacity: '1', transform: 'translateY(0%)' }
 				}
 			},
 			animation: {
@@ -65,7 +69,9 @@ const config: Config = {
 					'slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
 				slideDownAndFade:
 					'slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
-				slideLeftAndFade: 'slideLeftAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)'
+				slideLeftAndFade:
+					'slideLeftAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+				apperFromTop: 'apperFromTop 1s ease-in-out'
 			},
 			gridTemplateColumns: {
 				withSidebar: '1fr 384px'

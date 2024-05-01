@@ -38,8 +38,8 @@ export default function Layout({
 		<div className="bg-neutral-100 text-neutral-800 flex flex-col min-h-screen overflow-x-hidden">
 			<Suspense fallback={<p>Hello world</p>}>
 				<Header />
-				<div className="flex flex-col flex-1">{children}</div>
 				<ConversionBar />
+				<div className="flex flex-col flex-1">{children}</div>
 				<Footer />
 			</Suspense>
 			<GoogleAnalytics />

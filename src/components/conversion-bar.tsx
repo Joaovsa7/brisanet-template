@@ -1,7 +1,6 @@
 import { isFilled } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
 import { createClient } from '~/libs/prismicio'
-import { Button } from './button'
 import { Container } from './container'
 
 export async function ConversionBar() {
@@ -17,23 +16,21 @@ export async function ConversionBar() {
 		}
 
 		return (
-			<div className="bg-primary py-3 sticky bottom-0">
+			<div className="bg-secondary py-2 animate-apperFromTop">
 				<Container
-					size="lg"
-					className="flex flex-col items-center justify-center gap-3 sm:justify-between sm:flex-row sm:gap-6"
+					size={'lg'}
+					className="flex flex-col items-center justify-center"
 				>
-					<p className="text-center sm:text-left sm:text-xl text-white font-medium">
-						{text}
-					</p>
-					<Button
-						variant="secondary"
-						size={{ initial: 'sm', sm: 'md' }}
-						asChild
-					>
-						<PrismicNextLink field={cta_link} prefetch={false}>
+					<p className="text-center text-base text-white font-medium">
+						{text}{' '}
+						<PrismicNextLink
+							field={cta_link}
+							prefetch={false}
+							className="underline underline-offset-4 font-bold"
+						>
 							{cta_label ?? 'Assine já'}
 						</PrismicNextLink>
-					</Button>
+					</p>
 				</Container>
 			</div>
 		)

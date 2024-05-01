@@ -49,7 +49,7 @@ export default function Banner({ slice }: BannerProps) {
 			>
 				<Container
 					size="lg"
-					className="min-h-96 flex flex-col items-start justify-center"
+					className="py-8 sm:py-0 sm:min-h-96 flex flex-col items-start justify-center"
 				>
 					<div>
 						<div>
@@ -72,7 +72,12 @@ export default function Banner({ slice }: BannerProps) {
 								)}
 							</div>
 							{ctaIsFilled && (
-								<Button size="lg" variant="secondary" asChild>
+								<Button
+									size={{ initial: 'md', md: 'lg' }}
+									variant="secondary"
+									asChild
+									className="w-full sm:w-fit"
+								>
 									<PrismicNextLink
 										field={slice.primary.cta_link}
 										prefetch={false}
