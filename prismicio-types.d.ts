@@ -5,6 +5,9 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ArticleDocumentDataSlicesSlice =
+  | ProductsCarouselSlice
+  | SlicesSlice
+  | LinksCardSlice
   | InfoCardsSlice
   | FaqSlice
   | ContentBlockSlice
@@ -443,6 +446,9 @@ export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
 type BlogDocumentDataSlicesSlice =
+  | ProductsCarouselSlice
+  | LinksCardSlice
+  | SlicesSlice
   | InfoCardsSlice
   | BannerSlice
   | FaqSlice
@@ -753,6 +759,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | SlicesSlice
   | LinksCardSlice
   | ProductsCarouselSlice
   | BannerSlice
@@ -998,6 +1005,7 @@ export type MostVisitedPagesDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | SlicesSlice
   | LinksCardSlice
   | ProductsCarouselSlice
   | BannerSlice

@@ -1,23 +1,30 @@
-import type { Content } from '@prismicio/client'
-import type { SliceComponentProps } from '@prismicio/react'
+import { type Content, isFilled } from '@prismicio/client'
+import { type SliceComponentProps, SliceZone } from '@prismicio/react'
+import { mainSlices } from '~/slices'
 
-/**
- * Props for `Slices`.
- */
-export type SlicesProps = SliceComponentProps<Content.SlicesSlice>
-
-/**
- * Component for "Slices" Slices.
- */
-const Slices = ({ slice }: SlicesProps): JSX.Element => {
-	return (
-		<section
-			data-slice-type={slice.slice_type}
-			data-slice-variation={slice.variation}
-		>
-			Placeholder component for slices (variation: {slice.variation}) Slices
-		</section>
-	)
+export type SlicesProps = SliceComponentProps<Content.SlicesSlice> & {
+	slice: Content.SlicesSlice & {
+		primary: Content.SlicesSliceDefaultPrimary & {
+			slices: Content.SlicesDocument & {
+				data: Content.SlicesDocumentData
+			}
+		}
+	}
 }
 
-export default Slices
+export default function Slices({ slice }: SlicesProps) {
+	if (!isFilled.contentRelationship(slice.primary.slices)) {
+		return null
+	}
+
+	if (slice.primary.slices.data.slices.length === 0) {
+		return null
+	}
+
+	return (
+		<SliceZone
+			slices={slice.primary.slices.data.slices}
+			components={mainSlices}
+		/>
+	)
+}

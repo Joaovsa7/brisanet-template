@@ -79,5 +79,6 @@ export const fetchLinks = [
 	'product.price',
 	'product.is_promotion',
 	'sidebar_banner.banner',
-	'sidebar_banner.link'
+	'sidebar_banner.link',
+	'slices.slices'
 ]

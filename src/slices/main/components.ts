@@ -5,6 +5,7 @@ import Faq from './Faq'
 import InfoCards from './InfoCards'
 import LinksCard from './LinksCard'
 import ProductsCarousel from './ProductsCarousel'
+import Slices from './Slices'
 
 export const components = {
 	banner: Banner,
@@ -12,6 +13,7 @@ export const components = {
 	content_block: ContentBlock,
 	faq: Faq,
 	info_cards: InfoCards,
-	links_cards: LinksCard,
+	links_card: LinksCard,
+	slices: Slices,
 	products_carousel: ProductsCarousel
 }

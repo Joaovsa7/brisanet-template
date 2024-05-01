@@ -58,7 +58,7 @@ export default function LinksCard({ slice }: LinksCardProps) {
 			<Container size="lg">
 				<RichText field={slice.primary.title} className="prose-headings:mt-0" />
 
-				<div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+				<div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:gap-6 md:grid-cols-4">
 					{slice.items.map((item: Content.LinksCardSliceDefaultItem) => {
 						const Icon = ICONS[item.icon ?? 'Arquivo']
 
@@ -67,11 +67,18 @@ export default function LinksCard({ slice }: LinksCardProps) {
 								key={item.title}
 								field={item.link}
 								prefetch={false}
-								className="p-6 bg-white shadow rounded flex flex-col gap-4 hover:shadow-md transition-shadow"
+								data-highlight={slice.items[0].title === item.title}
+								className="group min-h-36 min-w-36 p-3 shadow rounded flex flex-col gap-4 justify-between hover:shadow-lg transition-shadow data-[highlight=false]:bg-white data-[highlight=true]:bg-primary data-[highlight=true]:text-white"
 							>
-								<Icon className="w-10 h-10 text-primary" />
-								<h3 className="text-xl text-secondary">{item.title}</h3>
-								{item.description && <p>{item.description}</p>}
+								<Icon className="size-7 text-primary group-data-[highlight=true]:text-white" />
+								<h3 className="font-semibold text-lg sm:text-xl text-secondary group-data-[highlight=true]:text-white">
+									{item.title}
+								</h3>
+								{item.description && (
+									<p className="font-medium sr-only lg:not-sr-only">
+										{item.description}
+									</p>
+								)}
 							</PrismicNextLink>
 						)
 					})}
