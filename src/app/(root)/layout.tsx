@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
 
 import { env } from '~/config/env'
 
@@ -8,6 +8,10 @@ import { ConversionBar } from '~/components/conversion-bar'
 import { Footer } from '~/components/footer'
 import { GoogleAnalytics } from '~/components/google-analytics'
 import { Header } from '~/components/header'
+
+const SaleModal = dynamic(() => import('~/components/sale-modal'), {
+	ssr: false
+})
 
 export const metadata: Metadata = {
 	title: {
@@ -36,12 +40,11 @@ export default function Layout({
 }) {
 	return (
 		<div className="bg-neutral-100 text-neutral-800 flex flex-col min-h-screen overflow-x-hidden">
-			<Suspense fallback={<p>Hello world</p>}>
-				<Header />
-				<ConversionBar />
-				<div className="flex flex-col flex-1">{children}</div>
-				<Footer />
-			</Suspense>
+			<Header />
+			<ConversionBar />
+			<div className="flex flex-col flex-1">{children}</div>
+			<Footer />
+			<SaleModal />
 			<GoogleAnalytics />
 			<Clarity />
 		</div>
