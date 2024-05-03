@@ -2,6 +2,7 @@
 
 import * as Dialog from '@radix-ui/react-dialog'
 import { IconArrowUpRight, IconX } from '@tabler/icons-react'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 
@@ -35,9 +36,11 @@ export default function SaleModal() {
 					>
 						<IconX className="size-6" />
 					</Dialog.Close>
-					<img
+					<Image
 						src="/sale-banner.png"
 						alt="500 Mega por R$89,99 mês"
+						width={672}
+						height={378}
 						className="aspect-video object-cover"
 					/>
 					<div className="bg-white p-8 text-center flex flex-col gap-6 items-center">
