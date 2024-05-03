@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import dynamic from 'next/dynamic'
 
 import { env } from '~/config/env'
 
@@ -9,9 +8,9 @@ import { Footer } from '~/components/footer'
 import { GoogleAnalytics } from '~/components/google-analytics'
 import { Header } from '~/components/header'
 
-const SaleModal = dynamic(() => import('~/components/sale-modal'), {
-	ssr: false
-})
+// const SaleModal = dynamic(() => import('~/components/sale-modal'), {
+// 	ssr: false
+// })
 
 export const metadata: Metadata = {
 	title: {
@@ -44,7 +43,7 @@ export default function Layout({
 			<ConversionBar />
 			<div className="flex flex-col flex-1">{children}</div>
 			<Footer />
-			<SaleModal />
+			{/* <SaleModal /> */}
 			<GoogleAnalytics />
 			<Clarity />
 		</div>
