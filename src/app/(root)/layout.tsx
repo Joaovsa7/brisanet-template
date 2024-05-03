@@ -5,7 +5,7 @@ import { env } from '~/config/env'
 // import { Clarity } from '~/components/clarity'
 import { ConversionBar } from '~/components/conversion-bar'
 import { Footer } from '~/components/footer'
-// import { GoogleAnalytics } from '~/components/google-analytics'
+import { GoogleAnalytics } from '~/components/google-analytics'
 import { Header } from '~/components/header'
 
 // const SaleModal = dynamic(() => import('~/components/sale-modal'), {
@@ -44,7 +44,7 @@ export default function Layout({
 			<div className="flex flex-col flex-1">{children}</div>
 			<Footer />
 			{/* <SaleModal /> */}
-			{/* <GoogleAnalytics /> */}
+			<GoogleAnalytics />
 			{/* <Clarity /> */}
 		</div>
 	)
