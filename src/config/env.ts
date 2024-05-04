@@ -7,7 +7,8 @@ export const env = createEnv({
 		PRISMIC_ACCESS_TOKEN: z.string().min(1),
 		PRISMIC_REPOSITORY_NAME: z.enum([
 			'telefone-da-brisanet',
-			'numero-da-brisanet'
+			'numero-da-brisanet',
+			'planobrisanet'
 		])
 	},
 
