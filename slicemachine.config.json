@@ -1,10 +1,10 @@
 {
-	"repositoryName": "planobrisanet",
-	"adapter": "@slicemachine/adapter-next",
-	"libraries": [
-		"./src/slices/main",
-		"./src/slices/header",
-		"./src/slices/footer"
-	],
-	"localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
+  "repositoryName": "telefone-da-brisanet",
+  "adapter": "@slicemachine/adapter-next",
+  "libraries": [
+    "./src/slices/main",
+    "./src/slices/header",
+    "./src/slices/footer"
+  ],
+  "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }
