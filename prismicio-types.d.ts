@@ -1269,6 +1269,117 @@ export type RedirectsDocument<Lang extends string = string> =
   >;
 
 /**
+ * Item in *Campo de Busca → Páginas mais acessadas*
+ */
+export interface SearchFieldDocumentDataMostVisitedPagesItem {
+  /**
+   * Ícone field in *Campo de Busca → Páginas mais acessadas*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: search_field.most_visited_pages[].icon
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  icon: prismic.SelectField<
+    | "Check"
+    | "Download"
+    | "Instalaçao"
+    | "Internet"
+    | "Smartphone"
+    | "Suporte"
+    | "Telefone"
+    | "Upload"
+    | "Wi-Fi"
+    | "Ajuda"
+    | "Arquivo"
+    | "Calendário"
+    | "Headset"
+    | "Instalação"
+    | "Jornal"
+    | "Laptop"
+    | "Tablet"
+    | "TV"
+    | "WhatsApp"
+    | "Facebook"
+    | "Instagram"
+    | "Twitter"
+    | "Ferramenta"
+    | "Chat"
+    | "PDF"
+    | "Empresa"
+    | "Localização"
+    | "YouTube"
+    | "LinkedIn"
+    | "Casa"
+  >;
+
+  /**
+   * Nome da Página field in *Campo de Busca → Páginas mais acessadas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: search_field.most_visited_pages[].page_name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  page_name: prismic.KeyTextField;
+
+  /**
+   * URL da Página field in *Campo de Busca → Páginas mais acessadas*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: search_field.most_visited_pages[].page_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  page_url: prismic.LinkField;
+}
+
+/**
+ * Content for Campo de Busca documents
+ */
+interface SearchFieldDocumentData {
+  /**
+   * Input Placeholder field in *Campo de Busca*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: search_field.input_placeholder
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  input_placeholder: prismic.KeyTextField;
+
+  /**
+   * Páginas mais acessadas field in *Campo de Busca*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: search_field.most_visited_pages[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  most_visited_pages: prismic.GroupField<
+    Simplify<SearchFieldDocumentDataMostVisitedPagesItem>
+  >;
+}
+
+/**
+ * Campo de Busca document from Prismic
+ *
+ * - **API ID**: `search_field`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SearchFieldDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SearchFieldDocumentData>,
+    "search_field",
+    Lang
+  >;
+
+/**
  * Content for Sidebar Banner documents
  */
 interface SidebarBannerDocumentData {
@@ -1364,6 +1475,7 @@ export type AllDocumentTypes =
   | PageDocument
   | ProductDocument
   | RedirectsDocument
+  | SearchFieldDocument
   | SidebarBannerDocument
   | SlicesDocument;
 
@@ -2156,6 +2268,9 @@ declare module "@prismicio/client" {
       RedirectsDocument,
       RedirectsDocumentData,
       RedirectsDocumentDataRedirectsItem,
+      SearchFieldDocument,
+      SearchFieldDocumentData,
+      SearchFieldDocumentDataMostVisitedPagesItem,
       SidebarBannerDocument,
       SidebarBannerDocumentData,
       SlicesDocument,

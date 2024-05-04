@@ -1,69 +1,12 @@
 import type { Content } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
 import type { SliceComponentProps } from '@prismicio/react'
-import {
-	IconBrandFacebook,
-	IconBrandInstagram,
-	IconBrandLinkedin,
-	IconBrandWhatsapp,
-	IconBrandX,
-	IconBrandYoutube,
-	IconBuildingEstate,
-	IconCalendar,
-	IconDeviceLaptop,
-	IconDeviceMobile,
-	IconDeviceTablet,
-	IconDeviceTv,
-	IconDownload,
-	IconFileText,
-	IconHeadset,
-	IconHelp,
-	IconHome,
-	IconHomeSignal,
-	IconMapPin,
-	IconMessages,
-	IconNetwork,
-	IconNews,
-	IconPdf,
-	IconPhone,
-	IconTool,
-	IconUpload,
-	IconWifi
-} from '@tabler/icons-react'
 
 import { Container } from '~/components/container'
 import { RichText } from '~/components/rich-text'
 import { Section } from '~/components/section'
 
-const ICONS = {
-	Ajuda: IconHelp,
-	Arquivo: IconFileText,
-	Calendário: IconCalendar,
-	Download: IconDownload,
-	Headset: IconHeadset,
-	Instalação: IconHomeSignal,
-	Internet: IconNetwork,
-	Jornal: IconNews,
-	Laptop: IconDeviceLaptop,
-	Smartphone: IconDeviceMobile,
-	Tablet: IconDeviceTablet,
-	Telefone: IconPhone,
-	TV: IconDeviceTv,
-	Upload: IconUpload,
-	WhatsApp: IconBrandWhatsapp,
-	Facebook: IconBrandFacebook,
-	Instagram: IconBrandInstagram,
-	Twitter: IconBrandX,
-	Ferramenta: IconTool,
-	Chat: IconMessages,
-	PDF: IconPdf,
-	Empresa: IconBuildingEstate,
-	Localização: IconMapPin,
-	'Wi-Fi': IconWifi,
-	YouTube: IconBrandYoutube,
-	LinkedIn: IconBrandLinkedin,
-	Casa: IconHome
-}
+import { CMS_ICONS } from '~/config/constants'
 
 export type LinksCardProps = SliceComponentProps<Content.LinksCardSlice>
 
@@ -82,7 +25,7 @@ export default function LinksCard({ slice }: LinksCardProps) {
 
 				<div className="grid gap-3 grid-cols-2 sm:grid-cols-3 md:gap-6 md:grid-cols-4">
 					{slice.items.map((item: Content.LinksCardSliceDefaultItem) => {
-						const Icon = ICONS[item.icon ?? 'Arquivo']
+						const Icon = CMS_ICONS[item.icon ?? 'Arquivo']
 
 						return (
 							<PrismicNextLink

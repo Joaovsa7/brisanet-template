@@ -1,0 +1,82 @@
+{
+  "format": "custom",
+  "id": "search_field",
+  "label": "Campo de Busca",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "input_placeholder": {
+        "type": "Text",
+        "config": {
+          "label": "Input Placeholder",
+          "placeholder": ""
+        }
+      },
+      "most_visited_pages": {
+        "type": "Group",
+        "config": {
+          "label": "Páginas mais acessadas",
+          "repeat": true,
+          "fields": {
+            "icon": {
+              "type": "Select",
+              "config": {
+                "label": "Ícone",
+                "placeholder": "",
+                "options": [
+                  "Check",
+                  "Download",
+                  "Instalaçao",
+                  "Internet",
+                  "Smartphone",
+                  "Suporte",
+                  "Telefone",
+                  "Upload",
+                  "Wi-Fi",
+                  "Ajuda",
+                  "Arquivo",
+                  "Calendário",
+                  "Headset",
+                  "Instalação",
+                  "Jornal",
+                  "Laptop",
+                  "Tablet",
+                  "TV",
+                  "WhatsApp",
+                  "Facebook",
+                  "Instagram",
+                  "Twitter",
+                  "Ferramenta",
+                  "Chat",
+                  "PDF",
+                  "Empresa",
+                  "Localização",
+                  "YouTube",
+                  "LinkedIn",
+                  "Casa"
+                ]
+              }
+            },
+            "page_name": {
+              "type": "Text",
+              "config": {
+                "label": "Nome da Página",
+                "placeholder": ""
+              }
+            },
+            "page_url": {
+              "type": "Link",
+              "config": {
+                "label": "URL da Página",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "select": null
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

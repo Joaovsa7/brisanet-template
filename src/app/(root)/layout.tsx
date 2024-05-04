@@ -7,6 +7,7 @@ import { ConversionBar } from '~/components/conversion-bar'
 import { Footer } from '~/components/footer'
 import { GoogleAnalytics } from '~/components/google-analytics'
 import { Header } from '~/components/header'
+import { SearchDrawer } from '~/components/search-drawer'
 
 // const SaleModal = dynamic(() => import('~/components/sale-modal'), {
 // 	ssr: false
@@ -43,6 +44,7 @@ export default function Layout({
 			<ConversionBar />
 			<div className="flex flex-col flex-1">{children}</div>
 			<Footer />
+			<SearchDrawer />
 			{/* <SaleModal /> */}
 			<GoogleAnalytics />
 			{/* <Clarity /> */}
