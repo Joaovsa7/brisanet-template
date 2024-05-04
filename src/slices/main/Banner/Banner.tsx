@@ -1,32 +1,22 @@
 import { type Content, asHTML, isFilled } from '@prismicio/client'
-import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
-import type { SliceComponentProps } from '@prismicio/react'
+import { PrismicNextLink } from '@prismicio/next'
 
 import { Button } from '~/components/button'
 import { Container } from '~/components/container'
+import { type IProductBenefit, ProductCard } from '~/components/product-card'
+import { BannerAd } from './BannerAd'
 
-export type BannerProps = SliceComponentProps<Content.BannerSlice>
-
-function BannerAd({ primary }: Content.BannerSliceAd) {
-	return (
-		<section>
-			<Container size="lg">
-				<PrismicNextLink field={primary.link} prefetch={false}>
-					<PrismicNextImage
-						field={primary.banner}
-						width={1280}
-						height={576}
-						quality={100}
-						fallbackAlt=""
-						loading="eager"
-					/>
-				</PrismicNextLink>
-			</Container>
-		</section>
-	)
+export interface IBannerProps {
+	slice: Content.BannerSlice & {
+		primary: Omit<Content.BannerSliceDefaultPrimary, 'product'> & {
+			product: Content.ProductDocument & {
+				data: Content.ProductDocumentData
+			}
+		}
+	}
 }
 
-export default function Banner({ slice }: BannerProps) {
+export default function Banner({ slice }: IBannerProps) {
 	const isDefaultVariation = slice.variation === 'default'
 	const isAdVariation = slice.variation === 'ad'
 
@@ -34,12 +24,14 @@ export default function Banner({ slice }: BannerProps) {
 		return <BannerAd {...slice} />
 	}
 
+	const { cta_label, cta_link, description, product, title } = slice.primary
+
+	const productIsFilled = isFilled.contentRelationship(product)
+
 	if (isDefaultVariation) {
-		const titleIsFilled = isFilled.richText(slice.primary.title)
-		const descriptionIsFilled = isFilled.richText(slice.primary.description)
-		const ctaIsFilled =
-			isFilled.keyText(slice.primary.cta_label) &&
-			isFilled.link(slice.primary.cta_link)
+		const titleIsFilled = isFilled.richText(title)
+		const descriptionIsFilled = isFilled.richText(description)
+		const ctaIsFilled = isFilled.keyText(cta_label) && isFilled.link(cta_link)
 
 		return (
 			<section
@@ -49,45 +41,61 @@ export default function Banner({ slice }: BannerProps) {
 			>
 				<Container
 					size="lg"
-					className="py-8 sm:py-0 sm:min-h-96 flex flex-col items-start justify-center"
+					className="py-8 sm:min-h-96 flex flex-col items-center justify-center md:flex-row md:items-center md:justify-between gap-8"
 				>
 					<div>
-						<div>
-							<div className="max-w-2xl">
-								{titleIsFilled && (
-									<span
-										className="text-4xl md:text-5xl text-white font-semibold mb-6 tracking-tighter block"
-										dangerouslySetInnerHTML={{
-											__html: asHTML(slice.primary.title)
-										}}
-									/>
-								)}
-								{descriptionIsFilled && (
-									<span
-										className="text-white text-lg font-medium mb-8 block"
-										dangerouslySetInnerHTML={{
-											__html: asHTML(slice.primary.description)
-										}}
-									/>
-								)}
-							</div>
-							{ctaIsFilled && (
-								<Button
-									size={{ initial: 'md', md: 'lg' }}
-									variant="secondary"
-									asChild
-									className="w-full sm:w-fit"
-								>
-									<PrismicNextLink
-										field={slice.primary.cta_link}
-										prefetch={false}
-									>
-										{slice.primary.cta_label}
-									</PrismicNextLink>
-								</Button>
+						<div
+							data-product={productIsFilled}
+							className="max-w-lg data-[product=true]:text-center md:data-[product=true]:text-left"
+						>
+							{titleIsFilled && (
+								<span
+									className="text-3xl md:text-5xl text-white font-semibold mb-6 tracking-tighter block"
+									dangerouslySetInnerHTML={{
+										__html: asHTML(slice.primary.title)
+									}}
+								/>
+							)}
+							{descriptionIsFilled && (
+								<span
+									className="text-white text-lg font-medium block"
+									dangerouslySetInnerHTML={{
+										__html: asHTML(slice.primary.description)
+									}}
+								/>
 							)}
 						</div>
+						{ctaIsFilled && (
+							<Button
+								data-product={productIsFilled}
+								size={{ initial: 'md', md: 'lg' }}
+								variant="secondary"
+								asChild
+								className="w-full sm:w-fit data-[product=true]:hidden mt-8 md:data-[product=true]:flex"
+							>
+								<PrismicNextLink
+									field={slice.primary.cta_link}
+									prefetch={false}
+								>
+									{slice.primary.cta_label}
+								</PrismicNextLink>
+							</Button>
+						)}
 					</div>
+
+					{productIsFilled && (
+						<ProductCard
+							name={product.data.name as string}
+							benefits={
+								product.data.benefits.map((benefit) => ({
+									icon: benefit.icon,
+									name: benefit.benefit
+								})) as IProductBenefit[]
+							}
+							price={product.data.price as string}
+							isPromotion={product.data.is_promotion}
+						/>
+					)}
 				</Container>
 			</section>
 		)

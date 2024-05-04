@@ -1,5 +1,5 @@
 {
-	"repositoryName": "telefone-da-brisanet",
+	"repositoryName": "planobrisanet",
 	"adapter": "@slicemachine/adapter-next",
 	"libraries": [
 		"./src/slices/main",

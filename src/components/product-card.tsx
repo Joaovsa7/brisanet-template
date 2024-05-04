@@ -26,7 +26,7 @@ const PRODUCT_BENEFIT_ICONS = {
 	'Wi-Fi': IconWifi
 }
 
-interface IProductBenefit {
+export interface IProductBenefit {
 	name: string
 	icon: keyof typeof PRODUCT_BENEFIT_ICONS
 }
