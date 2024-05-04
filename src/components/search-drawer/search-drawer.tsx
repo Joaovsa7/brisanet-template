@@ -6,6 +6,7 @@ import { IconChevronRight, IconMenu2, IconSend2 } from '@tabler/icons-react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { type ChangeEvent, type FormEvent, useEffect, useState } from 'react'
 import { Drawer } from 'vaul'
+
 import { CMS_ICONS } from '~/config/constants'
 
 export function SearchDrawer({

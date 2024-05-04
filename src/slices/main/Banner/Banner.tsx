@@ -24,11 +24,10 @@ export default function Banner({ slice }: IBannerProps) {
 		return <BannerAd {...slice} />
 	}
 
-	const { cta_label, cta_link, description, product, title } = slice.primary
-
-	const productIsFilled = isFilled.contentRelationship(product)
-
 	if (isDefaultVariation) {
+		const { cta_label, cta_link, description, product, title } = slice.primary
+
+		const productIsFilled = isFilled.contentRelationship(product)
 		const titleIsFilled = isFilled.richText(title)
 		const descriptionIsFilled = isFilled.richText(description)
 		const ctaIsFilled = isFilled.keyText(cta_label) && isFilled.link(cta_link)
