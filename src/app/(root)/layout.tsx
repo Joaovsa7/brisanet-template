@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { env } from '~/config/env'
 
+import { Suspense } from 'react'
 import { ConversionBar } from '~/components/conversion-bar'
 import { Footer } from '~/components/footer'
 import { GoogleAnalytics } from '~/components/google-analytics'
@@ -39,7 +40,9 @@ export default function Layout({
 			<ConversionBar />
 			<div className="flex flex-col flex-1">{children}</div>
 			<Footer />
-			<SearchDrawer />
+			<Suspense fallback={null}>
+				<SearchDrawer />
+			</Suspense>
 			<GoogleAnalytics />
 		</div>
 	)
