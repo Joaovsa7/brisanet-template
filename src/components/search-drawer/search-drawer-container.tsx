@@ -1,10 +1,18 @@
-import { isMobile, isTablet } from 'react-device-detect'
+import { headers } from 'next/headers'
+import { UAParser } from 'ua-parser-js'
+
 import { createClient } from '~/libs/prismicio'
 
 import { SearchDrawer } from './search-drawer'
 
 export async function SearchDrawerContainer() {
-	if (!isMobile || !isTablet) {
+	const ua = headers().get('user-agent')
+
+	const device = new UAParser(ua || '').getDevice()
+
+	const isMobile = device.type === 'mobile'
+
+	if (!isMobile) {
 		return null
 	}
 
