@@ -6,7 +6,6 @@ import { env } from '~/config/env'
 import { Clarity } from '~/components/clarity'
 import { ConversionBar } from '~/components/conversion-bar'
 import { Footer } from '~/components/footer'
-import { GoogleAnalytics } from '~/components/google-analytics'
 import { Header } from '~/components/header'
 import { SearchDrawer } from '~/components/search-drawer'
 
@@ -44,7 +43,6 @@ export default function Layout({
 			<Suspense fallback={null}>
 				<SearchDrawer />
 			</Suspense>
-			<GoogleAnalytics />
 			<Clarity />
 		</div>
 	)
