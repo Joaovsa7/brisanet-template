@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 
 import { env } from '~/config/env'
 
-import { Suspense } from 'react'
+import { Clarity } from '~/components/clarity'
 import { ConversionBar } from '~/components/conversion-bar'
 import { Footer } from '~/components/footer'
 import { GoogleAnalytics } from '~/components/google-analytics'
@@ -44,6 +45,7 @@ export default function Layout({
 				<SearchDrawer />
 			</Suspense>
 			<GoogleAnalytics />
+			<Clarity />
 		</div>
 	)
 }

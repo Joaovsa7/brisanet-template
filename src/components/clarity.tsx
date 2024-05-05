@@ -3,6 +3,7 @@ import Script from 'next/script'
 export function Clarity() {
 	return (
 		<Script
+			strategy="afterInteractive"
 			dangerouslySetInnerHTML={{
 				__html: `
           (function(c,l,a,r,i,t,y){
