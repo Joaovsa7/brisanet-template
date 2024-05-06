@@ -173,7 +173,7 @@ const CarouselPrevious = React.forwardRef<
 			type="button"
 			ref={ref}
 			className={twMerge(
-				'mx-1 text-white bg-primary inline-flex items-center justify-center size-10 rounded-full disabled:opacity-40',
+				'mx-1 text-white bg-primary inline-flex items-center justify-center size-10 rounded-sm disabled:opacity-40 disabled:cursor-not-allowed',
 				className
 			)}
 			disabled={!canScrollPrev}
@@ -198,7 +198,7 @@ const CarouselNext = React.forwardRef<
 			type="button"
 			ref={ref}
 			className={twMerge(
-				'mx-1 text-white bg-primary inline-flex items-center justify-center size-10 rounded-full disabled:opacity-40',
+				'mx-1 text-white bg-primary inline-flex items-center justify-center size-10 rounded-sm disabled:opacity-40 disabled:cursor-not-allowed',
 				className
 			)}
 			disabled={!canScrollNext}
@@ -213,10 +213,10 @@ const CarouselNext = React.forwardRef<
 CarouselNext.displayName = 'CarouselNext'
 
 export {
-	type CarouselApi,
 	Carousel,
 	CarouselContent,
 	CarouselItem,
+	CarouselNext,
 	CarouselPrevious,
-	CarouselNext
+	type CarouselApi
 }
