@@ -12,6 +12,5 @@ export const components = {
 	links_card: dynamic(() => import('./LinksCard')),
 	menu_item: dynamic(() => import('./MenuItem')),
 	products_carousel: dynamic(() => import('./ProductsCarousel')),
-	slice_group: dynamic(() => import('./SliceGroup')),
-	slices: dynamic(() => import('./Slices'))
+	slice_group: dynamic(() => import('./SliceGroup'))
 }

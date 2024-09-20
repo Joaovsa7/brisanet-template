@@ -14,9 +14,6 @@
             "slice_group": {
               "type": "SharedSlice"
             },
-            "slices": {
-              "type": "SharedSlice"
-            },
             "links_card": {
               "type": "SharedSlice"
             },

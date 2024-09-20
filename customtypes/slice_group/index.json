@@ -26,9 +26,6 @@
             "footer_links": {
               "type": "SharedSlice"
             },
-            "slices": {
-              "type": "SharedSlice"
-            },
             "slice_group": {
               "type": "SharedSlice"
             },

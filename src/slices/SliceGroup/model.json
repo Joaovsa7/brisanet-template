@@ -1,29 +1,27 @@
 {
-  "id": "slice_group",
-  "type": "SharedSlice",
-  "name": "SliceGroup",
-  "description": "SliceGroup",
-  "variations": [
-    {
-      "id": "default",
-      "name": "Default",
-      "docURL": "...",
-      "version": "initial",
-      "description": "Default",
-      "imageUrl": "",
-      "primary": {
-        "slice_group": {
-          "type": "Link",
-          "config": {
-            "label": "Slice Group",
-            "select": "document",
-            "customtypes": [
-              "slice_group"
-            ]
-          }
-        }
-      },
-      "items": {}
-    }
-  ]
+	"id": "slice_group",
+	"type": "SharedSlice",
+	"name": "SliceGroup",
+	"description": "SliceGroup",
+	"variations": [
+		{
+			"id": "default",
+			"name": "Default",
+			"docURL": "...",
+			"version": "initial",
+			"description": "Default",
+			"imageUrl": "",
+			"primary": {
+				"slice_group": {
+					"type": "Link",
+					"config": {
+						"label": "Slice Group",
+						"select": "document",
+						"customtypes": ["slice_group"]
+					}
+				}
+			},
+			"items": {}
+		}
+	]
 }

@@ -7,7 +7,6 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 type ArticleDocumentDataSlicesSlice =
   | SliceGroupSlice
   | ProductsCarouselSlice
-  | SlicesSlice
   | LinksCardSlice
   | InfoCardsSlice
   | FaqSlice
@@ -158,7 +157,6 @@ export type ArticleDocument<Lang extends string = string> =
 
 type ArticleCategoryDocumentDataSlicesSlice =
   | SliceGroupSlice
-  | SlicesSlice
   | LinksCardSlice
   | ProductsCarouselSlice
   | InfoCardsSlice
@@ -293,7 +291,6 @@ export interface AuthorDocumentDataSocialNetworksItem {
 }
 
 type AuthorDocumentDataSlicesSlice =
-  | SlicesSlice
   | SliceGroupSlice
   | ProductsCarouselSlice
   | LinksCardSlice
@@ -458,7 +455,6 @@ type BlogDocumentDataSlicesSlice =
   | SliceGroupSlice
   | ProductsCarouselSlice
   | LinksCardSlice
-  | SlicesSlice
   | InfoCardsSlice
   | BannerSlice
   | FaqSlice
@@ -770,7 +766,6 @@ export type HeaderDocument<Lang extends string = string> =
 
 type HomeDocumentDataSlicesSlice =
   | SliceGroupSlice
-  | SlicesSlice
   | LinksCardSlice
   | ProductsCarouselSlice
   | BannerSlice
@@ -1017,7 +1012,6 @@ export type MostVisitedPagesDocument<Lang extends string = string> =
 
 type PageDocumentDataSlicesSlice =
   | SliceGroupSlice
-  | SlicesSlice
   | LinksCardSlice
   | ProductsCarouselSlice
   | BannerSlice
@@ -1438,7 +1432,6 @@ type SliceGroupDocumentDataSlicesSlice =
   | CallToActionSlice
   | MenuItemSlice
   | FooterLinksSlice
-  | SlicesSlice
   | SliceGroupSlice
   | ProductsCarouselSlice
   | BannerSlice
@@ -1479,44 +1472,6 @@ export type SliceGroupDocument<Lang extends string = string> =
     Lang
   >;
 
-type SlicesDocumentDataSlicesSlice =
-  | SliceGroupSlice
-  | ProductsCarouselSlice
-  | LinksCardSlice
-  | InfoCardsSlice
-  | FaqSlice
-  | ContentBlockSlice
-  | CallToActionSlice
-  | BannerSlice;
-
-/**
- * Content for Slices documents
- */
-interface SlicesDocumentData {
-  /**
-   * Slice Zone field in *Slices*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slices.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#slices
-   */
-  slices: prismic.SliceZone<SlicesDocumentDataSlicesSlice>;
-}
-
-/**
- * Slices document from Prismic
- *
- * - **API ID**: `slices`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type SlicesDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<Simplify<SlicesDocumentData>, "slices", Lang>;
-
 export type AllDocumentTypes =
   | ArticleDocument
   | ArticleCategoryDocument
@@ -1535,8 +1490,7 @@ export type AllDocumentTypes =
   | RedirectsDocument
   | SearchFieldDocument
   | SidebarBannerDocument
-  | SliceGroupDocument
-  | SlicesDocument;
+  | SliceGroupDocument;
 
 /**
  * Primary content in *Banner → Default → Primary*
@@ -2306,48 +2260,6 @@ export type SliceGroupSlice = prismic.SharedSlice<
   SliceGroupSliceVariation
 >;
 
-/**
- * Primary content in *Slices → Default → Primary*
- */
-export interface SlicesSliceDefaultPrimary {
-  /**
-   * Slices field in *Slices → Default → Primary*
-   *
-   * - **Field Type**: Content Relationship
-   * - **Placeholder**: *None*
-   * - **API ID Path**: slices.default.primary.slices
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  slices: prismic.ContentRelationshipField<"slices">;
-}
-
-/**
- * Default variation for Slices Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SlicesSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<SlicesSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *Slices*
- */
-type SlicesSliceVariation = SlicesSliceDefault;
-
-/**
- * Slices Shared Slice
- *
- * - **API ID**: `slices`
- * - **Description**: Slices
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type SlicesSlice = prismic.SharedSlice<"slices", SlicesSliceVariation>;
-
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -2410,9 +2322,6 @@ declare module "@prismicio/client" {
       SliceGroupDocument,
       SliceGroupDocumentData,
       SliceGroupDocumentDataSlicesSlice,
-      SlicesDocument,
-      SlicesDocumentData,
-      SlicesDocumentDataSlicesSlice,
       AllDocumentTypes,
       BannerSlice,
       BannerSliceDefaultPrimary,
@@ -2462,10 +2371,6 @@ declare module "@prismicio/client" {
       SliceGroupSliceDefaultPrimary,
       SliceGroupSliceVariation,
       SliceGroupSliceDefault,
-      SlicesSlice,
-      SlicesSliceDefaultPrimary,
-      SlicesSliceVariation,
-      SlicesSliceDefault,
     };
   }
 }

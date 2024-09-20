@@ -20,9 +20,6 @@
             "links_card": {
               "type": "SharedSlice"
             },
-            "slices": {
-              "type": "SharedSlice"
-            },
             "info_cards": {
               "type": "SharedSlice"
             },
