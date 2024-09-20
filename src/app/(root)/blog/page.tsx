@@ -1,24 +1,15 @@
 import type { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { createClient, fetchLinks } from '~/libs/prismicio'
-
-import type { IArticleDocumentResponse } from './[slug]/page'
-
 import { env } from '~/config/env'
+
+import { cmsService } from '~/services/cms'
+
 import { Blog } from '~/templates/Blog'
 
-export async function generateMetadata(
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	_: any,
-	parent: ResolvingMetadata
-) {
+export async function generateMetadata(_: unknown, parent: ResolvingMetadata) {
 	try {
-		const client = createClient()
-
-		const document = await client.getSingle('blog', {
-			fetchLinks
-		})
+		const document = await cmsService.getBlog()
 
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
@@ -52,17 +43,9 @@ export async function generateMetadata(
 
 export default async function BlogPage() {
 	try {
-		const client = createClient()
-
 		const [document, articleDocuments] = await Promise.all([
-			client.getSingle('blog'),
-			client.getAllByType<IArticleDocumentResponse>('article', {
-				fetchLinks,
-				orderings: {
-					field: 'document.first_publication_date',
-					direction: 'desc'
-				}
-			})
+			cmsService.getBlog(),
+			cmsService.getArticles()
 		])
 
 		return <Blog document={document} articles={articleDocuments} />

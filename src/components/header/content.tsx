@@ -8,7 +8,7 @@ import {
 import Link from 'next/link'
 
 import type { Content } from '@prismicio/client'
-import { headerSlices } from '~/slices'
+import { components } from '~/slices'
 import { Button } from '../button'
 import { Container } from '../container'
 import { Logo } from '../logo'
@@ -29,7 +29,7 @@ export function HeaderContent({
 
 			<NavigationMenuRoot className="hidden xl:block relative">
 				<NavigationMenuList className="flex items-center justify-center">
-					<SliceZone slices={menuItems} components={headerSlices} />
+					<SliceZone slices={menuItems} components={components} />
 				</NavigationMenuList>
 			</NavigationMenuRoot>
 
@@ -47,7 +47,7 @@ export function HeaderContent({
 					<MobileMenu>
 						<NavigationMenuRoot orientation="vertical">
 							<NavigationMenuList>
-								<SliceZone slices={menuItems} components={headerSlices} />
+								<SliceZone slices={menuItems} components={components} />
 							</NavigationMenuList>
 						</NavigationMenuRoot>
 					</MobileMenu>

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 
 import { env } from '~/config/env'
 
-import { createClient } from '~/libs/prismicio'
+import { cmsService } from '~/services/cms'
 
 import { Authors } from '~/templates/Authors'
 
@@ -17,14 +17,7 @@ export const metadata: Metadata = {
 
 export default async function AuthorsPage() {
 	try {
-		const client = createClient()
-
-		const authorDocuments = await client.getAllByType('author', {
-			orderings: {
-				field: 'document.first_publication_date',
-				direction: 'desc'
-			}
-		})
+		const authorDocuments = await cmsService.getAuthors()
 
 		return <Authors authors={authorDocuments} />
 	} catch {

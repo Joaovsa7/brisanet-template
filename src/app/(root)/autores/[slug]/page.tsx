@@ -2,11 +2,14 @@ import { filter } from '@prismicio/client'
 import type { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { createClient, fetchLinks } from '~/libs/prismicio'
+import type { ArticleDocument } from '~/_types/prismicio-types'
 
-import type { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
+import { fetchLinks, prismicio } from '~/libs/prismicio'
 
 import { env } from '~/config/env'
+
+import { cmsService } from '~/services/cms'
+
 import { Author } from '~/templates/Authors'
 
 interface IPageProps {
@@ -22,11 +25,7 @@ export async function generateMetadata(
 	try {
 		const { slug } = params
 
-		const client = createClient()
-
-		const document = await client.getByUID('author', slug, {
-			fetchLinks
-		})
+		const document = await cmsService.getAuthorByUid(slug)
 
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
@@ -59,15 +58,13 @@ export default async function AuthorPage({ params }: IPageProps) {
 	try {
 		const { slug } = params
 
-		const client = createClient()
-
 		const [document, otherAuthorDocuments] = await Promise.all([
-			client.getByUID('author', slug),
-			client.getAllByType('author')
+			cmsService.getAuthorByUid(slug),
+			cmsService.getAuthors()
 		])
 
 		const authorArticleDocuments =
-			await client.getAllByType<IArticleDocumentResponse>('article', {
+			await prismicio.getAllByType<ArticleDocument>('article', {
 				fetchLinks,
 				filters: [filter.at('my.article.author', document.id)],
 				orderings: {

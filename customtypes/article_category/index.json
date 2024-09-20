@@ -35,6 +35,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "slice_group": {
+              "type": "SharedSlice"
+            },
+            "slices": {
+              "type": "SharedSlice"
+            },
+            "links_card": {
+              "type": "SharedSlice"
+            },
+            "products_carousel": {
+              "type": "SharedSlice"
+            },
             "info_cards": {
               "type": "SharedSlice"
             },

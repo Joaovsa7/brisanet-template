@@ -6,8 +6,6 @@ import { Button } from '~/components/button'
 import { Container } from '~/components/container'
 import { RichText } from '~/components/rich-text'
 
-import type { CallToActionDocument } from '../../../../prismicio-types'
-
 export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>
 
 export default function CallToAction({ slice }: CallToActionProps) {
@@ -15,7 +13,8 @@ export default function CallToAction({ slice }: CallToActionProps) {
 		return null
 	}
 
-	const cta = slice.primary.call_to_action as unknown as CallToActionDocument
+	const cta = slice.primary
+		.call_to_action as unknown as Content.CallToActionDocument
 
 	return (
 		<section

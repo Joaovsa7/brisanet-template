@@ -1,10 +1,9 @@
-import { filter } from '@prismicio/client'
-import { isFilled } from '@prismicio/client'
+import { filter, isFilled } from '@prismicio/client'
 import { IconCalendar } from '@tabler/icons-react'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
-import { createClient } from '~/libs/prismicio'
+import { prismicio } from '~/libs/prismicio'
 
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
@@ -24,9 +23,7 @@ export default async function SearchPage({ searchParams }: IPageProps) {
 		redirect('/')
 	}
 
-	const client = createClient()
-
-	const { results, total_results_size } = await client.get<
+	const { results, total_results_size } = await prismicio.get<
 		ArticleDocument | PageDocument
 	>({
 		filters: [

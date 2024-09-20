@@ -8,15 +8,15 @@ import {
 	LinkedinIcon
 } from 'react-share'
 
-import type { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
+import type { ArticleDocument } from '~/_types/prismicio-types'
+import type { AuthorDocument } from '../../../prismicio-types'
+
 import { ArticleCard } from '~/components/article-card'
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { GoogleStructuredData } from '~/components/google-structured-data'
 import { PageInfo } from '~/components/page-info'
 import { RichText } from '~/components/rich-text'
-
-import type { AuthorDocument } from '../../../prismicio-types'
 
 const icons = {
 	Facebook: <FacebookIcon />,
@@ -28,7 +28,7 @@ const icons = {
 
 interface IAuthorProps {
 	document: AuthorDocument
-	authorArticles: IArticleDocumentResponse[]
+	authorArticles: ArticleDocument[]
 	otherAuthors: AuthorDocument[]
 }
 
@@ -85,18 +85,18 @@ export function Author({
 
 							<ul className="mt-4">
 								{document.data.social_networks.map((socialNetwork) => {
-									if (!socialNetwork.name) {
+									if (!socialNetwork.social_network) {
 										return null
 									}
 
 									return (
-										<li key={socialNetwork.name}>
+										<li key={socialNetwork.social_network}>
 											<PrismicNextLink
 												prefetch={false}
 												field={socialNetwork.link}
 												className="w-10 h-10 bg-neutral-200 rounded-full overflow-hidden flex items-center justify-center transition-transform duration-300 hover:-translate-y-0.5"
 											>
-												{icons[socialNetwork.name]}
+												{icons[socialNetwork.social_network]}
 											</PrismicNextLink>
 										</li>
 									)

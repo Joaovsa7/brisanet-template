@@ -1,11 +1,9 @@
 import { asText, isFilled } from '@prismicio/client'
 import { PrismicNextImage } from '@prismicio/next'
 
-import type { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
+import type { ArticleDocument } from '~/_types/prismicio-types'
 
-export function ArticleCard({
-	article
-}: { article: IArticleDocumentResponse }) {
+export function ArticleCard({ article }: { article: ArticleDocument }) {
 	return (
 		<article className="group flex flex-col overflow-hidden">
 			<div className="aspect-video">

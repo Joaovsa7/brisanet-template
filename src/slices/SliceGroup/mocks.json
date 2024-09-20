@@ -3,7 +3,7 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"slices": {
+			"slice_group": {
 				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "DocumentLink",

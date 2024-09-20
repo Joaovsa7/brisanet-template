@@ -1,10 +1,6 @@
 {
   "repositoryName": "telefone-da-brisanet",
   "adapter": "@slicemachine/adapter-next",
-  "libraries": [
-    "./src/slices/main",
-    "./src/slices/header",
-    "./src/slices/footer"
-  ],
+  "libraries": ["./src/slices"],
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }

@@ -8,11 +8,7 @@ import { cmsService } from '~/services/cms'
 
 import { Home } from '~/templates/Home'
 
-export async function generateMetadata(
-	// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-	_: any,
-	parent: ResolvingMetadata
-) {
+export async function generateMetadata(_: unknown, parent: ResolvingMetadata) {
 	try {
 		const document = await cmsService.getHome()
 

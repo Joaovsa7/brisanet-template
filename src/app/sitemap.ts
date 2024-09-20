@@ -1,16 +1,14 @@
 import { env } from '~/config/env'
-import { createClient } from '~/libs/prismicio'
+import { prismicio } from '~/libs/prismicio'
 
 export default async function sitemap() {
-	const client = createClient()
-
 	const [authorPages, articlePages, blogPage, homePage, pages] =
 		await Promise.allSettled([
-			client.getAllByType('author'),
-			client.getAllByType('article'),
-			client.getSingle('blog'),
-			client.getSingle('home'),
-			client.getAllByType('page')
+			prismicio.getAllByType('author'),
+			prismicio.getAllByType('article'),
+			prismicio.getSingle('blog'),
+			prismicio.getSingle('home'),
+			prismicio.getAllByType('page')
 		])
 
 	const sitemaps = []

@@ -1,13 +1,13 @@
 import { isFilled } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
-import { createClient } from '~/libs/prismicio'
+
+import { prismicio } from '~/libs/prismicio'
+
 import { Container } from './container'
 
 export async function ConversionBar() {
-	const client = createClient()
-
 	try {
-		const conversionBarDocument = await client.getSingle('conversion_bar')
+		const conversionBarDocument = await prismicio.getSingle('conversion_bar')
 
 		const { text, cta_label, cta_link } = conversionBarDocument.data
 

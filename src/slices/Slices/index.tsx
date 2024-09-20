@@ -1,6 +1,7 @@
 import { type Content, isFilled } from '@prismicio/client'
 import { type SliceComponentProps, SliceZone } from '@prismicio/react'
-import { mainSlices } from '~/slices'
+
+import { components } from '..'
 
 export type SlicesProps = SliceComponentProps<Content.SlicesSlice> & {
 	slice: Content.SlicesSlice & {
@@ -24,7 +25,7 @@ export default function Slices({ slice }: SlicesProps) {
 	return (
 		<SliceZone
 			slices={slice.primary.slices.data.slices}
-			components={mainSlices}
+			components={components}
 		/>
 	)
 }

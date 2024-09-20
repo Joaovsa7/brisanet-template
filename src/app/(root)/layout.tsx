@@ -42,8 +42,8 @@ export default function Layout({
 			<Footer />
 			<Suspense fallback={null}>
 				<SearchDrawer />
+				<Clarity />
 			</Suspense>
-			<Clarity />
 		</div>
 	)
 }

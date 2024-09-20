@@ -1,44 +1,53 @@
 {
   "format": "custom",
-  "id": "slices",
-  "label": "Slices",
+  "id": "slice_group",
+  "label": "Slice Group",
   "repeatable": true,
   "status": true,
   "json": {
     "Main": {
       "uid": {
+        "type": "UID",
         "config": {
           "label": "UID"
-        },
-        "type": "UID"
+        }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "call_to_action": {
+              "type": "SharedSlice"
+            },
+            "menu_item": {
+              "type": "SharedSlice"
+            },
+            "footer_links": {
+              "type": "SharedSlice"
+            },
+            "slices": {
+              "type": "SharedSlice"
+            },
             "slice_group": {
               "type": "SharedSlice"
             },
             "products_carousel": {
               "type": "SharedSlice"
             },
-            "links_card": {
-              "type": "SharedSlice"
-            },
-            "info_cards": {
+            "banner": {
               "type": "SharedSlice"
             },
             "faq": {
               "type": "SharedSlice"
             },
+            "info_cards": {
+              "type": "SharedSlice"
+            },
+            "links_card": {
+              "type": "SharedSlice"
+            },
             "content_block": {
-              "type": "SharedSlice"
-            },
-            "call_to_action": {
-              "type": "SharedSlice"
-            },
-            "banner": {
               "type": "SharedSlice"
             }
           }

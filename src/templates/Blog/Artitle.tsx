@@ -4,19 +4,21 @@ import { SliceZone } from '@prismicio/react'
 import { IconCalendar, IconClock } from '@tabler/icons-react'
 import Link from 'next/link'
 
-import type { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
+import type { ArticleDocument } from '~/_types/prismicio-types'
+
 import { ArticleCard } from '~/components/article-card'
 import { ArticleShareButtons } from '~/components/article-share-buttons'
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { GoogleStructuredData } from '~/components/google-structured-data'
 import { RichText } from '~/components/rich-text'
+import { components } from '~/slices'
+
 import { env } from '~/config/env'
-import { mainSlices } from '~/slices'
 
 interface IArticleProps {
-	document: IArticleDocumentResponse
-	relatedArticles: IArticleDocumentResponse[]
+	document: ArticleDocument
+	relatedArticles: ArticleDocument[]
 }
 
 export function Article({ document, relatedArticles }: IArticleProps) {
@@ -138,7 +140,7 @@ export function Article({ document, relatedArticles }: IArticleProps) {
 					</div>
 				</Container>
 
-				<SliceZone slices={document.data.slices} components={mainSlices} />
+				<SliceZone slices={document.data.slices} components={components} />
 
 				<Container>
 					{relatedArticlesIsPopulated && (

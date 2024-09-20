@@ -1,7 +1,7 @@
 import { headers } from 'next/headers'
 import { UAParser } from 'ua-parser-js'
 
-import { createClient } from '~/libs/prismicio'
+import { prismicio } from '~/libs/prismicio'
 
 import { SearchDrawer } from './search-drawer'
 
@@ -17,9 +17,7 @@ export async function SearchDrawerContainer() {
 	}
 
 	try {
-		const client = createClient()
-
-		const document = await client.getSingle('search_field')
+		const document = await prismicio.getSingle('search_field')
 
 		return <SearchDrawer document={document} />
 	} catch {

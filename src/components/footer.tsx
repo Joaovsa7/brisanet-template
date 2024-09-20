@@ -1,16 +1,14 @@
 import { SliceZone } from '@prismicio/react'
 import Link from 'next/link'
 
-import { footerSlices } from '~/slices'
+import { components } from '~/slices'
 import { Container } from './container'
 import { Logo } from './logo'
 
-import { createClient } from '~/libs/prismicio'
+import { prismicio } from '~/libs/prismicio'
 
 export async function Footer() {
-	const client = createClient()
-
-	const footerDocument = await client.getSingle('footer').catch(() => null)
+	const footerDocument = await prismicio.getSingle('footer').catch(() => null)
 
 	const currentYear = new Date().getFullYear()
 
@@ -20,7 +18,7 @@ export async function Footer() {
 				{footerDocument?.data.slices && (
 					<SliceZone
 						slices={footerDocument.data.slices}
-						components={footerSlices}
+						components={components}
 					/>
 				)}
 

@@ -59,7 +59,7 @@
         "config": {
           "label": "Redes Sociais",
           "fields": {
-            "name": {
+            "social_network": {
               "type": "Select",
               "config": {
                 "label": "Rede Social",
@@ -90,6 +90,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "slices": {
+              "type": "SharedSlice"
+            },
+            "slice_group": {
+              "type": "SharedSlice"
+            },
+            "products_carousel": {
+              "type": "SharedSlice"
+            },
+            "links_card": {
+              "type": "SharedSlice"
+            },
             "banner": {
               "type": "SharedSlice"
             },

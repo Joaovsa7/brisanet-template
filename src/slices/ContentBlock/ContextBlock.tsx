@@ -6,12 +6,11 @@ import { Container } from '~/components/container'
 import { RichText } from '~/components/rich-text'
 import { Section } from '~/components/section'
 
-import type { SidebarBannerDocument } from '../../../../prismicio-types'
-
 export type ContentBlockProps = SliceComponentProps<Content.ContentBlockSlice>
 
 export default function ContentBlock({ slice }: ContentBlockProps) {
-	const banner = slice.primary.banner as unknown as SidebarBannerDocument
+	const banner = slice.primary
+		.banner as unknown as Content.SidebarBannerDocument
 
 	const bannerIsFilled = isFilled.contentRelationship(slice.primary.banner)
 

@@ -7,12 +7,11 @@ import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { GoogleStructuredData } from '~/components/google-structured-data'
 import { PageInfo } from '~/components/page-info'
+import { components } from '~/slices'
 
 import { env } from '~/config/env'
-
-import { createClient, fetchLinks } from '~/libs/prismicio'
-
-import { mainSlices } from '~/slices'
+import { prismicio } from '~/libs/prismicio'
+import { cmsService } from '~/services/cms'
 
 interface IPageProps {
 	params: {
@@ -22,9 +21,7 @@ interface IPageProps {
 
 export async function generateStaticParams() {
 	try {
-		const client = createClient()
-
-		const document = await client.getSingle<
+		const document = await prismicio.getSingle<
 			Content.MostVisitedPagesDocument & {
 				data: {
 					pages: {
@@ -50,11 +47,7 @@ export async function generateMetadata(
 		const { slugs } = params
 		const uid = slugs.join('--')
 
-		const client = createClient()
-
-		const document = await client.getByUID('page', uid, {
-			fetchLinks
-		})
+		const document = await cmsService.getPageByUid(uid)
 
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
@@ -90,9 +83,8 @@ export default async function Page({ params }: IPageProps) {
 	try {
 		const { slugs } = params
 		const uid = slugs.join('--')
-		const client = createClient()
 
-		const document = await client.getByUID('page', uid, { fetchLinks })
+		const document = await cmsService.getPageByUid(uid)
 
 		return (
 			<main>
@@ -101,7 +93,7 @@ export default async function Page({ params }: IPageProps) {
 				<Container size="lg" className="py-4">
 					<Breadcrumb />
 				</Container>
-				<SliceZone slices={document.data.slices} components={mainSlices} />
+				<SliceZone slices={document.data.slices} components={components} />
 			</main>
 		)
 	} catch {

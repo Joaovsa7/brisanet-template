@@ -1,19 +1,20 @@
 import { SliceZone } from '@prismicio/react'
 import Link from 'next/link'
 
+import type { ArticleDocument } from '~/_types/prismicio-types'
+
 import { ArticleCard } from '~/components/article-card'
 import { Breadcrumb } from '~/components/breadcrumb'
 import { Container } from '~/components/container'
 import { GoogleStructuredData } from '~/components/google-structured-data'
 import { PageInfo } from '~/components/page-info'
-import { mainSlices } from '~/slices'
+import { components } from '~/slices'
 
-import type { IArticleDocumentResponse } from '~/app/(root)/blog/[slug]/page'
 import type { BlogDocument } from '../../../prismicio-types'
 
 interface IBlogProps {
 	document: BlogDocument
-	articles: IArticleDocumentResponse[]
+	articles: ArticleDocument[]
 }
 
 export function Blog({ articles, document }: IBlogProps) {
@@ -43,7 +44,7 @@ export function Blog({ articles, document }: IBlogProps) {
 				</section>
 			</Container>
 
-			<SliceZone slices={document.data.slices} components={mainSlices} />
+			<SliceZone slices={document.data.slices} components={components} />
 		</main>
 	)
 }

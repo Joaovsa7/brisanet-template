@@ -1,9 +1,14 @@
 import { type Content, filter } from '@prismicio/client'
 import type { ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
+
+import type { ArticleDocument } from '~/_types/prismicio-types'
+
 import { env } from '~/config/env'
 
-import { createClient, fetchLinks } from '~/libs/prismicio'
+import { fetchLinks, prismicio } from '~/libs/prismicio'
+
+import { cmsService } from '~/services/cms'
 
 import { Article } from '~/templates/Blog'
 
@@ -15,9 +20,7 @@ interface IPageProps {
 
 export async function generateStaticParams() {
 	try {
-		const client = createClient()
-
-		const document = await client.getSingle<
+		const document = await prismicio.getSingle<
 			Content.MostReadArticlesDocument & {
 				data: {
 					articles: {
@@ -42,11 +45,7 @@ export async function generateMetadata(
 	try {
 		const { slug } = params
 
-		const client = createClient()
-
-		const document = await client.getByUID('article', slug, {
-			fetchLinks
-		})
+		const document = await cmsService.getArticleByUid(slug)
 
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document.data
@@ -84,31 +83,14 @@ export async function generateMetadata(
 	}
 }
 
-export type IArticleDocumentResponse = Content.ArticleDocument & {
-	data: {
-		category: {
-			data: Pick<Content.ArticleCategoryDocumentData, 'name'>
-		}
-		author: Content.AuthorDocument & {
-			data: Pick<Content.AuthorDocumentData, 'name' | 'avatar' | 'position'>
-		}
-	}
-}
-
 export default async function ArticlePage({ params }: IPageProps) {
 	try {
-		const articleUid = params.slug
+		const { slug } = params
 
-		const client = createClient()
+		const document = await cmsService.getArticleByUid(slug)
 
-		const document = await client.getByUID<IArticleDocumentResponse>(
-			'article',
-			articleUid,
-			{ fetchLinks }
-		)
-
-		const relatedArticles = await client
-			.getAllByType<IArticleDocumentResponse>('article', {
+		const relatedArticles = await prismicio
+			.getAllByType<ArticleDocument>('article', {
 				fetchLinks,
 				filters: [
 					filter.not('document.id', document.id),

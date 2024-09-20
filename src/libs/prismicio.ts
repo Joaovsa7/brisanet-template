@@ -3,12 +3,6 @@ import * as prismicNext from '@prismicio/next'
 
 import { env } from '~/config/env'
 
-/**
- * A list of Route Resolver objects that define how a document's `url` field is resolved.
- *
- * {@link https://prismic.io/docs/route-resolver#route-resolver}
- */
-// TODO: Update the routes array to match your project's route structure.
 const routes: prismic.ClientConfig['routes'] = [
 	{
 		type: 'home',
@@ -36,13 +30,7 @@ const routes: prismic.ClientConfig['routes'] = [
 	}
 ]
 
-/**
- * Creates a Prismic client for the project's repository. The client is used to
- * query content from the Prismic API.
- *
- * @param config - Configuration for the Prismic client.
- */
-export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
+const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 	const client = prismic.createClient(env.PRISMIC_REPOSITORY_NAME, {
 		accessToken: env.PRISMIC_ACCESS_TOKEN,
 		routes,
@@ -62,6 +50,8 @@ export const createClient = (config: prismicNext.CreateClientConfig = {}) => {
 	return client
 }
 
+export const prismicio = createClient()
+
 export const fetchLinks = [
 	'author.avatar',
 	'author.name',
@@ -80,5 +70,6 @@ export const fetchLinks = [
 	'product.is_promotion',
 	'sidebar_banner.banner',
 	'sidebar_banner.link',
-	'slices.slices'
+	'slices.slices',
+	'slice_group.slices'
 ]
