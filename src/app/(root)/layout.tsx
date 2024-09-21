@@ -3,6 +3,7 @@ import { Suspense } from 'react'
 
 import { env } from '~/config/env'
 
+import { Adsense } from '~/components/adsense'
 import { Clarity } from '~/components/clarity'
 import { ConversionBar } from '~/components/conversion-bar'
 import { Footer } from '~/components/footer'
@@ -43,6 +44,7 @@ export default function Layout({
 			<Suspense fallback={null}>
 				<SearchDrawer />
 				<Clarity />
+				<Adsense />
 			</Suspense>
 		</div>
 	)
