@@ -94,7 +94,7 @@ export function ProductCard({
 			<header>
 				{isPromotion && (
 					<span className="absolute top-0 left-0 right-0 bg-secondary text-white p-2 uppercase font-semibold text-center">
-						Promoção
+						Melhor oferta
 					</span>
 				)}
 				<h3 className="font-semibold text-4xl text-primary tracking-tight">

@@ -3,9 +3,13 @@ import { PrismicNextImage, PrismicNextLink } from '@prismicio/next'
 
 import { Container } from '~/components/container'
 
-export function BannerAd({ primary }: Content.BannerSliceAd) {
+type BannerAdProps = Content.BannerSliceAd & {
+	slice_type: string
+}
+
+export function BannerAd({ primary, slice_type, variation }: BannerAdProps) {
 	return (
-		<section>
+		<section data-slice-type={slice_type} data-slice-variation={variation}>
 			<Container size="lg">
 				<PrismicNextLink field={primary.link} prefetch={false}>
 					<PrismicNextImage

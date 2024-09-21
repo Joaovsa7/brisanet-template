@@ -13,7 +13,7 @@ export async function Footer() {
 	const currentYear = new Date().getFullYear()
 
 	return (
-		<footer className="bg-secondary pt-14 pb-8">
+		<footer className="bg-primary pt-14 pb-8">
 			<Container size="lg">
 				{footerDocument?.data.slices && (
 					<SliceZone

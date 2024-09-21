@@ -19,8 +19,8 @@ const config: Config = {
 			transparent,
 			current,
 			neutral: zinc,
-			primary: '#F56E28',
-			secondary: '#083D93',
+			primary: '#ff5022',
+			secondary: '#2242d4',
 			destructive: red,
 			success: emerald
 		},

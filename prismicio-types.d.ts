@@ -1499,6 +1499,21 @@ export type AllDocumentTypes =
   | SliceGroupDocument;
 
 /**
+ * Item in *Banner → BannerProducts → Primary → Planos*
+ */
+export interface BannerSliceBannerProductsPrimaryProductsItem {
+  /**
+   * Plano field in *Banner → BannerProducts → Primary → Planos*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner.bannerProducts.primary.products[].product
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  product: prismic.ContentRelationshipField<"product">;
+}
+
+/**
  * Primary content in *Banner → Default → Primary*
  */
 export interface BannerSliceDefaultPrimary {
@@ -1605,9 +1620,52 @@ export type BannerSliceAd = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Banner → BannerProducts → Primary*
+ */
+export interface BannerSliceBannerProductsPrimary {
+  /**
+   * Título field in *Banner → BannerProducts → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner.bannerProducts.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Planos field in *Banner → BannerProducts → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: banner.bannerProducts.primary.products[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  products: prismic.GroupField<
+    Simplify<BannerSliceBannerProductsPrimaryProductsItem>
+  >;
+}
+
+/**
+ * BannerProducts variation for Banner Slice
+ *
+ * - **API ID**: `bannerProducts`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BannerSliceBannerProducts = prismic.SharedSliceVariation<
+  "bannerProducts",
+  Simplify<BannerSliceBannerProductsPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Banner*
  */
-type BannerSliceVariation = BannerSliceDefault | BannerSliceAd;
+type BannerSliceVariation =
+  | BannerSliceDefault
+  | BannerSliceAd
+  | BannerSliceBannerProducts;
 
 /**
  * Banner Shared Slice
@@ -2438,9 +2496,12 @@ declare module "@prismicio/client" {
       BannerSlice,
       BannerSliceDefaultPrimary,
       BannerSliceAdPrimary,
+      BannerSliceBannerProductsPrimaryProductsItem,
+      BannerSliceBannerProductsPrimary,
       BannerSliceVariation,
       BannerSliceDefault,
       BannerSliceAd,
+      BannerSliceBannerProducts,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
       CallToActionSliceVariation,
