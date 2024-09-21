@@ -2,6 +2,7 @@
 
 import type { Content } from '@prismicio/client'
 import { PrismicNextLink } from '@prismicio/next'
+import { DialogTitle } from '@radix-ui/react-dialog'
 import { IconChevronRight, IconMenu2, IconSend2 } from '@tabler/icons-react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { type ChangeEvent, type FormEvent, useEffect, useState } from 'react'
@@ -41,13 +42,17 @@ export function SearchDrawer({
 
 	return (
 		<Drawer.Root open={open} shouldScaleBackground onOpenChange={setOpen}>
-			<Drawer.Trigger className="size-12 fixed right-4 bottom-4 flex items-center justify-center rounded-full shadow-lg bg-primary">
+			<Drawer.Trigger
+				aria-label="Abrir campo de pesquisa"
+				className="size-12 fixed right-4 bottom-4 flex items-center justify-center rounded-full shadow-lg bg-primary"
+			>
 				<IconMenu2 className="text-white" />
 			</Drawer.Trigger>
 
 			<Drawer.Portal>
 				<Drawer.Overlay className="fixed inset-0 bg-black/50 z-50 backdrop-blur-[2px]" />
 				<Drawer.Content className="flex flex-col gap-4 fixed bottom-0 inset-x-0 rounded-t-3xl p-3 backdrop-blur-xl outline-none bg-white z-50">
+					<DialogTitle className="sr-only">Campo de pesquisa</DialogTitle>
 					<form onSubmit={handleSubmit}>
 						<div className="flex items-center gap-2 pl-4 pr-2 rounded-3xl border border-neutral-200">
 							<input

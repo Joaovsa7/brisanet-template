@@ -26,7 +26,11 @@ export default function ContentBlock({ slice }: ContentBlockProps) {
 				<RichText field={slice.primary.content} />
 
 				{bannerIsFilled && (
-					<PrismicNextLink field={banner.data.link} prefetch={false}>
+					<PrismicNextLink
+						field={banner.data.link}
+						prefetch={false}
+						aria-label="Anúncio"
+					>
 						<PrismicNextImage
 							field={banner.data.banner}
 							width={384}
