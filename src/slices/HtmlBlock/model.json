@@ -1,0 +1,28 @@
+{
+  "id": "html_block",
+  "type": "SharedSlice",
+  "name": "HtmlBlock",
+  "description": "HtmlBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "html": {
+          "type": "StructuredText",
+          "config": {
+            "label": "HTML",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "preformatted"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

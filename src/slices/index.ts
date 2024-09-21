@@ -8,6 +8,7 @@ export const components = {
 	content_block: dynamic(() => import('./ContentBlock')),
 	faq: dynamic(() => import('./Faq')),
 	footer_links: dynamic(() => import('./FooterLinks')),
+	html_block: dynamic(() => import('./HtmlBlock')),
 	info_cards: dynamic(() => import('./InfoCards')),
 	links_card: dynamic(() => import('./LinksCard')),
 	menu_item: dynamic(() => import('./MenuItem')),

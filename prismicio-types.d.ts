@@ -5,6 +5,7 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type ArticleDocumentDataSlicesSlice =
+  | HtmlBlockSlice
   | TableSlice
   | SliceGroupSlice
   | ProductsCarouselSlice
@@ -157,6 +158,7 @@ export type ArticleDocument<Lang extends string = string> =
   >;
 
 type ArticleCategoryDocumentDataSlicesSlice =
+  | HtmlBlockSlice
   | TableSlice
   | SliceGroupSlice
   | LinksCardSlice
@@ -293,6 +295,7 @@ export interface AuthorDocumentDataSocialNetworksItem {
 }
 
 type AuthorDocumentDataSlicesSlice =
+  | HtmlBlockSlice
   | TableSlice
   | SliceGroupSlice
   | ProductsCarouselSlice
@@ -455,6 +458,7 @@ export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
 type BlogDocumentDataSlicesSlice =
+  | HtmlBlockSlice
   | TableSlice
   | SliceGroupSlice
   | ProductsCarouselSlice
@@ -769,6 +773,7 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomeDocumentDataSlicesSlice =
+  | HtmlBlockSlice
   | TableSlice
   | SliceGroupSlice
   | LinksCardSlice
@@ -1016,6 +1021,7 @@ export type MostVisitedPagesDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | HtmlBlockSlice
   | TableSlice
   | SliceGroupSlice
   | LinksCardSlice
@@ -1435,6 +1441,7 @@ export type SidebarBannerDocument<Lang extends string = string> =
   >;
 
 type SliceGroupDocumentDataSlicesSlice =
+  | HtmlBlockSlice
   | CallToActionSlice
   | MenuItemSlice
   | FooterLinksSlice
@@ -1926,6 +1933,51 @@ type FooterLinksSliceVariation = FooterLinksSliceDefault;
 export type FooterLinksSlice = prismic.SharedSlice<
   "footer_links",
   FooterLinksSliceVariation
+>;
+
+/**
+ * Primary content in *HtmlBlock → Default → Primary*
+ */
+export interface HtmlBlockSliceDefaultPrimary {
+  /**
+   * HTML field in *HtmlBlock → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: html_block.default.primary.html
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  html: prismic.RichTextField;
+}
+
+/**
+ * Default variation for HtmlBlock Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HtmlBlockSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HtmlBlockSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HtmlBlock*
+ */
+type HtmlBlockSliceVariation = HtmlBlockSliceDefault;
+
+/**
+ * HtmlBlock Shared Slice
+ *
+ * - **API ID**: `html_block`
+ * - **Description**: HtmlBlock
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HtmlBlockSlice = prismic.SharedSlice<
+  "html_block",
+  HtmlBlockSliceVariation
 >;
 
 /**
@@ -2519,6 +2571,10 @@ declare module "@prismicio/client" {
       FooterLinksSliceDefaultItem,
       FooterLinksSliceVariation,
       FooterLinksSliceDefault,
+      HtmlBlockSlice,
+      HtmlBlockSliceDefaultPrimary,
+      HtmlBlockSliceVariation,
+      HtmlBlockSliceDefault,
       InfoCardsSlice,
       InfoCardsSliceDefaultItem,
       InfoCardsSliceVariation,
