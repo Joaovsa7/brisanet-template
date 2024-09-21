@@ -1,0 +1,67 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"first_column": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sit nulla laboris consequat consequat."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"second_column": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"text",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Consequat irure nulla culpa in consequat."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"about": {
+				"__TYPE__": "FieldContent",
+				"value": "usually",
+				"type": "Text"
+			},
+			"name": {
+				"__TYPE__": "FieldContent",
+				"value": "musical",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
