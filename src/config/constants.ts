@@ -7,7 +7,6 @@ import {
 	IconBrandYoutube,
 	IconBuildingEstate,
 	IconCalendar,
-	IconCheck,
 	IconDeviceLaptop,
 	IconDeviceMobile,
 	IconDeviceTablet,
@@ -24,13 +23,14 @@ import {
 	IconNews,
 	IconPdf,
 	IconPhone,
+	IconSquareCheck,
 	IconTool,
 	IconUpload,
 	IconWifi
 } from '@tabler/icons-react'
 
 export const CMS_ICONS = {
-	Check: IconCheck,
+	Check: IconSquareCheck,
 	Download: IconDownload,
 	Instalaçao: IconHomeSignal,
 	Internet: IconNetwork,

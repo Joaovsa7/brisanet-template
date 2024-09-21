@@ -1,5 +1,5 @@
 import {
-	IconCheck,
+	IconCircleCheck,
 	IconDeviceMobile,
 	IconDownload,
 	IconHeadset,
@@ -15,7 +15,7 @@ import { env } from '~/config/env'
 import { Button } from './button'
 
 const PRODUCT_BENEFIT_ICONS = {
-	Check: IconCheck,
+	Check: IconCircleCheck,
 	Download: IconDownload,
 	Instalaçao: IconHomeSignal,
 	Internet: IconNetwork,
@@ -109,10 +109,10 @@ export function ProductCard({
 						return (
 							<li
 								key={benefit.name}
-								className="flex items-center gap-1.5 text-secondary font-medium"
+								className="flex items-start gap-1.5 text-secondary font-medium"
 							>
 								<Icon className="text-primary" />
-								<span>{benefit.name}</span>
+								<span className="flex-1">{benefit.name}</span>
 							</li>
 						)
 					})}
