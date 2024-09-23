@@ -10,7 +10,6 @@ import {
 	IconWifi
 } from '@tabler/icons-react'
 
-import { env } from '~/config/env'
 
 import { Button } from './button'
 
@@ -61,7 +60,7 @@ export function ProductCard({
 						image: 'https://telefonedabrisanet.com.br/brisanet-logo.png',
 						description: `Plano de internet ${name} com ${productBenefits.join(
 							', '
-						)} por apenas ${Number(price.replace(/\D/g, '')) / 100} por mês.`,
+						)} por apenas ${price} por mês.`,
 						shippingDetails: {
 							'@type': 'OfferShippingDetails',
 							shippingDestination: {
@@ -81,9 +80,9 @@ export function ProductCard({
 						},
 						offers: {
 							'@type': 'Offer',
-							url: env.BASE_URL,
+							// url: env.BASE_URL,
 							priceCurrency: 'BRL',
-							price: Number(price.replace(/\D/g, '')) / 100,
+							price,
 							priceValidUntil: '2025-01-01',
 							availability: 'https://schema.org/InStock',
 							itemCondition: 'https://schema.org/NewCondition'
@@ -104,14 +103,14 @@ export function ProductCard({
 			<main className="flex-1">
 				<ul className="flex flex-col gap-2">
 					{benefits.map((benefit) => {
-						const Icon = PRODUCT_BENEFIT_ICONS[benefit.icon]
+						const Icon = PRODUCT_BENEFIT_ICONS.Check
 
 						return (
 							<li
 								key={benefit.name}
 								className="flex items-start gap-1.5 text-secondary font-medium"
 							>
-								<Icon className="text-primary" />
+								<img src={benefit.icon} />
 								<span className="flex-1">{benefit.name}</span>
 							</li>
 						)
@@ -123,7 +122,7 @@ export function ProductCard({
 					{Intl.NumberFormat('pt-BR', {
 						currency: 'BRL',
 						style: 'currency'
-					}).format(Number(price.replace(/\D/g, '')) / 100)}
+					}).format(Number(price))}
 					<span className="text-2xl font-normal">/mês</span>
 				</h3>
 				<Button asChild size="sm" className="w-full">
