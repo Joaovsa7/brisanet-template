@@ -81,6 +81,7 @@ export default function ProductsCarousel({ slice }: ProductsCarouselProps) {
 												name={`${product.speed.data.attributes.value}MEGA` as string}
 												benefits={benefits}
 												price={product.price as string}
+												isPromotion={product?.label?.active}
 											/>
 										</CarouselItem>
 									)
