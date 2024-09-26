@@ -34,7 +34,7 @@ interface IProductCardProps {
 	name: string
 	benefits: IProductBenefit[]
 	price: string
-	isPromotion: boolean
+	isPromotion?: boolean
 }
 
 export function ProductCard({
@@ -80,7 +80,7 @@ export function ProductCard({
 						},
 						offers: {
 							'@type': 'Offer',
-							// url: env.BASE_URL,
+							url: process.env.BASE_URL,
 							priceCurrency: 'BRL',
 							price,
 							priceValidUntil: '2025-01-01',
@@ -102,15 +102,13 @@ export function ProductCard({
 			</header>
 			<main className="flex-1">
 				<ul className="flex flex-col gap-2">
-					{benefits.map((benefit) => {
-						const Icon = PRODUCT_BENEFIT_ICONS.Check
-
+					{benefits.map((benefit, index) => {
 						return (
 							<li
 								key={benefit.name}
 								className="flex items-start gap-1.5 text-secondary font-medium"
 							>
-								<img src={benefit.icon} />
+								<img src={benefit.icon} alt={`${index}-${benefit.name}`} />
 								<span className="flex-1">{benefit.name}</span>
 							</li>
 						)

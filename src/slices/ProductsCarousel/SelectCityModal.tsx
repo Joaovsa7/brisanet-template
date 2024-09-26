@@ -38,11 +38,10 @@ const DropdownCity = ({ options, onSelect }) => {
 					value={searchTerm}
 					onChange={(e) => setSearchTerm(e.target.value)}
 					onFocus={() => setIsOpen(true)}
-					onBlur={() => setTimeout(() => setIsOpen(false), 100)}
 				/>
 				<label
-					className={`absolute left-0 top-0 ml-3 transform transition-all duration-300 ease-in-out bg-background px-1 text-sm text-gray-500 bg-white
-            ${searchTerm ? "-top-2 text-sm text-orange-600 dark:text-yellow-200" : "top-1/2 -translate-y-1/2 ml-4 text-base text-gray-500 peer-focus:-top-2 peer-focus:ml-3 peer-focus:text-sm peer-focus:text-orange-600 peer-placeholder-shown:text-gray-500"}`}
+					className={`absolute left-0 top-0 ml-3 transform transition-all duration-300 ease-in-out bg-background px-1 text-sm text-gray-500
+            ${searchTerm ? "top-4 text-sm text-orange-600 dark:text-yellow-200 bg-white" : "top-1/2 -translate-y-[-5px] text-base text-gray-500 peer-focus:text-sm peer-focus:text-orange-600 peer-placeholder-shown:text-gray-500"}`}
 				>
 					Digite sua cidade
 				</label>
@@ -50,7 +49,7 @@ const DropdownCity = ({ options, onSelect }) => {
 
 			{isOpen && searchTerm && (
 				<ul
-					className="absolute z-10 mt-2 w-full rounded-md border border-gray-300 bg-white dark:bg-gray-800 max-h-60 overflow-auto shadow-lg"
+					className="absolute z-20 mt-2 w-full rounded-md border border-gray-300 bg-white dark:bg-gray-800 max-h-60 lg:max-h-96 overflow-auto shadow-lg"
 				>
 					{filteredOptions.length > 0 ? (
 						filteredOptions.map((city) => (
@@ -93,13 +92,18 @@ export function SelectCityModal({ currentCity, onSelect }) {
 
 	return (
 		<>
-			<h3 className="text-3xl font-bold text-primary mb-4 md:mb-0 cursor-pointer" onClick={onToggle}>
-				{currentCityName?.attributes?.name}  &#x2935;
-			</h3>
-			<Dialog.Root open={isOpen}>
+			{currentCityName?.attributes?.name && (
+				<div className='flex flex-col gap-1'>
+					<span className='text-xs'>OFERTAS VÁLIDAS PARA:</span>
+					<h3 className="text-3xl font-bold text-primary mb-4 md:mb-0 cursor-pointer" onClick={onToggle}>
+						{currentCityName?.attributes?.name}  &#x2935;
+					</h3>
+				</div>
+			)}
+			<Dialog.Root open={isOpen} >
 				<Dialog.Portal>
 					<Dialog.Overlay className="bg-black/80 fixed inset-0 z-50" />
-					<Dialog.Content className="max-w-2xl w-full rounded-md overflow-hidden fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2">
+					<Dialog.Content className="max-w-2xl w-full rounded-md overflow-hidden fixed top-1/2 left-1/2 z-50 -translate-x-1/2 -translate-y-1/2 h-[300px]">
 						<Dialog.Close
 							className="absolute top-4 right-4 bg-white rounded-full size-12 flex items-center justify-center"
 							aria-label="Fechar modal"

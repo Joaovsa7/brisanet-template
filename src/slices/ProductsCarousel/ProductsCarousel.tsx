@@ -36,9 +36,8 @@ export default function ProductsCarousel({ slice }: ProductsCarouselProps) {
 
 		brisanetService.getProductsByCity(fromSessionStorage || selectedCity).then((data) => {
 			const results = data.services[0].services.data;
-			const hasResults = results.length > 0;
 
-			setProducts(hasResults ? results : slice.items);
+			setProducts(results);
 			setIsLoading(false);
 		});
 	}, [selectedCity]);
@@ -67,11 +66,11 @@ export default function ProductsCarousel({ slice }: ProductsCarouselProps) {
 					) : (
 						<Carousel>
 							<CarouselContent>
-								{products?.map?.((data) => {
+								{products.length > 0 ? products?.map?.((data) => {
 									const product = data?.attributes
-									const benefits = product.informations.map((info) => ({
+									const benefits = product?.informations?.map?.((info) => ({
 										name: info.name, icon: info.icon.data.attributes.url
-									}))
+									})) || []
 
 									return (
 										<CarouselItem
@@ -82,11 +81,14 @@ export default function ProductsCarousel({ slice }: ProductsCarouselProps) {
 												name={`${product.speed.data.attributes.value}MEGA` as string}
 												benefits={benefits}
 												price={product.price as string}
-											// isPromotion={product.data.is_promotion}
 											/>
 										</CarouselItem>
 									)
-								})}
+								}) : (
+									<div className='w-full p-10 bg-primary text-white text-2xl rounded-md'>
+										Sem disponibilidade para a sua região
+									</div>
+								)}
 							</CarouselContent>
 
 							<div className="mx-auto w-fit mt-6">
