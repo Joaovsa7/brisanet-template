@@ -26,7 +26,7 @@ export default async function sitemap() {
 
 	if (blogPage.status === 'fulfilled' && blogPage.value.data.robots_index) {
 		sitemaps.push({
-			url: `${env.BASE_URL}/blog`,
+			url: `www.${env.BASE_URL}/blog`,
 			lastModified: new Date(
 				blogPage.value.last_publication_date
 			).toISOString(),
@@ -39,7 +39,7 @@ export default async function sitemap() {
 		const articlesSitemap = articlePages.value
 			.filter((document) => document.data.robots_index)
 			.map((document) => ({
-				url: `${env.BASE_URL}/blog/${document.uid}`,
+				url: `www.${env.BASE_URL}/blog/${document.uid}`,
 				lastModified: new Date(document.last_publication_date).toISOString(),
 				changeFrequency: 'weekly',
 				priority: 0.9
@@ -52,7 +52,7 @@ export default async function sitemap() {
 		const articlesSitemap = pages.value
 			.filter((document) => document.data.robots_index)
 			.map((document) => ({
-				url: `${env.BASE_URL}/${document.uid.replaceAll('--', '/')}`,
+				url: `www.${env.BASE_URL}/${document.uid.replaceAll('--', '/')}`,
 				lastModified: new Date(document.last_publication_date).toISOString(),
 				changeFrequency: 'weekly',
 				priority: 0.9
@@ -65,7 +65,7 @@ export default async function sitemap() {
 		const authorsSitemap = authorPages.value
 			.filter((document) => document.data.robots_index)
 			.map((document) => ({
-				url: `${env.BASE_URL}/autores/${document.uid}`,
+				url: `www.${env.BASE_URL}/autores/${document.uid}`,
 				lastModified: new Date(document.last_publication_date).toISOString(),
 				changeFrequency: 'weekly',
 				priority: 0.9
