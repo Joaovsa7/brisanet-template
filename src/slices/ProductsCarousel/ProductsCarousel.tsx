@@ -15,20 +15,33 @@ import { Container } from '~/components/container';
 import { ProductCard } from '~/components/product-card';
 import { RichText } from '~/components/rich-text';
 import { brisanetService } from '~/services/brisanet';
-import { ListCities } from './ListCities';
+import { ProductSkeleton } from './ProductSkeleton';
+import { SelectCityModal } from './SelectCityModal';
 
 export type ProductsCarouselProps =
 	SliceComponentProps<Content.ProductsCarouselSlice>
 
 export default function ProductsCarousel({ slice }: ProductsCarouselProps) {
 	const [products, setProducts] = useState([]);
-	const [selectedCity, setSelectedCity] = useState(slice.primary?.defaultCity || "74")
-	console.log({ selectedCity })
+	const [isLoading, setIsLoading] = useState(true);
+	const [selectedCity, setSelectedCity] = useState(slice.primary?.defaultCity || "96")
+
 	useEffect(() => {
-		brisanetService.getProductsByCity(selectedCity).then((data) => {
-			setProducts(data.services[0].services.data)
+		setIsLoading(true);
+		const fromSessionStorage = window.sessionStorage.getItem('@brisanet/city')
+
+		if (fromSessionStorage) {
+			setSelectedCity(fromSessionStorage)
+		}
+
+		brisanetService.getProductsByCity(fromSessionStorage || selectedCity).then((data) => {
+			const results = data.services[0].services.data;
+			const hasResults = results.length > 0;
+
+			setProducts(hasResults ? results : slice.items);
+			setIsLoading(false);
 		});
-	}, [selectedCity])
+	}, [selectedCity]);
 
 	return (
 		<section
@@ -36,39 +49,54 @@ export default function ProductsCarousel({ slice }: ProductsCarouselProps) {
 			data-slice-variation={slice.variation}
 		>
 			<Container size="lg">
-				<div className="flex items-center justify-between">
+				<div className="flex flex-col md:flex-row items-center justify-between">
 					<RichText field={slice.primary.title} />
-					<ListCities onSelect={setSelectedCity} />
+					<SelectCityModal currentCity={selectedCity} onSelect={id => {
+						window.sessionStorage.setItem('@brisanet/city', id.city);
+						return setSelectedCity(id.city);
+					}} />
 				</div>
-				<Carousel>
-					<CarouselContent>
-						{products?.map?.((data) => {
-							const product = data?.attributes
-							const benefits = product.informations.map((info) => ({
-								name: info.name, icon: info.icon.data.attributes.url
-							}))
+				{
+					isLoading ? (
+						<div className="flex gap-4">
+							<ProductSkeleton />
+							<ProductSkeleton />
+							<ProductSkeleton />
+							<ProductSkeleton />
+						</div>
+					) : (
+						<Carousel>
+							<CarouselContent>
+								{products?.map?.((data) => {
+									const product = data?.attributes
+									const benefits = product.informations.map((info) => ({
+										name: info.name, icon: info.icon.data.attributes.url
+									}))
 
-							return (
-								<CarouselItem
-									key={product.id}
-									className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
-								>
-									<ProductCard
-										name={`${product.speed.data.attributes.value}MEGA`as string}
-										benefits={benefits}
-										price={product.price as string}
-										// isPromotion={product.data.is_promotion}
-									/>
-								</CarouselItem>
-							)
-						})}
-					</CarouselContent>
+									return (
+										<CarouselItem
+											key={product.id}
+											className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4"
+										>
+											<ProductCard
+												name={`${product.speed.data.attributes.value}MEGA` as string}
+												benefits={benefits}
+												price={product.price as string}
+											// isPromotion={product.data.is_promotion}
+											/>
+										</CarouselItem>
+									)
+								})}
+							</CarouselContent>
 
-					<div className="mx-auto w-fit mt-6">
-						<CarouselPrevious />
-						<CarouselNext />
-					</div>
-				</Carousel>
+							<div className="mx-auto w-fit mt-6">
+								<CarouselPrevious />
+								<CarouselNext />
+							</div>
+						</Carousel>
+					)
+				}
+
 			</Container>
 		</section>
 	)

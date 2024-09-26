@@ -38,6 +38,8 @@ export async function getCoveredCities() {
       });
   
       const { data: { cities: { data }}} = await response.json();
+
+      console.log({ data: data.map((d) => `${d.id},${d.attributes.name}, ${d.attributes.state.data.attributes.UF}`)})
   
       return data
     } catch (error) {

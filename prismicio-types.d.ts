@@ -2284,6 +2284,16 @@ export interface ProductsCarouselSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.TitleField;
+
+  /**
+   * cityId field in *ProductsCarousel → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Consulte em -> https://go.idea2.digital/22BroL
+   * - **API ID Path**: products_carousel.default.primary.cityid
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cityid: prismic.KeyTextField;
 }
 
 /**

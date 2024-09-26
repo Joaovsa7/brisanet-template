@@ -86,6 +86,8 @@ export default async function Page({ params }: IPageProps) {
 
 		const document = await cmsService.getPageByUid(uid)
 
+		console.log(JSON.stringify(document))
+
 		return (
 			<main>
 				<PageInfo updatedAt={document.last_publication_date} />
