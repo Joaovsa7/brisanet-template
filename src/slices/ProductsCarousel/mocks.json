@@ -13,6 +13,11 @@
 						}
 					}
 				]
+			},
+			"cityid": {
+				"__TYPE__": "FieldContent",
+				"value": "jet",
+				"type": "Text"
 			}
 		},
 		"items": [
