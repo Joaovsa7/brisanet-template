@@ -1,5 +1,6 @@
 import { env } from '~/config/env'
 import { prismicio } from '~/libs/prismicio'
+import { brisanetService } from '~/services/brisanet'
 
 export default async function sitemap() {
 	const [authorPages, articlePages, blogPage, homePage, pages] =
@@ -73,6 +74,15 @@ export default async function sitemap() {
 
 		sitemaps.push(...authorsSitemap)
 	}
+
+	const templatePages = ((await brisanetService.getCoveredCities()).map((page) => ({
+		url: `www.${env.BASE_URL}/cobertura/${page.state}/${page.slug}`,
+		lastModified: new Date().toISOString(),
+		changeFrequency: 'weekly',
+		priority: 0.9
+	})));
+
+	sitemaps.push(...templatePages)
 
 	return sitemaps
 }

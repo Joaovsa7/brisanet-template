@@ -11,6 +11,7 @@ import {
 	CarouselNext,
 	CarouselPrevious
 } from '~/components/carousel';
+
 import { Container } from '~/components/container';
 import { ProductCard } from '~/components/product-card';
 import { RichText } from '~/components/rich-text';
@@ -24,7 +25,7 @@ export type ProductsCarouselProps =
 export default function ProductsCarousel({ slice }: ProductsCarouselProps) {
 	const [products, setProducts] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
-	const [selectedCity, setSelectedCity] = useState(slice.primary?.defaultCity || "96")
+	const [selectedCity, setSelectedCity] = useState(slice.primary?.cityid || "96")
 
 	useEffect(() => {
 		setIsLoading(true);

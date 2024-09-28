@@ -9,6 +9,11 @@ const nextConfig = {
 				source: '/telefone',
 				destination: '/numero-da-brisanet',
 				permanent: true
+			},
+			{
+				source: '/cobertura/fortaleza',
+				destination: '/cobertura/ceara/fortaleza',
+				permanent: true
 			}
 		]
 	}

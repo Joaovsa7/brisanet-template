@@ -1,0 +1,1526 @@
+[
+  {
+    "id": 274,
+    "slug": "abaiara",
+    "state": "ceara",
+    "name": "Abaiara"
+  },
+  {
+    "id": 106,
+    "slug": "abreu-e-lima",
+    "state": "pernambuco",
+    "name": "Abreu e Lima"
+  },
+  {
+    "id": 217,
+    "slug": "acarape",
+    "state": "ceara",
+    "name": "Acarape"
+  },
+  {
+    "id": 28,
+    "slug": "acarau",
+    "state": "ceara",
+    "name": "Acaraú"
+  },
+  {
+    "id": 45,
+    "slug": "acopiara",
+    "state": "ceara",
+    "name": "Acopiara"
+  },
+  {
+    "id": 177,
+    "slug": "agua-nova",
+    "state": "rio-grande-do-norte",
+    "name": "Água Nova"
+  },
+  {
+    "id": 187,
+    "slug": "aiuaba",
+    "state": "ceara",
+    "name": "Aiuaba"
+  },
+  {
+    "id": 151,
+    "slug": "alagoinhas",
+    "state": "bahia",
+    "name": "Alagoinhas"
+  },
+  {
+    "id": 275,
+    "slug": "alcantaras",
+    "state": "ceara",
+    "name": "Alcantaras"
+  },
+  {
+    "id": 182,
+    "slug": "alexandria",
+    "state": "rio-grande-do-norte",
+    "name": "Alexandria"
+  },
+  {
+    "id": 178,
+    "slug": "altaneira",
+    "state": "ceara",
+    "name": "Altaneira"
+  },
+  {
+    "id": 116,
+    "slug": "altos",
+    "state": "piaui",
+    "name": "Altos"
+  },
+  {
+    "id": 174,
+    "slug": "antonina-do-norte",
+    "state": "ceara",
+    "name": "Antonina do Norte"
+  },
+  {
+    "id": 219,
+    "slug": "apodi",
+    "state": "rio-grande-do-norte",
+    "name": "Apodi"
+  },
+  {
+    "id": 186,
+    "slug": "apuiares",
+    "state": "ceara",
+    "name": "Apuiarés"
+  },
+  {
+    "id": 210,
+    "slug": "aquiraz",
+    "state": "ceara",
+    "name": "Aquiraz"
+  },
+  {
+    "id": 114,
+    "slug": "aracaju",
+    "state": "sergipe",
+    "name": "Aracaju"
+  },
+  {
+    "id": 202,
+    "slug": "aracati",
+    "state": "ceara",
+    "name": "Aracati"
+  },
+  {
+    "id": 263,
+    "slug": "aracoiaba",
+    "state": "ceara",
+    "name": "Aracoiaba"
+  },
+  {
+    "id": 109,
+    "slug": "arapiraca",
+    "state": "alagoas",
+    "name": "Arapiraca"
+  },
+  {
+    "id": 204,
+    "slug": "arara",
+    "state": "paraiba",
+    "name": "Arara"
+  },
+  {
+    "id": 131,
+    "slug": "araripina",
+    "state": "pernambuco",
+    "name": "Araripina"
+  },
+  {
+    "id": 88,
+    "slug": "arcoverde",
+    "state": "pernambuco",
+    "name": "Arcoverde"
+  },
+  {
+    "id": 75,
+    "slug": "assu",
+    "state": "rio-grande-do-norte",
+    "name": "Assu"
+  },
+  {
+    "id": 230,
+    "slug": "aurora",
+    "state": "ceara",
+    "name": "Aurora"
+  },
+  {
+    "id": 36,
+    "slug": "banabuiu",
+    "state": "ceara",
+    "name": "Banabuiú"
+  },
+  {
+    "id": 77,
+    "slug": "barauna",
+    "state": "rio-grande-do-norte",
+    "name": "Baraúna"
+  },
+  {
+    "id": 11,
+    "slug": "barbalha",
+    "state": "ceara",
+    "name": "Barbalha"
+  },
+  {
+    "id": 161,
+    "slug": "barra-dos-coqueiros",
+    "state": "sergipe",
+    "name": "Barra dos Coqueiros"
+  },
+  {
+    "id": 179,
+    "slug": "barro",
+    "state": "ceara",
+    "name": "Barro"
+  },
+  {
+    "id": 242,
+    "slug": "barroquinha",
+    "state": "ceara",
+    "name": "Barroquinha"
+  },
+  {
+    "id": 59,
+    "slug": "bayeux",
+    "state": "paraiba",
+    "name": "Bayeux"
+  },
+  {
+    "id": 194,
+    "slug": "bela-cruz",
+    "state": "ceara",
+    "name": "Bela Cruz"
+  },
+  {
+    "id": 85,
+    "slug": "belo-jardim",
+    "state": "pernambuco",
+    "name": "Belo Jardim"
+  },
+  {
+    "id": 89,
+    "slug": "bezerros",
+    "state": "pernambuco",
+    "name": "Bezerros"
+  },
+  {
+    "id": 164,
+    "slug": "boa-viagem",
+    "state": "ceara",
+    "name": "Boa Viagem"
+  },
+  {
+    "id": 101,
+    "slug": "brejo-da-madre-de-deus",
+    "state": "pernambuco",
+    "name": "Brejo da Madre de Deus"
+  },
+  {
+    "id": 35,
+    "slug": "brejo-santo",
+    "state": "ceara",
+    "name": "Brejo Santo"
+  },
+  {
+    "id": 243,
+    "slug": "buriti-dos-montes",
+    "state": "piaui",
+    "name": "Buriti dos Montes"
+  },
+  {
+    "id": 60,
+    "slug": "cabedelo",
+    "state": "paraiba",
+    "name": "Cabedelo"
+  },
+  {
+    "id": 105,
+    "slug": "cabo-de-santo-agostinho",
+    "state": "pernambuco",
+    "name": "Cabo de Santo Agostinho"
+  },
+  {
+    "id": 231,
+    "slug": "caetano-pereiro",
+    "state": "ceara",
+    "name": "Caetano Pereiro"
+  },
+  {
+    "id": 183,
+    "slug": "caicara-do-rio-do-vento",
+    "state": "rio-grande-do-norte",
+    "name": "Caiçara do Rio do Vento"
+  },
+  {
+    "id": 74,
+    "slug": "caico",
+    "state": "rio-grande-do-norte",
+    "name": "Caicó"
+  },
+  {
+    "id": 64,
+    "slug": "cajazeiras",
+    "state": "paraiba",
+    "name": "Cajazeiras"
+  },
+  {
+    "id": 146,
+    "slug": "camacari",
+    "state": "bahia",
+    "name": "Camaçari"
+  },
+  {
+    "id": 127,
+    "slug": "camaragibe",
+    "state": "pernambuco",
+    "name": "Camaragibe"
+  },
+  {
+    "id": 226,
+    "slug": "camocim",
+    "state": "ceara",
+    "name": "Camocim"
+  },
+  {
+    "id": 14,
+    "slug": "campina-grande",
+    "state": "paraiba",
+    "name": "Campina Grande"
+  },
+  {
+    "id": 119,
+    "slug": "campo-maior",
+    "state": "piaui",
+    "name": "Campo Maior"
+  },
+  {
+    "id": 195,
+    "slug": "campos-sales",
+    "state": "ceara",
+    "name": "Campos Sales"
+  },
+  {
+    "id": 193,
+    "slug": "caninde",
+    "state": "ceara",
+    "name": "Canindé"
+  },
+  {
+    "id": 154,
+    "slug": "caninde-de-sao-francisco",
+    "state": "sergipe",
+    "name": "Caninde de São Francisco"
+  },
+  {
+    "id": 264,
+    "slug": "caridade",
+    "state": "ceara",
+    "name": "Caridade"
+  },
+  {
+    "id": 197,
+    "slug": "caririacu",
+    "state": "ceara",
+    "name": "Caririaçu"
+  },
+  {
+    "id": 244,
+    "slug": "carnaubal",
+    "state": "ceara",
+    "name": "Carnaubal"
+  },
+  {
+    "id": 87,
+    "slug": "caruaru",
+    "state": "pernambuco",
+    "name": "Caruaru"
+  },
+  {
+    "id": 102,
+    "slug": "cascavel",
+    "state": "ceara",
+    "name": "Cascavel"
+  },
+  {
+    "id": 67,
+    "slug": "catole-do-rocha",
+    "state": "paraiba",
+    "name": "Catolé do Rocha"
+  },
+  {
+    "id": 150,
+    "slug": "catu",
+    "state": "bahia",
+    "name": "Catu"
+  },
+  {
+    "id": 265,
+    "slug": "catunda",
+    "state": "ceara",
+    "name": "Catunda"
+  },
+  {
+    "id": 120,
+    "slug": "caucaia",
+    "state": "ceara",
+    "name": "Caucaia"
+  },
+  {
+    "id": 276,
+    "slug": "ceara-mirim",
+    "state": "rio-grande-do-norte",
+    "name": "CEARA MIRIM"
+  },
+  {
+    "id": 98,
+    "slug": "ceara-mirim",
+    "state": "rio-grande-do-norte",
+    "name": "Ceará-Mirim"
+  },
+  {
+    "id": 38,
+    "slug": "cedro",
+    "state": "ceara",
+    "name": "Cedro"
+  },
+  {
+    "id": 220,
+    "slug": "chorozinho",
+    "state": "ceara",
+    "name": "Chorozinho"
+  },
+  {
+    "id": 181,
+    "slug": "conde",
+    "state": "paraiba",
+    "name": "Conde"
+  },
+  {
+    "id": 184,
+    "slug": "coreau",
+    "state": "ceara",
+    "name": "Coreaú"
+  },
+  {
+    "id": 5,
+    "slug": "coronel-joao-pessoa",
+    "state": "rio-grande-do-norte",
+    "name": "Coronel João Pessoa"
+  },
+  {
+    "id": 31,
+    "slug": "crateus",
+    "state": "ceara",
+    "name": "Crateús"
+  },
+  {
+    "id": 9,
+    "slug": "crato",
+    "state": "ceara",
+    "name": "Crato"
+  },
+  {
+    "id": 246,
+    "slug": "croata",
+    "state": "ceara",
+    "name": "Croata"
+  },
+  {
+    "id": 84,
+    "slug": "custodia",
+    "state": "pernambuco",
+    "name": "Custódia"
+  },
+  {
+    "id": 140,
+    "slug": "delmiro-gouveia",
+    "state": "alagoas",
+    "name": "Delmiro Gouveia"
+  },
+  {
+    "id": 147,
+    "slug": "dias-davila",
+    "state": "bahia",
+    "name": "Dias D'Ávila"
+  },
+  {
+    "id": 4,
+    "slug": "doutor-severiano",
+    "state": "rio-grande-do-norte",
+    "name": "Doutor Severiano"
+  },
+  {
+    "id": 82,
+    "slug": "encanto",
+    "state": "rio-grande-do-norte",
+    "name": "Encanto"
+  },
+  {
+    "id": 133,
+    "slug": "escada",
+    "state": "pernambuco",
+    "name": "Escada"
+  },
+  {
+    "id": 142,
+    "slug": "estancia",
+    "state": "sergipe",
+    "name": "Estância"
+  },
+  {
+    "id": 113,
+    "slug": "eusebio",
+    "state": "ceara",
+    "name": "Eusébio"
+  },
+  {
+    "id": 73,
+    "slug": "extremoz",
+    "state": "rio-grande-do-norte",
+    "name": "Extremoz"
+  },
+  {
+    "id": 207,
+    "slug": "farias-brito",
+    "state": "ceara",
+    "name": "Farias Brito"
+  },
+  {
+    "id": 156,
+    "slug": "feira-de-santana",
+    "state": "bahia",
+    "name": "Feira de Santana"
+  },
+  {
+    "id": 234,
+    "slug": "flecheiras-sao-goncalo-do-amarante",
+    "state": "ceara",
+    "name": "Flecheiras São Gonçalo do Amarante"
+  },
+  {
+    "id": 266,
+    "slug": "forquilha",
+    "state": "ceara",
+    "name": "Forquilha"
+  },
+  {
+    "id": 96,
+    "slug": "fortaleza",
+    "state": "ceara",
+    "name": "Fortaleza"
+  },
+  {
+    "id": 247,
+    "slug": "fortim",
+    "state": "ceara",
+    "name": "Fortim"
+  },
+  {
+    "id": 81,
+    "slug": "francisco-dantas",
+    "state": "rio-grande-do-norte",
+    "name": "Francisco Dantas"
+  },
+  {
+    "id": 200,
+    "slug": "frutuoso-gomes",
+    "state": "rio-grande-do-norte",
+    "name": "Frutuoso Gomes"
+  },
+  {
+    "id": 205,
+    "slug": "gado-bravo",
+    "state": "paraiba",
+    "name": "Gado Bravo"
+  },
+  {
+    "id": 122,
+    "slug": "garanhuns",
+    "state": "pernambuco",
+    "name": "Garanhuns"
+  },
+  {
+    "id": 252,
+    "slug": "goianinha",
+    "state": "rio-grande-do-norte",
+    "name": "Goianinha"
+  },
+  {
+    "id": 267,
+    "slug": "granja",
+    "state": "ceara",
+    "name": "Granja"
+  },
+  {
+    "id": 90,
+    "slug": "gravata",
+    "state": "pernambuco",
+    "name": "Gravatá"
+  },
+  {
+    "id": 236,
+    "slug": "groairas",
+    "state": "ceara",
+    "name": "Groaíras"
+  },
+  {
+    "id": 221,
+    "slug": "grossos",
+    "state": "rio-grande-do-norte",
+    "name": "Grossos"
+  },
+  {
+    "id": 240,
+    "slug": "guaiuba",
+    "state": "ceara",
+    "name": "Guaiuba"
+  },
+  {
+    "id": 20,
+    "slug": "guaraciaba-do-norte",
+    "state": "ceara",
+    "name": "Guaraciaba do Norte"
+  },
+  {
+    "id": 21,
+    "slug": "horizonte",
+    "state": "ceara",
+    "name": "Horizonte"
+  },
+  {
+    "id": 248,
+    "slug": "hugo-napoleao",
+    "state": "piaui",
+    "name": "Hugo Napoleão"
+  },
+  {
+    "id": 268,
+    "slug": "ibaretama",
+    "state": "ceara",
+    "name": "Ibaretama"
+  },
+  {
+    "id": 27,
+    "slug": "ibiapina",
+    "state": "ceara",
+    "name": "Ibiapina"
+  },
+  {
+    "id": 46,
+    "slug": "ico",
+    "state": "ceara",
+    "name": "Icó"
+  },
+  {
+    "id": 125,
+    "slug": "igarassu",
+    "state": "pernambuco",
+    "name": "Igarassu"
+  },
+  {
+    "id": 56,
+    "slug": "iguatu",
+    "state": "ceara",
+    "name": "Iguatu"
+  },
+  {
+    "id": 216,
+    "slug": "ipaporanga",
+    "state": "ceara",
+    "name": "Ipaporanga"
+  },
+  {
+    "id": 214,
+    "slug": "ipaumirim",
+    "state": "ceara",
+    "name": "Ipaumirim"
+  },
+  {
+    "id": 19,
+    "slug": "ipu",
+    "state": "ceara",
+    "name": "Ipu"
+  },
+  {
+    "id": 253,
+    "slug": "ipueiras",
+    "state": "ceara",
+    "name": "Ipueiras"
+  },
+  {
+    "id": 51,
+    "slug": "iracema",
+    "state": "ceara",
+    "name": "Iracema"
+  },
+  {
+    "id": 138,
+    "slug": "itabaiana",
+    "state": "sergipe",
+    "name": "Itabaiana"
+  },
+  {
+    "id": 249,
+    "slug": "itaicaba",
+    "state": "ceara",
+    "name": "Itaiçaba"
+  },
+  {
+    "id": 238,
+    "slug": "itaja",
+    "state": "rio-grande-do-norte",
+    "name": "Itajá"
+  },
+  {
+    "id": 17,
+    "slug": "itapaje",
+    "state": "ceara",
+    "name": "Itapajé"
+  },
+  {
+    "id": 32,
+    "slug": "itapipoca",
+    "state": "ceara",
+    "name": "Itapipoca"
+  },
+  {
+    "id": 159,
+    "slug": "jaboatao-dos-guararapes",
+    "state": "pernambuco",
+    "name": "Jaboatão dos Guararapes"
+  },
+  {
+    "id": 53,
+    "slug": "jaguaretama",
+    "state": "ceara",
+    "name": "Jaguaretama"
+  },
+  {
+    "id": 52,
+    "slug": "jaguaribara",
+    "state": "ceara",
+    "name": "Jaguaribara"
+  },
+  {
+    "id": 6,
+    "slug": "jaguaribe",
+    "state": "ceara",
+    "name": "Jaguaribe"
+  },
+  {
+    "id": 173,
+    "slug": "jati",
+    "state": "ceara",
+    "name": "Jati"
+  },
+  {
+    "id": 155,
+    "slug": "jeremoabo",
+    "state": "bahia",
+    "name": "Jeremoabo"
+  },
+  {
+    "id": 254,
+    "slug": "joao-camara",
+    "state": "rio-grande-do-norte",
+    "name": "João Câmara"
+  },
+  {
+    "id": 15,
+    "slug": "joao-pessoa",
+    "state": "paraiba",
+    "name": "João Pessoa"
+  },
+  {
+    "id": 79,
+    "slug": "jose-da-penha",
+    "state": "rio-grande-do-norte",
+    "name": "José da Penha"
+  },
+  {
+    "id": 152,
+    "slug": "juazeiro",
+    "state": "bahia",
+    "name": "Juazeiro"
+  },
+  {
+    "id": 10,
+    "slug": "juazeiro-do-norte",
+    "state": "ceara",
+    "name": "Juazeiro do Norte"
+  },
+  {
+    "id": 166,
+    "slug": "jucas",
+    "state": "ceara",
+    "name": "Jucás"
+  },
+  {
+    "id": 213,
+    "slug": "jucurutu",
+    "state": "rio-grande-do-norte",
+    "name": "Jucurutu"
+  },
+  {
+    "id": 139,
+    "slug": "lagarto",
+    "state": "sergipe",
+    "name": "Lagarto"
+  },
+  {
+    "id": 37,
+    "slug": "lavras-da-mangabeira",
+    "state": "ceara",
+    "name": "Lavras da Mangabeira"
+  },
+  {
+    "id": 148,
+    "slug": "limoeiro",
+    "state": "pernambuco",
+    "name": "Limoeiro"
+  },
+  {
+    "id": 7,
+    "slug": "limoeiro-do-norte",
+    "state": "ceara",
+    "name": "Limoeiro do Norte"
+  },
+  {
+    "id": 129,
+    "slug": "luis-correia",
+    "state": "piaui",
+    "name": "Luis Correia"
+  },
+  {
+    "id": 83,
+    "slug": "luis-gomes",
+    "state": "rio-grande-do-norte",
+    "name": "Luís Gomes"
+  },
+  {
+    "id": 99,
+    "slug": "macaiba",
+    "state": "rio-grande-do-norte",
+    "name": "Macaíba"
+  },
+  {
+    "id": 255,
+    "slug": "macau",
+    "state": "rio-grande-do-norte",
+    "name": "Macau"
+  },
+  {
+    "id": 97,
+    "slug": "maceio",
+    "state": "alagoas",
+    "name": "Maceió"
+  },
+  {
+    "id": 78,
+    "slug": "major-sales",
+    "state": "rio-grande-do-norte",
+    "name": "Major Sales"
+  },
+  {
+    "id": 103,
+    "slug": "maracanau",
+    "state": "ceara",
+    "name": "Maracanaú"
+  },
+  {
+    "id": 104,
+    "slug": "maranguape",
+    "state": "ceara",
+    "name": "Maranguape"
+  },
+  {
+    "id": 190,
+    "slug": "marco",
+    "state": "ceara",
+    "name": "Marco"
+  },
+  {
+    "id": 256,
+    "slug": "marco",
+    "state": "ceara",
+    "name": "Marco"
+  },
+  {
+    "id": 124,
+    "slug": "marechal-deodoro",
+    "state": "alagoas",
+    "name": "Marechal Deodoro"
+  },
+  {
+    "id": 232,
+    "slug": "mari",
+    "state": "paraiba",
+    "name": "Mari"
+  },
+  {
+    "id": 76,
+    "slug": "martins",
+    "state": "rio-grande-do-norte",
+    "name": "Martins"
+  },
+  {
+    "id": 206,
+    "slug": "massape",
+    "state": "ceara",
+    "name": "Massapê"
+  },
+  {
+    "id": 191,
+    "slug": "mauriti",
+    "state": "ceara",
+    "name": "Mauriti"
+  },
+  {
+    "id": 229,
+    "slug": "meruoca",
+    "state": "ceara",
+    "name": "Meruoca"
+  },
+  {
+    "id": 12,
+    "slug": "milagres",
+    "state": "ceara",
+    "name": "Milagres"
+  },
+  {
+    "id": 192,
+    "slug": "milha",
+    "state": "ceara",
+    "name": "Milhã"
+  },
+  {
+    "id": 42,
+    "slug": "missao-velha",
+    "state": "ceara",
+    "name": "Missão Velha"
+  },
+  {
+    "id": 24,
+    "slug": "mombaca",
+    "state": "ceara",
+    "name": "Mombaça"
+  },
+  {
+    "id": 43,
+    "slug": "morada-nova",
+    "state": "ceara",
+    "name": "Morada Nova"
+  },
+  {
+    "id": 269,
+    "slug": "morrinhos",
+    "state": "ceara",
+    "name": "Morrinhos"
+  },
+  {
+    "id": 13,
+    "slug": "mossoro",
+    "state": "rio-grande-do-norte",
+    "name": "Mossoró"
+  },
+  {
+    "id": 222,
+    "slug": "mucambo",
+    "state": "ceara",
+    "name": "Mucambo"
+  },
+  {
+    "id": 16,
+    "slug": "natal",
+    "state": "rio-grande-do-norte",
+    "name": "Natal"
+  },
+  {
+    "id": 132,
+    "slug": "nisia-floresta",
+    "state": "rio-grande-do-norte",
+    "name": "Nísia Floresta"
+  },
+  {
+    "id": 136,
+    "slug": "nossa-senhora-do-socorro",
+    "state": "sergipe",
+    "name": "Nossa Senhora do Socorro"
+  },
+  {
+    "id": 237,
+    "slug": "nova-cruz",
+    "state": "rio-grande-do-norte",
+    "name": "Nova Cruz"
+  },
+  {
+    "id": 208,
+    "slug": "nova-olinda",
+    "state": "ceara",
+    "name": "Nova Olinda"
+  },
+  {
+    "id": 180,
+    "slug": "nova-russas",
+    "state": "ceara",
+    "name": "Nova Russas"
+  },
+  {
+    "id": 260,
+    "slug": "olho-dagua-do-borges",
+    "state": "rio-grande-do-norte",
+    "name": "Olho d'água do Borges"
+  },
+  {
+    "id": 158,
+    "slug": "olinda",
+    "state": "pernambuco",
+    "name": "Olinda"
+  },
+  {
+    "id": 41,
+    "slug": "oros",
+    "state": "ceara",
+    "name": "Orós"
+  },
+  {
+    "id": 130,
+    "slug": "ouricuri",
+    "state": "pernambuco",
+    "name": "Ouricuri"
+  },
+  {
+    "id": 22,
+    "slug": "pacajus",
+    "state": "ceara",
+    "name": "Pacajus"
+  },
+  {
+    "id": 134,
+    "slug": "pacatuba",
+    "state": "ceara",
+    "name": "Pacatuba"
+  },
+  {
+    "id": 270,
+    "slug": "pacoti",
+    "state": "ceara",
+    "name": "Pacoti"
+  },
+  {
+    "id": 188,
+    "slug": "pacuja",
+    "state": "ceara",
+    "name": "Pacujá"
+  },
+  {
+    "id": 110,
+    "slug": "palmeira-dos-indios",
+    "state": "alagoas",
+    "name": "Palmeira dos Índios"
+  },
+  {
+    "id": 257,
+    "slug": "paracuru",
+    "state": "ceara",
+    "name": "Paracuru"
+  },
+  {
+    "id": 273,
+    "slug": "parada-zona-rural-de-sao-goncalo-do-amarante",
+    "state": "ceara",
+    "name": "Parada Zona Rural de São Gonçalo do Amarante"
+  },
+  {
+    "id": 117,
+    "slug": "paraipaba",
+    "state": "ceara",
+    "name": "Paraipaba"
+  },
+  {
+    "id": 123,
+    "slug": "parnaiba",
+    "state": "piaui",
+    "name": "Parnaíba"
+  },
+  {
+    "id": 71,
+    "slug": "parnamirim",
+    "state": "rio-grande-do-norte",
+    "name": "Parnamirim"
+  },
+  {
+    "id": 239,
+    "slug": "pascoal-pacajus",
+    "state": "ceara",
+    "name": "Pascoal Pacajus"
+  },
+  {
+    "id": 63,
+    "slug": "patos",
+    "state": "paraiba",
+    "name": "Patos"
+  },
+  {
+    "id": 3,
+    "slug": "pau-dos-ferros",
+    "state": "rio-grande-do-norte",
+    "name": "Pau dos Ferros"
+  },
+  {
+    "id": 128,
+    "slug": "paulista",
+    "state": "pernambuco",
+    "name": "Paulista"
+  },
+  {
+    "id": 153,
+    "slug": "paulo-afonso",
+    "state": "bahia",
+    "name": "Paulo Afonso"
+  },
+  {
+    "id": 48,
+    "slug": "pedra-branca",
+    "state": "ceara",
+    "name": "Pedra Branca"
+  },
+  {
+    "id": 175,
+    "slug": "penaforte",
+    "state": "ceara",
+    "name": "Penaforte"
+  },
+  {
+    "id": 209,
+    "slug": "pentecoste",
+    "state": "ceara",
+    "name": "Pentecoste"
+  },
+  {
+    "id": 1,
+    "slug": "pereiro",
+    "state": "ceara",
+    "name": "Pereiro"
+  },
+  {
+    "id": 86,
+    "slug": "pesqueira",
+    "state": "pernambuco",
+    "name": "Pesqueira"
+  },
+  {
+    "id": 143,
+    "slug": "petrolina",
+    "state": "pernambuco",
+    "name": "Petrolina"
+  },
+  {
+    "id": 115,
+    "slug": "picos",
+    "state": "piaui",
+    "name": "Picos"
+  },
+  {
+    "id": 261,
+    "slug": "piloes",
+    "state": "paraiba",
+    "name": "Pilões"
+  },
+  {
+    "id": 250,
+    "slug": "pio-ix",
+    "state": "piaui",
+    "name": "Pio IX"
+  },
+  {
+    "id": 168,
+    "slug": "piquet-carneiro",
+    "state": "ceara",
+    "name": "Piquet Carneiro"
+  },
+  {
+    "id": 218,
+    "slug": "piranhas",
+    "state": "alagoas",
+    "name": "Piranhas"
+  },
+  {
+    "id": 137,
+    "slug": "piripiri",
+    "state": "piaui",
+    "name": "Piripiri"
+  },
+  {
+    "id": 58,
+    "slug": "pombal",
+    "state": "paraiba",
+    "name": "Pombal"
+  },
+  {
+    "id": 69,
+    "slug": "portalegre",
+    "state": "rio-grande-do-norte",
+    "name": "Portalegre"
+  },
+  {
+    "id": 196,
+    "slug": "porteiras",
+    "state": "ceara",
+    "name": "Porteiras"
+  },
+  {
+    "id": 227,
+    "slug": "potengi",
+    "state": "ceara",
+    "name": "Potengi"
+  },
+  {
+    "id": 162,
+    "slug": "potiretama",
+    "state": "ceara",
+    "name": "Potiretama"
+  },
+  {
+    "id": 108,
+    "slug": "queimadas",
+    "state": "paraiba",
+    "name": "Queimadas"
+  },
+  {
+    "id": 49,
+    "slug": "quixada",
+    "state": "ceara",
+    "name": "Quixadá"
+  },
+  {
+    "id": 47,
+    "slug": "quixeramobim",
+    "state": "ceara",
+    "name": "Quixeramobim"
+  },
+  {
+    "id": 39,
+    "slug": "quixere",
+    "state": "ceara",
+    "name": "Quixeré"
+  },
+  {
+    "id": 68,
+    "slug": "rafael-fernandes",
+    "state": "rio-grande-do-norte",
+    "name": "Rafael Fernandes"
+  },
+  {
+    "id": 201,
+    "slug": "rafael-godeiro",
+    "state": "rio-grande-do-norte",
+    "name": "Rafael Godeiro"
+  },
+  {
+    "id": 118,
+    "slug": "recife",
+    "state": "pernambuco",
+    "name": "Recife"
+  },
+  {
+    "id": 145,
+    "slug": "ribeira-do-pombal",
+    "state": "bahia",
+    "name": "Ribeira do Pombal"
+  },
+  {
+    "id": 112,
+    "slug": "rio-largo",
+    "state": "alagoas",
+    "name": "Rio Largo"
+  },
+  {
+    "id": 55,
+    "slug": "russas",
+    "state": "ceara",
+    "name": "Russas"
+  },
+  {
+    "id": 189,
+    "slug": "saboeiro",
+    "state": "ceara",
+    "name": "Saboeiro"
+  },
+  {
+    "id": 95,
+    "slug": "salgueiro",
+    "state": "pernambuco",
+    "name": "Salgueiro"
+  },
+  {
+    "id": 93,
+    "slug": "santa-cruz-do-capibaribe",
+    "state": "pernambuco",
+    "name": "Santa Cruz do Capibaribe"
+  },
+  {
+    "id": 61,
+    "slug": "santa-luzia",
+    "state": "paraiba",
+    "name": "Santa Luzia"
+  },
+  {
+    "id": 258,
+    "slug": "santa-quiteria",
+    "state": "ceara",
+    "name": "Santa Quitéria"
+  },
+  {
+    "id": 57,
+    "slug": "santa-rita",
+    "state": "paraiba",
+    "name": "Santa Rita"
+  },
+  {
+    "id": 160,
+    "slug": "santo-amaro",
+    "state": "bahia",
+    "name": "Santo Amaro"
+  },
+  {
+    "id": 30,
+    "slug": "sao-benedito",
+    "state": "ceara",
+    "name": "São Benedito"
+  },
+  {
+    "id": 66,
+    "slug": "sao-bento",
+    "state": "paraiba",
+    "name": "São Bento"
+  },
+  {
+    "id": 149,
+    "slug": "sao-cristovao",
+    "state": "sergipe",
+    "name": "São Cristovão"
+  },
+  {
+    "id": 72,
+    "slug": "sao-goncalo-do-amarante",
+    "state": "rio-grande-do-norte",
+    "name": "São Gonçalo do Amarante"
+  },
+  {
+    "id": 100,
+    "slug": "sao-jose-de-mipibu",
+    "state": "rio-grande-do-norte",
+    "name": "São José de Mipibu"
+  },
+  {
+    "id": 126,
+    "slug": "sao-lourenco-da-mata",
+    "state": "pernambuco",
+    "name": "São Lourenço da Mata"
+  },
+  {
+    "id": 2,
+    "slug": "sao-miguel",
+    "state": "rio-grande-do-norte",
+    "name": "São Miguel"
+  },
+  {
+    "id": 135,
+    "slug": "sao-miguel-dos-campos",
+    "state": "alagoas",
+    "name": "São Miguel dos Campos"
+  },
+  {
+    "id": 259,
+    "slug": "sape",
+    "state": "paraiba",
+    "name": "Sapé"
+  },
+  {
+    "id": 228,
+    "slug": "senador-georgino-avelino",
+    "state": "rio-grande-do-norte",
+    "name": "Senador Georgino Avelino"
+  },
+  {
+    "id": 50,
+    "slug": "senador-pompeu",
+    "state": "ceara",
+    "name": "Senador Pompeu"
+  },
+  {
+    "id": 91,
+    "slug": "serra-talhada",
+    "state": "pernambuco",
+    "name": "Serra Talhada"
+  },
+  {
+    "id": 157,
+    "slug": "simoes-filho",
+    "state": "bahia",
+    "name": "Simões Filho"
+  },
+  {
+    "id": 34,
+    "slug": "sobral",
+    "state": "ceara",
+    "name": "Sobral"
+  },
+  {
+    "id": 62,
+    "slug": "sousa",
+    "state": "paraiba",
+    "name": "Sousa"
+  },
+  {
+    "id": 144,
+    "slug": "surubim",
+    "state": "pernambuco",
+    "name": "Surubim"
+  },
+  {
+    "id": 199,
+    "slug": "taboleiro-grande",
+    "state": "rio-grande-do-norte",
+    "name": "Taboleiro Grande"
+  },
+  {
+    "id": 54,
+    "slug": "tabuleiro-do-norte",
+    "state": "ceara",
+    "name": "Tabuleiro do Norte"
+  },
+  {
+    "id": 251,
+    "slug": "taipu",
+    "state": "rio-grande-do-norte",
+    "name": "Taipu"
+  },
+  {
+    "id": 215,
+    "slug": "tamboril",
+    "state": "ceara",
+    "name": "Tamboril"
+  },
+  {
+    "id": 33,
+    "slug": "taua",
+    "state": "ceara",
+    "name": "Tauá"
+  },
+  {
+    "id": 111,
+    "slug": "teresina",
+    "state": "piaui",
+    "name": "Teresina"
+  },
+  {
+    "id": 29,
+    "slug": "tiangua",
+    "state": "ceara",
+    "name": "Tianguá"
+  },
+  {
+    "id": 121,
+    "slug": "timon",
+    "state": "maranhao",
+    "name": "Timon"
+  },
+  {
+    "id": 141,
+    "slug": "tobias-barreto",
+    "state": "sergipe",
+    "name": "Tobias Barreto"
+  },
+  {
+    "id": 94,
+    "slug": "toritama",
+    "state": "pernambuco",
+    "name": "Toritama"
+  },
+  {
+    "id": 233,
+    "slug": "trindade-pereiro",
+    "state": "ceara",
+    "name": "Trindade Pereiro"
+  },
+  {
+    "id": 26,
+    "slug": "ubajara",
+    "state": "ceara",
+    "name": "Ubajara"
+  },
+  {
+    "id": 65,
+    "slug": "uirauna",
+    "state": "paraiba",
+    "name": "Uirauna"
+  },
+  {
+    "id": 235,
+    "slug": "umari-pacajus",
+    "state": "ceara",
+    "name": "Umari Pacajus"
+  },
+  {
+    "id": 80,
+    "slug": "umarizal",
+    "state": "rio-grande-do-norte",
+    "name": "Umarizal"
+  },
+  {
+    "id": 271,
+    "slug": "umirim",
+    "state": "ceara",
+    "name": "Umirim"
+  },
+  {
+    "id": 262,
+    "slug": "upanema",
+    "state": "rio-grande-do-norte",
+    "name": "Upanema"
+  },
+  {
+    "id": 272,
+    "slug": "uruburetama",
+    "state": "ceara",
+    "name": "Uruburetama"
+  },
+  {
+    "id": 212,
+    "slug": "varjota",
+    "state": "ceara",
+    "name": "Varjota"
+  },
+  {
+    "id": 40,
+    "slug": "varzea-alegre",
+    "state": "ceara",
+    "name": "Várzea Alegre"
+  },
+  {
+    "id": 8,
+    "slug": "venha-ver",
+    "state": "rio-grande-do-norte",
+    "name": "Venha Ver"
+  },
+  {
+    "id": 23,
+    "slug": "vicosa-do-ceara",
+    "state": "ceara",
+    "name": "Viçosa do Ceará"
+  },
+  {
+    "id": 92,
+    "slug": "vitoria-de-santo-antao",
+    "state": "pernambuco",
+    "name": "Vitoria de Santo Antão"
+  }
+]

@@ -75,13 +75,13 @@ const DropdownCity = ({ options, onSelect }) => {
 
 export function SelectCityModal({ currentCity, onSelect }) {
 	const [isOpen, setIsOpen] = useState(false);
-	const [cities, setCities] = useState([]);
+	const [cities, setCities] = useState<{ id?: nunber, name?: string, slug?: string, state?: string }[]>([]);
 
 	useEffect(() => {
-		brisanetService.getCoveredCities().then(setCities);
+		brisanetService.getCoveredCities().then(data => setCities(data));
 	}, []);
 
-	const currentCityName = cities?.find?.((city) => city.id === currentCity);
+	const currentCityName = cities?.find?.((city) => city.id === Number(currentCity));
 
 	const onToggle = () => setIsOpen((currState) => !currState);
 
@@ -92,11 +92,11 @@ export function SelectCityModal({ currentCity, onSelect }) {
 
 	return (
 		<>
-			{currentCityName?.attributes?.name && (
+			{currentCityName?.name && (
 				<div className='flex flex-col gap-1'>
 					<span className='text-xs'>OFERTAS VÁLIDAS PARA:</span>
 					<h3 className="text-3xl font-bold text-primary mb-4 md:mb-0 cursor-pointer" onClick={onToggle}>
-						{currentCityName?.attributes?.name}  &#x2935;
+						{currentCityName?.name}  &#x2935;
 					</h3>
 				</div>
 			)}
@@ -117,7 +117,7 @@ export function SelectCityModal({ currentCity, onSelect }) {
 							</Dialog.Title>
 
 							<DropdownCity
-								options={cities.map((city) => ({ city: city.id, value: city.attributes.name }))}
+								options={cities.map((city) => ({ city: city.id, value: city.name }))}
 								onSelect={handleOnSelect}
 							/>
 
