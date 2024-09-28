@@ -21,7 +21,7 @@ interface IPageProps {
 	}
 }
 
-function getCityNameFromUid(uid) {
+function getCityNameFromUid(uid: string) {
 	if (typeof uid !== 'string') {
 		throw new TypeError('O UID deve ser uma string.');
 	}
@@ -97,7 +97,7 @@ export async function generateMetadata(
 			}
 		}
 	} catch {
-		const isCoberturaPath = uid.includes('cobertura--')
+		const isCoberturaPath = uid.includes('cobertura--') && slugs.length >= 3
 
 		if (!isCoberturaPath) {
 			return notFound();
@@ -158,7 +158,7 @@ export default async function Page({ params }: IPageProps) {
 			</main>
 		)
 	} catch {
-		const isCoberturaPath = uid.includes('cobertura--')
+		const isCoberturaPath = uid.includes('cobertura--') && slugs.length >= 3
 
 		if (!isCoberturaPath) {
 			return notFound();

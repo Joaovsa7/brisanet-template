@@ -3,7 +3,7 @@ import { z } from 'zod'
 
 export const env = createEnv({
 	server: {
-		BASE_URL: z.string().url(),
+		BASE_URL: z.string().optional(),
 		PRISMIC_ACCESS_TOKEN: z.string().min(1),
 		PRISMIC_REPOSITORY_NAME: z.enum([
 			'telefone-da-brisanet',
