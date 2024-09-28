@@ -26,15 +26,12 @@ function getCityNameFromUid(uid) {
 		throw new TypeError('O UID deve ser uma string.');
 	}
 
-	// Divide o UID pelo separador '--'
 	const parts = uid.split('--');
 
-	// Verifica se o UID possui pelo menos três partes
 	if (parts.length < 3) {
 		throw new Error('O UID não está no formato esperado: "cobertura--estado--cidade".');
 	}
 
-	// Retorna a última parte, que é o nome da cidade
 	return parts[parts.length - 1];
 }
 
