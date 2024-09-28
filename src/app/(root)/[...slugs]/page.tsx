@@ -12,7 +12,7 @@ import { components } from '~/slices'
 import { env } from '~/config/env'
 import { prismicio } from '~/libs/prismicio'
 import { brisanetService } from '~/services/brisanet'
-import { getTemplatePage } from '~/services/brisanet/get-template-page-mock'
+import { getTemplatePageMock } from '~/services/brisanet/get-template-page-mock'
 import { cmsService } from '~/services/cms'
 
 interface IPageProps {
@@ -110,7 +110,7 @@ export async function generateMetadata(
 			return notFound();
 		}
 
-		const document = await getTemplatePage(templatePage)
+		const document = await getTemplatePageMock(templatePage)
 
 		const { meta_title, meta_description, robots_follow, robots_index } =
 			document?.data || {}
@@ -171,7 +171,7 @@ export default async function Page({ params }: IPageProps) {
 			return notFound();
 		}
 
-		const document = await getTemplatePage(templatePage)
+		const document = await getTemplatePageMock(templatePage)
 
 		return (
 			<main>
