@@ -1,23 +1,45 @@
 import { env } from "~/config/env";
 
-export const getTemplatePageMock = ({ state, slug, id, name }: { state?: string, slug?: string, id?: number, name?: string }) => {
+export const getTemplatePageMock = ({ state = '', slug, id, name }: { state?: string, slug?: string, id?: number, name?: string }) => {
+	const stateName = state?.charAt(0)?.toUpperCase?.() + state?.slice?.(1);
+	const phoneNumber = "0800 281 3017";
+	const whatsappNumber = '+55 84 98111-8525';
+
 	switch (env.PRISMIC_REPOSITORY_NAME) {
 		case 'telefone-da-brisanet':
 			return {
-				id: "ZdaurBEAAHoUKvq1",
-				uid: `cobertura--${state}--${slug}`,
-				url: `/cobertura/${state}/${slug}`,
-				type: "page",
-				href: `https://telefone-da-brisanet.cdn.prismic.io/api/v2/documents/search?ref=ZvcoNxAAACEA4OR-&q=[[d = at(document.id, "${id}")]]`,
-				tags: [],
-				first_publication_date: "2024-02-22T02:17:20+0000",
-				last_publication_date: "2024-09-27T11:29:13+0000",
-				slugs: [],
-				linked_documents: [],
-				lang: "pt-br",
-				alternate_languages: [],
-				data: {
-					slices: [
+				"id": "${id}",
+				"uid": `cobertura--${state}--${slug}`,
+				"url": `/cobertura/${state}/${slug}`,
+				"type": "cobertura",
+				"href": `https://whitelabel-brisanet.cdn.prismic.io/api/v2/documents/search?ref=ZvcoNxAAACEA4OR-&q=[[d = at(document.id, "${id}")]]`,
+				"tags": [],
+				"first_publication_date": "2024-04-01T10:00:00+0000",
+				"last_publication_date": "2024-04-01T10:00:00+0000",
+				"slugs": [`cobertura-${state}-${slug}`],
+				"linked_documents": [],
+				"lang": "pt-br",
+				"alternate_languages": [],
+				"data": {
+					"slices": [
+						{
+							"variation": "default",
+							"version": "initial",
+							"items": [],
+							"primary": {
+								"title": [
+									{
+										"type": "heading2",
+										"text": `Cobertura Brisanet em ${name} ${stateName}`,
+										"spans": [],
+										"direction": "ltr"
+									}
+								]
+							},
+							"id": "slice1",
+							"slice_type": "banner",
+							"slice_label": null
+						},
 						{
 							variation: "default",
 							version: "initial",
@@ -26,228 +48,183 @@ export const getTemplatePageMock = ({ state, slug, id, name }: { state?: string,
 								title: [
 									{
 										type: "heading2",
-										text: `Telefone Brisanet em ${name}`,
+										text: `Planos da Brisanet em ${name}`,
 										spans: [],
 										direction: "ltr"
 									}
 								],
 								cityid: `${id}`
 							},
-							id: "products_carousel$751922eb-4fe5-44b7-8f4c-99795a3ae6c0",
+							id: "products_carousel$851923fe-5ge5-55b8-9g5d-99895a4be7d1",
 							slice_type: "products_carousel",
 							slice_label: null
 						},
 						{
-							variation: "default",
-							version: "initial",
-							items: [],
-							primary: {
-								content: [
+							"variation": "default",
+							"version": "initial",
+							"items": [],
+							"primary": {
+								"content": [
 									{
-										type: "paragraph",
-										text: `A Brisanet tem expandido continuamente sua rede de fibra óptica em ${name}, ${state}, garantindo que nossos clientes tenham acesso a serviços de telefonia de alta qualidade. Com múltiplas linhas telefônicas e suporte dedicado, a Brisanet assegura que você possa se comunicar com eficiência e confiabilidade.`,
-										spans: [],
-										direction: "ltr"
+										"type": "paragraph",
+										"text": `A **Brisanet ${stateName}** orgulha-se de oferecer uma cobertura ampla e confiável na cidade de **${name}**, garantindo que os moradores tenham acesso aos melhores serviços de internet e telefonia do mercado. Com uma infraestrutura de fibra óptica de última geração, a Brisanet assegura uma conexão estável e velocidades impressionantes, perfeitas para atender às diversas necessidades digitais da comunidade local.`,
+										"spans": [],
+										"direction": "ltr"
 									},
 									{
-										type: "heading3",
-										text: "Como Entrar em Contato com o Suporte Brisanet",
-										spans: [
-											{
-												start: 0,
-												end: 40,
-												type: "strong"
-											}
-										],
-										direction: "ltr"
+										"type": "paragraph",
+										"text": `Além da excelência em conectividade, a **Brisanet ${stateName}** oferece um atendimento ao cliente de alta qualidade através do **telefone da Brisanet ${stateName}** ${phoneNumber} e do WhatsApp ${whatsappNumber}. Nossa equipe de suporte está sempre pronta para resolver dúvidas, solucionar problemas técnicos e auxiliar na escolha do plano ideal para cada cliente.`,
+										"spans": [],
+										"direction": "ltr"
 									},
 									{
-										type: "paragraph",
-										text: `Para entrar em contato com o suporte da Brisanet em ${name}, siga estes passos simples:`,
-										spans: [],
-										direction: "ltr"
+										"type": "paragraph",
+										"text": `A variedade de **planos Brisanet ${stateName}** disponíveis em ${name} é outro diferencial que nos destaca no mercado. Desde planos básicos para navegação e e-mails até pacotes avançados para usuários que demandam alta velocidade para download e upload, ideais para streaming em 4K, jogos online sem lag e conferências de vídeo sem interrupções.`,
+										"spans": [],
+										"direction": "ltr"
 									},
 									{
-										type: "o-list-item",
-										text: "Ligue para o nosso número de suporte 0800 281 3017.",
-										spans: [
-											{
-												start: 25,
-												end: 38,
-												type: "hyperlink",
-												data: {
-													link_type: "Web",
-													url: "tel:08002813017",
-													target: "_self"
-												}
-											}
-										],
-										direction: "ltr"
+										"type": "paragraph",
+										"text": `**Contratar Brisanet ${stateName}** é um processo simples e rápido. Você pode realizar a contratação diretamente pelo nosso site oficial, ligando para o **número da Brisanet ${stateName}** ${phoneNumber}, ou enviando uma mensagem via WhatsApp para ${whatsappNumber}. Nossa equipe está preparada para guiá-lo durante todo o processo, desde a escolha do plano ideal até a instalação rápida e sem complicações.`,
+										"spans": [],
+										"direction": "ltr"
 									},
 									{
-										type: "o-list-item",
-										text: "Envie uma mensagem via WhatsApp para 84 98111-8525.",
-										spans: [
-											{
-												start: 28,
-												end: 42,
-												type: "hyperlink",
-												data: {
-													link_type: "Web",
-													url: "https://wa.me/84891118525",
-													target: "_blank"
-												}
-											}
-										],
-										direction: "ltr"
+										"type": "paragraph",
+										"text": `A **Brisanet ${stateName}** possui cobertura em várias cidades, garantindo que você tenha acesso aos melhores serviços de internet, independentemente de onde esteja. Nossa rede de fibra óptica está em constante expansão, permitindo que cada vez mais moradores e empresas se beneficiem de uma conexão de alta qualidade.`,
+										"spans": [],
+										"direction": "ltr"
 									},
 									{
-										type: "o-list-item",
-										text: "Visite uma de nossas lojas físicas em ${name} para atendimento presencial.",
-										spans: [],
-										direction: "ltr"
+										"type": "paragraph",
+										"text": `Optar pela **Brisanet ${stateName}** significa escolher qualidade, confiança e inovação. Com tecnologia de ponta em fibra óptica, a Brisanet garante uma conexão estável e rápida, perfeita para atender às demandas crescentes de conectividade no mundo moderno.`,
+										"spans": [],
+										"direction": "ltr"
 									},
 									{
-										type: "heading2",
-										text: "Benefícios de Utilizar o Telefone Brisanet",
-										spans: [
-											{
-												start: 0,
-												end: 48,
-												type: "strong"
-											}
-										],
-										direction: "ltr"
+										"type": "paragraph",
+										"text": `Além disso, oferecemos suporte técnico 24/7, instalação rápida e sem custo adicional, e a possibilidade de adicionar serviços complementares como TV a cabo e telefonia fixa, garantindo uma experiência completa e satisfatória para todos os clientes da **Brisanet ${stateName}** em **${name}**.`,
+										"spans": [],
+										"direction": "ltr"
 									},
 									{
-										type: "paragraph",
-										text: `Optar pelo telefone Brisanet em ${name} oferece uma série de benefícios, incluindo suporte técnico 24/7, assistência personalizada e soluções rápidas para quaisquer problemas que possam surgir. Nossa infraestrutura robusta garante chamadas claras e sem interrupções, proporcionando uma comunicação eficaz para sua residência ou empresa.`,
-										spans: [],
-										direction: "ltr"
+										"type": "paragraph",
+										"text": `A **Brisanet ${stateName}** está comprometida em proporcionar uma experiência digital excepcional para os moradores de ${name}. Nosso foco é oferecer serviços que não apenas atendam, mas superem as expectativas dos nossos clientes. Com uma equipe dedicada e uma infraestrutura robusta, estamos sempre prontos para inovar e melhorar nossos serviços, garantindo que você tenha acesso às melhores soluções de conectividade disponíveis no mercado.`,
+										"spans": [],
+										"direction": "ltr"
 									}
 								],
-								banner: {
-									id: "ZdOLlRAAAO8DwhO_",
-									type: "sidebar_banner",
-									tags: [],
-									lang: "pt-br",
-									slug: "-",
-									first_publication_date: "2024-02-19T17:11:00+0000",
-									last_publication_date: "2024-02-19T17:11:00+0000",
-									uid: "500-mega-netflix",
-									data: {
-										banner: {
-											dimensions: {
-												width: 1080,
-												height: 1920
-											},
-											alt: "Anúncio de Telefonia Brisanet 500 Mega + Netflix por 104,90 reais",
-											copyright: null,
-											url: "https://images.prismic.io/telefone-da-brisanet/65d38b546df829d21997f329_banner-netflix-500mb.jpg?auto=format,compress",
-											id: "ZdOLVG34KdIZl_Mp",
-											edit: {
-												x: 0,
-												y: 0,
-												zoom: 1,
-												background: "transparent"
-											}
-										},
-										link: {
-											link_type: "Web",
-											url: "https://assine.parceirosbrisanet.com.br/assine/?resellerId=10563",
-											target: "_blank"
-										}
-									},
-									link_type: "Document",
-									isBroken: false
+								"banner": {
+									"id": "banner1",
+									"type": "sidebar_banner",
+									"tags": [],
+									"lang": "pt-br",
+									"slug": "-",
+									"first_publication_date": "2024-04-01T10:00:00+0000",
+									"last_publication_date": "2024-04-01T10:00:00+0000",
+									"uid": "banner-brisanet-barro",
+									"data": {
+									}
 								}
 							},
-							id: "content_block$372ded40-5f5e-4a0a-bd77-db7dd93769bb",
-							slice_type: "content_block",
-							slice_label: null
+							"id": "content_block1",
+							"slice_type": "content_block",
+							"slice_label": null
 						},
 						{
-							variation: "default",
-							version: "initial",
-							items: [
+							"variation": "default",
+							"version": "initial",
+							"items": [
 								{
-									question: `Qual o telefone da Brisanet em ${name}?`,
-									anwser: [
+									"question": `Qual o telefone da Brisanet em ${name}?`,
+									"anwser": [
 										{
-											type: "paragraph",
-											text: `O telefone Brisanet em ${name} é 0800 281 3017 e o WhatsApp 84 98111-8525. Nossa equipe está pronta para atender suas necessidades e esclarecer todas as suas dúvidas.`,
-											spans: [
+											"type": "paragraph",
+											"text": `O telefone Brisanet em ${name} é ${phoneNumber} e o WhatsApp ${whatsappNumber}. Nossa equipe está pronta para atender suas necessidades e esclarecer todas as suas dúvidas.`,
+											"spans": [
 												{
-													start: 35,
-													end: 48,
-													type: "hyperlink",
-													data: {
-														link_type: "Web",
-														url: "tel:08002813017",
-														target: "_self"
+													"start": 35,
+													"end": 35 + phoneNumber.length,
+													"type": "hyperlink",
+													"data": {
+														"link_type": "Web",
+														"url": `tel:${phoneNumber.replace(/\D/g, '')}`,
+														"target": "_self"
 													}
 												},
 												{
-													start: 56,
-													end: 72,
-													type: "hyperlink",
-													data: {
-														link_type: "Web",
-														url: "https://wa.me/84891118525",
-														target: "_blank"
+													"start": 56,
+													"end": 56 + whatsappNumber.length,
+													"type": "hyperlink",
+													"data": {
+														"link_type": "Web",
+														"url": `https://wa.me/${whatsappNumber.replace(/\D/g, '')}`,
+														"target": "_blank"
 													}
 												}
 											],
-											direction: "ltr"
+											"direction": "ltr"
 										}
 									]
 								},
 								{
-									question: `Tem suporte telefônico em ${name}?`,
-									anwser: [
+									"question": `Tem suporte telefônico em ${name}?`,
+									"anwser": [
 										{
-											type: "paragraph",
-											text: `Sim, a Brisanet oferece suporte telefônico dedicado em ${name}, garantindo que você receba assistência rápida e eficiente para qualquer questão relacionada aos nossos serviços de telefonia.`,
-											spans: [],
-											direction: "ltr"
+											"type": "paragraph",
+											"text": `Sim, a Brisanet oferece suporte telefônico dedicado em ${name}, garantindo que você receba assistência rápida e eficiente para qualquer questão relacionada aos nossos serviços de telefonia.`,
+											"spans": [],
+											"direction": "ltr"
 										}
 									]
 								},
 								{
-									question: `Como funciona o atendimento telefônico da Brisanet em ${name}?`,
-									anwser: [
+									"question": `Como funciona o atendimento telefônico da Brisanet em ${name}?`,
+									"anwser": [
 										{
-											type: "paragraph",
-											text: `O atendimento telefônico da Brisanet em ${name} é realizado por uma equipe especializada, pronta para ajudar com instalação, manutenção, planos e qualquer outro serviço que você necessite. Basta ligar para 0800 281 3017 e falar com um de nossos atendentes.`,
-											spans: [],
-											direction: "ltr"
+											"type": "paragraph",
+											"text": `O atendimento telefônico da Brisanet em ${name} é realizado por uma equipe especializada, pronta para ajudar com instalação, manutenção, planos e qualquer outro serviço que você necessite. Basta ligar para ${phoneNumber} e falar com um de nossos atendentes.`,
+											"spans": [
+												{
+													"start": 68,
+													"end": 68 + phoneNumber.length,
+													"type": "hyperlink",
+													"data": {
+														"link_type": "Web",
+														"url": `tel:${phoneNumber.replace(/\D/g, '')}`,
+														"target": "_self"
+													}
+												}
+											],
+											"direction": "ltr"
 										}
 									]
 								}
 							],
-							primary: {
-								title: [
+							"primary": {
+								"title": [
 									{
-										type: "paragraph",
-										text: "Perguntas Frequentes",
-										spans: [],
-										direction: "ltr"
+										"type": "paragraph",
+										"text": "Perguntas Frequentes",
+										"spans": [],
+										"direction": "ltr"
 									}
 								]
 							},
-							id: "faq$0e1cd385-5979-4d9b-aa31-c642f40603c0",
-							slice_type: "faq",
-							slice_label: null
+							"id": "faq1",
+							"slice_type": "faq",
+							"slice_label": null
 						}
 					],
-					meta_image: {},
-					meta_title: `Telefone Brisanet ${name} | 0800 | WhatsApp`,
-					meta_description: `Aproveite os melhores serviços de telefonia da Brisanet em ${name}, ${state}. Conecte-se com a melhor cobertura e atendimento personalizado. Solicite seu plano agora!`,
-					robots_index: true,
-					robots_follow: true,
-					google_structured_data: null
+					"meta_image": {},
+					"meta_title": `Cobertura Brisanet ${name} ${stateName} | Internet e Telefonia`,
+					"meta_description": `A Brisanet oferece cobertura em ${name}, ${stateName} com planos de internet de alta velocidade, suporte dedicado e atendimento personalizado. Contrate agora e aproveite os melhores serviços de telefonia e internet.`,
+					"robots_index": true,
+					"robots_follow": true,
+					"google_structured_data": null
 				}
-			};
+			}
+
 		case 'numero-da-brisanet':
 			return {
 				id: "ZdaurBEAAHoUKvq2",
