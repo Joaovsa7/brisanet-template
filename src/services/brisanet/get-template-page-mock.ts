@@ -29,8 +29,8 @@ export const getTemplatePageMock = ({ state = '', slug, id, name }: { state?: st
 							"primary": {
 								"title": [
 									{
-										"type": "heading2",
-										"text": `Cobertura Brisanet em ${name} ${stateName}`,
+										"type": "heading1",
+										"text": `Brisanet ${name}`,
 										"spans": [],
 										"direction": "ltr"
 									}
@@ -57,6 +57,146 @@ export const getTemplatePageMock = ({ state = '', slug, id, name }: { state?: st
 							},
 							id: "products_carousel$851923fe-5ge5-55b8-9g5d-99895a4be7d1",
 							slice_type: "products_carousel",
+							slice_label: null
+						},
+						{
+							variation: "default",
+							version: "initial",
+							items: [],
+							primary: {
+								content: [
+									{
+										type: "paragraph",
+										text: `A Brisanet oferece diversos números de contato em ${name}, ${state}, facilitando o acesso aos nossos serviços e suporte. Seja para assistência técnica, dúvidas sobre planos ou novas contratações, temos a linha certa para você.`,
+										spans: [],
+										direction: "ltr"
+									},
+									{
+										type: "heading3",
+										text: `Números de Contato da Brisanet ${name}`,
+										spans: [
+											{
+												start: 0,
+												end: 35,
+												type: "strong"
+											}
+										],
+										direction: "ltr"
+									},
+									{
+										type: "paragraph",
+										text: `Conheça os principais números de contato da Brisanet ${name} para facilitar a sua comunicação conosco:`,
+										spans: [],
+										direction: "ltr"
+									},
+									{
+										type: "o-list-item",
+										text: "Suporte Técnico: 0800 281 3017",
+										spans: [
+											{
+												start: 20,
+												end: 32,
+												type: "hyperlink",
+												data: {
+													link_type: "Web",
+													url: "tel:08002813017",
+													target: "_self"
+												}
+											}
+										],
+										direction: "ltr"
+									},
+									{
+										type: "o-list-item",
+										text: "Atendimento Comercial: 0800 281 3020",
+										spans: [
+											{
+												start: 25,
+												end: 37,
+												type: "hyperlink",
+												data: {
+													link_type: "Web",
+													url: "tel:08002813020",
+													target: "_self"
+												}
+											}
+										],
+										direction: "ltr"
+									},
+									{
+										type: "o-list-item",
+										text: "WhatsApp: 84 98111-8525",
+										spans: [
+											{
+												start: 11,
+												end: 27,
+												type: "hyperlink",
+												data: {
+													link_type: "Web",
+													url: "https://wa.me/84891118525",
+													target: "_blank"
+												}
+											}
+										],
+										direction: "ltr"
+									},
+									{
+										type: "heading2",
+										text: "Vantagens de Utilizar os Números da Brisanet em ${name}",
+										spans: [
+											{
+												start: 0,
+												end: 62,
+												type: "strong"
+											}
+										],
+										direction: "ltr"
+									},
+									{
+										type: "paragraph",
+										text: `Ao utilizar os números de contato da Brisanet em ${name}, você garante atendimento rápido e eficiente, com profissionais capacitados para resolver qualquer questão. Nossos canais de comunicação estão disponíveis para atender às suas necessidades de forma ágil e personalizada.`,
+										spans: [],
+										direction: "ltr"
+									}
+								],
+								banner: {
+									id: "ZdOLlRAAAO8DwhO_2",
+									type: "sidebar_banner",
+									tags: [],
+									lang: "pt-br",
+									slug: "-",
+									first_publication_date: "2024-02-19T17:11:00+0000",
+									last_publication_date: "2024-02-19T17:11:00+0000",
+									uid: "600-mega-netflix",
+									data: {
+										banner: {
+											dimensions: {
+												width: 1080,
+												height: 1920
+											},
+											alt: "Anúncio de Contato Brisanet 500 Mega + Netflix por 104,90 reais",
+											copyright: null,
+											url: "https://images.prismic.io/numero-da-brisanet/75e39c657ef930e32098f329_banner-netflix-500mb.jpg?auto=format,compress",
+											id: "ZdOLVG34KdIZl_Mp2",
+											edit: {
+												x: 0,
+												y: 0,
+												zoom: 1,
+												background: "transparent"
+											}
+										},
+										link: {
+											link_type: "Web",
+											url: "https://assine.numero-da-brisanet.com.br/assine/?resellerId=10563",
+											target: "_blank"
+										}
+									},
+									link_type: "Document",
+									isBroken: false
+								}
+							},
+							id: "content_block$482ded40-5f5e-5a1a-cd77-db8dd93879cc",
+							slice_type: "content_block",
 							slice_label: null
 						},
 						{
@@ -241,6 +381,24 @@ export const getTemplatePageMock = ({ state = '', slug, id, name }: { state?: st
 				alternate_languages: [],
 				data: {
 					slices: [
+						{
+							"variation": "default",
+							"version": "initial",
+							"items": [],
+							"primary": {
+								"title": [
+									{
+										"type": "heading1",
+										"text": `Brisanet ${name}`,
+										"spans": [],
+										"direction": "ltr"
+									}
+								]
+							},
+							"id": "slice1",
+							"slice_type": "banner",
+							"slice_label": null
+						},
 						{
 							variation: "default",
 							version: "initial",
@@ -511,6 +669,24 @@ export const getTemplatePageMock = ({ state = '', slug, id, name }: { state?: st
 				alternate_languages: [],
 				data: {
 					slices: [
+						{
+							"variation": "default",
+							"version": "initial",
+							"items": [],
+							"primary": {
+								"title": [
+									{
+										"type": "heading1",
+										"text": `Brisanet ${name}`,
+										"spans": [],
+										"direction": "ltr"
+									}
+								]
+							},
+							"id": "slice1",
+							"slice_type": "banner",
+							"slice_label": null
+						},
 						{
 							variation: "default",
 							version: "initial",
