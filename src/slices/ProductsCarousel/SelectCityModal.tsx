@@ -123,7 +123,7 @@ export function SelectCityModal({ currentCity, onSelect }) {
 
 							<Button asChild variant="secondary">
 								<a
-									href="https://assine.parceirosbrisanet.com.br/assine/?resellerId=10563"
+									href="https://brisanet.myog.io/assine/?resellerId=10563"
 									target="_blank"
 									rel="noreferrer"
 								>

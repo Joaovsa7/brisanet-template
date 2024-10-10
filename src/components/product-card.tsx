@@ -125,7 +125,7 @@ export function ProductCard({
 				</h3>
 				<Button asChild size="sm" className="w-full">
 					<a
-						href="https://assine.parceirosbrisanet.com.br/assine/?resellerId=10563"
+						href="https://brisanet.myog.io/assine/?resellerId=10563"
 						target="_blank"
 						rel="noreferrer"
 					>
